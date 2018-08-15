@@ -1,0 +1,35 @@
+{
+  "defaultEnv":  {"ENV": "DB_DRIVER"},
+
+  "dev": {
+    "driver": "sqlite3",
+    "filename": "~/dev.db"
+  },
+
+  "test": {
+    "driver": "sqlite3",
+    "filename": ":memory:"
+  },
+
+  "prod": {
+    "driver": "mysql",
+    "user": "root",
+    "password": "root"
+  },
+
+  "pg": {
+    "driver": "pg",
+    "user": {"ENV": "DB_USER"},
+    "password": {"ENV": "DB_PASS"},
+    "host": {"ENV": "DB_HOST"},
+    "database": {"ENV": "DB_NAME"}
+  },
+
+  "mongo": {
+    "driver": "mongodb",
+    "database": "my_db",
+    "host": "localhost"
+  },
+
+  "other": "postgres://uname:pw@server.com/dbname"
+}
