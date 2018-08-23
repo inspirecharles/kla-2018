@@ -3,6 +3,7 @@ import { Switch, Route} from "react-router-dom";
 
 import routes from "./routes"
 import Header from "./components/HeaderContainer";
+import Footer from "./components/FooterContainer";
 
 class App extends Component {
 	render(){
@@ -12,6 +13,7 @@ class App extends Component {
 				<switch>
 					{routes.map((route, i) => <Route key={i} {...route} />)}
 				</switch>
+				<Footer />
 			</div>
 		)
 	}
