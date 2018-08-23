@@ -29,7 +29,7 @@ body {
 
 
 /* for header */
-header {
+.result-container {
 	background-color: #007bff;
 	padding-top: 42px;
 	padding-bottom: 42px;
@@ -130,5 +130,36 @@ header {
 
 	.supplementary {
 		background-color: #7e8fad;
+	}
+}
+
+/* for media */
+.media {
+	padding: 3.25rem 0;
+
+	.media-img {
+		width: 70%;
+		height: auto;
+	}
+}
+
+/* for notification wrapper */
+.notification-wrapper {
+	background-color: #2a65cd;
+
+	.getNotified-container {
+		padding: 3.25rem 0;
+	}
+
+	.notif-button {
+		padding-top: 2.25rem;
+	}
+}
+
+/* for uk lotto news wrapper */
+.uk-lotto-news-wrapper {
+	.view-more-news {
+		justify-content: center;
+		padding-top: 2.25rem;
 	}
 }
