@@ -3,9 +3,23 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const nodeExternals = require('webpack-node-externals');
 
+
+const whitelist = [
+	'react', 
+	'react-router-dom',
+	'isomorphic-fetch',
+	'react-dom',
+	'redux',
+	'react-redux',
+	'bootstrap',
+	'jquery'
+]
+
 const browserConfig = {
 	target: 'node', // in order to ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
+    /*externals: [nodeExternals({
+    	whitelist: whitelist
+    })], */
 	entry: [
 		"./src/browser/index.js",
 		"./src/scss/index.scss"
@@ -77,7 +91,9 @@ const browserConfig = {
 
 const serverConfig = {
 	target: 'node', // in order to ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
+    /*externals: [nodeExternals({
+    	whitelist: whitelist
+    })],*/
 	entry: "./src/server/index.js",
 	target: "node",
 	output: {
