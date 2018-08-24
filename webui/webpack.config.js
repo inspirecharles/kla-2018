@@ -40,11 +40,6 @@ const browserConfig = {
 					use: [
 						{
 							loader: "css-loader",
-							options: {importLoaders: 1}
-						},
-						{
-							loader: "postcss-loader",
-							options: { plugins: [autoprefixer()] }
 						},
 				        {
 				            loader: "sass-loader"
@@ -58,9 +53,17 @@ const browserConfig = {
 				loader: "babel-loader",
 				query: { 
 					presets: ["es2015", "react"] 
+				},
+			},
+			{
+				test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+                loader: "url-loader?limit=100000",
+				options: {
+					name: "public/media/[name].[ext]",
+					publicPath: url => url.replace(/public/, "")
 				}
 			}
-		]
+		],
 	},
 	plugins: [
 		new ExtractTextPlugin({
