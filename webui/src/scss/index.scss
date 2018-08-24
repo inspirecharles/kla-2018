@@ -179,7 +179,16 @@ body {
 .subscribe-wrapper {
 	background-color: #2a65cd;
 
+	.subscribe-body {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
 	.subscribe-container {
-		padding: 3.25rem 0;
+		padding: 2.25rem 0;
+	}
+
+	.form-control, .btn {
+		border-radius: 0;
 	}
 }

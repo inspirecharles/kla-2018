@@ -303,16 +303,16 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 			<div className="subscribe-container">
 				<div className="row">
 				
-					<div className="media-body col-lg-6">
+					<div className="media-body subscribe-body col-lg-6">
 						<h4 className="media-heading subscribe-heading text-white">Lottery Results in Your Inbox</h4>
 						<p className="subscribe-content text-white">
 							Get the latest UK lottery results direct to your email and never miss your lucky numbers!
 						</p>
 					</div>
-					<div className="media right col-lg-6">
+					<div className="media-body subscribe-body right col-lg-6">
 						<div className="single">
 							<div className="input-group">
-					         <input type="email" className="form-control" placeholder="Enter your email" />
+					         <input type="email" className="form-control" placeholder="youremail@email.com" />
 						        <span className="input-group-btn">
 						        	<button className="btn btn-theme" type="submit">Subscribe</button>
 					         	</span>
