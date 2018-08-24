@@ -38,7 +38,8 @@ body {
 	margin-top: 20px;
 
 	.game_result {
-		padding-left: 0;
+		padding-right: 25px;
+    	padding-left: 25px;
 	}
 
 	.card-header {
@@ -135,13 +136,18 @@ body {
 	}
 }
 
-/* for media */
+/* for media lottery results */
 .media {
 	padding: 3.25rem 0;
 
 	.media-img {
 		width: 70%;
 		height: auto;
+	}
+
+	.media-body, .media-right {
+		padding-left: 25px;
+		padding-right: 25px;
 	}
 }
 
@@ -155,6 +161,7 @@ body {
 
 	.notif-button {
 		padding-top: 2.25rem;
+		text-align: center;
 	}
 }
 
@@ -162,6 +169,28 @@ body {
 .uk-lotto-news-wrapper {
 	.view-more-news {
 		justify-content: center;
-		padding-top: 2.25rem;
+		padding: 2.25rem 0;
+	}
+
+	.card {
+		box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.1);
+	}
+}
+
+/* subscribe wrapper */
+.subscribe-wrapper {
+	background-color: #2a65cd;
+
+	.subscribe-body {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.subscribe-container {
+		padding: 2.25rem 0;
+	}
+
+	.form-control, .btn {
+		border-radius: 0;
 	}
 }

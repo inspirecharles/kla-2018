@@ -31,50 +31,7 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 		                            	<div className="main_numbers col-lg-12 col-md-12">
 			                                <dl>
 			                                	<dt className="clr mainNumber_label">
-			                                        <label for="">Main Numbers</label>
-			                                    </dt>
-				                                <dd className="numbers circle bc_lotto d-inline-block">9</dd>
-				                                <dd className="numbers circle bc_lotto d-inline-block">13</dd>
-				                                <dd className="numbers circle bc_lotto d-inline-block">16</dd>
-				                                <dd className="numbers circle bc_lotto d-inline-block">25</dd>
-				                                <dd className="numbers circle bc_lotto d-inline-block">40</dd>
-				                                <dd className="numbers circle bc_lotto d-inline-block">46</dd>
-			                                </dl>
-			                            </div>
-		                            </div>
-		                        </div>
-
-					            <div className="card-footer container-fluid">
-									<div className="row footerNextDraw">
-										<h3 className="nextDraw">Next Draw: &#163;7,000,000</h3>
-										<button className="btn btn-light ml-auto">Buy Now</button>
-									</div>
-								</div>
-
-	                        </div>
-							
-						</div>
-
-						<div className="card">
-							<div className="card-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx2" role="tablist" aria-multiselectable="true">
-							    <a data-toggle="collapse" data-parent="#accordionEx1" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
-	                                
-					                <div className="d-inline-block">
-					                	<img className="img-fluid uk-logo-lotto" src="../../img/icon-lotto.png" /> <i className="fa fa-angle-down rotate-icon fa-2x"></i>
-					                </div>
-					                <div className="d-inline-block prize_date">
-					                	<h6 className="prize text-right">&#163;6,300,000</h6>
-	  									<p className="text-right date">Saturday 21 July 2018</p>
-					                </div>
-	                            </a>
-							</div>
-							<div id="collapse5" className="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx2">
-	                            <div className="card-body pt-0" id="lotto">
-		                            <div className="gameResults-main">
-		                            	<div className="main_numbers col-lg-12 col-md-12">
-			                                <dl>
-			                                	<dt className="clr mainNumber_label">
-			                                        <label for="">Main Numbers</label>
+			                                        <label htmlFor="">Main Numbers</label>
 			                                    </dt>
 				                                <dd className="numbers circle bc_lotto d-inline-block">9</dd>
 				                                <dd className="numbers circle bc_lotto d-inline-block">13</dd>
@@ -100,12 +57,11 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 
                 	</div>
                 </div>
-                <div className="col-lg-6 game_result">
-                	<div className="accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true">
 
-						<div className="card">
-							<div className="card-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true">
-							    <a data-toggle="collapse" data-parent="#accordionEx1" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                <div className="col-lg-6 game_result">
+                	<div className="card">
+							<div className="card-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx2" role="tablist" aria-multiselectable="true">
+							    <a data-toggle="collapse" data-parent="#accordionEx1" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
 	                                
 					                <div className="d-inline-block">
 					                	<img className="img-fluid uk-logo-lotto" src="../../img/icon-lotto.png" /> <i className="fa fa-angle-down rotate-icon fa-2x"></i>
@@ -116,13 +72,13 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 					                </div>
 	                            </a>
 							</div>
-							<div id="collapse6" className="collapse show" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
+							<div id="collapse5" className="collapse show" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx2">
 	                            <div className="card-body pt-0" id="lotto">
 		                            <div className="gameResults-main">
 		                            	<div className="main_numbers col-lg-12 col-md-12">
 			                                <dl>
 			                                	<dt className="clr mainNumber_label">
-			                                        <label for="">Main Numbers</label>
+			                                        <label htmlFor="">Main Numbers</label>
 			                                    </dt>
 				                                <dd className="numbers circle bc_lotto d-inline-block">9</dd>
 				                                <dd className="numbers circle bc_lotto d-inline-block">13</dd>
@@ -146,7 +102,55 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 							
 						</div>
 
-						<div className="card">
+                </div>
+
+                <div className="col-lg-6 game_result">
+                	<div className="card">
+							<div className="card-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true">
+							    <a data-toggle="collapse" data-parent="#accordionEx1" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
+	                                
+					                <div className="d-inline-block">
+					                	<img className="img-fluid uk-logo-lotto" src="../../img/icon-lotto.png" /> <i className="fa fa-angle-down rotate-icon fa-2x"></i>
+					                </div>
+					                <div className="d-inline-block prize_date">
+					                	<h6 className="prize text-right">&#163;6,300,000</h6>
+	  									<p className="text-right date">Saturday 21 July 2018</p>
+					                </div>
+	                            </a>
+							</div>
+							<div id="collapse6" className="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
+	                            <div className="card-body pt-0" id="lotto">
+		                            <div className="gameResults-main">
+		                            	<div className="main_numbers col-lg-12 col-md-12">
+			                                <dl>
+			                                	<dt className="clr mainNumber_label">
+			                                        <label htmlFor="">Main Numbers</label>
+			                                    </dt>
+				                                <dd className="numbers circle bc_lotto d-inline-block">9</dd>
+				                                <dd className="numbers circle bc_lotto d-inline-block">13</dd>
+				                                <dd className="numbers circle bc_lotto d-inline-block">16</dd>
+				                                <dd className="numbers circle bc_lotto d-inline-block">25</dd>
+				                                <dd className="numbers circle bc_lotto d-inline-block">40</dd>
+				                                <dd className="numbers circle bc_lotto d-inline-block">46</dd>
+			                                </dl>
+			                            </div>
+		                            </div>
+		                        </div>
+
+					            <div className="card-footer container-fluid">
+									<div className="row footerNextDraw">
+										<h3 className="nextDraw">Next Draw: &#163;7,000,000</h3>
+										<button className="btn btn-light ml-auto">Buy Now</button>
+									</div>
+								</div>
+
+	                        </div>
+							
+						</div>
+                </div>
+
+                <div className="col-lg-6 game_result">
+                	<div className="card">
 							<div className="card-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx2" role="tablist" aria-multiselectable="true">
 							    <a data-toggle="collapse" data-parent="#accordionEx1" href="#collapse7" aria-expanded="true" aria-controls="collapse7">
 	                                
@@ -165,7 +169,7 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 		                            	<div className="main_numbers col-lg-12 col-md-12">
 			                                <dl>
 			                                	<dt className="clr mainNumber_label">
-			                                        <label for="">Main Numbers</label>
+			                                        <label htmlFor="">Main Numbers</label>
 			                                    </dt>
 				                                <dd className="numbers circle bc_lotto d-inline-block">9</dd>
 				                                <dd className="numbers circle bc_lotto d-inline-block">13</dd>
@@ -188,51 +192,54 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 	                        </div>
 							
 						</div>
-
-                	</div>
                 </div>
+
 	        </div>
 	    </div>
 	</div>
 
 	<div className="container">
-		<div className="media col-lg-12">
+		<div className="media">
+			<div className="row">
 		
-			<div className="media-body col-md-12 col-lg-6">
-				<h4 className="media-heading">The UK&#39;s Home of Lottery Results Online
-				</h4>
-				<p className="media-content">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, tellus quis rutrum vulputate, est augue pellentesque sem, vitae tempus ipsum lacus at tortor. In efficitur eu eros sed semper. 
+				<div className="media-body col-lg-6">
+					<h4 className="media-heading">The UK&#39;s Home of Lottery <br/>Results Online
+					</h4>
+					<p className="media-content">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, tellus quis rutrum vulputate, est augue pellentesque sem, vitae tempus ipsum lacus at tortor. In efficitur eu eros sed semper. 
 
-					<br /><br />
+						<br /><br />
 
-					Vivamus molestie metus ac tincidunt iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque et arcu vel felis consequat maximus non at purus.
+						Vivamus molestie metus ac tincidunt iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque et arcu vel felis consequat maximus non at purus.
 
-					<br /><br />
-					
-					Vivamus molestie metus ac tincidunt iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque et arcu vel felis consequat maximus non at purus.
-				</p>
+						<br /><br />
+						
+						Vivamus molestie metus ac tincidunt iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque et arcu vel felis consequat maximus non at purus.
+					</p>
+				</div>
+				<div className="media-right col-lg-6 hidden-md-down">
+					<a href="#">
+					  <img className="img-fluid media-img hidden-md" src="../../img/girl_laptop.jpg" />
+					</a>
+				</div>
 			</div>
-			<div className="media-right col-lg-6 ">
-				<a href="#">
-				  <img className="img-fluid media-img hidden-md" src="../../img/girl_laptop.jpg" />
-				</a>
-			</div>
-		</div>
+		</div>	
 	</div>
 
 	<div className="notification-wrapper">
 		<div className="container">
-			<div className="media getNotified-container col-lg-12">
+			<div className="media getNotified-container">
+				<div className="row">
 				
-				<div className="media-body col-md-12 col-lg-8">
-					<h4 className="media-heading notif-heading text-white">The UK&#39;s Home of Lottery Results Online</h4>
-					<p className="notif-content text-white">
-						Never miss the winning numbers! Get push notification over time UK lotto results are available for all your favorite lotteries.
-					</p>
-				</div>
-				<div className="media-right col-lg-4 notif-button">
-					<a className="btn btn-light btn-align">Get Notified</a>
+					<div className="media-body col-lg-8">
+						<h4 className="media-heading notif-heading text-white">Draw Results Direct to Your Phone.</h4>
+						<p className="notif-content text-white">
+							Never miss the winning numbers! Get push notification over time UK lotto results are available for all your favorite lotteries.
+						</p>
+					</div>
+					<div className="media-right notif-button col-lg-4">
+						<button type="button" className="btn btn-light">Get Notified</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -287,6 +294,32 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 
 		    <div className="row view-more-news">
 				<button className="btn btn-primary">View More...</button>
+			</div>
+		</div>
+	</div>
+
+	<div className="subscribe-wrapper">
+		<div className="container">
+			<div className="subscribe-container">
+				<div className="row">
+				
+					<div className="media-body subscribe-body col-lg-6">
+						<h4 className="media-heading subscribe-heading text-white">Lottery Results in Your Inbox</h4>
+						<p className="subscribe-content text-white">
+							Get the latest UK lottery results direct to your email and never miss your lucky numbers!
+						</p>
+					</div>
+					<div className="media-body subscribe-body right col-lg-6">
+						<div className="single">
+							<div className="input-group">
+					         <input type="email" className="form-control" placeholder="youremail@email.com" />
+						        <span className="input-group-btn">
+						        	<button className="btn btn-theme" type="submit">Subscribe</button>
+					         	</span>
+					        </div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
