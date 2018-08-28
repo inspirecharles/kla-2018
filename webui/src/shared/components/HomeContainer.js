@@ -297,12 +297,10 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 	</div>
 
 	<div className="container">
-		<div className="media">
-			<div className="row">
-		
-				<div className="media-body col-lg-6">
-					<h4 className="media-heading">The UK&#39;s Home of Lottery <br/>Results Online
-					</h4>
+		<div className="media-1">
+			<div className="row my-4">
+				<div className="col-lg-6">
+					<h4 className="media-heading">The UK&#39;s Home of Lottery Results Online</h4>
 					<p className="media-content">
 						Lotto Results UK is the only place to get up to date results for all your 
 						favourite UK lotteries, raffles and draws. With our simple design and clear 
@@ -320,12 +318,11 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 						Could you be the next big winner? Find out now with the latest results at Lottery Results UK.  
 
 					</p>
-				</div>
-				<div className="media-right col-lg-6 hidden-md-down">
-					<a href="#">
-					  <img className="img-fluid media-img hidden-md" src="../../img/girl_laptop.jpg" />
-					</a>
-				</div>
+		        </div>
+				<div className="col-lg-6">
+		        	<img className="img-fluid media-img hidden-md" src="../../img/girl_laptop.jpg" />
+		        </div>
+		        
 			</div>
 		</div>	
 	</div>
