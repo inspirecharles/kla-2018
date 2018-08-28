@@ -18,6 +18,10 @@ a:hover {
 	text-decoration: none;
 }
 
+.btn {
+		border-radius: 0;
+	}
+
 body {
 	padding-top: 54px;
 
@@ -88,7 +92,7 @@ body {
 
 	.card-body {
 		padding: 0;
-		margin-bottom: 15%;
+		margin-bottom: 10%;
 	}
 
 	.prize, .date {

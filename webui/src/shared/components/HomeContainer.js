@@ -66,6 +66,18 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 		                            </div>
 		                        </div>
 
+		                        <div className="card-body pt-0">
+		                        	<div className="gameResults-main">
+		                            	<div className="supplementary_numbers col-lg-12 col-md-12">
+		                            		<div className="supp-link-icons">
+				                            	<i className="fa fa-print" aria-hidden="true"></i>
+				                            	<i className="fa fa-print" aria-hidden="true"></i>
+				                            	<i className="fa fa-print" aria-hidden="true"></i>
+				                            </div>
+		                            	</div>
+		                            </div>
+		                        </div>
+
 					            <div className="card-footer container-fluid">
 									<div className="row footerNextDraw">
 										<h3 className="nextDraw">Next Draw: &#163;7,000,000</h3>
