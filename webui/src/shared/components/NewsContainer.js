@@ -7,11 +7,11 @@ class NewsContainer extends Component {
 
 	render() {
 	    return (
-	    	<div className="row">
+			<div className="result-container">
 	    		<div className="container">
-		    	 	NewsContainer content here
+		    	 	News here
 	      		</div>
-	      	</div>
+      		</div>
 	    );
 	}
 	

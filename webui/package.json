@@ -4,6 +4,7 @@
   "description": "lottery results",
   "main": "index.js",
   "scripts": {
+    "webpack": "NODE_ENV=development webpack -w --mode development",
     "start-dev": "NODE_ENV=development webpack -w --mode development & NODE_ENV=development nodemon server.js",
     "build": "NODE_ENV=development webpack --mode development",
     "build-production": "NODE_ENV=production webpack --mode production",

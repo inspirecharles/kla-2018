@@ -18,19 +18,17 @@ class HeaderContainer extends Component {
 			        </button>
 			        <div className="collapse navbar-collapse" id="navbarResponsive">
 			        	<ul className="navbar-nav ml-auto">
-			            	<li className="nav-item active">
-			              		<a className="nav-link" href="#">Home
-			                		<span className="sr-only">(current)</span>
-			              		</a>
+			            	<li className="nav-item">
+			              		<NavLink to="/" className="nav-link" activeClassName="active">Home</NavLink>
 			            	</li>
 			            	<li className="nav-item">
-			              		<a className="nav-link" href="#">Lottery Results</a>
+			              		<NavLink to="/results" className="nav-link" activeClassName="active">Lottery Results</NavLink>
 			            	</li>
 			            	<li className="nav-item">
-			              		<a className="nav-link" href="#">Check Your Ticket</a>
+			            		<NavLink to="/tickets" className="nav-link" activeClassName="active">Check Your Tickets</NavLink>
 			            	</li>
 			            	<li className="nav-item">
-			              		<a className="nav-link" href="#">Lottery News</a>
+			              		<NavLink to="/news" className="nav-link" activeClassName="active">Lottery News</NavLink>
 			            	</li>
 			          	</ul>
 			        </div>
