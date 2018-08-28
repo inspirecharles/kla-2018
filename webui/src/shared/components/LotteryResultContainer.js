@@ -7,11 +7,11 @@ class LotteryResultContainer extends Component {
 
 	render() {
 	    return (
-	    	<div className="row">
+			<div className="result-container">
 	    		<div className="container">
 		    	 	LotteryResultContainer content here
 	      		</div>
-	      	</div>
+      		</div>
 	    );
 	}
 	

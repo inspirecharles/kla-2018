@@ -1,7 +1,7 @@
 import React, { Component } from "react"; 
 class HomeContainer extends Component { constructor() { super(); } render() { return (
 <div>
-	<div className="business-header result-container">
+	<div className="result-container">
 	    <div className="container">
 	    	<div className="row">
 	    		<div className="col-lg-12">
