@@ -14,6 +14,10 @@ $fa-font-path: "~font-awesome/fonts/";
 	color: #2a65cd;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 body {
 	padding-top: 54px;
 
@@ -40,6 +44,20 @@ body {
 	.game_result {
 		padding-right: 25px;
     	padding-left: 25px;
+	}
+
+	.lottery-results-header {}
+
+	.arrow-icon {
+		background-color: #7f8fa6;
+		color: #fff;
+		text-align: center;
+		line-height: 3rem;
+	}
+
+	.arrow-icon, .prize-date, .game-logo {
+	    padding-top: 15px;
+	    padding-bottom: 15px;
 	}
 
 	.card-header {
@@ -193,4 +211,32 @@ body {
 	.form-control, .btn {
 		border-radius: 0;
 	}
+
+	.subscribe {
+		padding-top: 25px;
+	}
+}
+
+/* footer */
+
+footer {
+
+	.footer-links a {
+		color: #808fa6;
+    	white-space: nowrap;
+	}
+
+	.footer-copyright, a {
+		color: #808fa6;
+    	white-space: nowrap;
+	}
+
+	a:hover {
+	    color: #0056b3;	
+	}
+
+	.social-media { 
+		color: #808fa6;
+	}
+	
 }
