@@ -303,15 +303,21 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 					<h4 className="media-heading">The UK&#39;s Home of Lottery <br/>Results Online
 					</h4>
 					<p className="media-content">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, tellus quis rutrum vulputate, est augue pellentesque sem, vitae tempus ipsum lacus at tortor. In efficitur eu eros sed semper. 
+						Lotto Results UK is the only place to get up to date results for all your 
+						favourite UK lotteries, raffles and draws. With our simple design and clear 
+						lotto results, you can easily check your lottery numbers, tickets and even the prize winnings. 
+						Look back at past lottery draw results or check your ticket to see if you could be a winner.
+					</p>
+					<p className="media-content">
+						We bring you the latest on the UKs biggest lotteries from the National Lottery and more – 
+						including Lotto, Lotto Hotpicks, Euro Millions, Thunderball, People’s Postcode Lottery and the 
+						Health Lottery! 
+					</p>
+					<p className="media-content">
+						We have regular Lottery News updates to give you the inside scoop on the games and winners. 
+						Discover the upcoming jackpot amounts, special promotions, and lottery winner’s stories. 
+						Could you be the next big winner? Find out now with the latest results at Lottery Results UK.  
 
-						<br /><br />
-
-						Vivamus molestie metus ac tincidunt iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque et arcu vel felis consequat maximus non at purus.
-
-						<br /><br />
-						
-						Vivamus molestie metus ac tincidunt iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque et arcu vel felis consequat maximus non at purus.
 					</p>
 				</div>
 				<div className="media-right col-lg-6 hidden-md-down">
