@@ -4,18 +4,28 @@ class HomeCardComponent extends Component {
 	constructor() {
 		super();
 		this.state = {
+			name: null,
 			show: false,
 		};
+
+
+		this.toggleShow = this.toggleShow.bind(this);
 	} 
 
 	componentWillMount(){
-		console.log(this.props)
+		this.setState(...this.props)
+	}
+
+	toggleShow(){
+		this.setState({
+			show: !this.state.show
+		})
 	}
 
 	render() {
 		return (
 	        <div className="col-lg-6 game_result">
-	        	<div className="accordion md-accordion accordion-3 z-depth-1-half" role="tablist" aria-multiselectable="true">
+	        	<div className="accordion md-accordion accordion-3 z-depth-1-half" role="tablist" aria-multiselectable="true" onClick={this.toggleShow}>
 					<div className="card">
 						<div className="lottery-results-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true">
 						    <a data-toggle="collapse" data-parent="#accordionEx1" href={"#card"+this.props.name} aria-expanded="true" aria-controls="collapse1">
@@ -30,7 +40,7 @@ class HomeCardComponent extends Component {
 												<p className="text-right date">Saturday 21 July 2018</p>
 										    </div>
 										    <div className="col col-lg-2 arrow-icon">
-										    	<i className="fa fa-angle-down rotate-icon fa-2x align-middle"></i>
+										    	<i className={"fa fa-angle-"+(this.state.show==true?'up':'down')+" rotate-icon fa-2x align-middle"}></i>
 										    </div>
 										</div>
 									</div>
@@ -38,7 +48,7 @@ class HomeCardComponent extends Component {
 	                        </a>
 						</div>
 						
-						<div id={"card"+this.props.name} className={"collapse "+(this.props.show==true?'show':'')} role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
+						<div id={"card"+this.props.name} className={"collapse "+(this.state.show==true || this.props.show==true?'show':'')} role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
 	                        <div className="card-body pt-0" id="lotto">
 	                            <div className="gameResults-main">
 	                            	<div className="main_numbers col-lg-12 col-md-12">
