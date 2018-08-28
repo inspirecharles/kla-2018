@@ -61,18 +61,19 @@ class HomeContainer extends Component { constructor() { super(); } render() { re
 			                                        <label htmlFor="">Supplementary</label>
 			                                    </dt>
 				                                <dd className="numbers circle supplementary d-inline-block">52</dd>
+				                                <button className="btn btn-primary float-right">View Prizes...</button>
 			                                </dl>
 			                            </div>
 		                            </div>
 		                        </div>
 
-		                        <div className="card-body pt-0">
-		                        	<div className="gameResults-main">
+		                        <div className="gameResults-actionLink">
+		                        	<div className="actionLink">
 		                            	<div className="supplementary_numbers col-lg-12 col-md-12">
 		                            		<div className="supp-link-icons">
-				                            	<i className="fa fa-print" aria-hidden="true"></i>
-				                            	<i className="fa fa-print" aria-hidden="true"></i>
-				                            	<i className="fa fa-print" aria-hidden="true"></i>
+		                            			<a className="icons"><img className="img-fluid icon-printresult" src="../../img/icons/print-results.svg" /></a>
+				                            	<a className="icons"><img className="img-fluid icon-download" src="../../img/icons/download.svg" /></a>
+				                            	<a className="icons icon-pastresult"><img className="img-fluid icon-pastresult" src="../../img/icons/past-results.svg" />Past Results</a>
 				                            </div>
 		                            	</div>
 		                            </div>

@@ -32,6 +32,15 @@ a:hover {
 	padding: 0.375rem 1.75rem;
 }
 
+.supp-link-icons {
+	color: #2a65cd;
+	padding-top: 20px;
+}
+
+.gameResults-actionLink {
+    margin-bottom: 2%;
+}
+
 body {
 	padding-top: 54px;
 
@@ -60,7 +69,17 @@ body {
     	padding-left: 25px;
 	}
 
-	.lottery-results-header {}
+	a.icons.icon-pastresult {
+		float: right;
+	}
+
+	a.icons {
+		padding-right: 15px;
+	}
+
+	.icon-pastresult {
+		padding-right: 5px;
+	}
 
 	.arrow-icon {
 		background-color: #7f8fa6;
