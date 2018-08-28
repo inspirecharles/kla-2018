@@ -2,6 +2,11 @@
 $fa-font-path: "~font-awesome/fonts/";
 @import "~font-awesome/scss/font-awesome";
 
+@font-face {
+  font-family: 'Effra';
+  src: url('/media/Effra_Std_He.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
 .navbar-dark .navbar-nav .nav-link {
 	color: #212121;
 }
