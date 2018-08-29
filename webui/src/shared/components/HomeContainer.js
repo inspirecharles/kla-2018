@@ -89,7 +89,7 @@ class HomeContainer extends Component {
 
 									<div className="card-body">
 										<h4 className="card-title">
-											<a href="#">Project Six</a>
+											<a href="#">Wow... What a Blog Title!</a>
 										</h4>
 										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
@@ -102,7 +102,7 @@ class HomeContainer extends Component {
 
 									<div className="card-body">
 										<h4 className="card-title">
-											<a href="#">Project Six</a>
+											<a href="#">Wow... What a Blog Title!</a>
 										</h4>
 										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
@@ -115,7 +115,7 @@ class HomeContainer extends Component {
 
 									<div className="card-body">
 										<h4 className="card-title">
-											<a href="#">Project Six</a>
+											<a href="#">Wow... What a Blog Title!</a>
 										</h4>
 										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
