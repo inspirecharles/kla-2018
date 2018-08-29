@@ -3,7 +3,7 @@ $fa-font-path: "~font-awesome/fonts/";
 @import "~font-awesome/scss/font-awesome";
 
 @font-face {
-  font-family: 'Effra';
+  font-family: 'Effra Heavy';
   src: url('/media/Effra_Std_He.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
@@ -42,7 +42,7 @@ a:hover {
 }
 
 h4 {
-	font-family: "Effra";
+	font-family: "Effra Heavy";
     font-size: 40px;
 }
 
@@ -136,7 +136,7 @@ body {
 
 	.prize {
 		font-weight: bold;
-		font-family: "Effra";
+		font-family: "Effra Heavy";
     	font-size: 18px;
 	}
 
