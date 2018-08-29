@@ -51,7 +51,7 @@ function renderFullPage(html, preloadedState) {
 				<div id="root">${html}</div>
 			</body>
 			<script>window.__PRELOADED_STATE__ = ${serialize(preloadedState)}</script>
-			<script type="text/javascript" src="/bundle.js"></script>
+			<script type="text/javascript" src="/bundle.js" async></script>
 		</html>
 	`;
 }
