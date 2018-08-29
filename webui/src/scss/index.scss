@@ -11,6 +11,10 @@ h3{
 	font-family: "effra heavy";
 }
 
+.navbar-dark .navbar-toggler-icon {
+    background-image: url(../../img/icons/menu.svg);
+}
+
 .navbar-dark .navbar-nav .nav-link {
 	color: #212121;
 }
