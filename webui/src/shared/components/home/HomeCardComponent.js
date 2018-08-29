@@ -48,7 +48,7 @@ class HomeCardComponent extends Component {
 	                        </a>
 						</div>
 						
-						<div id={"card"+this.props.name} className={"collapse "+(this.state.show==true || this.props.show==true?'show':'')} role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
+						<div id={"card"+this.props.name} className={"collapse "+(this.props.show==true?'show':'')} role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
 	                        <div className="card-body pt-0" id="lotto">
 	                            <div className="gameResults-main">
 	                            	<div className="main_numbers col-lg-12 col-md-12">
