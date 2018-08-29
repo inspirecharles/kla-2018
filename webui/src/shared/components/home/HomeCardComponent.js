@@ -33,7 +33,7 @@ class HomeCardComponent extends Component {
 	                        		<div className="container">
 										<div className="row">
 										    <div className="game-logo col">
-										    	<img className="img-fluid uk-logo-lotto" src="../../img/icon-lotto.png" />
+										    	<img className="img-fluid uk-logo-lotto" src="../../img/lotto_logo.png" /> LOTTO
 										    </div>
 										    <div className="prize-date col-md-auto">
 										    	<h6 className="prize text-right">&#163;6,300,000</h6>
@@ -75,7 +75,7 @@ class HomeCardComponent extends Component {
 		                                        <label htmlFor="">Supplementary</label>
 		                                    </dt>
 			                                <dd className="numbers circle supplementary d-inline-block">52</dd>
-			                                <button className="btn btn-primary float-right">View Prizes...</button>
+			                                <button className="btn btn-primary float-right">View Prizes</button>
 		                                </dl>
 		                            </div>
 	                            </div>

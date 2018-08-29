@@ -93,6 +93,11 @@ body {
 		max-width: 12%;
 	}
 
+	.game-logo {
+		font-family: "Effra Heavy";
+    	color: #000;
+	}
+
 	.arrow-icon, .prize-date, .game-logo {
 	    padding-top: 15px;
 	    padding-bottom: 15px;
@@ -114,8 +119,9 @@ body {
 	}
 
 	.uk-logo-lotto {
-		width: 70%;
+		width: 25%;
 		height: auto;
+		margin-right: 5%;
 	}
 
 	.card {
