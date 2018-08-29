@@ -36,13 +36,13 @@ class FooterContainer extends Component {
 
 			            <ul className="list-unstyled list-inline text-center">
 						      <li className="list-inline-item">
-						      	<a href="#"><i id="social-fb" className="fa fa-facebook-square fa-3x social"></i></a>
+						      	<a href="#"><img className="sm-fb" src="../../img/icons/iconmonstr-facebook-3.svg" /></a>
 						      </li>
 						      <li className="list-inline-item">
-						        <a href="#"><i id="social-tw" className="fa fa-twitter-square fa-3x social"></i></a>
+						        <a href="#"><img className="sm-twitter" src="../../img/icons/iconmonstr-twitter-3.svg" /></a>
 						      </li>
 						      <li className="list-inline-item">
-						        <a href="#"><i id="social-gp" className="fa fa-google-plus-square fa-3x social"></i></a>
+						        <a href="#"><img className="uk-gplus" src="../../img/icons/iconmonstr-google-plus-3.svg" /></a>
 						      </li>
 						</ul>
 

@@ -73,11 +73,6 @@ body {
 	padding-bottom: 42px;
 	margin-top: 20px;
 
-	.game_result {
-		padding-right: 25px;
-    	padding-left: 25px;
-	}
-
 	a.icons.icon-pastresult {
 		float: right;
 	}
@@ -94,7 +89,8 @@ body {
 		background-color: #7f8fa6;
 		color: #fff;
 		text-align: center;
-		line-height: 3rem;
+		line-height: 4rem;
+		max-width: 12%;
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
@@ -181,6 +177,8 @@ body {
 	.circle {
 	    border-radius: 50%;
 	}
+
+
 
 	/* UK numbers */
 	.bc_lotto {
@@ -275,6 +273,10 @@ footer {
 
 	.social-media { 
 		color: #808fa6;
+	}
+
+	.list-inline-item:not(:last-child) {
+	    margin-right: .8rem;
 	}
 	
 }

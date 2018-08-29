@@ -11,7 +11,7 @@ class HeaderContainer extends Component {
 	    	<nav className="navbar navbar-expand-lg navbar-dark fixed-top mx-auto" id="mainNav">
 		      	<div className="container">
 			        <section className="left" id="html">
-	                    <img className="uk-logo" src="../../img/uk-logo.svg" />
+	                    <a className="logo" href="#"><img className="uk-logo" src="../../img/uk-logo.svg" /></a>
 	                </section>
 			        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			        	<span className="navbar-toggler-icon"></span>
