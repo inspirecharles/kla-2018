@@ -7,6 +7,10 @@ $fa-font-path: "~font-awesome/fonts/";
   src: url('/media/Effra_Std_He.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
+h3{
+	font-family: "effra heavy";
+}
+
 .navbar-dark .navbar-nav .nav-link {
 	color: #212121;
 }
