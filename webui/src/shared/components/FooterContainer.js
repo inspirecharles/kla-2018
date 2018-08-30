@@ -32,9 +32,9 @@ class FooterContainer extends Component {
 
 			          <div className="social-media col-md-3 mb-md-0 mb-3">
 
-			          	<p className="mb-1">Find Us On Social Media</p>
+			          	<p className="mb-1 sm-font">Find Us On Social Media</p>
 
-			            <ul className="list-unstyled list-inline text-center">
+			            <ul className="list-unstyled list-inline text-right">
 						      <li className="list-inline-item">
 						      	<a href="#"><img className="sm-fb" src="../../img/icons/iconmonstr-facebook-3.svg" /></a>
 						      </li>
@@ -54,7 +54,7 @@ class FooterContainer extends Component {
 
 			    <div className="footer-copyright text-center py-3">Copyright © 2018 
 			      <a className="footer-list" href="www.lotteryresults.co.uk"> www.lotteryresults.co.uk</a>
-			      <p className="mb-1">Powered by 
+			      <p className="mb-1 poweredby-text">Powered by 
 			      	<a className="footer-list jumbo-corp-link" href="#"> Jumbo Interactive</a>
 			      </p>
 			    </div>

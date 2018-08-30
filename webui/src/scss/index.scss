@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h4 {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 body {
@@ -90,6 +90,13 @@ body {
 	padding-top: 42px;
 	padding-bottom: 42px;
 	margin-top: 20px;
+
+	label {
+		color: #1D1D1D;	
+		font-family: "Avenir Next";	
+		font-size: 16px;	
+		line-height: 22px;
+	}
 
 	a.icons.icon-pastresult {
 		float: right;
@@ -283,6 +290,14 @@ body {
 		padding: 2.25rem 0;
 	}
 
+	.form-control {
+		color: #7F8FA6;	
+		font-family: "Avenir Next";	
+		font-size: 16px;	
+		line-height: 27px;
+		text-align: center;
+	}
+
 	.form-control, .btn {
 		border-radius: 0;
 	}
@@ -296,14 +311,20 @@ body {
 
 footer {
 
-	.footer-links a {
-		color: #808fa6;
+	.footer-copyright, a {
     	white-space: nowrap;
+    	color: #7F8FA6;	
+    	font-family: "Avenir Next";	
+    	font-size: 16px;	
+    	line-height: 22px;	
 	}
 
-	.footer-copyright, a {
-		color: #808fa6;
-    	white-space: nowrap;
+	.sm-font {
+		color: #7F8FA6;	
+		font-family: "Avenir Next";	
+		font-size: 16px;	
+		line-height: 22px;	
+		text-align: right;
 	}
 
 	a:hover {
