@@ -1,0 +1,42 @@
+@media (max-width: 575.98px) {
+	.container{
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	body {
+		#mainNav {
+
+			.uk-logo {
+				width: 230px;
+				height: 65px;
+			}
+		}
+	}
+
+	.result-container {
+		padding-top: 10px;
+
+		.uk-logo-lotto {
+			width: 15%;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	
+}

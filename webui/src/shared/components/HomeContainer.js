@@ -24,7 +24,7 @@ class HomeContainer extends Component {
 				    <div className="container">
 				    	<div className="row">
 				    		<div className="col-lg-12">
-				    			<h3 className="display-5 text-left text-white mt-4">Latest UK Lottery Results.</h3>
+				    			<h3 className="display-5 text-left text-white mt-4 latest-title">Latest UK Lottery Results.</h3>
 				    		</div>
 				    	</div>
 				        <div className="row">
