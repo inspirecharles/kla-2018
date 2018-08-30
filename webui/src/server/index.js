@@ -61,6 +61,6 @@ app.get("*", (req,res) => {
 	res.send(renderFullPage(html, preloadedState));
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(3001, () => {
 	console.log("Server is listening "+process.env.PORT+" || "+3000);
 });
