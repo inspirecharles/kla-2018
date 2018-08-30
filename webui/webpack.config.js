@@ -91,9 +91,7 @@ const browserConfig = {
 
 const serverConfig = {
 	target: 'node', // in order to ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals({
-    	whitelist: whitelist
-    })],
+	externals: [nodeExternals()],
 	entry: "./src/server/index.js",
 	target: "node",
 	output: {
