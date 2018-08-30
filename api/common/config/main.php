@@ -9,5 +9,11 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'api' => [
+            'class' => 'common\components\APIComponent'
+        ],
+        'Settings' => [
+            'class' => 'common\components\SettingsComponent'
+        ],
     ],
 ];
