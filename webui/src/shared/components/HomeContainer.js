@@ -10,8 +10,8 @@ class HomeContainer extends Component {
 	render() {
 		return (
 			<div>
-				<div className="result-container">
-				    <div className="container">
+				<div className="result-container container-fluid">
+				    <div className="container-fluid">
 				    	<div className="row">
 				    		<div className="col-lg-12">
 				    			<h3 className="display-5 text-left text-white mt-4">Latest UK Lottery Results.</h3>
@@ -27,7 +27,7 @@ class HomeContainer extends Component {
 				    </div>
 				</div>
 
-				<div className="container">
+				<div className="container-fluid">
 					<div className="media-1">
 						<div className="row my-4">
 							<div className="col-lg-6">
@@ -59,7 +59,7 @@ class HomeContainer extends Component {
 				</div>
 
 				<div className="notification-wrapper">
-					<div className="container">
+					<div className="container-fluid">
 						<div className="media getNotified-container">
 							<div className="row">
 							
@@ -77,7 +77,7 @@ class HomeContainer extends Component {
 					</div>
 				</div>
 
-				<div className="container">
+				<div className="container-fluid">
 					<div className="uk-lotto-news-wrapper">
 						<h1 className="my-4 text-center">Latest UK Lotto News
 					    </h1>
@@ -130,7 +130,7 @@ class HomeContainer extends Component {
 				</div>
 
 				<div className="subscribe-wrapper">
-					<div className="container">
+					<div className="container-fluid">
 						<div className="subscribe-container">
 							<div className="row">
 							
