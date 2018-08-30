@@ -20,20 +20,19 @@ $fa-font-path: "~font-awesome/fonts/";
   src: url('/media/AvenirLTStd-Roman.otf')  format('opentype');
 }
 
-h3{
-	font-family: "effra heavy";
-}
-
 .navbar-dark .navbar-nav .nav-link {
-	color: #212121;
+	color: #1D1D1D;
+	font-family: 'Avenir Next';
 }
 
 .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
-	color: #2a65cd;
+	color: #1D1D1D;
+	font-family: 'Avenir Next';
 }
 
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
 	color: #2a65cd;
+	font-family: 'Avenir Next';
 }
 
 a:hover {
@@ -63,7 +62,6 @@ h1, h2, h3, h4, h5 {
 }
 
 h4 {
-	font-family: "Effra Heavy";
     font-size: 40px;
 }
 
@@ -71,9 +69,12 @@ body {
 	padding-top: 54px;
 
 	/* for navigation */
+
+	.nav-background {
+		background-color: #FFF;	
+		box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
+	}
 	#mainNav {
-		padding: 1.5rem 1rem;
-		background-color: #FFF;
 
 		.uk-logo {
 			width: 270px;
@@ -108,6 +109,10 @@ body {
 		text-align: center;
 		line-height: 4rem;
 		max-width: 12%;
+	}
+
+	.navbar-dark .navbar-nav .nav-link.active {
+	    color: #1d1d1d;
 	}
 
 	.game-logo {
@@ -158,9 +163,12 @@ body {
 	}
 
 	.prize {
-		font-weight: bold;
-		font-family: "Effra Heavy";
-    	font-size: 18px;
+		color: #1D1D1D;	
+		font-family: "Avenir Next";	
+		font-size: 16px;	
+		line-height: 22px;	
+		text-align: right;
+		font-weight: 700;
 	}
 
 	.prize_date {
@@ -168,9 +176,11 @@ body {
 	}
 
 	.nextDraw {
-	    font-size: 1.3rem;
-	    padding-left: 30px;
-	    padding-top: 5px;
+	    color: #FFF;
+	    font-size: 20px;	
+	    font-weight: 900;	
+	    line-height: 20px;	
+	    text-align: center;
 	}
 
 	.footerNextDraw {
