@@ -1,11 +1,21 @@
 import React, { Component } from "react"; 
+import {bindActionCreators} from "redux";
+import { withRouter } from "react-router-dom";
+import {connect} from "react-redux";
 import HomeCardComponent from "./home/HomeCardComponent"
+
+
+import {updateGames} from "../actions/action-games";
 
 
 class HomeContainer extends Component { 
 	constructor() { 
 		super();
-	} 
+	}
+
+	componentWillMount(){
+	    this.props.updateGames();
+	}
 
 	render() {
 		return (
@@ -160,6 +170,19 @@ class HomeContainer extends Component {
 		); 
 	} 
 
-} 
+}
 
-export default HomeContainer;
+
+function mapStateToProps(state){
+  	return {
+    	games: state.games
+  	}
+}
+
+function matchDispatchToProps(dispatch){
+  	return bindActionCreators({
+    	updateGames: updateGames
+  	}, dispatch);
+}
+
+export default withRouter(connect(mapStateToProps, matchDispatchToProps)(HomeContainer));
