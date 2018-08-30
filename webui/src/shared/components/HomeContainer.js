@@ -14,7 +14,7 @@ class HomeContainer extends Component {
 	}
 
 	componentWillMount(){
-	    //this.props.updateGames();
+	    this.props.updateGames();
 	}
 
 	render() {
