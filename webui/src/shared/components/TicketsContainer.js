@@ -7,11 +7,11 @@ class TicketsContainer extends Component {
 
 	render() {
 	    return (
-	    	<div className="row">
+			<div className="result-container">
 	    		<div className="container">
-		    	 	TICKETS content here
+		    	 	Tickets here
 	      		</div>
-	      	</div>
+      		</div>
 	    );
 	}
 	

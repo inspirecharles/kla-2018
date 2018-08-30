@@ -1,4 +1,5 @@
 import serialize from "serialize-javascript"
+import compression from "compression";
 import express from "express";
 import React from "react";
 import {renderToString} from "react-dom/server";
@@ -17,8 +18,8 @@ if(process.env.NODE_ENV === "development"){
 
 const app = express();
 
+app.use(compression())
 app.use(express.static("public"));
-
 app.use(handleRender);
 
 function handleRender(req, res) {
@@ -50,7 +51,7 @@ function renderFullPage(html, preloadedState) {
 				<div id="root">${html}</div>
 			</body>
 			<script>window.__PRELOADED_STATE__ = ${serialize(preloadedState)}</script>
-			<script type="text/javascript" src="/bundle.js"></script>
+			<script type="text/javascript" src="/bundle.js" async></script>
 		</html>
 	`;
 }
