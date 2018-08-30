@@ -1,4 +1,4 @@
-const initialAccounts = ['asdfasdf', 'asdfasdfaszxcvzx', '123123azsdasd'];
+const initialAccounts = [];
 
 export default function(state = initialAccounts, action) {
 	switch(action.type){

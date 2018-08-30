@@ -23,14 +23,14 @@ app.use(express.static("public"));
 app.use(handleRender);
 
 function handleRender(req, res) {
+	const staticContext = {};
   	const store = createStore(allReducers,
-		applyMiddleware(thunk),
-		applyMiddleware(logger)
+		applyMiddleware(thunk)
 	);
 
   	const html = renderToString(
     	<Provider store={store}>
-    		<StaticRouter location={req.url}>
+    		<StaticRouter location={req.url} context={staticContext}>
       			<App />
       		</StaticRouter>
     	</Provider>
