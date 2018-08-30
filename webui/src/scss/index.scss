@@ -163,9 +163,12 @@ body {
 	}
 
 	.prize {
-		font-weight: bold;
-		font-family: "Effra Heavy";
-    	font-size: 18px;
+		color: #1D1D1D;	
+		font-family: "Avenir Next";	
+		font-size: 16px;	
+		line-height: 22px;	
+		text-align: right;
+		font-weight: 700;
 	}
 
 	.prize_date {
@@ -173,9 +176,11 @@ body {
 	}
 
 	.nextDraw {
-	    font-size: 1.3rem;
-	    padding-left: 30px;
-	    padding-top: 5px;
+	    color: #FFF;
+	    font-size: 20px;	
+	    font-weight: 900;	
+	    line-height: 20px;	
+	    text-align: center;
 	}
 
 	.footerNextDraw {
