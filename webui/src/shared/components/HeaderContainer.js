@@ -8,7 +8,7 @@ class HeaderContainer extends Component {
 
 	render() {
 	    return (
-	    	<nav className="navbar navbar-expand-lg navbar-dark fixed-top mx-auto" id="mainNav">
+	    	<nav className="navbar navbar-expand-lg navbar-dark fixed-top mx-auto nav-background" id="mainNav">
 		      	<div className="container">
 			        <section className="left" id="html">
 	                    <a className="logo" href="#"><img className="uk-logo" src="../../img/uk-logo.svg" /></a>
