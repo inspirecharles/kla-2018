@@ -20,8 +20,8 @@ class HomeContainer extends Component {
 	render() {
 		return (
 			<div>
-				<div className="result-container">
-				    <div className="container">
+				<div className="result-container container-fluid">
+				    <div className="container-fluid">
 				    	<div className="row">
 				    		<div className="col-lg-12">
 				    			<h3 className="display-5 text-left text-white mt-4">Latest UK Lottery Results.</h3>
@@ -37,7 +37,7 @@ class HomeContainer extends Component {
 				    </div>
 				</div>
 
-				<div className="container">
+				<div className="container-fluid">
 					<div className="media-1">
 						<div className="row my-4">
 							<div className="col-lg-6">
@@ -69,7 +69,7 @@ class HomeContainer extends Component {
 				</div>
 
 				<div className="notification-wrapper">
-					<div className="container">
+					<div className="container-fluid">
 						<div className="media getNotified-container">
 							<div className="row">
 							
@@ -87,7 +87,7 @@ class HomeContainer extends Component {
 					</div>
 				</div>
 
-				<div className="container">
+				<div className="container-fluid">
 					<div className="uk-lotto-news-wrapper">
 						<h1 className="my-4 text-center">Latest UK Lotto News
 					    </h1>
@@ -99,7 +99,7 @@ class HomeContainer extends Component {
 
 									<div className="card-body">
 										<h4 className="card-title">
-											<a href="#">Project Six</a>
+											<a href="#">Wow... What a Blog Title!</a>
 										</h4>
 										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
@@ -112,7 +112,7 @@ class HomeContainer extends Component {
 
 									<div className="card-body">
 										<h4 className="card-title">
-											<a href="#">Project Six</a>
+											<a href="#">Wow... What a Blog Title!</a>
 										</h4>
 										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
@@ -125,7 +125,7 @@ class HomeContainer extends Component {
 
 									<div className="card-body">
 										<h4 className="card-title">
-											<a href="#">Project Six</a>
+											<a href="#">Wow... What a Blog Title!</a>
 										</h4>
 										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
@@ -140,7 +140,7 @@ class HomeContainer extends Component {
 				</div>
 
 				<div className="subscribe-wrapper">
-					<div className="container">
+					<div className="container-fluid">
 						<div className="subscribe-container">
 							<div className="row">
 							

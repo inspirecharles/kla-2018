@@ -30,7 +30,7 @@ class HomeCardComponent extends Component {
 						<div className="lottery-results-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true" onClick={this.toggleShow}>
 						    <a data-toggle="collapse" data-parent="#accordionEx1" href={"#card"+this.props.name} aria-expanded="true" aria-controls="collapse1">
 	                        	<div className="game-result-header">
-	                        		<div className="container">
+	                        		<div className="container-fluid">
 										<div className="row">
 										    <div className="game-logo col">
 										    	<img className="img-fluid uk-logo-lotto" src="../../img/lotto_logo.png" /> LOTTO
