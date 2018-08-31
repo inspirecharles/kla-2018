@@ -31,15 +31,15 @@ class HomeCardComponent extends Component {
 						    <a data-toggle="collapse" data-parent="#accordionEx1" href={"#card"+this.props.name} aria-expanded="true" aria-controls="collapse1">
 	                        	<div className="game-result-header">
 	                        		<div className="container">
-										<div className="row">
-										    <div className="game-logo col">
+										<div className="row game-row">
+										    <div className="game-logo">
 										    	<img className="img-fluid uk-logo-lotto" src="../../img/lotto_logo.png" /> LOTTO
 										    </div>
-										    <div className="prize-date col-md-auto">
+										    <div className="prize-date">
 										    	<h6 className="prize text-right">&#163;6,300,000</h6>
-												<p className="text-right date">Saturday 21 July 2018</p>
+												<p className="date text-right">Saturday 21 July 2018</p>
 										    </div>
-										    <div className="col col-lg-2 arrow-icon">
+										    <div className="arrow-icon">
 										    	<i className={"fa fa-angle-"+(this.state.show==true?'up':'down')+" rotate-icon fa-2x align-middle"}></i>
 										    </div>
 										</div>
