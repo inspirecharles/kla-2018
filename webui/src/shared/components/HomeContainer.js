@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import HomeCardComponent from "./home/HomeCardComponent"
 
 
-import {updateGames} from "../actions/action-games";
+import {fetchGames} from "../actions/action-games";
 
 
 class HomeContainer extends Component { 
@@ -13,9 +13,13 @@ class HomeContainer extends Component {
 		super();
 	}
 
-	componentWillMount(){
-	    this.props.updateGames();
-	}
+	static initialAction() {
+    	return fetchGames();
+  	}
+   	componentDidMount() {
+    	if (!this.props.games)
+      		this.props.dispatch(HomeContainer.initialAction());
+  	}
 
 	render() {
 		return (
@@ -28,7 +32,7 @@ class HomeContainer extends Component {
 				    		</div>
 				    	</div>
 				        <div className="row">
-						    {[...Array(6)].map((x, i) =>  {
+						    {this.props.games.map((x, i) =>  {
 						    		var show = (i == 0 || i == 1)?true:false;
 							    	return <HomeCardComponent key={i} show={show} name={"card"+i}/>
 						    	}
@@ -181,7 +185,7 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   	return bindActionCreators({
-    	updateGames: updateGames
+    	fetchGames: fetchGames
   	}, dispatch);
 }
 
