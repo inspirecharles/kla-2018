@@ -1,0 +1,23 @@
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Euro Millions', 'euro_millions', 'uk', 1);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Hot Picks', 'hotpicks', 'uk', 2);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Lotto', 'lotto', 'uk', 3);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Thunderball', 'thunderball', 'uk', 4);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Health Lottery', 'health_lottery', 'uk', 5);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Postcode Daily', 'postcode_daily', 'uk', 6);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Postcode Weekly', 'postcode_weekly', 'uk', 7);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Postcode Monthly', 'postcode_monthly', 'uk', 8);

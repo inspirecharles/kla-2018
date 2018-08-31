@@ -22,7 +22,9 @@ class m180817_030028_create_results extends Migration
                 'supp_numbers' => 'varchar(100)',
                 'dividends' => 'text',
                 'powerball_numbers' => 'varchar(100) NULL',
-                'strike_numbers' => 'varchar(100) NULL'
+                'strike_numbers' => 'varchar(100) NULL',
+                'current_jackpot' => 'text',
+                'next_jackpot' => 'text',
             )
         );
     }

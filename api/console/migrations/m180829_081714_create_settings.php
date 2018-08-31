@@ -17,6 +17,21 @@ class m180829_081714_create_settings extends Migration
             'name' => $this->string(100)->notNull()->unique(),
             'value' => $this->string(1000)
         ]);
+
+        $this->insert('settings', ['name' => 'google-tag-manager','value' => NULL]);
+        $this->insert('settings', ['name' => 'google-analytics','value' => NULL]);
+        $this->insert('settings', ['name' => 'google-webmaster-tools','value' => NULL]);
+        $this->insert('settings', ['name' => 'bing-webmaster-tools','value' => NULL]);
+        $this->insert('settings', ['name' => 'results-api-secret','value' => NULL]);
+        $this->insert('settings', ['name' => 'country', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'nationality', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'variant', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'site-url', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'site-name', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'title', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'admin-email', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'support-email', 'value' => NULL]);
+        $this->insert('settings', ['name' => 'international-sites', 'value' => NULL]);
     }
 
     /**
