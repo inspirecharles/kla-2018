@@ -16,11 +16,6 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
-        'urlManager' => require(__DIR__ . '/url-mapping.php'),
-        'request' => [
-            'parsers' => [
-                'application/json' => 'yii\web\JsonParser',
-            ]
-        ]
+        'urlManager' => require(__DIR__ . '/url-mapping.php')
     ],
 ];
