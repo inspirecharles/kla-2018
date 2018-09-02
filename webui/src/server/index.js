@@ -5,12 +5,13 @@ import React from "react";
 import {renderToString} from "react-dom/server";
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux';
-import { StaticRouter } from "react-router-dom";
+import { StaticRouter, matchPath } from "react-router-dom";
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import allReducers from '../shared/reducers'
 import App from "../shared/App";
 import sourceMapSupport from "source-map-support";
+import routes from "../shared/routes";
 
 if(process.env.NODE_ENV === "development"){
 	sourceMapSupport.install();
@@ -22,22 +23,31 @@ app.use(compression())
 app.use(express.static("public"));
 app.use(handleRender);
 
-function handleRender(req, res) {
-	const staticContext = {};
+function handleRender(req, res, next) {
   	const store = createStore(allReducers,
 		applyMiddleware(thunk)
 	);
 
-  	const html = renderToString(
-    	<Provider store={store}>
-    		<StaticRouter location={req.url} context={staticContext}>
-      			<App />
-      		</StaticRouter>
-    	</Provider>
-  	)
+	const promises = routes.reduce((acc, route) => {
+	    if (matchPath(req.url, route) && route.component && route.component.initialAction) {
+	      acc.push(Promise.resolve(store.dispatch(route.component.initialAction())));
+	    }
+	    return acc;
+	}, []);
 
-  	const preloadedState = store.getState();
-  	res.send(renderFullPage(html, preloadedState));
+	Promise.all(promises)
+    .then(() => {
+		const staticContext = {};
+    	const html = renderToString(
+	    	<Provider store={store}>
+	    		<StaticRouter location={req.url} context={staticContext}>
+	      			<App />
+	      		</StaticRouter>
+	    	</Provider>
+	  	)
+	  	const preloadedState = store.getState();
+	  	res.send(renderFullPage(html, preloadedState));
+    }).catch(next);  	
 }
 
 function renderFullPage(html, preloadedState) {
@@ -57,8 +67,8 @@ function renderFullPage(html, preloadedState) {
 	`;
 }
 
-app.get("*", (req,res) => {
-	res.send(renderFullPage(html, preloadedState));
+app.get("*", (req,res, next) => {
+	handleRender(req, res, next);
 });
 
 app.listen(3001, () => {
