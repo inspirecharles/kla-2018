@@ -1,3 +1,4 @@
+
 .navbar-dark .navbar-nav .nav-link {
 	color: #1D1D1D;
 	font-family: 'Avenir Med';
@@ -35,6 +36,11 @@ a:hover {
 		height: 16px;
 		width: 16px;
 	}
+
+	img.img-fluid.icon-pastresult {
+		height: 20px;
+		width: 20px;
+	}
 }
 
 .gameResults-actionLink {
@@ -48,6 +54,14 @@ h1, h2, h3, h4, h5 {
 h4 {
     font-size: 30px;
 }
+
+p.media-content {
+	color: #1D1D1D;	
+	font-family: "Avenir Next";	
+	font-size: 16px;	
+	line-height: 22px;
+}
+
 
 body {
 	padding-top: 54px;
@@ -104,7 +118,7 @@ body {
 		color: #fff;
 		text-align: center;
 		line-height: 4rem;
-		width: 16%;
+		width: 15%;
 		margin-left: auto;
 	}
 
@@ -176,11 +190,12 @@ body {
 	}
 
 	.nextDraw {
-	    color: #FFF;
-	    font-size: 20px;	
-	    font-weight: 900;	
-	    line-height: 20px;	
-	    text-align: center;
+	    color: #FFF;	
+		font-family: "Celias Medium";	
+		font-size: 20px;	
+		font-weight: normal;	
+		line-height: 20px;	
+		text-align: center;
 	}
 
 	.footerNextDraw {
