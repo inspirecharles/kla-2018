@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import HomeCardComponent from "./home/HomeCardComponent"
 
 
-import {updateGames} from "../actions/action-games";
+import {fetchGames} from "../actions/action-games";
 
 
 class HomeContainer extends Component { 
@@ -13,9 +13,13 @@ class HomeContainer extends Component {
 		super();
 	}
 
-	componentWillMount(){
-	    this.props.updateGames();
-	}
+	static initialAction() {
+    	return fetchGames();
+  	}
+   	componentDidMount() {
+    	if (!this.props.games)
+      		this.props.dispatch(HomeContainer.initialAction());
+  	}
 
 	render() {
 		return (
@@ -60,8 +64,8 @@ class HomeContainer extends Component {
 
 								</p>
 					        </div>
-							<div className="col-lg-6">
-					        	<img className="img-fluid media-img hidden-md" src="../../img/girl_laptop.jpg" />
+							<div className="col-lg-6 hidden-sm-down">
+					        	<img className="img-fluid media-img" src="../../img/girl_laptop.jpg" />
 					        </div>
 					        
 						</div>
@@ -181,7 +185,7 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   	return bindActionCreators({
-    	updateGames: updateGames
+    	fetchGames: fetchGames
   	}, dispatch);
 }
 

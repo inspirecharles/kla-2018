@@ -1,3 +1,4 @@
+
 .navbar-dark .navbar-nav .nav-link {
 	color: #1D1D1D;
 	font-family: 'Avenir Med';
@@ -24,11 +25,22 @@ a:hover {
 
 .btn {
 	padding: 0.375rem 1.75rem;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .supp-link-icons {
 	color: #2a65cd;
 	padding-top: 20px;
+
+	.icon-printresult, .icon-download {
+		height: 16px;
+		width: 16px;
+	}
+
+	img.img-fluid.icon-pastresult {
+		height: 20px;
+		width: 20px;
+	}
 }
 
 .gameResults-actionLink {
@@ -42,6 +54,14 @@ h1, h2, h3, h4, h5 {
 h4 {
     font-size: 30px;
 }
+
+p.media-content {
+	color: #1D1D1D;	
+	font-family: "Avenir Next";	
+	font-size: 16px;	
+	line-height: 22px;
+}
+
 
 body {
 	padding-top: 54px;
@@ -69,6 +89,11 @@ body {
 	padding-bottom: 42px;
 	margin-top: 20px;
 
+	.game-row {
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
 	label {
 		color: #1D1D1D;	
 		font-family: "Avenir Boo";	
@@ -93,7 +118,8 @@ body {
 		color: #fff;
 		text-align: center;
 		line-height: 4rem;
-		max-width: 12%;
+		width: 15%;
+		margin-left: auto;
 	}
 
 	.navbar-dark .navbar-nav .nav-link.active {
@@ -103,6 +129,9 @@ body {
 	.game-logo {
 		font-family: "Effra Heavy";
     	color: #000;
+    	width: 40%;
+    	font-size: 14px;
+		padding-left: 30px;
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
@@ -132,7 +161,7 @@ body {
 	}
 
 	.card {
-		box-shadow: 0 3px 12px 2px rgba(0, 0, 0, .4);
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
 		border: 0;
 		margin-bottom: 40px;;
 	}
@@ -156,16 +185,17 @@ body {
 		font-weight: 700;
 	}
 
-	.prize_date {
-		float: right;
+	.prize-date {
+		margin-left: auto;
 	}
 
 	.nextDraw {
-	    color: #FFF;
-	    font-size: 20px;	
-	    font-weight: 900;	
-	    line-height: 20px;	
-	    text-align: center;
+	    color: #FFF;	
+		font-family: "Celias Medium";	
+		font-size: 20px;	
+		font-weight: normal;	
+		line-height: 20px;	
+		text-align: center;
 	}
 
 	.footerNextDraw {

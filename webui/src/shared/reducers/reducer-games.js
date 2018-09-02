@@ -1,10 +1,10 @@
 const initialGames = [];
 
-export default function(state = initialGames, action) {
-	switch(action.type){
-		case "UPDATE_GAMES":
-			return action.payload;
-			break;
-	}
-	return state;
+export default function reducer(state = initialGames, action) {
+  	switch (action.type) {
+    	case "FETCH_GAMES_SUCCESS":
+      		return action.payload ;
+     	default:
+      		return state;
+  	}
 }
