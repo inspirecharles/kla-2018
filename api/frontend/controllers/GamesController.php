@@ -2,7 +2,9 @@
 
 namespace frontend\controllers;
 
+use \yii\web\Response;
 use yii\rest\ActiveController;
+use common\models\Games;
 
 class GamesController extends ActiveController
 {
@@ -11,13 +13,6 @@ class GamesController extends ActiveController
    	public function behaviors()
     {
         return [
-            [
-                'class' => \yii\filters\ContentNegotiator::className(),
-                'only' => ['index', 'view'],
-                'formats' => [
-                    'application/json' => \yii\web\Response::FORMAT_JSON,
-                ]
-            ],
             'corsFilter' => [
                 'class' => \yii\filters\Cors::className(),
                 'cors' => [
@@ -31,7 +26,28 @@ class GamesController extends ActiveController
         ];
     }
 
-    public function actionTest(){
-    	return json_encode(['test' => 'hahaha']);
+    public function beforeAction($action)
+    {
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+        return parent::beforeAction($action);
+    }
+
+    public function rules()
+    {
+        return [
+            [['name', 'slug'], 'required'],
+            [['name'], 'string', 'max' => 45],
+            [['slug'], 'string', 'max' => 45],
+            [['slug'], 'unique'],
+            [['priority'], 'integer', 'integerOnly' => true]
+        ];
+    }
+
+    public function actionHomedata(){
+        $games = Games::find()->joinWith('results')->orderBy([
+            'games.priority' => SORT_ASC,
+            'results.draw_date' => SORT_DESC
+        ])->asArray()->all();
+        return $games;
     }
 }
