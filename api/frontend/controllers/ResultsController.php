@@ -26,6 +26,12 @@ class ResultsController extends ActiveController
         ];
     }
 
+    public function beforeAction($action)
+    {
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+        return parent::beforeAction($action);
+    }
+
     public function actionTest(){
         return Results::find()->where(['results.id'=>1])->with('game')->asArray()->one();
     }
