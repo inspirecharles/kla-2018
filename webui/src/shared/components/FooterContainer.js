@@ -53,10 +53,10 @@ class FooterContainer extends Component {
 			    </div>
 
 			    <div className="footer-copyright text-center py-3">Copyright © 2018 
-			      <a className="footer-list" href="www.lotteryresults.co.uk"> www.lotteryresults.co.uk</a>
-			      <p className="mb-1 poweredby-text">Powered by 
-			      	<a className="footer-list jumbo-corp-link" href="#"> Jumbo Interactive</a>
-			      </p>
+			    	<a className="footer-list" href="www.lotteryresults.co.uk"> www.lotteryresults.co.uk</a>
+			    	<p className="mb-1 poweredby-text">Powered by 
+			      		<a className="footer-list jumbo-corp-link" href="#"> Jumbo Interactive</a>
+			    	</p>
 			    </div>
 
 			  </footer>
