@@ -53,8 +53,10 @@
 
 		.notif-content {
 		    font-family: "Avenir Next";
-		    font-size: 16px;
+		    font-size: 15px;
 		    line-height: 22px;
+		    padding-top: 10px;
+		    font-weight: lighter;
 		}
 
 		.notif-button {
@@ -73,6 +75,20 @@
 			a {
 				font-family: "Celias Black";
 			}
+		}
+	}
+
+	.subscribe-wrapper {
+		.media-body {
+		    flex: unset;
+		}
+
+		.subscribe-content {
+			font-family: "Avenir Next";
+		    font-size: 15px;
+		    line-height: 22px;
+		    padding-top: 10px;
+		    font-weight: lighter;
 		}
 	}
 
