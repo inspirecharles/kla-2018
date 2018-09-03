@@ -22,7 +22,8 @@ class m180829_081714_create_settings extends Migration
         $this->insert('settings', ['name' => 'google-analytics','value' => NULL]);
         $this->insert('settings', ['name' => 'google-webmaster-tools','value' => NULL]);
         $this->insert('settings', ['name' => 'bing-webmaster-tools','value' => NULL]);
-        $this->insert('settings', ['name' => 'results-api-secret','value' => NULL]);
+        $this->insert('settings', ['name' => 'results-api-key','value' => 'development-token']);
+        $this->insert('settings', ['name' => 'results-api-secret','value' => '3dftZgQWyMeBFOyn9Mm7diqDDJO6C5mO']);
         $this->insert('settings', ['name' => 'country', 'value' => NULL]);
         $this->insert('settings', ['name' => 'nationality', 'value' => NULL]);
         $this->insert('settings', ['name' => 'variant', 'value' => NULL]);
