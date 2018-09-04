@@ -16,8 +16,8 @@ const whitelist = [
 ]
 
 const browserConfig = {
-	/*target: 'node', // in order to ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals({
+	target: 'node', // in order to ignore built-in modules like path, fs, etc.
+    /*externals: [nodeExternals({
     	whitelist: whitelist
     })], */
 	entry: [
