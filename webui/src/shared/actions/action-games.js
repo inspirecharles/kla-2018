@@ -1,5 +1,4 @@
 import "es6-promise/auto";
-import "dotenv/config";
 import fetch from "isomorphic-fetch";
 
 const FETCH_GAMES_REQUEST = 'FETCH_GAMES_REQUEST';
@@ -12,7 +11,7 @@ const gamesError = () => ({ type: FETCH_GAMES_FAILURE });
 
 export const fetchGames = () => (dispatch, getState) => {
   dispatch(requestGames());
-  return fetch(process.env.API_URL+"/games")
+  return fetch(getState().env.API_URL+"/games")
     .then(response => response.json())
     .then(games => dispatch(receivedGames(games)))
     .catch(err => dispatch(gamesError(err)));

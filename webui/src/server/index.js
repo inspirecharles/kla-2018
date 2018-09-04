@@ -12,11 +12,15 @@ import allReducers from '../shared/reducers'
 import App from "../shared/App";
 import sourceMapSupport from "source-map-support";
 import routes from "../shared/routes";
-import "dotenv/config";
+
+import {fetchEnv} from "../shared/actions/action-env";
+import {parse} from "env-file-reader";
+const envs = parse('.env');
 
 if(process.env.NODE_ENV === "development"){
 	sourceMapSupport.install();
 }
+
 
 const app = express();
 
@@ -28,6 +32,7 @@ function handleRender(req, res, next) {
   	const store = createStore(allReducers,
 		applyMiddleware(thunk)
 	);
+	store.dispatch(fetchEnv(envs));
 
 	const promises = routes.reduce((acc, route) => {
 	    if (matchPath(req.url, route) && route.component && route.component.initialAction) {
@@ -72,6 +77,6 @@ app.get("*", (req,res, next) => {
 	handleRender(req, res, next);
 });
 
-app.listen(process.env.APP_PORT, () => {
-	console.log("Server is listening "+process.env.APP_PORT);
+app.listen(envs.APP_PORT, () => {
+	console.log("Server is listening "+envs.APP_PORT);
 });
