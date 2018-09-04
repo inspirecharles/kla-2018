@@ -12,10 +12,6 @@ return [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
         ],
-        'urlManager' => require(__DIR__ . '/url-mapping.php'),
-        'response' => [                 
-            'format' => yii\web\Response::FORMAT_JSON, 
-            'charset' => 'UTF-8',               
-        ],
+        'urlManager' => require(__DIR__ . '/url-mapping.php')
     ],
 ];
