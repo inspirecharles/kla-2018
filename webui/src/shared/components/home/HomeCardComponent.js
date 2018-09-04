@@ -32,7 +32,7 @@ class HomeCardComponent extends Component {
 	                        		<div className="container">
 										<div className="row game-row">
 										    <div className="game-logo">
-										    	<img className={"img-fluid uk-logo-lotto"} src={"/img/variants/uk/lotto.png"} /> LOTTO
+										    	<img className={"img-fluid "+this.props.game.variant+"-logo-lotto"} src={"/img/variants/"+this.props.game.variant+"/"+this.props.game.slug+".png"} /> {this.props.game.name}
 										    </div>
 										    <div className="prize-date">
 										    	<h6 className="prize text-right">&#163;6,300,000</h6>
