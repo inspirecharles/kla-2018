@@ -12,6 +12,7 @@ import allReducers from '../shared/reducers'
 import App from "../shared/App";
 import sourceMapSupport from "source-map-support";
 import routes from "../shared/routes";
+import "dotenv/config";
 
 if(process.env.NODE_ENV === "development"){
 	sourceMapSupport.install();
@@ -71,6 +72,6 @@ app.get("*", (req,res, next) => {
 	handleRender(req, res, next);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-	console.log("Server is listening "+process.env.PORT+" || "+3000);
+app.listen(process.env.APP_PORT, () => {
+	console.log("Server is listening "+process.env.APP_PORT);
 });
