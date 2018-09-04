@@ -4,11 +4,11 @@ namespace frontend\controllers;
 
 use \yii\web\Response;
 use yii\rest\ActiveController;
-use common\models\Games;
+use common\models\Results;
 
-class GamesController extends ActiveController
+class ResultsController extends ActiveController
 {
-    public $modelClass = 'common\models\Games';
+    public $modelClass = 'common\models\Results';
 
    	public function behaviors()
     {
@@ -32,22 +32,7 @@ class GamesController extends ActiveController
         return parent::beforeAction($action);
     }
 
-    public function rules()
-    {
-        return [
-            [['name', 'slug'], 'required'],
-            [['name'], 'string', 'max' => 45],
-            [['slug'], 'string', 'max' => 45],
-            [['slug'], 'unique'],
-            [['priority'], 'integer', 'integerOnly' => true]
-        ];
-    }
-
-    public function actionHomedata(){
-        $games = Games::find()->joinWith('results')->orderBy([
-            'games.priority' => SORT_ASC,
-            'results.draw_date' => SORT_DESC
-        ])->asArray()->all();
-        return $games;
+    public function actionTest(){
+        return Results::find()->where(['results.id'=>1])->with('game')->asArray()->one();
     }
 }

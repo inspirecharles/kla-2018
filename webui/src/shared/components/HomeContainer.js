@@ -28,13 +28,13 @@ class HomeContainer extends Component {
 				    <div className="container">
 				    	<div className="row">
 				    		<div className="col-lg-12">
-				    			<h3 className="display-5 text-left text-white mt-4 latest-title">Latest UK Lottery Results.</h3>
+				    			<h1 className="display-5 text-left text-white mt-4 latest-title">Latest UK Lottery Results.</h1>
 				    		</div>
 				    	</div>
 				        <div className="row">
-						    {[...Array(6)].map((x, i) =>  {
+						    {this.props.games.map((game, i) =>  {
 						    		var show = (i == 0 || i == 1)?true:false;
-							    	return <HomeCardComponent key={i} show={show} name={"card"+i}/>
+							    	return <HomeCardComponent key={i} show={show} name={"card"+i} game={game}/>
 						    	}
 						  	)}
 				        </div>
@@ -93,8 +93,7 @@ class HomeContainer extends Component {
 
 				<div className="container">
 					<div className="uk-lotto-news-wrapper">
-						<h1 className="my-4 text-center">Latest UK Lotto News
-					    </h1>
+						<h2 className="my-4 text-center uk-lotto-news-title">Latest UK Lotto News</h2>
 
 					    <div className="row">
 							<div className="col-lg-4 col-sm-6 portfolio-item">
@@ -102,10 +101,10 @@ class HomeContainer extends Component {
 									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
 
 									<div className="card-body">
-										<h4 className="card-title">
+										<h3 className="card-title blog-title">
 											<a href="#">Wow... What a Blog Title!</a>
-										</h4>
-										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+										</h3>
+										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
 								</div>
 							</div>
@@ -115,10 +114,10 @@ class HomeContainer extends Component {
 									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
 
 									<div className="card-body">
-										<h4 className="card-title">
+										<h3 className="card-title blog-title">
 											<a href="#">Wow... What a Blog Title!</a>
-										</h4>
-										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+										</h3>
+										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
 								</div>
 							</div>
@@ -128,10 +127,10 @@ class HomeContainer extends Component {
 									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
 
 									<div className="card-body">
-										<h4 className="card-title">
+										<h3 className="card-title blog-title">
 											<a href="#">Wow... What a Blog Title!</a>
-										</h4>
-										<p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+										</h3>
+										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 									</div>
 								</div>
 							</div>
@@ -149,7 +148,7 @@ class HomeContainer extends Component {
 							<div className="row">
 							
 								<div className="media-body subscribe-body col-lg-6 col-md-12">
-									<h4 className="media-heading subscribe-heading text-white">Lottery Results in Your Inbox</h4>
+									<h3 className="media-heading subscribe-heading text-white">Lottery Results in Your Inbox</h3>
 									<p className="subscribe-content text-white">
 										Get the latest UK lottery results direct to your email and never miss your lucky numbers!
 									</p>
