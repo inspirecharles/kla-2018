@@ -110,13 +110,13 @@ class ApiController extends Controller
     {
         $resultsModel = new Results();
         $data = (object)array();
-        if ( is_array($gr->Data) && count($gr->Data) > 0) {
+        if (count($gr->Data) > 0) {
             foreach ($gr->Data as $key => $grData) {  //loop on the container object
                 $data->game_id = $game['id'];
                 $data->draw_date = date('Y-m-d', strtotime($grData->DrawDate));
                 $data->draw_id = $grData->DrawNumber;
                 $data->slug = $game['slug'];
-                if (is_array($grData->Results) && count($grData->Results) > 0 && isset($grData->Results->results)) {
+                if (count($grData->Results) > 0 && isset($grData->Results->results)) {
 
                     $dr = $grData->Results->results;
                     $mainNum = $dr->numbers->numbers_1;
