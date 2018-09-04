@@ -35,7 +35,7 @@ class HomeCardComponent extends Component {
 										    	<img className={"img-fluid uk-logo-lotto"} src={"/img/variants/uk/lotto.png"} /> LOTTO
 										    </div>
 										    <div className="prize-date">
-										    	<h6 className="prize text-right">&#163;6,300,000</h6>
+										    	<p className="prize text-right">&#163;6,300,000</p>
 												<p className="date text-right">Saturday 21 July 2018</p>
 										    </div>
 										    <div className="arrow-icon">

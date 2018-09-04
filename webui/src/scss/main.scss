@@ -192,7 +192,7 @@ body {
 
 	.prize {
 		color: #1D1D1D;	
-		font-family: 'Avenir Next Regular';
+		font-family: 'Avenir Next Bold';
 		font-size: 16px;	
 		line-height: 22px;
 		font-weight: 700;
@@ -209,6 +209,7 @@ body {
 		font-weight: normal;	
 		line-height: 20px;	
 		text-align: center;
+		margin-top: 10px;
 	}
 
 	.footerNextDraw {
@@ -222,17 +223,19 @@ body {
 	}
 
 	.numbers {
-		color: #FFF;
-		align-items: center;
-		width: 42px;
-	    height: 42px;
-	    font-size: 1.36rem;
+		font-family: "Celias";
+	    color: #FFF;
+	    align-items: center;
+	    width: 40px;
+	    height: 40px;
+	    font-size: 24px;
 	    margin-right: 15px;
 	    float: left;
 	    margin-bottom: 8px;
-    	line-height: 2;
-    	justify-content: center;
-    	text-align: center;
+	    line-height: 45px;
+	    justify-content: center;
+	    text-align: center;
+	    font-weight: 500;
 	}
 
 	.circle {
@@ -364,6 +367,10 @@ body {
 	.subscribe {
 		padding-top: 25px;
 	}
+
+	.btn-subscribe {
+		box-shadow: none;
+	}
 }
 
 /* footer */
@@ -388,10 +395,6 @@ footer {
 
 	a:hover {
 	    color: #0056b3;	
-	}
-
-	.social-media { 
-		color: #808fa6;
 	}
 
 	.list-inline-item:not(:last-child) {
