@@ -32,7 +32,7 @@ class HomeContainer extends Component {
 				    		</div>
 				    	</div>
 				        <div className="row">
-						    {this.props.games.map((game, i) =>  {
+						    {[...Array(6)].map((game, i) =>  {
 						    		var show = (i == 0 || i == 1)?true:false;
 							    	return <HomeCardComponent key={i} show={show} name={"card"+i} game={game}/>
 						    	}
