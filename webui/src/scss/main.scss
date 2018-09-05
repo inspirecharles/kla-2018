@@ -1,3 +1,23 @@
+.news-slider{
+	.slick-arrow{
+		z-index: 999;
+		background-color: #2a65cd;
+		position: absolute;
+		height: 200px;
+		width: 25px;
+
+		&.slick-disabled{
+			display: none !important;
+		}
+	}
+
+	.slick-prev{
+		left: 0;
+	}
+	.slick-next{
+		right: 0;
+	}
+}
 
 .navbar-dark .navbar-nav .nav-link {
 	color: #1D1D1D;
