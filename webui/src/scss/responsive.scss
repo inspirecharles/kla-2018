@@ -1,12 +1,4 @@
 @media (max-width: 389.98px) {
-	body {
-		#mainNav {
-
-			.uk-logo {
-				background-color: red;
-			}
-		}
-	}
 
 	.result-container {
 		.prize, .date {
@@ -27,6 +19,10 @@
 		    font-size: 18px;
 		    line-height: 35px;
 		    margin-right: 10px;
+		}
+
+		.arrow-icon {
+			margin-left: 10px;
 		}
 	}
 }

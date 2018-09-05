@@ -64,7 +64,7 @@ class HomeContainer extends Component {
 
 								</p>
 					        </div>
-							<div className="col-lg-6 hidden-sm-down">
+							<div className="col-lg-6">
 					        	<img className="img-fluid media-img" src="../../img/girl_laptop.jpg" />
 					        </div>
 					        
@@ -158,7 +158,7 @@ class HomeContainer extends Component {
 										<div className="input-group">
 								         <input type="email" className="form-control" placeholder="youremail@email.com" />
 									        <span className="input-group-btn">
-									        	<button className="btn btn-theme" type="submit">Subscribe</button>
+									        	<button className="btn btn-theme btn-subscribe" type="submit">Subscribe</button>
 								         	</span>
 								        </div>
 									</div>
