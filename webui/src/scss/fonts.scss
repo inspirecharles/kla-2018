@@ -1,27 +1,65 @@
 @font-face {
   font-family: 'Effra Heavy';
-  src: url('/media/Effra_Std_He.ttf')  format('truetype');
+  src: url('/media/effra/Effra_Std_He.ttf')  format('truetype');
 }
 
+
 @font-face {
-  font-family: 'Avenir Boo';
-  src: url('/media/AvenirLTStd-Book.otf')  format('opentype');
+  font-family: 'Avenir Book';
+  src: url('/media/avenir/AvenirLTStd-Book.otf')  format('opentype');
 }
 @font-face {
-  font-family: 'Avenir Med';
-  src: url('/media/AvenirLTStd-Medium.otf')  format('opentype');
+  font-family: 'Avenir Medium';
+  src: url('/media/avenir/AvenirLTStd-Medium.otf')  format('opentype');
 }
 @font-face {
-  font-family: 'Avenir Rom';
-  src: url('/media/AvenirLTStd-Roman.otf')  format('opentype');
+  font-family: 'Avenir Roman';
+  src: url('/media/avenir/AvenirLTStd-Roman.otf')  format('opentype');
 }
+@font-face {
+  font-family: 'Avenir Next Bold';
+  src: url('/media/avenir/AvenirNextLTPro-Bold.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Avenir Next LT';
+  src: url('/media/avenir/AvenirNextLTPro-It.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Avenir Next Regular';
+  src: url('/media/avenir/AvenirNextLTPro-Regular.otf')  format('opentype');
+}
+
 
 
 @font-face {
   font-family: 'Celias Black';
-  src: url('/media/celias/celias-black.ttf')  format('truetype');
+  src: url('/media/celias/Type Dynamic - Celias Black.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Celias Light Italic';
+  src: url('/media/celias/Type Dynamic - Celias Light Italic.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Celias Light';
+  src: url('/media/celias/Type Dynamic - Celias Light.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Celias Medium Italic';
+  src: url('/media/celias/Type Dynamic - Celias Medium Italic.otf')  format('opentype');
 }
 @font-face {
   font-family: 'Celias Medium';
-  src: url('/media/celias/celias-medium.ttf')  format('truetype');
+  src: url('/media/celias/Type Dynamic - Celias Medium.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Celias Regular Italic';
+  src: url('/media/celias/Type Dynamic - Celias Regular Italic.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Celias Regular';
+  src: url('/media/celias/Type Dynamic - Celias Regular.otf')  format('opentype');
+}
+@font-face {
+  font-family: 'Celias';
+  src: url('/media/celias/Type Dynamic - Celias.otf')  format('opentype');
 }

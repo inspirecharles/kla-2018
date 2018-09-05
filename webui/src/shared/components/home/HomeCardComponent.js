@@ -1,10 +1,9 @@
 import React, { Component } from "react"; 
 class HomeCardComponent extends Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			name: null,
 			show: false,
 		};
 
@@ -13,7 +12,7 @@ class HomeCardComponent extends Component {
 	} 
 
 	componentWillMount(){
-		this.setState(...this.props)
+		this.setState({show: this.props.show})
 	}
 
 	toggleShow(){
@@ -33,10 +32,10 @@ class HomeCardComponent extends Component {
 	                        		<div className="container">
 										<div className="row game-row">
 										    <div className="game-logo">
-										    	<img className="img-fluid uk-logo-lotto" src="/img/variants/uk/postcode.png" /> LOTTO
+										    	<img className={"img-fluid "+this.props.game.variant+"-logo-lotto game-"+this.props.game.slug} src={"/img/variants/"+this.props.game.variant+"/"+((this.props.game.slug.includes("postcode"))?'postcode':this.props.game.slug)+".png"} /> {this.props.game.name}
 										    </div>
 										    <div className="prize-date">
-										    	<h6 className="prize text-right">&#163;6,300,000</h6>
+										    	<p className="prize text-right">&#163;6,300,000</p>
 												<p className="date text-right">Saturday 21 July 2018</p>
 										    </div>
 										    <div className="arrow-icon">

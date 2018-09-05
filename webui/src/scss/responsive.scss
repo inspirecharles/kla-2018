@@ -1,6 +1,33 @@
-@media (max-width: 575.98px) {
-	.container{
+@media (max-width: 389.98px) {
+
+	.result-container {
+		.prize, .date {
+			font-size: 12px;
+		}
+
+		.latest-title {
+			font-size: 20px !important;
+		}
+
+		label {
+			font-size: 14px;
+		}
+
+		.numbers {
+		    width: 30px;
+		    height: 30px;
+		    font-size: 18px;
+		    line-height: 35px;
+		    margin-right: 10px;
+		}
+
+		.arrow-icon {
+			margin-left: 10px;
+		}
 	}
+}
+
+@media (max-width: 575.98px) {
 
 	body {
 		#mainNav {
@@ -20,7 +47,7 @@
 		}
 
 		.latest-title {
-			font-size: 30px;
+			font-size: 24px;
 		}
 
 		.prize, .date {
@@ -52,7 +79,7 @@
 		}
 
 		.notif-content {
-		    font-family: "Avenir Next";
+		    font-family: 'Avenir Next Regular';
 		    font-size: 15px;
 		    line-height: 22px;
 		    padding-top: 10px;
@@ -84,7 +111,7 @@
 		}
 
 		.subscribe-content {
-			font-family: "Avenir Next";
+			font-family: 'Avenir Next Regular';
 		    font-size: 15px;
 		    line-height: 22px;
 		    padding-top: 10px;
