@@ -10,7 +10,7 @@ class FooterContainer extends Component {
 	    return (
 			<footer className="page-footer font-small blue pt-4">
 
-			    <div className="container footer-links text-center text-md-left">
+			    <div className="container footer-links text-md-left">
 
 			      <div className="row justify-content-md-center">
 
