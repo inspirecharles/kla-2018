@@ -1,7 +1,7 @@
 
 .navbar-dark .navbar-nav .nav-link {
 	color: #1D1D1D;
-	font-family: "Nunito Regular", sans-serif;
+	font-family: "Nunito Regular, sans-serif";
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
@@ -56,6 +56,14 @@ a:hover {
 
 .gameResults-actionLink {
     margin-bottom: 2%;
+}
+
+h2.media-heading {
+	color: #1D1D1D;	
+	font-family: "Celias Black", sans-serif;
+	font-size: 24px;	
+	font-weight: 900;	
+	line-height: 24px;
 }
 
 p.media-content {

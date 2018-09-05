@@ -78,7 +78,7 @@ class HomeContainer extends Component {
 							<div className="row">
 							
 								<div className="media-body col-lg-8">
-									<h4 className="media-heading notif-heading text-white">Draw Results Direct to Your Phone.</h4>
+									<h3 className="media-heading notif-heading text-white">Draw Results Direct to Your Phone.</h3>
 									<p className="notif-content text-white">
 										Never miss the winning numbers! Get push notification over time UK lotto results are available for all your favorite lotteries.
 									</p>
