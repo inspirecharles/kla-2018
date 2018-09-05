@@ -1,7 +1,7 @@
 
 .navbar-dark .navbar-nav .nav-link {
 	color: #1D1D1D;
-	font-family: "Nunito Regular, sans-serif";
+	font-family: "Nunito Regular", sans-serif;
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
@@ -71,6 +71,19 @@ p.media-content {
 	font-family: "Nunito Regular", sans-serif;
 	font-size: 16px;	
 	line-height: 22px;
+}
+
+/* notification */
+h3.notif-heading {
+	font-family: "Celias Black", sans-serif;
+	font-size: 20px;		
+	line-height: 20px;
+}
+
+p.notif-content {
+	font-family: "Nunito Regular", sans-serif;
+	font-size: 16px;		
+	line-height: 20px;
 }
 
 
