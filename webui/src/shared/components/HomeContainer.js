@@ -45,7 +45,7 @@ class HomeContainer extends Component {
 					<div className="media-1">
 						<div className="row my-4">
 							<div className="col-lg-6">
-								<h4 className="media-heading">The UK&#39;s Home of Lottery Results Online</h4>
+								<h2 className="media-heading">The UK&#39;s Home of Lottery Results Online</h2>
 								<p className="media-content">
 									Lotto Results UK is the only place to get up to date results for all your 
 									favourite UK lotteries, raffles and draws. With our simple design and clear 
