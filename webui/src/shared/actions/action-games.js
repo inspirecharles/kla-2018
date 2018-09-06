@@ -16,3 +16,11 @@ export const fetchGames = () => (dispatch, getState) => {
     .then(games => dispatch(receivedGames(games)))
     .catch(err => dispatch(gamesError(err)));
 };
+
+export const fetchHomeResultData = () => (dispatch, getState) => {
+  dispatch(requestGames());
+  return fetch(getState().env.API_URL+"/games/homeresultdata")
+    .then(response => response.json())
+    .then(games => dispatch(receivedGames(games)))
+    .catch(err => dispatch(gamesError(err)));
+};

@@ -1,4 +1,6 @@
-import React, { Component } from "react"; 
+import React, { Component } from "react";
+import UKResult from "../variants/uk/ResultComponent"
+
 class HomeCardComponent extends Component {
 
 	constructor(props) {
@@ -9,7 +11,8 @@ class HomeCardComponent extends Component {
 
 
 		this.toggleShow = this.toggleShow.bind(this);
-	} 
+    	this.renderResult = this.renderResult.bind(this);
+	}
 
 	componentWillMount(){
 		this.setState({show: this.props.show})
@@ -19,6 +22,11 @@ class HomeCardComponent extends Component {
 		this.setState({
 			show: !this.state.show
 		})
+	}
+
+	renderResult(){
+		if( this.props.game.variant == "uk" )
+			return <UKResult game={this.props.game} />
 	}
 
 	render() {
@@ -48,37 +56,7 @@ class HomeCardComponent extends Component {
 						</div>
 						
 						<div id={"card"+this.props.name} className={"collapse "+(this.props.show==true?'show':'')} role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
-	                        <div className="card-body pt-0" id="lotto">
-	                            <div className="gameResults-main">
-	                            	<div className="main_numbers col-lg-12 col-md-12">
-		                                <dl>
-		                                	<dt className="clr mainNumber_label">
-		                                        <label htmlFor="">Main Numbers</label>
-		                                    </dt>
-			                                <dd className="numbers circle bc_lotto d-inline-block">9</dd>
-			                                <dd className="numbers circle bc_lotto d-inline-block">13</dd>
-			                                <dd className="numbers circle bc_lotto d-inline-block">16</dd>
-			                                <dd className="numbers circle bc_lotto d-inline-block">25</dd>
-			                                <dd className="numbers circle bc_lotto d-inline-block">40</dd>
-			                                <dd className="numbers circle bc_lotto d-inline-block">46</dd>
-		                                </dl>
-		                            </div>
-	                            </div>
-	                        </div>
-
-	                        <div className="card-body pt-0" id="lotto">
-	                            <div className="gameResults-main">
-	                            	<div className="supplementary_numbers col-lg-12 col-md-12">
-		                                <dl>
-		                                	<dt className="clr supplementary_label">
-		                                        <label htmlFor="">Supplementary</label>
-		                                    </dt>
-			                                <dd className="numbers circle supplementary d-inline-block">52</dd>
-			                                <button className="btn btn-primary float-right">View Prizes</button>
-		                                </dl>
-		                            </div>
-	                            </div>
-	                        </div>
+	                        { this.renderResult() }
 
 	                        <div className="gameResults-actionLink">
 	                        	<div className="actionLink">
