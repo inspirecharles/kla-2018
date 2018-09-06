@@ -1,6 +1,12 @@
 @media (max-width: 389.98px) {
 
 	.result-container {
+
+		.uk-logo-lotto {
+			width: 100% !important;
+			height: auto;
+		}
+
 		.prize, .date {
 			font-size: 12px;
 		}
@@ -43,7 +49,8 @@
 		padding-top: 10px;
 
 		.uk-logo-lotto {
-			width: 35%;
+			width: 70%;
+			height: auto;
 		}
 
 		.latest-title {
@@ -55,8 +62,7 @@
 		}
 
 		.game-logo {
-			font-size: 14px;
-			padding-left: 20px;
+			padding-left: 10px;
 		}
 
 		.arrow-icon {
