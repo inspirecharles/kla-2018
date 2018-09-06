@@ -41,7 +41,7 @@ class HomeCardComponent extends Component {
 	                        		<div className="container">
 										<div className="row game-row">
 										    <div className="game-logo">
-										    	<img className={"img-fluid "+this.props.game.variant+"-logo-lotto game-"+this.props.game.slug} src={"/img/variants/"+this.props.game.variant+"/"+((this.props.game.slug.includes("postcode"))?'postcode':this.props.game.slug)+".png"} /> {this.props.game.name}
+										    	<img className={"img-fluid "+this.props.game.variant+"-logo-lotto game-"+this.props.game.slug} src={"/img/variants/"+this.props.game.variant+"/"+((this.props.game.slug.includes("postcode"))?'postcode':this.props.game.slug)+".png"} />
 										    </div>
 										    <div className="prize-date">
 										    	<p className="prize text-right">&#163;6,300,000</p>
