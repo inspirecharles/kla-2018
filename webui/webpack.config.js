@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-//const nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 
 
 const whitelist = [
@@ -16,8 +16,8 @@ const whitelist = [
 ]
 
 const browserConfig = {
-	/*target: 'node', // in order to ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals({
+	target: 'web', // in order to ignore built-in modules like path, fs, etc.
+    /*externals: [nodeExternals({
     	whitelist: whitelist
     })], */
 	entry: [
@@ -90,10 +90,8 @@ const browserConfig = {
 };
 
 const serverConfig = {
-	/*target: 'node', // in order to ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals({
-    	whitelist: whitelist
-    })],*/
+	target: 'node', // in order to ignore built-in modules like path, fs, etc.
+	externals: [nodeExternals()],
 	entry: "./src/server/index.js",
 	target: "node",
 	output: {

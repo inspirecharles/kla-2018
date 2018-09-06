@@ -16,10 +16,6 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
-        'urlManager' => require(__DIR__ . '/url-mapping.php'),
-        'response' => [                 
-            'format' => yii\web\Response::FORMAT_JSON, 
-            'charset' => 'UTF-8',               
-        ],
+        'urlManager' => require(__DIR__ . '/url-mapping.php')
     ],
 ];

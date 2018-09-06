@@ -11,7 +11,7 @@ const gamesError = () => ({ type: FETCH_GAMES_FAILURE });
 
 export const fetchGames = () => (dispatch, getState) => {
   dispatch(requestGames());
-  return fetch("http://api.kla-uk.lan/games")
+  return fetch(getState().env.API_URL+"/games")
     .then(response => response.json())
     .then(games => dispatch(receivedGames(games)))
     .catch(err => dispatch(gamesError(err)));

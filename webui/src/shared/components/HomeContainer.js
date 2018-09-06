@@ -3,6 +3,7 @@ import {bindActionCreators} from "redux";
 import { withRouter } from "react-router-dom";
 import {connect} from "react-redux";
 import HomeCardComponent from "./home/HomeCardComponent"
+import NewsSliderComponent from "./home/NewsSliderComponent"
 
 
 import {fetchGames} from "../actions/action-games";
@@ -32,7 +33,7 @@ class HomeContainer extends Component {
 				    		</div>
 				    	</div>
 				        <div className="row">
-						    {[...Array(6)].map((game, i) =>  {
+						    {this.props.games.map((game, i) =>  {
 						    		var show = (i == 0 || i == 1)?true:false;
 							    	return <HomeCardComponent key={i} show={show} name={"card"+i} game={game}/>
 						    	}
@@ -94,48 +95,7 @@ class HomeContainer extends Component {
 				<div className="container">
 					<div className="uk-lotto-news-wrapper">
 						<h2 className="my-4 text-center uk-lotto-news-title">Latest UK Lotto News</h2>
-
-					    <div className="row">
-							<div className="col-lg-4 col-sm-6 portfolio-item">
-								<div className="card h-100">
-									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
-
-									<div className="card-body">
-										<h3 className="card-title blog-title">
-											<a href="#">Wow... What a Blog Title!</a>
-										</h3>
-										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-									</div>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-sm-6 portfolio-item">
-								<div className="card h-100">
-									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
-
-									<div className="card-body">
-										<h3 className="card-title blog-title">
-											<a href="#">Wow... What a Blog Title!</a>
-										</h3>
-										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-									</div>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-sm-6 portfolio-item">
-								<div className="card h-100">
-									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
-
-									<div className="card-body">
-										<h3 className="card-title blog-title">
-											<a href="#">Wow... What a Blog Title!</a>
-										</h3>
-										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-									</div>
-								</div>
-							</div>
-					    </div>
-
+						<NewsSliderComponent/>
 					    <div className="row view-more-news">
 							<button className="btn btn-primary">View More...</button>
 						</div>

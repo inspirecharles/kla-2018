@@ -13,9 +13,14 @@ import App from "../shared/App";
 import sourceMapSupport from "source-map-support";
 import routes from "../shared/routes";
 
+import {fetchEnv} from "../shared/actions/action-env";
+import {parse} from "env-file-reader";
+const envs = parse('.env');
+
 if(process.env.NODE_ENV === "development"){
 	sourceMapSupport.install();
 }
+
 
 const app = express();
 
@@ -27,6 +32,7 @@ function handleRender(req, res, next) {
   	const store = createStore(allReducers,
 		applyMiddleware(thunk)
 	);
+	store.dispatch(fetchEnv(envs));
 
 	const promises = routes.reduce((acc, route) => {
 	    if (matchPath(req.url, route) && route.component && route.component.initialAction) {
@@ -71,6 +77,6 @@ app.get("*", (req,res, next) => {
 	handleRender(req, res, next);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-	console.log("Server is listening "+process.env.PORT+" || "+3000);
+app.listen(envs.APP_PORT, () => {
+	console.log("Server is listening "+envs.APP_PORT);
 });
