@@ -58,15 +58,20 @@
 		}
 
 		.prize, .date {
-			font-size: 14px;
+			font-size: 12px;
 		}
 
 		.game-logo {
 			padding-left: 10px;
-		}
 
-		.arrow-icon {
-			width: 16%;
+			.uk-logo-lotto {
+				max-width: 100%
+			}
+
+			.game-health_lottery, .game-postcode_daily,
+			.game-postcode_weekly, .game-postcode_monthly {
+				max-width: 60%
+			}
 		}
 
 		.nextDraw {	
@@ -85,7 +90,7 @@
 		}
 
 		.notif-content {
-		    font-family: 'Avenir Next Regular';
+		    font-family: "Nunito Regular", sans-serif;
 		    font-size: 15px;
 		    line-height: 22px;
 		    padding-top: 10px;
@@ -117,7 +122,7 @@
 		}
 
 		.subscribe-content {
-			font-family: 'Avenir Next Regular';
+			font-family: "Nunito Regular", sans-serif;
 		    font-size: 15px;
 		    line-height: 22px;
 		    padding-top: 10px;
