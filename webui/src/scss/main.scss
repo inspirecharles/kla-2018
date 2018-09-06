@@ -180,12 +180,17 @@ body {
 	.game-logo {
 		font-family: "Effra Heavy";
     	color: #000;
-    	width: 40%;
     	font-size: 14px;
-		padding-left: 30px;
+		padding-left: 15px;
+		width: 40%;
 
-		img.img-fluid{
-			width: 50px;
+		.uk-logo-lotto {
+			max-width: 70%
+		}
+
+		.game-health_lottery, .game-postcode_daily,
+		.game-postcode_weekly, .game-postcode_monthly {
+			max-width: 60%
 		}
 	}
 
@@ -209,12 +214,6 @@ body {
 		border-radius: 0;
 	}
 
-	.uk-logo-lotto {
-		width: 36px;
-		height: auto;
-		margin-right: 5%;
-	}
-
 	.card {
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
 		border: 0;
@@ -233,7 +232,7 @@ body {
 
 	.prize {
 		color: #1D1D1D;	
-		font-family: "Nunito Semi Bold", sans-serif;
+		font-family: "Nunito Black", sans-serif;
 		font-size: 16px;	
 		line-height: 22px;
 		font-weight: 700;
