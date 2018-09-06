@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import UKResult from "../variants/uk/ResultComponent"
+import UKResult from "../variants/uk/ResultComponent";
+import moment from "moment";
 
 class HomeCardComponent extends Component {
 
@@ -44,7 +45,7 @@ class HomeCardComponent extends Component {
 										    </div>
 										    <div className="prize-date">
 										    	<p className="prize text-right">&#163;6,300,000</p>
-												<p className="date text-right">Saturday 21 July 2018</p>
+												<p className="date text-right">{this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('dddd DD MMMM YYYY') }</p>
 										    </div>
 										    <div className="arrow-icon">
 										    	<i className={"fa fa-angle-"+(this.state.show==true?'up':'down')+" rotate-icon fa-2x align-middle"}></i>

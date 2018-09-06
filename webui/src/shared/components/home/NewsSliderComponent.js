@@ -1,6 +1,5 @@
 import React, { Component } from "react"; 
 import Slider from "react-slick";
-import {isMobile} from "react-device-detect";
 
 class NewsSliderComponent extends Component {
 	constructor(props) {

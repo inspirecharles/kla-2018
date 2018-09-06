@@ -33,7 +33,6 @@ class ResultComponent extends Component {
 	}
 
 	componentWillMount(){
-		console.log(this.props.game.results[0]);
 		if(this.props.game.results.length){
 			this.processMainNumbers(this.props.game.results[0].main_numbers);
 			this.processSuppNumbers(this.props.game.results[0].supp_numbers)
