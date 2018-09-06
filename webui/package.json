@@ -41,6 +41,7 @@
     "font-awesome": "^4.7.0",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.3.1",
+    "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "nodemon": "^1.18.3",
     "popper.js": "^1.14.4",
@@ -48,11 +49,13 @@
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "react-slick": "^0.23.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "serialize-javascript": "^1.5.0",
+    "slick-carousel": "^1.8.1",
     "source-map-support": "^0.5.6",
     "url-loader": "^1.1.1"
   }

@@ -3,9 +3,10 @@ import {bindActionCreators} from "redux";
 import { withRouter } from "react-router-dom";
 import {connect} from "react-redux";
 import HomeCardComponent from "./home/HomeCardComponent"
+import NewsSliderComponent from "./home/NewsSliderComponent"
 
 
-import {fetchGames} from "../actions/action-games";
+import {fetchHomeResultData} from "../actions/action-games";
 
 
 class HomeContainer extends Component { 
@@ -14,7 +15,7 @@ class HomeContainer extends Component {
 	}
 
 	static initialAction() {
-    	return fetchGames();
+    	return fetchHomeResultData();
   	}
    	componentDidMount() {
     	if (!this.props.games)
@@ -45,7 +46,7 @@ class HomeContainer extends Component {
 					<div className="media-1">
 						<div className="row my-4">
 							<div className="col-lg-6">
-								<h4 className="media-heading">The UK&#39;s Home of Lottery Results Online</h4>
+								<h2 className="media-heading">The UK&#39;s Home of Lottery Results Online</h2>
 								<p className="media-content">
 									Lotto Results UK is the only place to get up to date results for all your 
 									favourite UK lotteries, raffles and draws. With our simple design and clear 
@@ -78,7 +79,7 @@ class HomeContainer extends Component {
 							<div className="row">
 							
 								<div className="media-body col-lg-8">
-									<h4 className="media-heading notif-heading text-white">Draw Results Direct to Your Phone.</h4>
+									<h3 className="media-heading notif-heading text-white">Draw Results Direct to Your Device.</h3>
 									<p className="notif-content text-white">
 										Never miss the winning numbers! Get push notification over time UK lotto results are available for all your favorite lotteries.
 									</p>
@@ -94,48 +95,7 @@ class HomeContainer extends Component {
 				<div className="container">
 					<div className="uk-lotto-news-wrapper">
 						<h2 className="my-4 text-center uk-lotto-news-title">Latest UK Lotto News</h2>
-
-					    <div className="row">
-							<div className="col-lg-4 col-sm-6 portfolio-item">
-								<div className="card h-100">
-									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
-
-									<div className="card-body">
-										<h3 className="card-title blog-title">
-											<a href="#">Wow... What a Blog Title!</a>
-										</h3>
-										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-									</div>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-sm-6 portfolio-item">
-								<div className="card h-100">
-									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
-
-									<div className="card-body">
-										<h3 className="card-title blog-title">
-											<a href="#">Wow... What a Blog Title!</a>
-										</h3>
-										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-									</div>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-sm-6 portfolio-item">
-								<div className="card h-100">
-									<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
-
-									<div className="card-body">
-										<h3 className="card-title blog-title">
-											<a href="#">Wow... What a Blog Title!</a>
-										</h3>
-										<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-									</div>
-								</div>
-							</div>
-					    </div>
-
+						<NewsSliderComponent/>
 					    <div className="row view-more-news">
 							<button className="btn btn-primary">View More...</button>
 						</div>
@@ -184,7 +144,7 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   	return bindActionCreators({
-    	fetchGames: fetchGames
+    	fetchHomeResultData: fetchHomeResultData
   	}, dispatch);
 }
 
