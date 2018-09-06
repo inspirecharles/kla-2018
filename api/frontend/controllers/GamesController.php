@@ -43,8 +43,12 @@ class GamesController extends ActiveController
         ];
     }
 
-    public function actionHomedata(){
-        $games = Games::find()->joinWith('results')->orderBy([
+    public function actionHomeresultdata(){
+        $games = Games::find()->joinWith(['results'=>function($query){
+            $query->orderBy(['results.draw_date' => SORT_DESC])->groupBy(['results.game_id']);
+        }])
+        ->groupBy('games.id')
+        ->orderBy([
             'games.priority' => SORT_ASC,
             'results.draw_date' => SORT_DESC
         ])->asArray()->all();

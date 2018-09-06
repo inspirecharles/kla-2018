@@ -6,7 +6,7 @@ import HomeCardComponent from "./home/HomeCardComponent"
 import NewsSliderComponent from "./home/NewsSliderComponent"
 
 
-import {fetchGames} from "../actions/action-games";
+import {fetchHomeResultData} from "../actions/action-games";
 
 
 class HomeContainer extends Component { 
@@ -15,7 +15,7 @@ class HomeContainer extends Component {
 	}
 
 	static initialAction() {
-    	return fetchGames();
+    	return fetchHomeResultData();
   	}
    	componentDidMount() {
     	if (!this.props.games)
@@ -144,7 +144,7 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   	return bindActionCreators({
-    	fetchGames: fetchGames
+    	fetchHomeResultData: fetchHomeResultData
   	}, dispatch);
 }
 
