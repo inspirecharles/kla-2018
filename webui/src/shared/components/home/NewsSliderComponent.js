@@ -1,5 +1,6 @@
 import React, { Component } from "react"; 
 import Slider from "react-slick";
+import {isMobile} from "react-device-detect";
 
 class NewsSliderComponent extends Component {
 	constructor(props) {
@@ -9,26 +10,22 @@ class NewsSliderComponent extends Component {
 	render() {
 		const settings = {
 			className: "news-slider",
-			arrows: true,
+			arrows: false,
+	        slidesToShow: 3,
+	        slidesToScroll: 3,
 			centerMode: false,
-			dots: true,
-			infinite: false,
+			centerPadding: '100px',
+			dots: false,
 	      	responsive: [
-	      		{
-		      		breakpoint: 6000,
-				    settings: {
-				        slidesToShow: 3,
-				        slidesToScroll: 3,
-				        dots: false,
-				        arrows: false,
-				    }
-			    },
 	      		{
 		      		breakpoint: 992,
 				    settings: {
+						arrows: true,
 				        slidesToShow: 1,
 				        slidesToScroll: 1,
-						centerMode: true,
+						centerMode: false,
+						centerPadding: '100px',
+						dots: true,
 				    }
 			    }
 	      	]
@@ -42,9 +39,9 @@ class NewsSliderComponent extends Component {
 								<a href="#"><img className="card-img-top" src="../../img/girl_laptop.jpg" /></a>
 
 								<div className="card-body">
-									<h3 className="card-title blog-title">
-										<a href="#">Wow... What a Blog Title! {i}</a>
-									</h3>
+									<a href="#">
+										<h3 className="card-title blog-title">Wow... What a Blog Title! {i}</h3>
+									</a>
 									<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 								</div>
 							</div>
