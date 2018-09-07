@@ -110,8 +110,10 @@ class ApiController extends Controller
     {
         $resultsModel = new Results();
         $data = (object)array();
+        
         if ( is_array($gr->Data) && count($gr->Data) > 0) {
             foreach ($gr->Data as $key => $grData) {  //loop on the container object
+                print_r($grData->Results);
                 $data->game_id = $game['id'];
                 $data->draw_date = date('Y-m-d', strtotime($grData->DrawDate));
                 $data->draw_id = $grData->DrawNumber;
@@ -121,11 +123,12 @@ class ApiController extends Controller
                     $dr = $grData->Results->results;
                     $mainNum = $dr->numbers->numbers_1;
                     $suppNum = $dr->numbers->numbers_2;
-
+                    
                     $data->main_numbers = json_encode($mainNum);
                     $data->supp_numbers = json_encode($suppNum);
                     $data->dividends = json_encode($dr->dividends);
-
+                    $data->next_jackpot = json_encode($grData->Results->Next_Jackpot);
+                    $data->current_jackpot = json_encode($grData->Results->Current_Jackpot);
                     //check for additional fields -- this is currently applicable for NZ Lotto/Powerball game
                     if (isset($dr->numbers->powerball_number)) {
                         $data->powerball_numbers = json_encode( (object) $dr->numbers->powerball_number);
@@ -134,7 +137,7 @@ class ApiController extends Controller
                     if (isset($dr->numbers->strike_numbers)) {
                         $data->strike_numbers = json_encode( (object) $dr->numbers->strike_numbers);
                     }
-
+                   
                     // save to db - if we have all the datas
                     $resultsModel->saveResult($data);
 
