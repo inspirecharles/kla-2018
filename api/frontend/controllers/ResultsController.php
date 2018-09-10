@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use \yii\web\Response;
 use yii\rest\ActiveController;
 use common\models\Results;
+use common\models\Games;
 
 class ResultsController extends ActiveController
 {
@@ -32,7 +33,11 @@ class ResultsController extends ActiveController
         return parent::beforeAction($action);
     }
 
-    public function actionTest(){
-        return Results::find()->where(['results.id'=>1])->with('game')->asArray()->one();
+    public function actionFetchbygameanddrawid($game_slug, $draw_id){
+        return Games::find()->joinWith(['results' => function($query) use ($draw_id){
+            $query->where(['results.draw_id' => $draw_id]);
+        }])
+        ->where(['games.slug'=>$game_slug])
+        ->asArray()->all();
     }
 }
