@@ -17,7 +17,7 @@ class HomeContainer extends Component {
 	static initialAction() {
     	return fetchHomeResultData();
   	}
-   	componentDidMount() {
+   	componentWillMount() {
     	if (!this.props.games)
       		this.props.dispatch(HomeContainer.initialAction());
   	}

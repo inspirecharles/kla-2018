@@ -1,4 +1,6 @@
 import React, { Component } from "react"; 
+import { Link } from "react-router-dom";
+import {createResultLink} from "../../../helper.js"
 
 class ResultComponent extends Component {
 
@@ -31,6 +33,7 @@ class ResultComponent extends Component {
 			}
 		}
 	}
+
 
 	componentWillMount(){
 		if(this.props.game.results && this.props.game.results.length){
@@ -67,7 +70,7 @@ class ResultComponent extends Component {
                                 { this.state.supp_numbers.map((item, i) => {
                                 	return <dd key={i} className="numbers circle supplementary d-inline-block">{item}</dd>
                                 }) }
-                                <button className="btn btn-primary float-right">View Prizes</button>
+                                <Link to={createResultLink(this.props.game)}><button className="btn btn-primary float-right">View Prizes</button></Link>
                             </dl>
                         </div>
                     </div>
