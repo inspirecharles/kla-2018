@@ -14,7 +14,7 @@ class FooterContainer extends Component {
 
 			      <div className="row justify-content-md-center">
 
-			        <div className="col-md-3 mb-md-0 mb-3">
+			        <div className="col-md-3 mb-md-0 mb-3 col-sm-6">
 
 			            <ul className="list-unstyled">
 			              <li>
@@ -23,14 +23,11 @@ class FooterContainer extends Component {
 			              <li>
 			                <a className="footer-list" href="#!">Privacy Policy</a>
 			              </li>
-			              <li>
-			                <a className="footer-list" href="#!">Sitemap</a>
-			              </li>
 			            </ul>
 
 			          </div>
 
-			          <div className="social-media col-md-3 mb-md-0 mb-3">
+			          <div className="social-media col-md-3 mb-md-0 mb-3 col-sm-6">
 
 			          	<p className="mb-1 sm-font">Find Us On Social Media</p>
 

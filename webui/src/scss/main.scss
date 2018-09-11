@@ -1,7 +1,7 @@
 .news-slider{
 	.slick-arrow{
 		z-index: 999;
-		background-color: #2a65cd;
+		background-color: #2965cc;
 		position: absolute;
 		height: 200px;
 		width: 25px;
@@ -38,7 +38,7 @@
 }
 
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-	color: #2a65cd;
+	color: #2965cc;
     font-family: "Nunito Regular", sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -60,7 +60,7 @@ a:hover {
 }
 
 .supp-link-icons {
-	color: #2a65cd;
+	color: #2965cc;
 	padding-top: 20px;
 
 	.icon-printresult, .icon-download {
@@ -76,11 +76,15 @@ a:hover {
 
 .gameResults-actionLink {
     margin-bottom: 2%;
+
+    .supplementary_numbers {
+    	padding: 0 26px;
+    }
 }
 
 h2.media-heading {
 	color: #1D1D1D;	
-	font-family: "Celias Black", sans-serif;
+	font-family: "Celias", sans-serif;
 	font-size: 24px;	
 	font-weight: 900;	
 	line-height: 24px;
@@ -95,7 +99,7 @@ p.media-content {
 
 /* notification */
 h3.notif-heading {
-	font-family: "Celias Black", sans-serif;
+	font-family: "Celias", sans-serif;
 	font-size: 20px;		
 	line-height: 20px;
 }
@@ -106,6 +110,15 @@ p.notif-content {
 	line-height: 20px;
 }
 
+.bg-blue {
+	background-color: #2965cc; 
+	border-color: #2965cc; 
+}
+
+.bg-blue:hover {
+	background-color: #0057ef;
+	border-color: #0057ef;
+}
 
 body {
 	padding-top: 54px;
@@ -128,7 +141,7 @@ body {
 
 /* for header */
 .result-container {
-	background-color: #2a65cd;
+	background-color: #2965cc;
 	padding-top: 30px;
 	padding-bottom: 42px;
 	margin-top: 20px;
@@ -152,12 +165,24 @@ body {
 		line-height: 22px;
 	}
 
+	.mainNumber_label, .supplementary_label {
+		padding-left: 0;
+		padding-bottom: 10px;
+	}
+
+	.supplementary_label {
+		display: inline-block;
+	}
+
 	a.icons.icon-pastresult {
 		float: right;
 	}
 
 	a.icons {
 		padding-right: 15px;
+	}
+	a.icons:last-child {
+	    padding-right: 0;
 	}
 
 	.icon-pastresult {
@@ -181,22 +206,26 @@ body {
 		font-family: "Effra Heavy";
     	color: #000;
     	font-size: 14px;
-		padding-left: 15px;
+		padding-left: 25px;
 		width: 40%;
 
 		.uk-logo-lotto {
-			max-width: 70%
+			max-width: 70%;
 		}
 
-		.game-health_lottery, .game-postcode_daily,
+		.game-postcode_daily,
 		.game-postcode_weekly, .game-postcode_monthly {
-			max-width: 38%
+			max-width: 50%;
+		}
+
+		.game-health_lottery {
+			max-width: 70%;
 		}
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
-	    padding-top: 15px;
-	    padding-bottom: 15px;
+	    padding-top: 25px;
+	    padding-bottom: 25px;
 	}
 
 	.card-header {
@@ -204,10 +233,15 @@ body {
 		border-bottom: none;
 	}
 
+	.gameResult-body {
+		padding: 25px 25px;
+	}
+
 	.card-footer {
 		background-color: #7f8fa6;
 		border-top: none;
 		color: #fff;
+		padding: 26px 26px;
 	}
 
 	.card-footer:last-child {
@@ -217,7 +251,7 @@ body {
 	.card {
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
 		border: 0;
-		margin-bottom: 40px;;
+		margin-bottom: 40px;
 	}
 
 	.card-body {
@@ -287,7 +321,7 @@ body {
 
 	/* UK numbers */
 	.bc_lotto {
-		background-color: #2a65cd;
+		background-color: #2965cc;
 	}
 
 	.supplementary {
@@ -312,7 +346,7 @@ body {
 
 /* for notification wrapper */
 .notification-wrapper {
-	background-color: #2a65cd;
+	background-color: #2965cc;
 
 	.getNotified-container {
 		padding: 3.25rem 0;
@@ -328,7 +362,7 @@ body {
 .uk-lotto-news-wrapper {
 
 	.uk-lotto-news-title {
-		font-family: "Celias Black";
+		font-family: "Celias", sans-serif;
 		color: #1d1d1d;
 		font-size: 24px;
 		font-weight: 900;
@@ -337,7 +371,7 @@ body {
 
 	.blog-title {
 		color: #1D1D1D;	
-		font-family: "Celias Black";
+		font-family: "Celias", sans-serif;
 		font-size: 20px;	
 		font-weight: 900;	
 		line-height: 20px;	
@@ -368,10 +402,10 @@ body {
 
 /* subscribe wrapper */
 .subscribe-wrapper {
-	background-color: #2a65cd;
+	background-color: #2965cc;
 
 	.subscribe-heading {
-		font-family: "Celias Black";	
+		font-family: "Celias", sans-serif;
 		font-size: 20px;	
 		font-weight: 900;	
 		line-height: 20px;
@@ -398,11 +432,12 @@ body {
 		font-family: "Nunito Regular", sans-serif;
 		font-size: 16px;	
 		line-height: 27px;
-		text-align: center;
 	}
 
 	.form-control, .btn {
 		border-radius: 0;
+		width: 140px;
+		height: 40px;
 	}
 
 	.subscribe {

@@ -67,7 +67,7 @@ class HomeContainer extends Component {
 								</p>
 					        </div>
 							<div className="col-lg-6">
-					        	<img className="img-fluid media-img" src="../../img/girl_laptop.jpg" />
+					        	<img className="img-fluid media-img" src="../../img/iStock-544097900.png" />
 					        </div>
 					        
 						</div>
@@ -98,7 +98,7 @@ class HomeContainer extends Component {
 						<h2 className="my-4 text-center uk-lotto-news-title">Latest UK Lotto News</h2>
 						<NewsSliderComponent/>
 					    <div className="row view-more-news">
-							<button className="btn btn-primary">View More...</button>
+							<button className="btn btn-primary bg-blue">View More...</button>
 						</div>
 					</div>
 				</div>
