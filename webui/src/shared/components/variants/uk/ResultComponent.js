@@ -64,12 +64,15 @@ class ResultComponent extends Component {
                     <div className="gameResults-main">
                     	<div className="supplementary_numbers col-lg-12 col-md-12">
                             <dl>
-                            	<dt className="clr supplementary_label">
-                                    <label htmlFor="">Supplementary</label>
-                                </dt>
+                            	{ this.state.supp_numbers.length > 0 && 
+	                            	<dt className="clr supplementary_label">
+	                                    <label htmlFor="">Supplementary</label>
+	                                </dt>
+                                }
                                 { this.state.supp_numbers.map((item, i) => {
                                 	return <dd key={i} className="numbers circle supplementary d-inline-block">{item}</dd>
                                 }) }
+
                                 <Link to={createResultLink(this.props.game)}><button className="btn btn-primary float-right">View Prizes</button></Link>
                             </dl>
                         </div>
