@@ -14,8 +14,7 @@ class ResultContainer extends Component {
   	}
 
 	componentWillMount(){
-		if (!this.props.results || this.props.results.length == 0)
-      		this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug, this.props.match.params.draw_id ));
+      	this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug, this.props.match.params.draw_id ));
 	}
 
 	render() {
