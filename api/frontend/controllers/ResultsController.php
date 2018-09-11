@@ -38,6 +38,6 @@ class ResultsController extends ActiveController
             $query->where(['results.draw_id' => $draw_id]);
         }])
         ->where(['games.slug'=>$game_slug])
-        ->asArray()->all();
+        ->asArray()->one();
     }
 }

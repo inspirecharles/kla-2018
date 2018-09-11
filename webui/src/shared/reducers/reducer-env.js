@@ -1,6 +1,6 @@
 const initialEnvs = [];
 
-export default function reducer(state = initialEnvs, action) {
+export default function (state = initialEnvs, action) {
   	switch (action.type) {
     	case "SET_ENV_SUCCESS":
       		return action.payload ;

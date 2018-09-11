@@ -1,6 +1,6 @@
 const initialResults = [];
 
-export default function reducer(state = initialResults, action) {
+export default function (state = initialResults, action) {
   	switch (action.type) {
     	case "FETCH_RESULT_SUCCESS":
       		return action.payload ;

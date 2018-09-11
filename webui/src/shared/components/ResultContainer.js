@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import {connect} from "react-redux";
 
-import {fetchResultByGameAndDrawId} from "../actions/action-results";
+import {fetchResultByGameAndDrawId} from "../actions/action-result-detail";
 
 class ResultContainer extends Component {
 	constructor() {
@@ -19,14 +19,17 @@ class ResultContainer extends Component {
 
 	render() {
 	    return (
-			<div className="result-container">
-	    		<div className="container">
+			<div id="result-detail" className="result-container">
+	    		<section className="detail container ">
 		    	 	<div className="row">
 			    		<div className="col-lg-12">
-			    			<h1 className="display-5 text-left text-white mt-4 latest-title">Latest {this.props.results && this.props.results.length && this.props.results[0].name} Results.</h1>
+			    			<h1 className="display-5 text-left text-white mt-4 latest-title">Latest {this.props.result_detail && this.props.result_detail.name} Results - Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id}</h1>
+			    		</div>
+			    		<div className="col-lg-12">
+			    			
 			    		</div>
 			    	</div>
-	      		</div>
+	      		</section>
       		</div>
 	    );
 	}
@@ -36,7 +39,7 @@ class ResultContainer extends Component {
 
 function mapStateToProps(state){
   	return {
-    	results: state.results
+    	result_detail: state.result_detail
   	}
 }
 
