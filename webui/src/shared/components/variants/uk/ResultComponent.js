@@ -67,7 +67,7 @@ class ResultComponent extends Component {
                                 { this.state.supp_numbers.map((item, i) => {
                                 	return <dd key={i} className="numbers circle supplementary d-inline-block">{item}</dd>
                                 }) }
-                                <button className="btn btn-primary float-right">View Prizes</button>
+                                <button className="btn btn-primary float-right mb1 bg-blue">View Prizes</button>
                             </dl>
                         </div>
                     </div>

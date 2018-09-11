@@ -1,7 +1,7 @@
 .news-slider{
 	.slick-arrow{
 		z-index: 999;
-		background-color: #2a65cd;
+		background-color: #2965cc;
 		position: absolute;
 		height: 200px;
 		width: 25px;
@@ -38,7 +38,7 @@
 }
 
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-	color: #2a65cd;
+	color: #2965cc;
     font-family: "Nunito Regular", sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -60,7 +60,7 @@ a:hover {
 }
 
 .supp-link-icons {
-	color: #2a65cd;
+	color: #2965cc;
 	padding-top: 20px;
 
 	.icon-printresult, .icon-download {
@@ -76,6 +76,10 @@ a:hover {
 
 .gameResults-actionLink {
     margin-bottom: 2%;
+
+    .supplementary_numbers {
+    	padding: 0 26px;
+    }
 }
 
 h2.media-heading {
@@ -106,6 +110,15 @@ p.notif-content {
 	line-height: 20px;
 }
 
+.bg-blue {
+	background-color: #2965cc; 
+	border-color: #2965cc; 
+}
+
+.bg-blue:hover {
+	background-color: #0057ef;
+	border-color: #0057ef;
+}
 
 body {
 	padding-top: 54px;
@@ -128,7 +141,7 @@ body {
 
 /* for header */
 .result-container {
-	background-color: #2a65cd;
+	background-color: #2965cc;
 	padding-top: 30px;
 	padding-bottom: 42px;
 	margin-top: 20px;
@@ -159,6 +172,9 @@ body {
 	a.icons {
 		padding-right: 15px;
 	}
+	a.icons:last-child {
+	    padding-right: 0;
+	}
 
 	.icon-pastresult {
 		padding-right: 5px;
@@ -181,22 +197,26 @@ body {
 		font-family: "Effra Heavy";
     	color: #000;
     	font-size: 14px;
-		padding-left: 15px;
+		padding-left: 35px;
 		width: 40%;
 
 		.uk-logo-lotto {
-			max-width: 70%
+			max-width: 70%;
 		}
 
-		.game-health_lottery, .game-postcode_daily,
+		.game-postcode_daily,
 		.game-postcode_weekly, .game-postcode_monthly {
-			max-width: 38%
+			max-width: 55%;
+		}
+
+		.game-health_lottery {
+			max-width: 70%;
 		}
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
-	    padding-top: 15px;
-	    padding-bottom: 15px;
+	    padding-top: 35px;
+	    padding-bottom: 35px;
 	}
 
 	.card-header {
@@ -208,6 +228,7 @@ body {
 		background-color: #7f8fa6;
 		border-top: none;
 		color: #fff;
+		padding: 26px 26px;
 	}
 
 	.card-footer:last-child {
@@ -287,7 +308,7 @@ body {
 
 	/* UK numbers */
 	.bc_lotto {
-		background-color: #2a65cd;
+		background-color: #2965cc;
 	}
 
 	.supplementary {
@@ -312,7 +333,7 @@ body {
 
 /* for notification wrapper */
 .notification-wrapper {
-	background-color: #2a65cd;
+	background-color: #2965cc;
 
 	.getNotified-container {
 		padding: 3.25rem 0;
@@ -368,7 +389,7 @@ body {
 
 /* subscribe wrapper */
 .subscribe-wrapper {
-	background-color: #2a65cd;
+	background-color: #2965cc;
 
 	.subscribe-heading {
 		font-family: "Celias Black";	
@@ -398,7 +419,6 @@ body {
 		font-family: "Nunito Regular", sans-serif;
 		font-size: 16px;	
 		line-height: 27px;
-		text-align: center;
 	}
 
 	.form-control, .btn {

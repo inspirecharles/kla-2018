@@ -97,7 +97,7 @@ class HomeContainer extends Component {
 						<h2 className="my-4 text-center uk-lotto-news-title">Latest UK Lotto News</h2>
 						<NewsSliderComponent/>
 					    <div className="row view-more-news">
-							<button className="btn btn-primary">View More...</button>
+							<button className="btn btn-primary bg-blue">View More...</button>
 						</div>
 					</div>
 				</div>

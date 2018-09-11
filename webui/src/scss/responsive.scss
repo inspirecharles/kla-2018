@@ -68,9 +68,13 @@
 				max-width: 100%
 			}
 
-			.game-health_lottery, .game-postcode_daily,
+			.game-postcode_daily,
 			.game-postcode_weekly, .game-postcode_monthly {
-				max-width: 39%
+				max-width: 50%;
+			}
+
+			.game-health_lottery {
+				max-width: 60%;
 			}
 		}
 
@@ -132,6 +136,13 @@
 
 	.game_result {
 		font-size: 12px;
+	}
+
+	footer {
+		.footer-copyright, a, .sm-font {
+	    	font-size: 15px;	
+	    	line-height: 22px;	
+		}
 	}
 }
 
