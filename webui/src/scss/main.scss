@@ -197,7 +197,7 @@ body {
 		font-family: "Effra Heavy";
     	color: #000;
     	font-size: 14px;
-		padding-left: 35px;
+		padding-left: 25px;
 		width: 40%;
 
 		.uk-logo-lotto {
@@ -206,7 +206,7 @@ body {
 
 		.game-postcode_daily,
 		.game-postcode_weekly, .game-postcode_monthly {
-			max-width: 55%;
+			max-width: 50%;
 		}
 
 		.game-health_lottery {
@@ -215,13 +215,17 @@ body {
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
-	    padding-top: 35px;
-	    padding-bottom: 35px;
+	    padding-top: 25px;
+	    padding-bottom: 25px;
 	}
 
 	.card-header {
 		background-color: #fff;
 		border-bottom: none;
+	}
+
+	.game-card-content {
+		padding: 0 25px;
 	}
 
 	.card-footer {
@@ -238,7 +242,7 @@ body {
 	.card {
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
 		border: 0;
-		margin-bottom: 40px;;
+		margin-bottom: 40px;
 	}
 
 	.card-body {
@@ -423,6 +427,8 @@ body {
 
 	.form-control, .btn {
 		border-radius: 0;
+		width: 140px;
+		height: 40px;
 	}
 
 	.subscribe {
