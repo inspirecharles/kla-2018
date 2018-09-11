@@ -35,8 +35,14 @@ function handleRender(req, res, next) {
 	store.dispatch(fetchEnv(envs));
 
 	const promises = routes.reduce((acc, route) => {
-	    if (matchPath(req.url, route) && route.component && route.component.initialAction) {
-	      acc.push(Promise.resolve(store.dispatch(route.component.initialAction())));
+		var props = matchPath(req.url, route);
+	    if ( props && route.component && route.component.initialAction) {
+	    	if( props.params.game_slug && props.params.draw_id ){	
+	    		acc.push(Promise.resolve(store.dispatch(route.component.initialAction( props.params.game_slug.replace("-", "_"), props.params.draw_id.replace("draw-","") ))));
+	    	}
+	    	else{
+	      		acc.push(Promise.resolve(store.dispatch(route.component.initialAction())));
+	    	}
 	    }
 	    return acc;
 	}, []);
@@ -73,7 +79,7 @@ function renderFullPage(html, preloadedState) {
 	`;
 }
 
-app.get("*", (req,res, next) => {
+app.get("/", (req,res, next) => {
 	handleRender(req, res, next);
 });
 

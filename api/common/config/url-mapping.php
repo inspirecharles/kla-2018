@@ -3,7 +3,7 @@
 return [
     'class' => 'yii\web\UrlManager',
     'enablePrettyUrl' => true,
-    'enableStrictParsing' => true,
+    'enableStrictParsing' => false,
     'showScriptName' => false,
     'rules' => [
         '<controller:\w+>/' => '<controller>/index',

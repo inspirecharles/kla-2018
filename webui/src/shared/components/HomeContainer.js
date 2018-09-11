@@ -17,8 +17,9 @@ class HomeContainer extends Component {
 	static initialAction() {
     	return fetchHomeResultData();
   	}
-   	componentDidMount() {
-    	if (!this.props.games)
+
+   	componentWillMount() {
+    	if (!this.props.games || this.props.games.length == 0)
       		this.props.dispatch(HomeContainer.initialAction());
   	}
 
@@ -66,7 +67,7 @@ class HomeContainer extends Component {
 								</p>
 					        </div>
 							<div className="col-lg-6">
-					        	<img className="img-fluid media-img" src="../../img/girl_laptop.jpg" />
+					        	<img className="img-fluid media-img" src="../../img/iStock-544097900.png" />
 					        </div>
 					        
 						</div>
@@ -97,7 +98,7 @@ class HomeContainer extends Component {
 						<h2 className="my-4 text-center uk-lotto-news-title">Latest UK Lotto News</h2>
 						<NewsSliderComponent/>
 					    <div className="row view-more-news">
-							<button className="btn btn-primary">View More...</button>
+							<button className="btn btn-primary bg-blue">View More...</button>
 						</div>
 					</div>
 				</div>
@@ -142,10 +143,4 @@ function mapStateToProps(state){
   	}
 }
 
-function matchDispatchToProps(dispatch){
-  	return bindActionCreators({
-    	fetchHomeResultData: fetchHomeResultData
-  	}, dispatch);
-}
-
-export default withRouter(connect(mapStateToProps, matchDispatchToProps)(HomeContainer));
+export default withRouter(connect(mapStateToProps)(HomeContainer));
