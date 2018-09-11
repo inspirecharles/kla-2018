@@ -57,6 +57,7 @@ class HomeCardComponent extends Component {
 						</div>
 						
 						<div id={"card"+this.props.name} className={"collapse game-card-content "+(this.props.show==true?'show':'')} role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx1">
+							<div className="gameResult-body">
 	                        { this.renderResult() }
 
 	                        <div className="gameResults-actionLink">
@@ -70,14 +71,14 @@ class HomeCardComponent extends Component {
 	                            	</div>
 	                            </div>
 	                        </div>
-	                    </div>
-
-	                    <div className="card-footer container">
-							<div className="row footerNextDraw">
-								<h3 className="nextDraw">Next Draw: &#163;7,000,000</h3>
-								<button className="btn btn-light ml-auto">Buy Now</button>
+	                    	</div>
+	                        <div className="card-footer container">
+								<div className="row footerNextDraw">
+									<h3 className="nextDraw">Next Draw: &#163;7,000,000</h3>
+									<button className="btn btn-light ml-auto">Buy Now</button>
+								</div>
 							</div>
-						</div>
+	                    </div>
 						
 					</div>
 
