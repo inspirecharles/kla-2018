@@ -61,12 +61,17 @@ class ResultComponent extends Component {
                 <div className="card-body pt-0" id="lotto">
                     <div className="gameResults-main">
                     	<div className="supplementary_numbers col-lg-12 col-md-12">
-                    		<div className="clr supplementary_label col-lg-12 col-md-12">Supplementary</div>
+						{ this.state.supp_numbers.length > 0 && 
+                			<div className="clr supplementary_label col-lg-12 col-md-12">Supplementary</div>
+                		}
                     		<div class="is-euro-millions">
 							    { this.state.supp_numbers.map((item, i) => {
                                 	return <div key={i} className="numbers circle supplementary d-inline-block">{item}</div>
                                 }) }
+
+                                { !this.props.hideViewPrizes &&
                                 <Link to={createResultLink(this.props.game)}><button className="btn btn-primary float-right">View Prizes</button></Link>
+								}
 							</div>
                         </div>
                     </div>
