@@ -45,14 +45,12 @@ class ResultComponent extends Component {
                 <div className="card-body pt-0" id="lotto">
                     <div className="gameResults-main">
                     	<div className="main_numbers col-lg-12 col-md-12">
-                            <dl>
-                            	<dt className="clr mainNumber_label">
-                                    <label htmlFor="">Main Numbers</label>
-                                </dt>
-                                { this.state.main_numbers.map((item, i) => {
-                                	return <dd key={i} className="numbers circle bc_lotto d-inline-block">{item}</dd>
+                    		<div className="clr mainNumber_label col-lg-12 col-md-12">Main Numbers</div>
+                    		<div class="is-euro-millions">
+							    { this.state.main_numbers.map((item, i) => {
+                                	return <div key={i} className="numbers circle bc_lotto d-inline-block">{item}</div>
                                 }) }
-                            </dl>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -60,15 +58,13 @@ class ResultComponent extends Component {
                 <div className="card-body pt-0" id="lotto">
                     <div className="gameResults-main">
                     	<div className="supplementary_numbers col-lg-12 col-md-12">
-                            <dl>
-                            	<dt className="clr supplementary_label">
-                                    <label htmlFor="">Supplementary</label>
-                                </dt>
-                                { this.state.supp_numbers.map((item, i) => {
-                                	return <dd key={i} className="numbers circle supplementary d-inline-block">{item}</dd>
+                    		<div className="clr supplementary_label col-lg-12 col-md-12">Supplementary</div>
+                    		<div class="is-euro-millions">
+							    { this.state.supp_numbers.map((item, i) => {
+                                	return <div key={i} className="numbers circle supplementary d-inline-block">{item}</div>
                                 }) }
                                 <button className="btn btn-primary float-right mb1 bg-blue">View Prizes</button>
-                            </dl>
+							</div>
                         </div>
                     </div>
                 </div>
