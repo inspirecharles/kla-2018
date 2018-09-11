@@ -73,7 +73,9 @@ class ResultComponent extends Component {
                                 	return <dd key={i} className="numbers circle supplementary d-inline-block">{item}</dd>
                                 }) }
 
-                                <Link to={createResultLink(this.props.game)}><button className="btn btn-primary float-right">View Prizes</button></Link>
+                                { !this.props.hideViewPrizes &&
+                                	<Link to={createResultLink(this.props.game)}><button className="btn btn-primary float-right">View Prizes</button></Link>
+                            	}
                             </dl>
                         </div>
                     </div>

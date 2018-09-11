@@ -1,5 +1,22 @@
 #result-detail{
+	
 	.detail{
-		
+		background-color: #2a65cd;
+	    padding-top: 30px;
+	    padding-bottom: 42px;
+	    margin-top: 20px;
+
+		.detail-content{
+			background-color: #fff;
+			padding: 15px;
+
+			img.game-logo{
+				width: 250px;
+			}
+
+			.next-draw{
+				background-color: gray;
+			}
+		}
 	}
 }

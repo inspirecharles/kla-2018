@@ -10,7 +10,6 @@ const receivedResult = result => ({ type: FETCH_RESULT_DETAIL_SUCCESS, payload: 
 const resultError = () => ({ type: FETCH_RESULT_DETAIL_FAILURE });
 
 export const fetchResultByGameAndDrawId = (game_slug, draw_id) => (dispatch, getState) => {
-  console.log('calling fetch from result-detail')
   dispatch(requestResult());
   return fetch(getState().env.API_URL+"/results/fetchbygameanddrawid?game_slug="+(game_slug && game_slug.replace("-", "_"))+"&draw_id="+(draw_id && draw_id.replace("draw-","")))
     .then(response => response.json())
