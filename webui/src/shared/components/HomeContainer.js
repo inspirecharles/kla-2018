@@ -17,8 +17,9 @@ class HomeContainer extends Component {
 	static initialAction() {
     	return fetchHomeResultData();
   	}
-   	componentDidMount() {
-    	if (!this.props.games)
+
+   	componentWillMount() {
+    	if (!this.props.games || this.props.games.length == 0)
       		this.props.dispatch(HomeContainer.initialAction());
   	}
 
@@ -142,10 +143,4 @@ function mapStateToProps(state){
   	}
 }
 
-function matchDispatchToProps(dispatch){
-  	return bindActionCreators({
-    	fetchHomeResultData: fetchHomeResultData
-  	}, dispatch);
-}
-
-export default withRouter(connect(mapStateToProps, matchDispatchToProps)(HomeContainer));
+export default withRouter(connect(mapStateToProps)(HomeContainer));
