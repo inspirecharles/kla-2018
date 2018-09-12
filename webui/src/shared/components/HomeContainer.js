@@ -47,7 +47,7 @@ class HomeContainer extends Component {
 					<div className="media-1">
 						<div className="row my-4">
 							<div className="col-lg-6">
-								<h2 className="media-heading">The UK&#39;s Home of Lottery Results Online</h2>
+								<h2 className="media-heading celias">The UK&#39;s Home of Lottery Results Online</h2>
 								<p className="media-content">
 									Lotto Results UK is the only place to get up to date results for all your 
 									favourite UK lotteries, raffles and draws. With our simple design and clear 
@@ -80,7 +80,7 @@ class HomeContainer extends Component {
 							<div className="row">
 							
 								<div className="media-body col-lg-8">
-									<h3 className="media-heading notif-heading text-white">Draw Results Direct to Your Device.</h3>
+									<h3 className="media-heading notif-heading celias text-white">Draw Results Direct to Your Device.</h3>
 									<p className="notif-content text-white">
 										Never miss the winning numbers! Get push notification over time UK lotto results are available for all your favorite lotteries.
 									</p>
@@ -95,7 +95,7 @@ class HomeContainer extends Component {
 
 				<div className="container">
 					<div className="uk-lotto-news-wrapper">
-						<h2 className="my-4 text-center uk-lotto-news-title">Latest UK Lotto News</h2>
+						<h2 className="my-4 text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
 						<NewsSliderComponent/>
 					    <div className="row view-more-news">
 							<button className="btn btn-primary bg-blue">View More...</button>
@@ -109,7 +109,7 @@ class HomeContainer extends Component {
 							<div className="row">
 							
 								<div className="media-body subscribe-body col-lg-6 col-md-12">
-									<h3 className="media-heading subscribe-heading text-white">Lottery Results in Your Inbox</h3>
+									<h3 className="media-heading subscribe-heading celias text-white">Lottery Results in Your Inbox</h3>
 									<p className="subscribe-content text-white">
 										Get the latest UK lottery results direct to your email and never miss your lucky numbers!
 									</p>
