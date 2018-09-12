@@ -34,7 +34,7 @@ class HomeContainer extends Component {
 				    		</div>
 				    	</div>
 				        <div className="row mt-3">
-						    {this.props.games.map((game, i) =>  {
+						    {this.props.games.length && this.props.games.map((game, i) =>  {
 						    		var show = (i == 0 || i == 1)?true:false;
 							    	return <HomeCardComponent key={i} show={show} name={"card"+i} game={game}/>
 						    	}
