@@ -1,3 +1,8 @@
+/* FONT VARIABLES */
+.celias {
+	font-family: "Celias", sans-serif;
+}
+
 .news-slider{
 	.slick-arrow{
 		z-index: 999;
@@ -63,6 +68,7 @@ a:hover {
 .supp-link-icons {
 	color: #2965cc;
 	padding-top: 20px;
+	padding-bottom: 20px;
 
 	.icon-printresult, .icon-download {
 		height: 16px;
@@ -79,13 +85,12 @@ a:hover {
     margin-bottom: 2%;
 
     .supplementary_numbers {
-    	padding: 0 26px;
+    	padding: 0 15px;
     }
 }
 
 h2.media-heading {
 	color: #1D1D1D;	
-	font-family: "Celias", sans-serif;
 	font-size: 24px;	
 	font-weight: 900;	
 	line-height: 24px;
@@ -100,7 +105,6 @@ p.media-content {
 
 /* notification */
 h3.notif-heading {
-	font-family: "Celias", sans-serif;
 	font-size: 20px;		
 	line-height: 20px;
 }
@@ -147,13 +151,6 @@ body {
 	padding-bottom: 42px;
 	margin-top: 20px;
 
-	.latest-title {
-		font-family: "Celias Medium";	
-		font-size: 24px;
-		font-weight: 900;
-		line-height: 24px;
-	}
-
 	.game-row {
 		flex-wrap: nowrap;
 		align-items: center;
@@ -164,15 +161,6 @@ body {
 		font-family: "Nunito Regular", sans-serif;
 		font-size: 16px;	
 		line-height: 22px;
-	}
-
-	.mainNumber_label, .supplementary_label {
-		padding-left: 0;
-		padding-bottom: 10px;
-	}
-
-	.supplementary_label {
-		display: inline-block;
 	}
 
 	a.icons.icon-pastresult {
@@ -225,8 +213,8 @@ body {
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
-	    padding-top: 25px;
-	    padding-bottom: 25px;
+	    padding-top: 30px;
+	    padding-bottom: 30px;
 	}
 
 	.card-header {
@@ -257,7 +245,7 @@ body {
 
 	.card-body {
 		padding: 0;
-		margin-bottom: 10%;
+		margin-bottom: 2%;
 	}
 
 	.prize, .date {
@@ -280,7 +268,7 @@ body {
 
 	.nextDraw {
 	    color: #FFF;	
-		font-family: "Celias Medium";	
+		font-family: "Celias Medium", sans-serif;
 		font-size: 20px;	
 		font-weight: normal;	
 		line-height: 20px;	
@@ -294,43 +282,6 @@ body {
 
 	.footerNextDraw {
 		margin: 0;
-	}
-
-	label {
-	    max-width: 100%;
-	    margin-bottom: 5px;
-	    font-weight: 100;
-	}
-
-	.numbers {
-		font-family: "Celias";
-	    color: #FFF;
-	    align-items: center;
-	    width: 40px;
-	    height: 40px;
-	    font-size: 24px;
-	    margin-right: 15px;
-	    float: left;
-	    margin-bottom: 8px;
-	    line-height: 45px;
-	    justify-content: center;
-	    text-align: center;
-	    font-weight: 500;
-	}
-
-	.circle {
-	    border-radius: 50%;
-	}
-
-
-
-	/* UK numbers */
-	.bc_lotto {
-		background-color: #2965cc;
-	}
-
-	.supplementary {
-		background-color: #7e8fad;
 	}
 }
 
@@ -367,7 +318,6 @@ body {
 .uk-lotto-news-wrapper {
 
 	.uk-lotto-news-title {
-		font-family: "Celias", sans-serif;
 		color: #1d1d1d;
 		font-size: 24px;
 		font-weight: 900;
@@ -376,7 +326,6 @@ body {
 
 	.blog-title {
 		color: #1D1D1D;	
-		font-family: "Celias", sans-serif;
 		font-size: 20px;	
 		font-weight: 900;	
 		line-height: 20px;	
@@ -410,7 +359,6 @@ body {
 	background-color: #2965cc;
 
 	.subscribe-heading {
-		font-family: "Celias", sans-serif;
 		font-size: 20px;	
 		font-weight: 900;	
 		line-height: 20px;

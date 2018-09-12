@@ -1,6 +1,6 @@
 #result-detail{
 	
-	.detail{
+	section.detail{
 		background-color: #2a65cd;
 	    padding-top: 30px;
 	    padding-bottom: 42px;
@@ -8,15 +8,131 @@
 
 		.detail-content{
 			background-color: #fff;
-			padding: 15px;
+			padding: 35px;
+			box-shadow: 0 0px 33px 0 rgba(0, 0, 0, 0.5);
 
 			img.game-logo{
-				width: 250px;
+				width: 150px;
+			}
+
+			.current-jackpot{
+				font-family: "Celias Black";
+				font-weight: bold;
+				font-size: 2em;
+				line-height: 0;
+			}
+
+			.card-body, 
+			.main_numbers, 
+			.supplementary_numbers{
+				padding-left: 0;
 			}
 
 			.next-draw{
-				background-color: gray;
+				padding: 30px;
+				background-color: $bg-gray;
+				font-family: "Celias Black";
+				font-weight: bold;
+				font-size: 2em;
+				color: #fff;
+			}
+
+			.dividends-table{
+				table{
+					width: 100%;
+
+					tr{
+						text-align: left;
+
+						&:first-child{
+							background-color: $bg-gray;
+							color: #fff;
+						}
+
+						&:last-child{
+							font-weight: bold;
+						}
+
+
+						border-bottom: 1px solid rgba(0,0,0, .2);
+
+						td{
+							padding: 10px 7px;
+						}
+					}
+				}
 			}
 		}
 	}
+
+	section.view-past-result{
+		background-color: $bg-gray;
+		color: #fff;
+		span{
+			font-family: "Celias Black";
+			font-weight: bold;
+			font-size: 1.3em;
+		}
+		button{
+			font-family: "Celias";
+			padding: 7px 25px;
+		}
+	}
+
+	section.result-video{
+		.container{
+			padding: 45px 0px;
+
+			.section-title{
+				font-family: "Celias Black";
+				font-weight: bold;
+				font-size: 1.7em;
+			}
+
+			.video{
+				width: 100%;
+				height: 310px;
+			}
+		}
+	}
+
+	section.draw-statistics{
+		background-color: #2a65cd;
+		.container{
+			color: #fff;
+			font-family: "Celias Black";
+			font-weight: bold;
+			padding: 50px;
+
+			.section-title{
+				font-size: 1.5em;
+			}
+
+			label{
+				font-family: "Celias";
+			}
+
+			span.value{
+				font-size: 3em;
+				line-height: .9;
+			}
+		}
+	}
+
+	section.news{
+		.container{
+			padding: 50px;
+
+			.section-title, .card-title{
+				font-size: 1.7em;
+				font-family: "Celias Black";
+				color: #000;
+			}
+			.card-title{
+				font-size: 1.4em;
+			}
+
+		}
+	}
+
 }
