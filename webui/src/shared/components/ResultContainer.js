@@ -32,7 +32,7 @@ class ResultContainer extends Component {
 	    return (
 			<div id="result-detail">
 	    		<section className="detail">
-	    			<div class="container">
+	    			<div className="container">
 			    	 	<div className="row">
 				    		<div className="col-lg-12">
 				    			<h1 className="display-5 text-left text-white mt-4 latest-title">Latest {this.props.result_detail && this.props.result_detail.name} Results - Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id}</h1>
@@ -40,17 +40,26 @@ class ResultContainer extends Component {
 				    	</div>
 			    		<div className="detail-content col-lg-12">
 			    			<div className="row">
-				    			<div className="col-lg-5">
+			    				<div className="col-lg-5">
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
+			    				</div>
+			    				<div className="col-lg-7 text-right">
+			    					<span class="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].current_jackpot))}</span><br/>
+				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
+			    				</div>
+			    			</div>
+			    			<div className="row mt-3">
+				    			<div className="col-lg-5">
 				    				{ this.renderResult() }
 				    				<div className="next-draw">
-				    					Next Draw<br/>
-				    					<h3>{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].next_jackpot))}</h3>
+				    					<div>Next Draw</div>
+				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].next_jackpot))}</div>
+				    					<div>
+				    						<button>Buy Now</button>
+				    					</div>
 				    				</div>
 				    			</div>
-				    			<div className="col-lg-7 text-right">
-				    				<h3>{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].current_jackpot))}</h3>
-				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
+				    			<div className="col-lg-7">
 				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, 'lotto_dividends') }
 				    			</div>
 			    			</div>
