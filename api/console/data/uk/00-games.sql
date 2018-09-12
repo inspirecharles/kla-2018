@@ -21,3 +21,9 @@ VALUES ('Postcode Weekly', 'postcode_weekly', 'uk', 7);
 
 INSERT INTO games(name, slug, variant, priority)
 VALUES ('Postcode Monthly', 'postcode_monthly', 'uk', 8);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('49 Lottery', '49lottery', 'uk', 9);
+
+INSERT INTO games(name, slug, variant, priority)
+VALUES ('Euro Millions Hotpick', 'euromillions_hotpick', 'uk', 10);
