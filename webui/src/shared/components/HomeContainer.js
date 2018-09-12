@@ -33,7 +33,7 @@ class HomeContainer extends Component {
 				    			<h1 className="display-5 text-left text-white mt-4 latest-title">Latest UK Lottery Results.</h1>
 				    		</div>
 				    	</div>
-				        <div className="row">
+				        <div className="row mt-3">
 						    {this.props.games.map((game, i) =>  {
 						    		var show = (i == 0 || i == 1)?true:false;
 							    	return <HomeCardComponent key={i} show={show} name={"card"+i} game={game}/>
