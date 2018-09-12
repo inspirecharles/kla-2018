@@ -39,7 +39,7 @@ class NewsSliderComponent extends Component {
 
 								<div className="card-body">
 									<a href="#">
-										<h3 className="card-title blog-title">Wow... What a Blog Title! {i}</h3>
+										<h3 className="card-title blog-title celias">Wow... What a Blog Title! {i}</h3>
 									</a>
 									<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
 								</div>

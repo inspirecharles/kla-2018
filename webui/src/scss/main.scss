@@ -1,3 +1,8 @@
+/* FONT VARIABLES */
+.celias {
+	font-family: "Celias", sans-serif;
+}
+
 .news-slider{
 	.slick-arrow{
 		z-index: 999;
@@ -63,6 +68,7 @@ a:hover {
 .supp-link-icons {
 	color: #2965cc;
 	padding-top: 20px;
+	padding-bottom: 20px;
 
 	.icon-printresult, .icon-download {
 		height: 16px;
@@ -79,13 +85,12 @@ a:hover {
     margin-bottom: 2%;
 
     .supplementary_numbers {
-    	padding: 0 26px;
+    	padding: 0 15px;
     }
 }
 
 h2.media-heading {
 	color: #1D1D1D;	
-	font-family: "Celias", sans-serif;
 	font-size: 24px;	
 	font-weight: 900;	
 	line-height: 24px;
@@ -100,7 +105,6 @@ p.media-content {
 
 /* notification */
 h3.notif-heading {
-	font-family: "Celias", sans-serif;
 	font-size: 20px;		
 	line-height: 20px;
 }
@@ -225,8 +229,8 @@ body {
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
-	    padding-top: 25px;
-	    padding-bottom: 25px;
+	    padding-top: 30px;
+	    padding-bottom: 30px;
 	}
 
 	.card-header {
@@ -280,7 +284,7 @@ body {
 
 	.nextDraw {
 	    color: #FFF;	
-		font-family: "Celias Medium";	
+		font-family: "Celias Medium", sans-serif;
 		font-size: 20px;	
 		font-weight: normal;	
 		line-height: 20px;	
@@ -303,7 +307,7 @@ body {
 	}
 
 	.numbers {
-		font-family: "Celias";
+		font-family: "Celias", sans-serif;
 	    color: #FFF;
 	    align-items: center;
 	    width: 40px;
@@ -367,7 +371,6 @@ body {
 .uk-lotto-news-wrapper {
 
 	.uk-lotto-news-title {
-		font-family: "Celias", sans-serif;
 		color: #1d1d1d;
 		font-size: 24px;
 		font-weight: 900;
@@ -376,7 +379,6 @@ body {
 
 	.blog-title {
 		color: #1D1D1D;	
-		font-family: "Celias", sans-serif;
 		font-size: 20px;	
 		font-weight: 900;	
 		line-height: 20px;	
@@ -410,7 +412,6 @@ body {
 	background-color: #2965cc;
 
 	.subscribe-heading {
-		font-family: "Celias", sans-serif;
 		font-size: 20px;	
 		font-weight: 900;	
 		line-height: 20px;
