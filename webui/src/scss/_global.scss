@@ -11,6 +11,11 @@ label {
     font-weight: 100;
 }
 
+.supplementary_numbers,
+.main_numbers{
+    min-height: 80px;
+}
+
 .mainNumber_label, .supplementary_label {
     padding-left: 0;
     padding-bottom: 7px;

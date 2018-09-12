@@ -8,14 +8,58 @@
 
 		.detail-content{
 			background-color: #fff;
-			padding: 15px;
+			padding: 35px;
 
 			img.game-logo{
-				width: 250px;
+				width: 150px;
+			}
+
+			.current-jackpot{
+				font-family: "Celias Black";
+				font-weight: bold;
+				font-size: 2em;
+				line-height: 0;
+			}
+
+			.card-body, 
+			.main_numbers, 
+			.supplementary_numbers{
+				padding-left: 0;
 			}
 
 			.next-draw{
-				background-color: gray;
+				padding: 30px;
+				background-color: $bg-gray;
+				font-family: "Celias Black";
+				font-weight: bold;
+				font-size: 2em;
+				color: #fff;
+			}
+
+			.dividends-table{
+				table{
+					width: 100%;
+
+					tr{
+						text-align: left;
+
+						&:first-child{
+							background-color: $bg-gray;
+							color: #fff;
+						}
+
+						&:last-child{
+							font-weight: bold;
+						}
+
+
+						border-bottom: 1px solid rgba(0,0,0, .2);
+
+						td{
+							padding: 10px 7px;
+						}
+					}
+				}
 			}
 		}
 	}
