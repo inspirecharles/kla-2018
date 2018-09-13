@@ -83,7 +83,13 @@ class ResultContainer extends Component {
 	      						</p>
 	      					</div>
 	      					<div className="col-lg-6">
-	      						<iframe className="video" src="https://www.youtube.com/embed/KGDrNTQmJ0I" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+	      						<iframe 
+	      							className="video" 
+	      							src="https://www.youtube.com/embed/KGDrNTQmJ0I?modestbranding=1&autohide=1&showinfo=0&controls=0" 
+	      							frameBorder="0" 
+	      							allow="autoplay; encrypted-media" 
+	      							allowFullScreen={false}>
+	      						</iframe>
 	      					</div>
 	      				</div>
 	      			</div>
