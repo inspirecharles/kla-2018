@@ -26,7 +26,7 @@ class HomeContainer extends Component {
 	render() {
 		return (
 			<div>
-				<div className="result-container">
+				<div className="result-container space-top">
 				    <div className="container">
 				    	<div className="row">
 				    		<div className="col-lg-12">

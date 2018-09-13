@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ComingSoon from "./ComingSoonContainer"
+import News from "./home/NewsSliderComponent"
 
 class LotteryResultContainer extends Component {
 	constructor() {
@@ -7,10 +9,17 @@ class LotteryResultContainer extends Component {
 
 	render() {
 	    return (
-			<div className="result-container">
-	    		<div className="container">
-		    	 	LotteryResultContainer content here
-	      		</div>
+			<div id="lottery-result" className="coming-soon">
+	    	 	<section className="results background-blue space-top">
+	    	 		<div className="container">
+	    	 			<ComingSoon/>
+	    	 		</div>
+	    	 	</section>
+	    	 	<section className="news">
+	    	 		<div className="container">
+	    	 			<News/>
+	    	 		</div>
+	    	 	</section>
       		</div>
 	    );
 	}
