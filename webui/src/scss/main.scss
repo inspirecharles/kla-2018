@@ -167,9 +167,6 @@ body {
 	a.icons {
 		padding-right: 15px;
 	}
-	a.icons:last-child {
-	    padding-right: 0;
-	}
 
 	.icon-pastresult {
 		padding-right: 5px;
@@ -210,8 +207,8 @@ body {
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
-	    padding-top: 30px;
-	    padding-bottom: 30px;
+	    padding-top: 20px;
+	    padding-bottom: 20px;
 	}
 
 	.card-header {
