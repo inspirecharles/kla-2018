@@ -1,3 +1,14 @@
+/* margin-top for the container */
+.space-top {
+    padding-top: 30px;
+    padding-bottom: 42px;
+    margin-top: 27px;
+}
+
+.background-blue {
+    background-color: #2965cc;
+}
+
 .latest-title {
     font-family: "Celias Medium";   
     font-size: 24px;
@@ -43,8 +54,6 @@ label {
 .circle {
     border-radius: 50%;
 }
-
-
 
 /* UK numbers */
 .bc_lotto {
