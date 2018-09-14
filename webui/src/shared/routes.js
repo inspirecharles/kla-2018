@@ -18,6 +18,12 @@ const routes = [
     title: 'Results'
   },
   {
+    path: "/results/:game_slug",
+    exact: true,
+    component: ComingSoonContainer,
+    title: 'Results (Game)'
+  },
+  {
     path: "/:game_slug/:draw_id",
     exact: true,
     component: ResultContainer
@@ -33,6 +39,18 @@ const routes = [
     exact: true,
     component: ComingSoonContainer,
     title: 'News'
+  },
+  {
+    path: "/buy-now",
+    exact: true,
+    component: ComingSoonContainer,
+    title: 'Buy Now'
+  },
+  {
+    path: "/get-notified",
+    exact: true,
+    component: ComingSoonContainer,
+    title: 'Buy Now'
   },
 ];
 

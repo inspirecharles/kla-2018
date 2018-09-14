@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 import moment from "moment";
 
@@ -60,7 +60,7 @@ class ResultContainer extends Component {
 				    					<div>Next Draw</div>
 				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].next_jackpot))}</div>
 				    					<div className="text-center mt-3">
-				    						<button className="btn">Buy Now</button>
+				    						<Link to={"/buy-now"}><button className="btn">Buy Now</button></Link>
 				    					</div>
 				    				</div>
 				    			</div>
@@ -74,7 +74,7 @@ class ResultContainer extends Component {
 	      		<section className="view-past-result">
 	      			<div className="container text-center pt-3 pb-3">
 	      				<span>View Past {this.props.result_detail && this.props.result_detail.name} Draw Results</span>
-	      				<button className="btn ml-5">Past Draws</button>
+	      				<Link to={"/results/"+(this.props.result_detail && this.props.result_detail.slug)}><button className="btn ml-5">Past Draws</button></Link>
 	      			</div>
 	      		</section>
 	      		<section className="result-video">

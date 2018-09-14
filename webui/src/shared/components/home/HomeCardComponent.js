@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import UKResult from "../variants/uk/ResultComponent";
+import { Link } from "react-router-dom";
 import moment from "moment";
+
+import UKResult from "../variants/uk/ResultComponent";
 
 class HomeCardComponent extends Component {
 
@@ -66,7 +68,7 @@ class HomeCardComponent extends Component {
 	                            		<div className="supp-link-icons">
 	                            			<a className="icons"><img className="img-fluid icon-printresult" src="../../img/icons/print-results.svg" /></a>
 			                            	<a className="icons"><img className="img-fluid icon-download" src="../../img/icons/download.svg" /></a>
-			                            	<a className="icons icon-pastresult"><img className="img-fluid icon-pastresult" src="../../img/icons/past-results.svg" />Past Results</a>
+			                            	<Link className="icons icon-pastresult" to={"/results/"+this.props.game.slug}><img className="img-fluid icon-pastresult" src="../../img/icons/past-results.svg" />Past Results</Link>
 			                            </div>
 	                            	</div>
 	                            </div>
@@ -75,7 +77,7 @@ class HomeCardComponent extends Component {
 	                        <div className="card-footer container">
 								<div className="row footerNextDraw">
 									<h3 className="nextDraw">Next Draw: {this.props.game.results && this.props.game.results[0] && decodeURIComponent(JSON.parse(this.props.game.results[0].next_jackpot))}</h3>
-									<button className="btn btn-light ml-auto buy-now-btn">Buy Now</button>
+									<Link to="/buy-now" className="ml-auto"><button className="btn btn-light buy-now-btn">Buy Now</button></Link>
 								</div>
 							</div>
 	                    </div>

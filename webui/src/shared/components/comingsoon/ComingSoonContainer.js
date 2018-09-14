@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import News from "../home/NewsSliderComponent";
 
 
@@ -35,7 +37,7 @@ class ComingSoonContainer extends Component {
 							<h2 className="my-4 text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
 							<News/>
 						    <div className="row view-more-news">
-								<button className="btn btn-primary bg-blue">View More...</button>
+								<Link to={"/news"}><button className="btn btn-primary bg-blue">View More...</button></Link>
 							</div>
 						</div>
 					</div>

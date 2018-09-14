@@ -1,6 +1,6 @@
 import React, { Component } from "react"; 
 import {bindActionCreators} from "redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 import HomeCardComponent from "./home/HomeCardComponent"
 import NewsSliderComponent from "./home/NewsSliderComponent"
@@ -91,7 +91,7 @@ class HomeContainer extends Component {
 										</p>
 									</div>
 									<div className="media-right notif-button col-lg-4">
-										<button type="button" className="btn btn-light">Get Notified</button>
+										<Link to={"/get-notified"}><button type="button" className="btn btn-light">Get Notified</button></Link>
 									</div>
 								</div>
 							</div>
@@ -105,7 +105,7 @@ class HomeContainer extends Component {
 							<h2 className="my-4 text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
 							<NewsSliderComponent/>
 						    <div className="row view-more-news">
-								<button className="btn btn-primary bg-blue">View More...</button>
+								<Link to={"/news"}><button className="btn btn-primary bg-blue">View More...</button></Link>
 							</div>
 						</div>
 					</div>
