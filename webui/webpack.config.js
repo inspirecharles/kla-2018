@@ -21,6 +21,7 @@ const browserConfig = {
     	whitelist: whitelist
     })], */
 	entry: [
+		"babel-polyfill",
 		"./src/browser/index.js",
 		"./src/scss/index.scss"
 	],
@@ -69,7 +70,7 @@ const browserConfig = {
 				exclude: /(node_modules)/,
 				loader: "babel-loader",
 				query: { 
-					presets: ["es2015", "react"] 
+					presets: ["es2015", "react", "stage-3"] 
 				},
 			},
 			{
@@ -92,7 +93,7 @@ const browserConfig = {
 const serverConfig = {
 	target: 'node', // in order to ignore built-in modules like path, fs, etc.
 	externals: [nodeExternals()],
-	entry: "./src/server/index.js",
+	entry: ["babel-polyfill", "./src/server/index.js"],
 	target: "node",
 	output: {
 		path: __dirname,
@@ -136,7 +137,7 @@ const serverConfig = {
 				exclude: /(node_modules)/,
 				loader: "babel-loader",
 				query: { 
-					presets: ["es2015", "react"] 
+					presets: ["es2015", "react", "stage-3"] 
 				}
 			}
 		]

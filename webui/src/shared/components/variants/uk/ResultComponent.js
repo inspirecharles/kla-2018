@@ -1,4 +1,6 @@
 import React, { Component } from "react"; 
+import { withRouter } from "react-router-dom";
+import {connect} from "react-redux";
 import { Link } from "react-router-dom";
 import {createResultLink} from "../../../helper.js"
 
@@ -12,35 +14,56 @@ class ResultComponent extends Component {
 			supp_numbers: [],
 		}
 
+    	this.processMainNumbers = this.processMainNumbers.bind(this);
+    	this.processSuppNumbers = this.processSuppNumbers.bind(this);
 	} 
 
 	processMainNumbers(main_numbers){
+		var main_array = [];
 		var mNumbers = JSON.parse(main_numbers);
 		if( mNumbers.type == 'Main' ){
 			for (const key of Object.keys(mNumbers)) {
 			    if( key != 'type' )
-			    	this.state.main_numbers.push(mNumbers[key])
+			    	main_array.push(mNumbers[key])
 			}
 		}
+		return main_array;
 	}
 
 	processSuppNumbers(supp_numbers){
+		var supp_array = [];
 		var sNumbers = JSON.parse(supp_numbers);
 		if( sNumbers.type == 'Supplementary' ){
 			for (const key of Object.keys(sNumbers)) {
 			    if( key != 'type' )
-			    	this.state.supp_numbers.push(sNumbers[key])
+			    	supp_array.push(sNumbers[key])
 			}
 		}
+		return supp_array;
 	}
 
 
 	componentWillMount(){
 		if(this.props.game.results && this.props.game.results.length){
-			this.processMainNumbers(this.props.game.results[0].main_numbers);
-			this.processSuppNumbers(this.props.game.results[0].supp_numbers)
+			var main_numbers = this.processMainNumbers(this.props.game.results[0].main_numbers);
+			var supp_numbers = this.processSuppNumbers(this.props.game.results[0].supp_numbers);
+			this.setState({
+				main_numbers: main_numbers,
+				supp_numbers: supp_numbers,
+			})
 		}
 	}
+	
+	componentWillReceiveProps(nextProps) {
+		if(nextProps.game.results && nextProps.game.results.length){
+			var main_numbers = this.processMainNumbers(nextProps.game.results[0].main_numbers);
+			var supp_numbers = this.processSuppNumbers(nextProps.game.results[0].supp_numbers);
+			this.setState({
+				main_numbers: main_numbers,
+				supp_numbers: supp_numbers,
+			})
+		}
+  	}
 
 	render() {
 		return (
@@ -75,5 +98,10 @@ class ResultComponent extends Component {
 	}
 }
 
+function mapStateToProps(state){
+  	return {
+    	result_detail: state.result_detail
+  	}
+}
 
-export default ResultComponent;
+export default withRouter(connect(mapStateToProps)(ResultComponent));

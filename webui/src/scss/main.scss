@@ -147,9 +147,6 @@ body {
 /* for header */
 .result-container {
 	background-color: #2965cc;
-	padding-top: 30px;
-	padding-bottom: 42px;
-	margin-top: 20px;
 
 	.game-row {
 		flex-wrap: nowrap;
@@ -169,9 +166,6 @@ body {
 
 	a.icons {
 		padding-right: 15px;
-	}
-	a.icons:last-child {
-	    padding-right: 0;
 	}
 
 	.icon-pastresult {
@@ -196,7 +190,7 @@ body {
     	color: #000;
     	font-size: 14px;
 		padding-left: 25px;
-		width: 40%;
+		width: 37%;
 
 		.uk-logo-lotto {
 			max-width: 70%;
@@ -213,8 +207,8 @@ body {
 	}
 
 	.arrow-icon, .prize-date, .game-logo {
-	    padding-top: 30px;
-	    padding-bottom: 30px;
+	    padding-top: 15px;
+	    padding-bottom: 15px;
 	}
 
 	.card-header {

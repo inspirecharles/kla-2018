@@ -17,7 +17,7 @@ const store = createStore(allReducers, preloadedState,
 	applyMiddleware(logger)
 )
 
-render(
+hydrate(
 	<Provider store={store}>
 		<BrowserRouter>
 			<App />

@@ -7,11 +7,11 @@ import {renderDividends} from "../helper"
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 
-import {fetchResultByGameAndDrawId} from "../actions/action-result-detail";
+import {fetchResultByGameAndDrawId, emptyResultDetail} from "../actions/action-result-detail";
 
 class ResultContainer extends Component {
-	constructor() {
-	    super();
+	constructor(props) {
+	    super(props);
 
     	this.renderResult = this.renderResult.bind(this);
 	}
@@ -22,6 +22,10 @@ class ResultContainer extends Component {
 
 	componentWillMount(){
       	this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), this.props.match.params.draw_id.replace("draw-","") ));
+	}
+
+	componentWillUnmount(){
+		this.props.dispatch(emptyResultDetail());
 	}
 
 	renderResult(){
@@ -45,13 +49,13 @@ class ResultContainer extends Component {
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="col-lg-7 text-right">
-			    					<span class="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].current_jackpot))}</span><br/>
+			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].current_jackpot))}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
 			    			<div className="row mt-3">
 				    			<div className="col-lg-5">
-				    				{ this.renderResult() }
+				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<div>Next Draw</div>
 				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].next_jackpot))}</div>
@@ -83,7 +87,13 @@ class ResultContainer extends Component {
 	      						</p>
 	      					</div>
 	      					<div className="col-lg-6">
-	      						<iframe class="video" src="https://www.youtube.com/embed/KGDrNTQmJ0I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	      						<iframe 
+	      							className="video" 
+	      							src="https://www.youtube.com/embed/KGDrNTQmJ0I?modestbranding=1&autohide=1&showinfo=0&controls=0" 
+	      							frameBorder="0" 
+	      							allow="autoplay; encrypted-media" 
+	      							allowFullScreen={false}>
+	      						</iframe>
 	      					</div>
 	      				</div>
 	      			</div>
@@ -98,21 +108,21 @@ class ResultContainer extends Component {
 	      				<div className="row text-center">
 	      					<div className="col-lg-4">
 	      						<label>Avg. prize Won</label><br/>
-	      						<span class="value">123,123.00</span>
+	      						<span className="value">123,123.00</span>
 	      					</div>
 	      					<div className="col-lg-4">
 	      						<label>Above avg. wins</label><br/>
-	      						<span class="value">12.11%</span>
+	      						<span className="value">12.11%</span>
 	      					</div>
 	      					<div className="col-lg-4">
 	      						<label>Largest prize Won</label><br/>
-	      						<span class="value">123,123,123.00</span>
+	      						<span className="value">123,123,123.00</span>
 	      					</div>
 	      				</div>
 	      			</div>
 	      		</section>
 	      		<section className="news">
-	      			<div class="container">
+	      			<div className="container">
 	      				<h2 className="my-4 text-center uk-lotto-news-title celias section-title">Lotto Winner Stories</h2>
 	      				<NewsSliderComponent/>
 	      				<div className="row view-more-news text-center mt-5">
