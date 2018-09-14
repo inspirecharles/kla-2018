@@ -19,16 +19,16 @@ class HeaderContainer extends Component {
 			        <div className="collapse navbar-collapse" id="navbarResponsive">
 			        	<ul className="navbar-nav ml-auto">
 			            	<li className="nav-item">
-			              		<NavLink to="/" className="nav-link" activeClassName="active">Home</NavLink>
+			              		<NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
 			            	</li>
 			            	<li className="nav-item">
-			              		<NavLink to="/results" className="nav-link" activeClassName="active">Lottery Results</NavLink>
+			              		<NavLink exact to="/results" className="nav-link" activeClassName="active">Lottery Results</NavLink>
 			            	</li>
 			            	<li className="nav-item">
-			            		<NavLink to="/tickets" className="nav-link" activeClassName="active">Check Your Tickets</NavLink>
+			            		<NavLink exact to="/tickets" className="nav-link" activeClassName="active">Check Your Tickets</NavLink>
 			            	</li>
 			            	<li className="nav-item">
-			              		<NavLink to="/news" className="nav-link" activeClassName="active">Lottery News</NavLink>
+			              		<NavLink exact to="/news" className="nav-link" activeClassName="active">Lottery News</NavLink>
 			            	</li>
 			          	</ul>
 			        </div>
