@@ -5,6 +5,10 @@ class LotteryResultContainer extends Component {
 	constructor() {
 	    super();
 	}
+	
+	componentDidMount() {
+	 	window.scrollTo(0, 0)
+	}
 
 	render() {
 	    return (

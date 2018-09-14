@@ -3,7 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 import moment from "moment";
 
-import {renderDividends} from "../helper"
+import {renderDividends} from "../helper";
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 
@@ -22,6 +22,10 @@ class ResultContainer extends Component {
 
 	componentWillMount(){
       	this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), this.props.match.params.draw_id.replace("draw-","") ));
+	}
+	
+	componentDidMount() {
+	 	window.scrollTo(0, 0)
 	}
 
 	componentWillUnmount(){
@@ -65,7 +69,7 @@ class ResultContainer extends Component {
 				    				</div>
 				    			</div>
 				    			<div className="col-lg-7">
-				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, 'lotto_dividends') }
+				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, this.props.result_detail.slug == "49lottery"?'chance_to_win':'lotto_dividends') }
 				    			</div>
 			    			</div>
 			    		</div>
@@ -126,7 +130,7 @@ class ResultContainer extends Component {
 	      				<h2 className="my-4 text-center uk-lotto-news-title celias section-title">Lotto Winner Stories</h2>
 	      				<NewsSliderComponent/>
 	      				<div className="row view-more-news text-center mt-5">
-							<button className="btn btn-primary bg-blue ml-auto mr-auto">View More...</button>
+							<Link to={"/news"} className="ml-auto mr-auto"><button className="btn btn-primary bg-blue ">View More...</button></Link>
 						</div>
 	      			</div>
 	      		</section>

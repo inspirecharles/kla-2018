@@ -10,7 +10,11 @@ class ComingSoonContainer extends Component {
 	}
 
 	componentWillMount(){
-		console.log(this.props);
+		
+	}
+	
+	componentDidMount() {
+	 	window.scrollTo(0, 0)
 	}
 
 	render() {

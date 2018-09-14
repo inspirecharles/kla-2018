@@ -22,6 +22,10 @@ class HomeContainer extends Component {
     	if (!this.props.games || this.props.games.length == 0)
       		this.props.dispatch(HomeContainer.initialAction());
   	}
+  	
+	componentDidMount() {
+	 	window.scrollTo(0, 0)
+	}
 
 	render() {
 		return (

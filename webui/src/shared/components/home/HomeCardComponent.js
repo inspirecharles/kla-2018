@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
+import {formatMoney} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
 
 class HomeCardComponent extends Component {
@@ -34,7 +35,7 @@ class HomeCardComponent extends Component {
 
 	render() {
 		return (
-	        <div className="col-lg-6 game_result">
+	        <div className={"col-lg-6 game_result "+" "+this.props.game.slug+" "+(this.props.game.slug.includes('postcode')?'postcode':'')}>
 	        	<div className="accordion md-accordion accordion-3 z-depth-1-half" role="tablist" aria-multiselectable="true">
 					<div className="card">
 						<div className="lottery-results-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true" onClick={this.toggleShow}>
@@ -46,7 +47,7 @@ class HomeCardComponent extends Component {
 										    	<img className={"img-fluid "+this.props.game.variant+"-logo-lotto game-"+this.props.game.slug} src={"/img/variants/"+this.props.game.variant+"/"+this.props.game.slug+".png"} />
 										    </div>
 										    <div className="prize-date">
-										    	<p className="prize text-right">{this.props.game.results && this.props.game.results[0] && decodeURIComponent(JSON.parse(this.props.game.results[0].current_jackpot))}</p>
+										    	<p className="prize text-right">{this.props.game.results && this.props.game.results[0] && "£ " + formatMoney(this.props.game.results[0].current_jackpot)}</p>
 												<p className="date text-right">{this.props.game.results && this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('dddd DD MMMM YYYY') }</p>
 										    </div>
 										    <div className="arrow-icon">

@@ -59,6 +59,16 @@ label {
     font-weight: 500;
 }
 
+.game_result.postcode{
+    .numbers.circle{
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+        padding: 2px 10px;
+        line-height: inherit;
+    }
+}
+
 .circle {
     border-radius: 50%;
 }
