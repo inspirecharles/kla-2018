@@ -5,7 +5,9 @@ export default function (state = initialResultDetail, action) {
       	case "FETCH_RESULT_DETAIL_REQUEST":
       		return {} ;
     	case "FETCH_RESULT_DETAIL_SUCCESS":
-      		return action.payload ;
+      		return { ...action.payload};
+      	case "EMPTY_RESULT_DETAIL_FAILURE":
+      		return {} ;
      	default:
       		return state;
   	}

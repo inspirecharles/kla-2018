@@ -48,8 +48,8 @@ function handleRender(req, res, next) {
 	}, []);
 
 	Promise.all(promises)
-    .then(() => {
-		const staticContext = {};
+    .then((data) => {
+		const staticContext = {data};
     	const html = renderToString(
 	    	<Provider store={store}>
 	    		<StaticRouter location={req.url} context={staticContext}>
