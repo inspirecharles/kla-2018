@@ -15,12 +15,13 @@
     background-color: #2965cc;
 }
 
-.comingSoon {
+.results {
     position: relative;
     overflow: hidden;
+    height: 560px
 }
 
-.comingSoon:before {
+.results:before {
     content: ' ';
     display: block;
     position: absolute;
@@ -36,13 +37,20 @@
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
-    background-size: 300px 100px;
+    background-size: 760px 600px;
     filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.comingSoon {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 140px;
 }
 
 .comingSoon-text {
     font-family: "Nunito Regular", sans-serif;
-    font-size: 24px;
+    font-size: 35px;
+
 }
 
 .latest-title {
