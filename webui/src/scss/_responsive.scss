@@ -162,10 +162,16 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-	
+	#result-detail{
+		section.result-video{
+			iframe.video{
+				height: 330px !important;
+			}
+		}
+	}
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-	
+
 }

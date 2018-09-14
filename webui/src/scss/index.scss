@@ -7,11 +7,12 @@ $fa-font-path: "~font-awesome/fonts/";
 @import "_fonts.scss";
 @import "_variables.scss";
 @import "_global.scss";
-@import "_responsive.scss";
 @import "main.scss";
 @import "result-detail.scss";
 @import "lottery-results.scss";
 @import "coming-soon.scss";
+
+@import "_responsive.scss";
 
 
 

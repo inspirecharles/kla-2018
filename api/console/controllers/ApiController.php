@@ -110,6 +110,7 @@ class ApiController extends Controller
     {
         $resultsModel = new Results();
         $data = (object)array();
+        
         if (count($gr->Data) > 0) {
             foreach ($gr->Data as $key => $grData) {  //loop on the container object
                 print_r($grData->Results);
@@ -126,8 +127,13 @@ class ApiController extends Controller
                     $data->main_numbers = json_encode($mainNum);
                     $data->supp_numbers = json_encode($suppNum);
                     $data->dividends = json_encode($dr->dividends);
-                    $data->next_jackpot = json_encode($grData->Results->Next_Jackpot);
-                    $data->current_jackpot = json_encode($grData->Results->Current_Jackpot);
+                    $data->next_jackpot = $grData->Results->Next_Jackpot;
+                    $data->current_jackpot =$grData->Results->Current_Jackpot;
+                    if (property_exists($dr, 'videoLink')){ 
+                        $data->video_link =  $dr->videoLink;
+                    }else{
+                        $data->video_link = null;
+                    }
                     //check for additional fields -- this is currently applicable for NZ Lotto/Powerball game
                     if (isset($dr->numbers->powerball_number)) {
                         $data->powerball_numbers = json_encode( (object) $dr->numbers->powerball_number);
