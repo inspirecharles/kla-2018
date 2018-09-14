@@ -55,8 +55,6 @@ class ResultComponent extends Component {
 	}
 	
 	componentWillReceiveProps(nextProps) {
-		console.log('componentWillReceiveProps', nextProps);
-
 		if(nextProps.game.results && nextProps.game.results.length){
 			var main_numbers = this.processMainNumbers(nextProps.game.results[0].main_numbers);
 			var supp_numbers = this.processSuppNumbers(nextProps.game.results[0].supp_numbers);

@@ -7,11 +7,11 @@ import {renderDividends} from "../helper"
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 
-import {fetchResultByGameAndDrawId} from "../actions/action-result-detail";
+import {fetchResultByGameAndDrawId, emptyResultDetail} from "../actions/action-result-detail";
 
 class ResultContainer extends Component {
-	constructor() {
-	    super();
+	constructor(props) {
+	    super(props);
 
     	this.renderResult = this.renderResult.bind(this);
 	}
@@ -22,6 +22,10 @@ class ResultContainer extends Component {
 
 	componentWillMount(){
       	this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), this.props.match.params.draw_id.replace("draw-","") ));
+	}
+
+	componentWillUnmount(){
+		this.props.dispatch(emptyResultDetail());
 	}
 
 	renderResult(){
