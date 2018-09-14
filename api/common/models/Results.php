@@ -39,6 +39,7 @@ class Results extends \yii\db\ActiveRecord
             [['game_id', 'draw_id'], 'integer'],
             [['draw_date'], 'required'],
             [['dividends'], 'string'],
+            [['video_link'], 'string'],
             [['next_jackpot'], 'string'],
             [['current_jackpot'], 'string'],
             [['draw_date'], 'string', 'max' => 50],
@@ -139,7 +140,7 @@ class Results extends \yii\db\ActiveRecord
             $results->dividends = $data->dividends;
             $results->next_jackpot = $data->next_jackpot;
             $results->current_jackpot = $data->current_jackpot;
-
+            $results->video_link = $data->video_link;
             //check for additional fields -- this is currently applicable for NZ Lotto/Powerball game
             if (isset($data->powerball_numbers)) {
                 $results->powerball_numbers = $data->powerball_numbers;
