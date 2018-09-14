@@ -3,7 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 import moment from "moment";
 
-import {renderDividends} from "../helper";
+import {renderDividends, formatMoney} from "../helper";
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 
@@ -23,7 +23,7 @@ class ResultContainer extends Component {
 	componentWillMount(){
       	this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), this.props.match.params.draw_id.replace("draw-","") ));
 	}
-	
+
 	componentDidMount() {
 	 	window.scrollTo(0, 0)
 	}
@@ -53,7 +53,7 @@ class ResultContainer extends Component {
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="col-lg-7 text-right">
-			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].current_jackpot))}</span><br/>
+			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
@@ -62,7 +62,7 @@ class ResultContainer extends Component {
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<div>Next Draw</div>
-				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && decodeURIComponent(JSON.parse(this.props.result_detail.results[0].next_jackpot))}</div>
+				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot)}</div>
 				    					<div className="text-center mt-3">
 				    						<Link to={"/buy-now"}><button className="btn">Buy Now</button></Link>
 				    					</div>

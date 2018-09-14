@@ -77,7 +77,7 @@ class HomeCardComponent extends Component {
 	                    	</div>
 	                        <div className="card-footer container">
 								<div className="row footerNextDraw">
-									<h3 className="nextDraw">Next Draw: {this.props.game.results && this.props.game.results[0] && decodeURIComponent(JSON.parse(this.props.game.results[0].next_jackpot))}</h3>
+									<h3 className="nextDraw">Next Draw: {this.props.game.results && this.props.game.results[0] && "£ " + formatMoney(this.props.game.results[0].next_jackpot)}</h3>
 									<Link to="/buy-now" className="ml-auto"><button className="btn btn-light buy-now-btn">Buy Now</button></Link>
 								</div>
 							</div>
