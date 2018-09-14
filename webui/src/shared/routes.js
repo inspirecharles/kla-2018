@@ -3,6 +3,7 @@ import LotteryResultContainer from "./components/LotteryResultContainer";
 import TicketsContainer from "./components/TicketsContainer";
 import NewsContainer from "./components/NewsContainer";
 import ResultContainer from "./components/ResultContainer";
+import ComingSoonContainer from "./components/comingsoon/ComingSoonContainer";
 
 const routes = [
   {
@@ -13,7 +14,7 @@ const routes = [
   {
     path: "/results",
     exact: true,
-    component: LotteryResultContainer
+    component: ComingSoonContainer
   },
   {
     path: "/:game_slug/:draw_id",
@@ -23,12 +24,12 @@ const routes = [
   {
     path: "/tickets",
     exact: true,
-    component: TicketsContainer
+    component: ComingSoonContainer
   },
   {
     path: "/news",
     exact: true,
-    component: NewsContainer
+    component: ComingSoonContainer
   },
 ];
 

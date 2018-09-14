@@ -86,7 +86,7 @@ class ResultContainer extends Component {
 	      							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo pulvinar sapien ut hendrerit. Ut eros mi, tristique facilisis nibh quis, pretium laoreet velit. <br/><br/>Suspendisse potenti. Duis quis nibh ac ante aliquam varius. Nulla varius risus orci, in scelerisque odio aliquet eget. Nam consequat justo diam, id finibus nunc ullamcorper at. <br/><br/>Sed eu dictum risus, accumsan mollis felis. Phasellus et sapien eget orci elementum condimentum. Nulla tincidunt laoreet auctor. Cras et nulla velit. Donec eget sodales erat. Aliquam volutpat ante ante, nec rutrum odio placerat quis. Vivamus semper blandit ex quis lacinia. Vivamus non consectetur quam, id gravida mi. Sed in porta nisl.
 	      						</p>
 	      					</div>
-	      					<div className="col-lg-6">
+	      					<div className="col-lg-6 video-container">
 	      						<iframe 
 	      							className="video" 
 	      							src="https://www.youtube.com/embed/KGDrNTQmJ0I?modestbranding=1&autohide=1&showinfo=0&controls=0" 
