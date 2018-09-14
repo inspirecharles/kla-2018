@@ -14,7 +14,8 @@ const routes = [
   {
     path: "/results",
     exact: true,
-    component: ComingSoonContainer
+    component: ComingSoonContainer,
+    title: 'Results'
   },
   {
     path: "/:game_slug/:draw_id",
@@ -24,12 +25,14 @@ const routes = [
   {
     path: "/tickets",
     exact: true,
-    component: ComingSoonContainer
+    component: ComingSoonContainer,
+    title: 'Tickets'
   },
   {
     path: "/news",
     exact: true,
-    component: ComingSoonContainer
+    component: ComingSoonContainer,
+    title: 'News'
   },
 ];
 

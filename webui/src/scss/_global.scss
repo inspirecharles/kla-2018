@@ -1,14 +1,16 @@
+#mainNav{
+    ul.navbar-nav{
+        a.nav-link.active{
+            color: #2965cc !important;
+        }
+    }
+}
+
 /* margin-top for the container */
 .space-top {
     padding-top: 30px;
     padding-bottom: 42px;
     margin-top: 27px;
-}
-
-/* coming soon */
-.launchingSoon-text {
-    font-size: 60px;
-    font-family: "Celias Medium", sans-serif;
 }
 
 .background-blue {
