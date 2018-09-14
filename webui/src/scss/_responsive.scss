@@ -152,6 +152,16 @@
 	}
 }
 
+@media (max-width: 992px) {
+	#result-detail{
+		section.result-video{
+			.video-container{
+			    padding-top: 56.25%;
+			}
+		}
+	}
+}
+
 @media (min-width: 576px) {
 }
 
