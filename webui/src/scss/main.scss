@@ -4,6 +4,8 @@
 }
 
 .news-slider{
+	margin-top: 20px; 
+
 	.slick-arrow{
 		z-index: 999;
 		background-color: #2965cc;
@@ -101,6 +103,7 @@ p.media-content {
 	font-family: "Nunito Regular", sans-serif;
 	font-size: 16px;	
 	line-height: 22px;
+	width: 488px;
 }
 
 /* notification */
@@ -399,6 +402,9 @@ body {
 /* footer */
 
 footer {
+
+	padding-top: 56px !important;
+    padding-bottom: 56px;
 
 	.footer-copyright, a {
     	white-space: nowrap;
