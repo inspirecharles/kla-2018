@@ -80,8 +80,9 @@
 	}
 
 	section.result-video{
+		padding: 52px 0; 
+
 		.container{
-			padding: 45px 0px;
 
 			.section-title{
 				font-family: "Celias Black";
@@ -92,7 +93,6 @@
 			.video-container{
 				position: relative;
 			    overflow: hidden;
-			    padding-top: 56.25%;
 
 				iframe.video{
 					position: absolute;
@@ -131,7 +131,6 @@
 
 	section.news{
 		.container{
-			padding: 50px;
 
 			.section-title, .card-title{
 				font-size: 1.7em;
