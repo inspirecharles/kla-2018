@@ -127,7 +127,7 @@ class ResultContainer extends Component {
 	      		</section>
 	      		<section className="news">
 	      			<div className="container">
-	      				<h2 className="my-4 text-center uk-lotto-news-title celias section-title">Lotto Winner Stories</h2>
+	      				<h2 className="text-center uk-lotto-news-title celias section-title">Lotto Winner Stories</h2>
 	      				<NewsSliderComponent/>
 	      				<div className="row view-more-news text-center mt-5">
 							<Link to={"/news"} className="ml-auto mr-auto"><button className="btn btn-primary bg-blue ">View More...</button></Link>
