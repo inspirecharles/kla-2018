@@ -38,7 +38,7 @@ class ComingSoonContainer extends Component {
 	    		<section className="news">
 	    	 		<div className="container">
 						<div className="uk-lotto-news-wrapper">
-							<h2 className="my-4 text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
+							<h2 className="text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
 							<News/>
 						    <div className="row view-more-news">
 								<Link to={"/news"}><button className="btn btn-primary bg-blue">View More...</button></Link>

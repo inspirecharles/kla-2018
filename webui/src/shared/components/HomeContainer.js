@@ -49,10 +49,10 @@ class HomeContainer extends Component {
 					</div>
 				</section>
 
-				<section>
+				<section className="lottery-content">
 					<div className="container">
 						<div className="media-1">
-							<div className="row my-4">
+							<div className="row">
 								<div className="col-lg-6">
 									<h2 className="media-heading celias">The UK&#39;s Home of Lottery Results Online</h2>
 									<p className="media-content">
@@ -103,10 +103,10 @@ class HomeContainer extends Component {
 					</div>
 				</section>
 
-				<section>
+				<section className="articles-section">
 					<div className="container">
 						<div className="uk-lotto-news-wrapper">
-							<h2 className="my-4 text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
+							<h2 className="text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
 							<NewsSliderComponent/>
 						    <div className="row view-more-news">
 								<Link to={"/news"}><button className="btn btn-primary bg-blue">View More...</button></Link>
