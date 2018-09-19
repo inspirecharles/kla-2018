@@ -35,7 +35,7 @@ class NewsSliderComponent extends Component {
 		        	return (
 		        		<div key={i} className="col-lg-12 portfolio-item">
 							<div className="card h-100">
-								<a href="#"><img className="card-img-top" src="../../img/pexels-photo-1111799.png" /></a>
+								<a href="#"><img className="card-img-top" src="/img/pexels-photo-1111799.png" /></a>
 
 								<div className="card-body">
 									<a href="#">

@@ -7,10 +7,22 @@ section.lottery-content {
 
     .media-img {
         width: 100%;
+        height: 100%;
     }
 }
 section.news {
     padding: 52px 0;
+
+    .container{
+
+        .section-title, .card-title{
+            color: #1D1D1D;
+        }
+        .card-title{
+            font-size: 20px;
+        }
+
+    }
 }
 section.page-footer {
     padding: 52px 0;
