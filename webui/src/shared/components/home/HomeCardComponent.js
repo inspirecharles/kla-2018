@@ -67,9 +67,9 @@ class HomeCardComponent extends Component {
 	                        	<div className="actionLink">
 	                            	<div className="supplementary_numbers col-lg-12 col-md-12">
 	                            		<div className="supp-link-icons">
-	                            			<a className="icons"><img className="img-fluid icon-printresult" src="../../img/icons/print-results.svg" /></a>
-			                            	<a className="icons"><img className="img-fluid icon-download" src="../../img/icons/download.svg" /></a>
-			                            	<Link className="icons icon-pastresult" to={"/results/"+this.props.game.slug}><img className="img-fluid icon-pastresult" src="../../img/icons/past-results.svg" />Past Results</Link>
+	                            			<a className="icons"><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
+			                            	<a className="icons"><img className="img-fluid icon-download" src="/img/icons/download.svg" /></a>
+			                            	<Link className="icons icon-pastresult" to={"/results/"+this.props.game.slug}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
 			                            </div>
 	                            	</div>
 	                            </div>
