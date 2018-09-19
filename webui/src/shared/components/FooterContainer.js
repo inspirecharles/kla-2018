@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class FooterContainer extends Component {
 	constructor() {
@@ -33,7 +33,7 @@ class FooterContainer extends Component {
 
 			            <ul className="list-unstyled list-inline text-right">
 						      <li className="list-inline-item">
-						      	<a href="#"><img className="sm-fb" src="../../img/icons/iconmonstr-facebook-3.svg" /></a>
+						      	<a href={"https://www.facebook.com/lotteryresults/"}><img className="sm-fb" src="../../img/icons/iconmonstr-facebook-3.svg" /></a>
 						      </li>
 						      <li className="list-inline-item">
 						        <a href="#"><img className="sm-twitter" src="../../img/icons/iconmonstr-twitter-3.svg" /></a>

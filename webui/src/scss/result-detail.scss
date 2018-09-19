@@ -16,7 +16,7 @@
 			}
 
 			.current-jackpot{
-				font-family: "Celias Black";
+				font-family: "Celias Black", sans-serif;  
 				font-weight: bold;
 				font-size: 2em;
 				line-height: 0;
@@ -69,7 +69,7 @@
 		background-color: $bg-gray;
 		color: #fff;
 		span{
-			font-family: "Celias Black";
+			font-family: "Celias Black", sans-serif;  
 			font-weight: bold;
 			font-size: 1.3em;
 		}
@@ -85,7 +85,7 @@
 		.container{
 
 			.section-title{
-				font-family: "Celias Black";
+				font-family: "Celias Black", sans-serif;  
 				font-weight: bold;
 				font-size: 1.7em;
 			}
@@ -110,7 +110,7 @@
 		background-color: #2a65cd;
 		.container{
 			color: #fff;
-			font-family: "Celias Black";
+			font-family: "Celias Black", sans-serif;  
 			font-weight: bold;
 			padding: 50px;
 
@@ -119,7 +119,7 @@
 			}
 
 			label{
-				font-family: "Celias";
+				font-family: "Celias", sans-serif;  
 			}
 
 			span.value{
@@ -133,12 +133,12 @@
 		.container{
 
 			.section-title, .card-title{
-				font-size: 1.7em;
-				font-family: "Celias Black";
-				color: #000;
+				/*font-size: 1.7em;
+				font-family: "Celias Black", sans-serif;  
+				color: #000;*/
 			}
 			.card-title{
-				font-size: 1.4em;
+				/*font-size: 1.4em;*/
 			}
 
 		}

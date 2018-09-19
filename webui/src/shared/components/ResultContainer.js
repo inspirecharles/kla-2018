@@ -134,6 +134,34 @@ class ResultContainer extends Component {
 						</div>
 	      			</div>
 	      		</section>
+
+	      		<section>
+					<div className="subscribe-wrapper">
+						<div className="container">
+							<div className="subscribe-container">
+								<div className="row">
+								
+									<div className="media-body subscribe-body col-lg-6 col-md-12">
+										<h3 className="media-heading subscribe-heading celias text-white">Lottery Results in Your Inbox</h3>
+										<p className="subscribe-content text-white">
+											Get the latest UK lottery results direct to your email and never miss your lucky numbers!
+										</p>
+									</div>
+									<div className="media-body subscribe-body right col-lg-6 col-md-12 subscribe">
+										<div className="single">
+											<div className="input-group">
+									         <input type="email" className="form-control" placeholder="youremail@email.com" />
+										        <span className="input-group-btn">
+										        	<button className="btn btn-theme btn-subscribe" type="submit">Subscribe</button>
+									         	</span>
+									        </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
       		</div>
 	    );
 	}

@@ -74,7 +74,7 @@ class HomeContainer extends Component {
 									</p>
 						        </div>
 								<div className="col-lg-6">
-						        	<img className="img-fluid media-img" src="../../img/iStock-544097900.png" />
+						        	<img className="img-fluid media-img" src="/img/iStock-544097900.png" />
 						        </div>
 						        
 							</div>
