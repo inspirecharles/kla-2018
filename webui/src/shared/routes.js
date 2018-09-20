@@ -4,6 +4,7 @@ import TicketsContainer from "./components/TicketsContainer";
 import NewsContainer from "./components/NewsContainer";
 import ResultContainer from "./components/ResultContainer";
 import ComingSoonContainer from "./components/comingsoon/ComingSoonContainer";
+import TermsContainer from "./components/site/TermsContainer";
 
 const routes = [
   {
@@ -52,6 +53,14 @@ const routes = [
     component: ComingSoonContainer,
     title: 'Buy Now'
   },
+  {
+    path: "/terms-and-conditions",
+    exact: true,
+    component: TermsContainer,
+    title: 'Terms and Conditions'
+  },
+
+
 ];
 
 export default routes;
