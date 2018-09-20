@@ -5,6 +5,7 @@ import AccountReducer	from './reducer-account';
 import GameReducer		from './reducer-games';
 import ResultsReducer	from './reducer-results';
 import ResultReducer	from './reducer-result-detail';
+import SiteMapReducer	from './reducer-sitemap';
 
 
 const allReducers = combineReducers({
@@ -13,6 +14,7 @@ const allReducers = combineReducers({
 	results: ResultsReducer,
 	result_detail: ResultReducer,
 	env: EnvReducer,
+	sitemap: SiteMapReducer,
 });
 
 export default allReducers;

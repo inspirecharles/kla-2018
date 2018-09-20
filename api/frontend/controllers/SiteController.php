@@ -13,6 +13,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
+use common\models\Games;
+
 /**
  * Site controller
  */
@@ -211,5 +213,17 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+
+    public function actionGetsitemapdata(){
+        $games = Games::find()->joinWith(['results'=>function($query){
+            $query->orderBy(['results.draw_date' => SORT_DESC]);
+        }])
+        ->groupBy('games.id')
+        ->orderBy([
+            'games.priority' => SORT_ASC,
+            'results.draw_date' => SORT_DESC
+        ])->asArray()->all();
+        return ['games' => $games];
     }
 }
