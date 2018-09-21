@@ -23,6 +23,9 @@ class FooterContainer extends Component {
 			              <li>
 			                <Link className="footer-list" to="/privacy">Privacy Policy</Link>
 			              </li>
+			              <li>
+			                <a className="footer-list" href="/sitemap.xml">Sitemap</a>
+			              </li>
 			            </ul>
 
 			          </div>
@@ -50,9 +53,9 @@ class FooterContainer extends Component {
 			    </div>
 
 			    <div className="footer-copyright text-center py-3">Copyright © 2018 
-			    	<a className="footer-list" href={"www.lotteryresults.co.uk"}> www.lotteryresults.co.uk</a>
+			    	<a className="footer-list" href={"https://www.lotteryresults.co.uk"}> www.lotteryresults.co.uk</a>
 			    	<p className="mb-1 poweredby-text">Powered by
-			      		<a className="footer-list jumbo-corp-link" href={"http://jumbointeractive.com"}> Jumbo Interactive</a>
+			      		<a className="footer-list jumbo-corp-link" href={"https://www.jumbointeractive.com/"}> Jumbo Interactive</a>
 			    	</p>
 			    </div>
 
