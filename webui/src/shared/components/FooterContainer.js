@@ -18,10 +18,10 @@ class FooterContainer extends Component {
 
 			            <ul className="list-unstyled">
 			              <li>
-			                <Link className="footer-list" to="/terms">Terms &amp; Conditions</Link>
+			                <Link className="footer-list" to="/terms-and-conditions">Terms &amp; Conditions</Link>
 			              </li>
 			              <li>
-			                <a className="footer-list" href="#!">Privacy Policy</a>
+			                <Link className="footer-list" to="/privacy">Privacy Policy</Link>
 			              </li>
 			            </ul>
 
