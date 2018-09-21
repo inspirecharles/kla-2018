@@ -18,7 +18,7 @@ class FooterContainer extends Component {
 
 			            <ul className="list-unstyled">
 			              <li>
-			                <a className="footer-list" href="#!">Terms &amp; Conditions</a>
+			                <Link className="footer-list" to="/terms">Terms &amp; Conditions</Link>
 			              </li>
 			              <li>
 			                <a className="footer-list" href="#!">Privacy Policy</a>
@@ -33,13 +33,13 @@ class FooterContainer extends Component {
 
 			            <ul className="list-unstyled list-inline text-right">
 						      <li className="list-inline-item">
-						      	<a href={"https://www.facebook.com/lotteryresults/"}><img className="sm-fb" src="../../img/icons/iconmonstr-facebook-3.svg" /></a>
+						      	<a href={"https://www.facebook.com/lotteryresults/"}><img className="sm-fb" src="/img/icons/iconmonstr-facebook-3.svg" /></a>
 						      </li>
 						      <li className="list-inline-item">
-						        <a href="#"><img className="sm-twitter" src="../../img/icons/iconmonstr-twitter-3.svg" /></a>
+						        <a href="#"><img className="sm-twitter" src="/img/icons/iconmonstr-twitter-3.svg" /></a>
 						      </li>
 						      <li className="list-inline-item">
-						        <a href="#"><img className="uk-gplus" src="../../img/icons/iconmonstr-google-plus-3.svg" /></a>
+						        <a href="#"><img className="uk-gplus" src="/img/icons/iconmonstr-google-plus-3.svg" /></a>
 						      </li>
 						</ul>
 
@@ -50,9 +50,9 @@ class FooterContainer extends Component {
 			    </div>
 
 			    <div className="footer-copyright text-center py-3">Copyright © 2018 
-			    	<a className="footer-list" href="www.lotteryresults.co.uk"> www.lotteryresults.co.uk</a>
-			    	<p className="mb-1 poweredby-text">Powered by 
-			      		<a className="footer-list jumbo-corp-link" href="#"> Jumbo Interactive</a>
+			    	<a className="footer-list" href={"www.lotteryresults.co.uk"}> www.lotteryresults.co.uk</a>
+			    	<p className="mb-1 poweredby-text">Powered by
+			      		<a className="footer-list jumbo-corp-link" href={"http://jumbointeractive.com"}> Jumbo Interactive</a>
 			    	</p>
 			    </div>
 
