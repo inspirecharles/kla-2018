@@ -49,10 +49,10 @@ class ResultContainer extends Component {
 				    	</div>
 			    		<div className="detail-content col-lg-12 mt-3">
 			    			<div className="row">
-			    				<div className="col-lg-5">
+			    				<div className="loto-game-logo">
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
-			    				<div className="col-lg-7 text-right">
+			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
