@@ -96,6 +96,19 @@ label {
         padding: 2px 10px;
         line-height: inherit;
     }
+
+    &.postcode_weekly, &.postcode_monthly {
+        .numbers.circle {
+            border-radius: 5px;
+            border-color: #1D1D1D;
+            background-color: transparent;
+            color: #1D1D1D;
+            text-align: center;
+            line-height: 50px;
+            border-style: solid;
+        }
+    }
+
 }
 
 .circle {
