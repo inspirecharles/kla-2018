@@ -44,7 +44,7 @@ class TermsContainer extends Component {
 	                                        	<li><a href="https://www.lotteryresults.co.uk">https://www.lotteryresults.co.uk</a></li>
 	                                        	<li><a href="https://www.lotterynumbers.co.za">https://www.lotterynumbers.co.za</a></li>
 	                                        	<li><a href="https://www.lotteryresults.co.nz">https://www.lotteryresults.co.nz</a></li>
-	                                        	<li><a href="https://www.lottozahlennet.de">https://www.lottozahlennet.de</a></li>
+	                                        	<li><a href="https://www.jumbolotto.de/">https://www.jumbolotto.de/</a></li>
 	                                    	</ul>
 
 	                                      	<br />
@@ -157,7 +157,7 @@ class TermsContainer extends Component {
 	                                        <li><a href="https://www.lotteryresults.co.uk/privacy">https://www.lotteryresults.co.uk/privacy</a></li>
 	                                        <li><a href="https://www.lotterynumbers.co.za/privacy">https://www.lotterynumbers.co.za/privacy</a></li>
 	                                        <li><a href="https://www.lotteryresults.co.nz/privacy">https://www.lotteryresults.co.nz/privacy</a></li>
-	                                        <li><a href="https://www.lottozahlennet.de/privacy">https://www.lottozahlennet.de/privacy</a></li>
+	                                        <li><a href="https://www.jumbolotto.de/privacy">https://www.lottozahlennet.de/privacy</a></li>
 	                                      </ul>
 	                                      <br />
 	                                      <p className="section-paragraph">
