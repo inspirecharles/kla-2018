@@ -73,7 +73,7 @@ class ResultComponent extends Component {
                 		<div className="clr mainNumber_label col-lg-12 col-md-12">Main Numbers</div>
                 		<div className="">
 						    { this.state.main_numbers.map((item, i) => {
-                            	return <div key={i} className="numbers circle bc_lotto d-inline-block">{item}</div>
+                            	return <div key={i} className={"numbers circle bc_lotto d-inline-block"}>{item}</div>
                             }) }
 						</div>
                     </div>
