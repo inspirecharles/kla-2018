@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use \yii\web\Response;
 use yii\rest\ActiveController;
 use common\models\Games;
+use common\models\Results;
 
 class GamesController extends ActiveController
 {
@@ -44,14 +45,21 @@ class GamesController extends ActiveController
     }
 
     public function actionHomeresultdata(){
-        $games = Games::find()->joinWith(['results'=>function($query){
-            $query->orderBy(['results.draw_date' => SORT_DESC])->groupBy(['results.game_id']);
-        }])
+        $games = Games::find()
+	/*->with(['results'=>function($query){
+            $query->orderBy(['results.draw_date' => SORT_DESC])
+		->groupBy(['results.game_id'])
+		->groupBy([new \yii\db\Expression('results.draw_date DESC')]);
+        }])*/
         ->groupBy('games.id')
         ->orderBy([
             'games.priority' => SORT_ASC,
-            'results.draw_date' => SORT_DESC
+            //'results.draw_date' => SORT_DESC
         ])->asArray()->all();
+	for($i = 0; $i < count($games); $i++){
+		$games[$i]['results'] = [];
+		$games[$i]['results'][] = Results::find()->where(['game_id'=>$games[$i]['id']])->orderBy(['draw_date' => SORT_DESC])->asArray()->one();
+	}
         return $games;
     }
 }

@@ -5,6 +5,7 @@ import NewsContainer from "./components/NewsContainer";
 import ResultContainer from "./components/ResultContainer";
 import ComingSoonContainer from "./components/comingsoon/ComingSoonContainer";
 import TermsContainer from "./components/site/TermsContainer";
+import PrivacyContainer from "./components/site/PrivacyContainer";
 
 const routes = [
   {
@@ -58,6 +59,12 @@ const routes = [
     exact: true,
     component: TermsContainer,
     title: 'Terms and Conditions'
+  },
+  {
+    path: "/privacy",
+    exact: true,
+    component: PrivacyContainer,
+    title: 'Privacy Policy'
   },
 
 

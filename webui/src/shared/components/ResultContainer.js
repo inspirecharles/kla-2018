@@ -40,7 +40,7 @@ class ResultContainer extends Component {
 	render() {
 	    return (
 			<div id="result-detail">
-	    		<section className="detail">
+	    		<section className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
 	    			<div className="container">
 			    	 	<div className="row">
 				    		<div className="col-lg-12">
