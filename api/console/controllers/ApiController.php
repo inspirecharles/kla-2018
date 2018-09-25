@@ -129,6 +129,11 @@ class ApiController extends Controller
                     $data->dividends = json_encode($dr->dividends);
                     $data->next_jackpot = $grData->Results->Next_Jackpot;
                     $data->current_jackpot =$grData->Results->Current_Jackpot;
+                    if(property_exists($dr, 'stats')){
+                        $data->stats = json_encode($dr->stats);
+                    }else{
+                        $data->stats = null;
+                    }
                     if (property_exists($dr, 'videoLink')){ 
                         $data->video_link =  $dr->videoLink;
                     }else{
