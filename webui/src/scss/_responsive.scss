@@ -89,6 +89,10 @@
 			font-weight: normal;	
 			line-height: 30px;	
 		}
+
+		.card-footer {
+			padding: 26px 15px;
+		}
 	}
 
 	.notification-wrapper {
@@ -142,6 +146,22 @@
 
 	.game_result {
 		font-size: 12px;
+	}
+
+	#result-detail {
+		section.detail {
+			.detail-content{
+				padding: 15px;
+
+				.next-draw {
+					text-align: center;
+				}
+			}
+
+			.latest-title {
+				line-height: 35px;
+			}
+		}
 	}
 
 	footer {
