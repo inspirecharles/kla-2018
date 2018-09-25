@@ -46,11 +46,19 @@ section.page-footer {
     background-color: #2965cc;
 }
 
-.latest-title {
+.latest-title, .blog-title {
     font-family: "Celias Medium", sans-serif;  
     font-size: 24px;
     font-weight: 900;
     line-height: 24px;
+}
+
+.blog-title {
+    padding-bottom: 20px;
+}
+
+.bg-image-full {
+    width: 100%;
 }
 
 label {
