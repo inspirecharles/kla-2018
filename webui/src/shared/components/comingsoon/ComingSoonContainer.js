@@ -24,7 +24,6 @@ class ComingSoonContainer extends Component {
 	    	 		<div className="container">
 			    	 	<div className="row">
 			    	 		<div className="col-lg-12">
-			    	 			<h1>{this.props.title}</h1>
 			    	 			<h2 className="launchingSoon-text text-center text-white">LAUNCHING SOON</h2>
 			    	 			<p className="comingSoon-text text-center text-white">
 			    	 				This awesome feature is coming soon. <br />

@@ -95,6 +95,16 @@
 		}
 	}
 
+	.game_result.postcode{
+
+	    &.postcode_weekly, &.postcode_monthly {
+	        .numbers.circle {
+	            min-width: 100%;
+	        }
+	    }
+
+	}
+
 	.notification-wrapper {
 		.media-heading {
 		    font-family: "Celias Medium";
@@ -177,6 +187,20 @@
 }
 
 @media (min-width: 576px) {
+	#result-detail {
+		section.detail {
+			.detail-content{
+
+				.next-draw {
+					text-align: center;
+				}
+			}
+
+			.latest-title {
+				line-height: 35px;
+			}
+		}
+	}
 }
 
 // Medium devices (tablets, 768px and up)
