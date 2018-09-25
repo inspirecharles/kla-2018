@@ -15,6 +15,12 @@
 				width: 150px;
 			}
 
+			.game-prize-date {
+				margin-left: auto;
+				padding-right: 15px;
+    			padding-top: 15px;
+			}
+
 			.current-jackpot{
 				font-family: "Celias Black", sans-serif;  
 				font-weight: bold;
@@ -31,7 +37,7 @@
 			.next-draw{
 				padding: 30px;
 				background-color: $bg-gray;
-				font-family: "Celias Black";
+				font-family: "Celias Black", sans-serif; 
 				font-weight: bold;
 				font-size: 2em;
 				color: #fff;
