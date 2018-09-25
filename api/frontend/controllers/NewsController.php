@@ -24,7 +24,6 @@ class NewsController extends ActiveController
                     'Access-Control-Allow-Credentials' => true,
                     'Access-Control-Max-Age' => 3600
                 ],
-
             ],
         ];
     }
@@ -36,7 +35,7 @@ class NewsController extends ActiveController
     }
 
     public function actionGetallnews(){
-        return News::find()->all();
+        return News::find()->orderBy(['date_submitted' => SORT_DESC])->all();
     }
 
     public function actionAddsubmit(){

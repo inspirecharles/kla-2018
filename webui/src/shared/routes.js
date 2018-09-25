@@ -1,7 +1,8 @@
 import HomeContainer from "./components/HomeContainer";
 import LotteryResultContainer from "./components/LotteryResultContainer";
 import TicketsContainer from "./components/TicketsContainer";
-import NewsContainer from "./components/NewsContainer";
+import NewsContainer from "./components/news/NewsContainer";
+import NewsDetailContainer from "./components/news/NewsDetailContainer";
 import ResultContainer from "./components/ResultContainer";
 import ComingSoonContainer from "./components/comingsoon/ComingSoonContainer";
 import TermsContainer from "./components/site/TermsContainer";
@@ -26,7 +27,7 @@ const routes = [
     title: 'Results (Game)'
   },
   {
-    path: "/:game_slug/:draw_id",
+    path: "/:game_slug/draw-:draw_id",
     exact: true,
     component: ResultContainer
   },
@@ -39,7 +40,13 @@ const routes = [
   {
     path: "/news",
     exact: true,
-    component: ComingSoonContainer,
+    component: NewsContainer,
+    title: 'News'
+  },
+  {
+    path: "/news/:slug",
+    exact: true,
+    component: NewsDetailContainer,
     title: 'News'
   },
   {

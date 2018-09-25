@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 function getAllNews(){
 	$.ajax({
-		url: 'http://api.kla-uk.lan/news/getallnews',
+		url: window.api_url+'/news/getallnews',
 		method: 'get',
 		success: function(res){
 			res.forEach(function(row, index){

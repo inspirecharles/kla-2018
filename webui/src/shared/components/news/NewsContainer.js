@@ -11,10 +11,12 @@ class NewsContainer extends Component {
 
 	render() {
 	    return (
-			<div className="result-container">
-	    		<div className="container">
-		    	 	News here
-	      		</div>
+			<div id="news-list">
+				<section>
+		    		<div className="container">
+			    	 	News list here
+		      		</div>
+	      		</section>
       		</div>
 	    );
 	}
