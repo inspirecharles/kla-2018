@@ -8,13 +8,14 @@ $(document).ready(function(){
 	$('#add-news-form').submit(function(e){
 		e.preventDefault();
 		$.ajax({
-			url: 'http://api.kla-uk.lan/news/addsubmit',
+			url: window.api_url+'/news/addsubmit',
 			method: 'post',
 			data: new FormData( this ),
 			processData: false,
       		contentType: false,
 			success: function(res){
-				console.log(res);
+				if(res.type=="success")
+					alert('News added successfully.')
 			}
 		});
 	});
@@ -23,7 +24,7 @@ $(document).ready(function(){
 
 function getAllNews(){
 	$.ajax({
-		url: 'http://api.kla-uk.lan/news/getallnews',
+		url: window.api_url+'/news/getallnews',
 		method: 'get',
 		success: function(res){
 			res.forEach(function(row, index){

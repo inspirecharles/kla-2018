@@ -24,7 +24,6 @@ class NewsController extends ActiveController
                     'Access-Control-Allow-Credentials' => true,
                     'Access-Control-Max-Age' => 3600
                 ],
-
             ],
         ];
     }
@@ -36,7 +35,7 @@ class NewsController extends ActiveController
     }
 
     public function actionGetallnews(){
-        return News::find()->all();
+        return News::find()->orderBy(['date_submitted' => SORT_DESC])->all();
     }
 
     public function actionAddsubmit(){
@@ -54,7 +53,7 @@ class NewsController extends ActiveController
             
             if($model->save()){
                 if ($uploadModel->file && $uploadModel->validate()){
-                    $file_path = Yii::getAlias('@uploadFolder').'/'. $model->id;
+                    $file_path = Yii::getAlias('@uploadFolder').'/news/'. $model->id;
                     mkdir($file_path);
                     $uploadModel->file->saveAs($file_path .'/'. $uploadModel->file->baseName . '.' . $uploadModel->file->extension );
 
