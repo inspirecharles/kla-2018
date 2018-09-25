@@ -1,9 +1,21 @@
 import React, { Component } from "react"; 
+import { withRouter, Link } from "react-router-dom";
+import {connect} from "react-redux";
 import Slider from "react-slick";
+
+import {fetchNewsForSlider} from "../../actions/action-news";
 
 class NewsSliderComponent extends Component {
 	constructor(props) {
 		super(props);
+	}
+
+	static initialAction() {
+    	return fetchNewsForSlider();
+  	}
+
+	componentWillMount(){
+		this.props.dispatch(NewsSliderComponent.initialAction());
 	}
 
 	render() {
@@ -15,6 +27,7 @@ class NewsSliderComponent extends Component {
 			centerMode: false,
 			centerPadding: '100px',
 			dots: false,
+			infinite: false,
 	      	responsive: [
 	      		{
 		      		breakpoint: 992,
@@ -31,19 +44,19 @@ class NewsSliderComponent extends Component {
 	    };
 		return (
 			<Slider {...settings}>
-		        {[...Array(6)].map((x, i)=>{
+		        {this.props.news_slider && this.props.news_slider.map((news_detail, i)=>{
 		        	return (
 		        		<div key={i} className="col-lg-12 portfolio-item">
-							<div className="card h-100">
-								<a href="#"><img className="card-img-top" src="/img/pexels-photo-1111799.png" /></a>
+		        			<Link to={"/news/"+news_detail.slug}>
+								<div className="card h-100">
+									<img className="card-img-top" src={this.props.env.API_URL+"/uploads/news/"+news_detail.id+"/"+news_detail.feat_img} />
 
-								<div className="card-body">
-									<a href="#">
-										<h3 className="card-title blog-title celias">Wow... What a Blog Title! {i}</h3>
-									</a>
-									<p className="card-text blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+									<div className="card-body">
+										<h3 className="card-title blog-title celias">{news_detail.title}</h3>
+										<div className="card-text blog-text" dangerouslySetInnerHTML={{__html: news_detail.article}}></div>
+									</div>
 								</div>
-							</div>
+							</Link>
 						</div>
 		        	)
 		        })}
@@ -53,4 +66,11 @@ class NewsSliderComponent extends Component {
 }
 
 
-export default NewsSliderComponent;
+function mapStateToProps(state){
+  	return {
+    	news_slider: state.news_slider,
+    	env: state.env
+  	}
+}
+
+export default withRouter(connect(mapStateToProps)(NewsSliderComponent));
