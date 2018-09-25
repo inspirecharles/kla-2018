@@ -46,11 +46,10 @@ class NewsSliderComponent extends Component {
 			<Slider {...settings}>
 		        {this.props.news_slider && this.props.news_slider.map((news_detail, i)=>{
 		        	return (
-		        		<div key={i} className="col-lg-12 portfolio-item">
+		        		<div key={i} className="col-lg-12">
 		        			<Link to={"/news/"+news_detail.slug}>
 								<div className="card h-100">
-									<img className="card-img-top" src={this.props.env.API_URL+"/uploads/news/"+news_detail.id+"/"+news_detail.feat_img} />
-
+									<div className="featured-image" style={{"background-image": "url('"+this.props.env.API_URL+"/uploads/news/"+news_detail.id+"/"+news_detail.feat_img+"')"}}></div>
 									<div className="card-body">
 										<h3 className="card-title blog-title celias">{news_detail.title}</h3>
 										<div className="card-text blog-text" dangerouslySetInnerHTML={{__html: news_detail.article}}></div>
