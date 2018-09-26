@@ -38,6 +38,11 @@ class NewsController extends ActiveController
         return News::find()->orderBy(['date_submitted' => SORT_DESC])->all();
     }
 
+    public function actionGetbyslug($slug){
+        $model = new News();
+        return $model->find()->where(['slug' => $slug])->one();
+    }
+
     public function actionAddsubmit(){
         $model = new News();
         if ($model->load(['News' => Yii::$app->request->post()])) {

@@ -14,6 +14,8 @@ class ResultContainer extends Component {
 	    super(props);
 
     	this.renderResult = this.renderResult.bind(this);
+
+    	this.getStat = this.getStat.bind(this);
 	}
 
 	static initialAction(game_slug = null, draw_id=null) {
@@ -35,6 +37,10 @@ class ResultContainer extends Component {
 	renderResult(){
 		if( this.props.result_detail.variant == "uk" )
 			return <UKResult game={this.props.result_detail} hideViewPrizes={true} />
+	}
+
+	getStat(){
+		return JSON.parse(this.props.result_detail && this.props.result_detail.results.length && this.props.result_detail.results[0].stats);
 	}
 
 	render() {
@@ -93,7 +99,7 @@ class ResultContainer extends Component {
 	      					<div className="col-lg-6 video-container">
 	      						<iframe 
 	      							className="video" 
-	      							src="https://www.youtube.com/embed/KGDrNTQmJ0I?modestbranding=1&autohide=1&showinfo=0&controls=0" 
+	      							src={ this.props.result_detail.results && this.props.result_detail.results[0].video_link+"?modestbranding=1&autohide=1&showinfo=0&controls=0"} 
 	      							frameBorder="0" 
 	      							allow="autoplay; encrypted-media" 
 	      							allowFullScreen={false}>
@@ -112,15 +118,15 @@ class ResultContainer extends Component {
 	      				<div className="row text-center">
 	      					<div className="col-lg-4">
 	      						<label>Avg. prize Won</label><br/>
-	      						<span className="value">123,123.00</span>
+	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().AveragePrizeWon}</span>
 	      					</div>
 	      					<div className="col-lg-4">
 	      						<label>Above avg. wins</label><br/>
-	      						<span className="value">12.11%</span>
+	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().AboveAverageWins}%</span>
 	      					</div>
 	      					<div className="col-lg-4">
 	      						<label>Largest prize Won</label><br/>
-	      						<span className="value">123,123,123.00</span>
+	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().LargestPrizeWon}</span>
 	      					</div>
 	      				</div>
 	      			</div>

@@ -41,8 +41,11 @@ function handleRender(req, res, next) {
 	const promises = routes.reduce((acc, route) => {
 		var props = matchPath(req.url, route);
 	    if ( props && route.component && route.component.initialAction) {
-	    	if( props.params.game_slug && props.params.draw_id ){	
+	    	if( props.path == '/:game_slug/draw-:draw_id' ){	
 	    		acc.push(Promise.resolve(store.dispatch(route.component.initialAction( props.params.game_slug.replace("-", "_"), props.params.draw_id.replace("draw-","") ))));
+	    	}
+	    	else if( props.path == '/news/:slug' ){
+	    		acc.push(Promise.resolve(store.dispatch(route.component.initialAction( props.params.slug ))));
 	    	}
 	    	else{
 	      		acc.push(Promise.resolve(store.dispatch(route.component.initialAction())));

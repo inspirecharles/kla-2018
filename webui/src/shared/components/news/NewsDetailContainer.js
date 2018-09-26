@@ -1,9 +1,21 @@
 import React, { Component } from "react";
+import { withRouter, Link } from "react-router-dom";
+import {connect} from "react-redux";
+
+import {fetchNewsBySlug} from "../../actions/action-news";
 
 class NewsDetailContainer extends Component {
-	constructor() {
-	    super();
+	constructor(props) {
+	    super(props);
 	}
+
+	static initialAction( slug = null ) {
+    	return fetchNewsBySlug( slug );
+  	}
+
+	componentWillMount() {
+      	this.props.dispatch(NewsDetailContainer.initialAction( this.props.match.params.slug ));
+  	}
 	
 	componentDidMount() {
 	 	window.scrollTo(0, 0)
@@ -17,7 +29,7 @@ class NewsDetailContainer extends Component {
 			    	 	<div className="row">
 			    	 		<div className="col-lg-12">
 			    	 			<h1 className="display-5 text-left text-white blog-title">
-			    	 				Wow... What a Blog Title 
+			    	 				{ this.props.news_detail && this.props.news_detail.title }
 			    	 			</h1>
 			    	 		</div>
 			    	 	</div>
@@ -31,74 +43,12 @@ class NewsDetailContainer extends Component {
 					    	 	<div className="row">
 					    	 		<div className="col-lg-12">
 					    	 			<header className="bg-image-full">
-									    	<a href="#"><img className="bg-image-full" src="/img/car-photo.png" /></a>
+									    	<img className="bg-image-full" src={this.props.news_detail && this.props.news_detail.id && this.props.env.API_URL+"/uploads/news/"+this.props.news_detail.id+"/"+this.props.news_detail.feat_img} />
 									    </header>
 					    	 		</div>
-					    	 	</div>
-				      		</div>
-	      				</div>
-	      			</div>
-	      		</section>
-
-	      		<section>
-	      			<div className="row">
-	      				<div className="col-lg-12">
-	      					<div className="container">
-					    	 	<div className="row">
-					    	 		<div className="col-lg-12">
-					    	 			<section className="lottery-content">
-											<div className="container">
-												<div className="media-1">
-													<div className="row">
-														<div className="col-lg-12">
-															<h2 className="media-heading celias">An Awesome Subtitle</h2>
-															<p className="media-content">
-																Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																Proin erat risus, molestie ullamcorper ex at, porta sollicitudin nisl. 
-																Proin varius maximus neque. Fusce sollicitudin placerat purus, 
-																ut vestibulum magna ornare aliquam. Suspendisse placerat feugiat gravida. 
-																Fusce eget venenatis urna. Class aptent taciti sociosqu ad litora 
-																torquent per conubia nostra, per inceptos himenaeos. 
-																Aenean sit amet mi ut lorem egestas volutpat at vel ante. 
-																Pellentesque sit amet augue commodo, pulvinar odio eget, 
-																condimentum nunc. Phasellus vestibulum arcu ac nisl semper, nec eleifend diam imperdiet.
-															</p>
-															<p className="media-content">
-																Phasellus volutpat rhoncus enim, eleifend feugiat risus imperdiet sit amet. 
-																Quisque odio tellus, consequat id ornare eu, congue et augue. 
-																Duis blandit eget libero quis ultricies. Proin sodales, 
-																neque sed varius bibendum, massa massa euismod magna, vitae aliquet
-																turpis ipsum vel eros. Vestibulum semper, sapien aliquet volutpat ullamcorper, 
-																diam massa mollis risus, et convallis tellus justo nec nunc. Sed pulvinar, massa sed 
-																facilisis iaculis, massa lorem sagittis ipsum, id lobortis leo ligula ut nibh.
-															</p>
-															<p className="media-content">
-																Mauris ornare sapien velit, nec varius felis placerat at. 
-																Vestibulum quis felis pharetra, tempor sapien vel, venenatis dui. 
-																Nullam nec dui et nisl tincidunt sollicitudin. Integer eros turpis, 
-																posuere non fringilla non, gravida nec lacus. Pellentesque et felis mollis, 
-																egestas neque eu, consectetur odio. In euismod non dui at feugiat.
-															</p>
-
-															<h2 className="media-heading celias">Whats this? Another Subtitle</h2>
-															<p className="media-content">
-																Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																Proin erat risus, molestie ullamcorper ex at, porta sollicitudin nisl. 
-																Proin varius maximus neque. Fusce sollicitudin placerat purus, 
-																ut vestibulum magna ornare aliquam. Suspendisse placerat feugiat gravida. 
-																Fusce eget venenatis urna. Class aptent taciti sociosqu ad litora 
-																torquent per conubia nostra, per inceptos himenaeos. 
-																Aenean sit amet mi ut lorem egestas volutpat at vel ante. 
-																Pellentesque sit amet augue commodo, pulvinar odio eget, 
-																condimentum nunc. Phasellus vestibulum arcu ac nisl semper, nec eleifend diam imperdiet.
-															</p>
-												        </div>
-												        
-													</div>
-												</div>	
-											</div>
-										</section>
-					    	 		</div>
+					    	 		<div className="col-lg-12" dangerouslySetInnerHTML={{__html: this.props.news_detail && this.props.news_detail.id && this.props.news_detail.article}}>
+										
+							        </div>
 					    	 	</div>
 				      		</div>
 	      				</div>
@@ -110,4 +60,12 @@ class NewsDetailContainer extends Component {
 	
 }
 
-export default NewsDetailContainer;
+
+function mapStateToProps(state){
+  	return {
+    	news_detail: state.news_detail,
+    	env: state.env
+  	}
+}
+
+export default withRouter(connect(mapStateToProps)(NewsDetailContainer));
