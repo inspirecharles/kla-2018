@@ -49,7 +49,7 @@ class ResultContainer extends Component {
 				    	</div>
 			    		<div className="detail-content col-lg-12 mt-3">
 			    			<div className="row">
-			    				<div className="loto-game-logo">
+			    				<div className="lotto-game-logo">
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="game-prize-date text-right">
@@ -150,7 +150,7 @@ class ResultContainer extends Component {
 									<div className="media-body subscribe-body right col-lg-6 col-md-12 subscribe">
 										<div className="single">
 											<div className="input-group">
-									         <input type="email" className="form-control" placeholder="youremail@email.com" />
+									         <input type="email" className="form-control" placeholder="Email" />
 										        <span className="input-group-btn">
 										        	<button className="btn btn-theme btn-subscribe" type="submit">Subscribe</button>
 									         	</span>
