@@ -1,3 +1,10 @@
+/* Global Common CSS */
+
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
 section.articles-section {
     padding: 52px 0;
 }
@@ -10,6 +17,7 @@ section.lottery-content {
         height: 100%;
     }
 }
+
 section.news {
     padding: 52px 0;
 
@@ -24,6 +32,7 @@ section.news {
 
     }
 }
+
 section.page-footer {
     padding: 52px 0;
 }
