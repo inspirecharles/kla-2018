@@ -17,7 +17,7 @@ const routes = [
   {
     path: "/results",
     exact: true,
-    component: ComingSoonContainer,
+    component: LotteryResultContainer,
     title: 'Results'
   },
   {

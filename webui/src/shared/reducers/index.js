@@ -3,6 +3,7 @@ import {combineReducers} 	from 'redux';
 import EnvReducer			from './reducer-env';
 import AccountReducer		from './reducer-account';
 import GameReducer			from './reducer-games';
+import GamesOnlyReducer		from './reducer-games-only';
 import ResultsReducer		from './reducer-results';
 import ResultReducer		from './reducer-result-detail';
 import NewsReducer			from './reducer-news';
@@ -14,6 +15,7 @@ import SiteMapReducer		from './reducer-sitemap';
 const allReducers = combineReducers({
 	accounts: AccountReducer,
 	games: GameReducer,
+	games_only: GamesOnlyReducer,
 	results: ResultsReducer,
 	result_detail: ResultReducer,
 	env: EnvReducer,

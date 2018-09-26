@@ -1,3 +1,24 @@
-#lottery-results {
-	
+#lottery-result {
+	section.lotteries{
+		.lottery-container{
+			background-color: #fff;
+			padding: 25px 35px;
+
+			.lottery{
+				position : relative;
+    			float : left;
+				width: 19%;
+			    padding: 15px;
+			    margin-left: 10px;
+			    height: 100px;
+			    overflow: hidden;
+				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+				img{
+					width: 80%;
+					vertical-align:middle;
+				}
+			}
+		}
+	}
 }
