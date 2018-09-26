@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import News from "./home/NewsSliderComponent";
+import NewsSliderComponent from "./home/NewsSliderComponent";
 import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 
@@ -31,12 +31,12 @@ class LotteryResultContainer extends Component {
 	    	 		<div className="container">
 	    	 			<div className="row">
 				    		<div className="col-lg-12">
-				    			<h1 className="display-5 text-left text-white mt-4 latest-title">Past Lottery Result</h1>
+				    			<h1 className="text-left text-white latest-title">Past Lottery Results</h1>
 				    		</div>
 				    	</div>
 				        <div className="row mt-3">
 				        	<div className="col-lg-12 lottery-container">
-				        		<h3>Step 1 - Select a Lottery</h3>
+				        		<h3 className="step-textTitle">Step 1 - Select a Lottery</h3>
 							    {this.props.games_only.length && this.props.games_only.map((game, i) =>  {
 							    		return (
 							    			<Link to={"/"+createGameUrlSlug(game.slug)+"/results"} key={i}>
@@ -51,6 +51,18 @@ class LotteryResultContainer extends Component {
 				        </div>
 	    	 		</div>
 	    	 	</section>
+
+	    	 	<section className="articles-section">
+					<div className="container">
+						<div className="uk-lotto-news-wrapper">
+							<h2 className="text-center uk-lotto-news-title celias">Latest UK Lotto News</h2>
+							<NewsSliderComponent/>
+						    <div className="row view-more-news">
+								<Link to={"/news"}><button className="btn btn-primary blueBtn">View More...</button></Link>
+							</div>
+						</div>
+					</div>
+				</section>
       		</div>
 	    );
 	}
