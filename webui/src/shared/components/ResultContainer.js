@@ -111,7 +111,7 @@ class ResultContainer extends Component {
 	      		<section className="draw-statistics">
 	      			<div className="container">
 	      				<div className="row">
-	      					<div className="col-lg-12 text-center section-title">
+	      					<div className="col-lg-12 text-center section-title margin-bottom">
 	      						Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id} Statistics
 	      					</div>
 	      				</div>
