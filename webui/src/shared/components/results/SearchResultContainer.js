@@ -86,9 +86,9 @@ class SearchResultContainer extends Component {
 				    				<div className="next-draw">
 				    					<h3>Step2 - Select A Draw</h3>
 				    					<form onSubmit={this.handleSearchSubmit}>
-					    					<input type="text" placeholder="Draw Number" name="search_number" onChange={this.handleChange} value={this.state.search_number} /><br />
+					    					<input type="text" className="form-control" placeholder="Draw Number" name="search_number" onChange={this.handleChange} value={this.state.search_number} /><br />
 					    					<span>or</span>
-					    					<input type="date" placeholder="Draw Date" name="search_date" onChange={this.handleChange} value={this.state.search_date} />
+					    					<input type="date" className="form-control" placeholder="Draw Date" name="search_date" onChange={this.handleChange} value={this.state.search_date} />
 				    					</form>
 				    				</div>
 				    			</div>
