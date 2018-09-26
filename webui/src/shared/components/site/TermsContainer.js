@@ -20,7 +20,7 @@ class TermsContainer extends Component {
 
 								<ol>
 									<li><p className="title-heading">Introduction</p> <hr/>
-										<p className="section-paragraph">
+										<div className="section-paragraph">
 	                                    	Jumbo Lotteries Pty Ltd ABN 78 125 816 659 <strong>("Jumbo")</strong> 
 	                                    	owns and operates the Lottery Results Network <strong>(“LRN”)</strong>, 
 	                                    	which is a network of portals specializing in the collection and publishing 
@@ -53,7 +53,7 @@ class TermsContainer extends Component {
 	                                      		and all aspects of your transactions with us. By continuing to use LRN Websites, you accept 
 	                                      		these terms and conditions of use in full.
 	                                      	</p>
-	                                    </p>
+	                                    </div>
 	                                    <br />
 									</li>
 

@@ -68,9 +68,9 @@ class SearchResultContainer extends Component {
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<h3>Step2 - Select A Draw</h3>
-				    					<input type="text" placeholder="Draw Number" /><br />
+				    					<input type="text" className="form-control" placeholder="Draw Number" /><br />
 				    					<span>or</span>
-				    					<input type="date" placeholder="Draw Date" />
+				    					<input type="date" className="form-control" placeholder="Draw Date" />
 				    				</div>
 				    			</div>
 				    			<div className="col-lg-7">
