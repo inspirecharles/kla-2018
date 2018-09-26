@@ -116,15 +116,15 @@ class ResultContainer extends Component {
 	      					</div>
 	      				</div>
 	      				<div className="row text-center">
-	      					<div className="col-lg-4">
+	      					<div className="col-lg-4 margin-bottom">
 	      						<label>Avg. prize Won</label><br/>
 	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().AveragePrizeWon}</span>
 	      					</div>
-	      					<div className="col-lg-4">
+	      					<div className="col-lg-4 margin-bottom">
 	      						<label>Above avg. wins</label><br/>
 	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().AboveAverageWins}%</span>
 	      					</div>
-	      					<div className="col-lg-4">
+	      					<div className="col-lg-4 margin-bottom">
 	      						<label>Largest prize Won</label><br/>
 	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().LargestPrizeWon}</span>
 	      					</div>
