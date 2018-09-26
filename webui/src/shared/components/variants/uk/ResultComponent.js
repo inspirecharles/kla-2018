@@ -66,22 +66,54 @@ class ResultComponent extends Component {
   	}*/
 
 	render() {
+		let support = 'Supplementary';
+		let main = 'Main Numbers';
+	switch(this.props.game.slug) {
+    case 'lotto':
+        support = 'Bonus Ball';
+        break;
+    case 'euro_millions':
+        support = 'Lucky Stars';
+        break;
+    case 'thunderball':
+        support = 'Thunderball';
+        break;
+    case '49lottery':
+   		main = 'LUNCHTIME DRAW';
+        support = 'TEATIME DRAW';
+        break;
+    case 'postcode_daily':
+   		main = 'Winning Postcodes';     
+        break;
+    case 'postcode_weekly':
+   		main ='Winning Postcode';
+        break;
+    case 'postcode_monthly':
+   		main ='Winning Postcode';
+        break;
+    default:
+        support = '';
+	} 
+    
 		return (
 			<div>
                 <div className="card-body pt-0" id="lotto">
                 	<div className="main_numbers col-lg-12 col-md-12">
-                		<div className="clr mainNumber_label col-lg-12 col-md-12">Main Numbers</div>
+                		<div className="clr mainNumber_label col-lg-12 col-md-12">{main}</div>
                 		<div className="">
 						    { this.state.main_numbers.map((item, i) => {
                             	return <div key={i} className={"numbers circle bc_lotto d-inline-block"}>{item}</div>
                             }) }
+
+
 						</div>
+
                     </div>
                 </div>
 
                 <div className="card-body pt-0" id="lotto">
                 	<div className="supplementary_numbers col-lg-12 col-md-12">
-            			<div className={"clr supplementary_label col-lg-12 col-md-12 "+(this.state.supp_numbers.length?'':'invisible')}>Supplementary</div>
+            			<div className={"clr supplementary_label col-lg-12 col-md-12 "+(this.state.supp_numbers.length?'':'invisible')}>{support}</div>
                 		<div className="">
 						    { this.state.supp_numbers.map((item, i) => {
                             	return <div key={i} className="numbers circle supplementary d-inline-block">{item}</div>

@@ -6,7 +6,7 @@ import moment from "moment";
 import {renderDividends, formatMoney} from "../helper";
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
-
+import SubscriptionComponent from "./subscribe/SubscriptionComponent"
 import {fetchResultByGameAndDrawId, emptyResultDetail} from "../actions/action-result-detail";
 
 class ResultContainer extends Component {
@@ -19,6 +19,7 @@ class ResultContainer extends Component {
 	}
 
 	static initialAction(game_slug = null, draw_id=null) {
+					
     	return fetchResultByGameAndDrawId(game_slug, draw_id);
   	}
 
@@ -44,6 +45,37 @@ class ResultContainer extends Component {
 	}
 
 	render() {
+		let firstStat='';
+		let secondStat='';
+		let thirdStat='';
+		let firstValue = '';
+		let secondValue = '';
+		let thirdValue = '';
+		if(this.props.result_detail.results && this.props.result_detail.results.length){
+			if(this.props.result_detail && this.props.result_detail.slug == "health_lottery"){
+					firstStat = "£\'s RAISED";
+					secondStat= "£\'s WON";
+					thirdStat ='WINNERS';
+					firstValue = '58 MILLION';
+					secondValue = '87 MILLION';
+					thirdValue = '3 MILLION';
+			}else if(this.props.result_detail && (this.props.result_detail.slug == "postcode_daily" ||this.props.result_detail.slug == "postcode_weekly" ||this.props.result_detail.slug == "postcode_monthly")){
+					firstStat = 'Amount Raised for Charity so far';
+					secondStat='Number of Players';
+					thirdStat ='% of Sub given to charity';
+					firstValue = '$255M';
+					secondValue = '2.4M';
+					thirdValue = '31%';
+			}else{
+					firstStat = 'Avg. prize Won';
+					secondStat='Above avg. wins';
+					thirdStat ='Largest prize Won';
+					firstValue = "£ " +formatMoney(this.getStat().AveragePrizeWon);
+					secondValue = this.getStat().AboveAverageWins+" %";
+					thirdValue = "£ " +formatMoney(this.getStat().LargestPrizeWon);
+			}
+		}
+
 	    return (
 			<div id="result-detail">
 	    		<section className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
@@ -70,8 +102,7 @@ class ResultContainer extends Component {
 				    					<div>Next Draw</div>
 				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot)}</div>
 				    					<div className="text-center mt-3">
-				    						<Link to={"/buy-now"}><button className="btn">Buy Now</button></Link>
-				    					</div>
+				    						<Link to={"/buy-now"}><button className="btn">Buy Now</button></Link>				    					</div>
 				    				</div>
 				    			</div>
 				    			<div className="col-lg-7">
@@ -114,19 +145,19 @@ class ResultContainer extends Component {
 	      					<div className="col-lg-12 text-center section-title margin-bottom">
 	      						Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id} Statistics
 	      					</div>
-	      				</div>
+	      				</div>	      			
 	      				<div className="row text-center">
 	      					<div className="col-lg-4 margin-bottom">
-	      						<label>Avg. prize Won</label><br/>
-	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().AveragePrizeWon}</span>
+	      						<label>{firstStat}</label><br/>
+	      						<span className="value">{firstValue}</span>
 	      					</div>
 	      					<div className="col-lg-4 margin-bottom">
-	      						<label>Above avg. wins</label><br/>
-	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().AboveAverageWins}%</span>
+	      						<label>{secondStat}</label><br/>
+	      						<span className="value">{secondValue}</span>
 	      					</div>
 	      					<div className="col-lg-4 margin-bottom">
-	      						<label>Largest prize Won</label><br/>
-	      						<span className="value">{this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.getStat().LargestPrizeWon}</span>
+	      						<label>{thirdStat}</label><br/>
+	      						<span className="value">{thirdValue}</span>
 	      					</div>
 	      				</div>
 	      			</div>
@@ -145,25 +176,7 @@ class ResultContainer extends Component {
 					<div className="subscribe-wrapper">
 						<div className="container">
 							<div className="subscribe-container">
-								<div className="row">
-								
-									<div className="media-body subscribe-body col-lg-6 col-md-12">
-										<h3 className="media-heading subscribe-heading celias text-white">Lottery Results in Your Inbox</h3>
-										<p className="subscribe-content text-white">
-											Get the latest UK lottery results direct to your email and never miss your lucky numbers!
-										</p>
-									</div>
-									<div className="media-body subscribe-body right col-lg-6 col-md-12 subscribe">
-										<div className="single">
-											<div className="input-group">
-									         <input type="email" className="form-control" placeholder="Email" />
-										        <span className="input-group-btn">
-										        	<button className="btn btn-theme btn-subscribe" type="submit">Subscribe</button>
-									         	</span>
-									        </div>
-										</div>
-									</div>
-								</div>
+								<SubscriptionComponent/>							
 							</div>
 						</div>
 					</div>
