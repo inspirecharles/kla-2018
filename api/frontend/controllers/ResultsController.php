@@ -40,4 +40,12 @@ class ResultsController extends ActiveController
         ->where(['games.slug'=>$game_slug])
         ->asArray()->one();
     }
+
+    public function actionFetchbygame($game_slug){
+        return Games::find()->joinWith(['results' => function($query){
+            $query->orderBy(['results.draw_date' => SORT_DESC])->limit(1);
+        }])
+        ->where(['games.slug'=>$game_slug])
+        ->asArray()->one();
+    }
 }

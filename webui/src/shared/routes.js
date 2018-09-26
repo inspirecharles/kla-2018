@@ -7,6 +7,7 @@ import ResultContainer from "./components/ResultContainer";
 import ComingSoonContainer from "./components/comingsoon/ComingSoonContainer";
 import TermsContainer from "./components/site/TermsContainer";
 import PrivacyContainer from "./components/site/PrivacyContainer";
+import SearchResultContainer from "./components/results/SearchResultContainer";
 
 const routes = [
   {
@@ -21,9 +22,9 @@ const routes = [
     title: 'Results'
   },
   {
-    path: "/results/:game_slug",
+    path: "/:game_slug/results",
     exact: true,
-    component: ComingSoonContainer,
+    component: SearchResultContainer,
     title: 'Results (Game)'
   },
   {
