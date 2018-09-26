@@ -16,6 +16,14 @@ class SearchResultContainer extends Component {
     	this.renderResult = this.renderResult.bind(this);
 
     	this.getStat = this.getStat.bind(this);
+
+    	this.state = {
+    		search_number: '',
+    		search_date: '',
+    	}
+
+    	this.handleChange = this.handleChange.bind(this);
+    	this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 	}
 
 	static initialAction(game_slug = null ) {
@@ -43,6 +51,15 @@ class SearchResultContainer extends Component {
 		return JSON.parse(this.props.result_detail && this.props.result_detail.results.length && this.props.result_detail.results[0].stats);
 	}
 
+	handleChange(event) {
+	    this.setState({...this.state, [event.target.name]:event.target.value})
+	}
+
+	handleSearchSubmit(event){
+		event.preventDefault();
+		console.log(this.state);
+	}
+
 	render() {
 	    return (
 			<div id="result-detail">
@@ -68,9 +85,11 @@ class SearchResultContainer extends Component {
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<h3>Step2 - Select A Draw</h3>
-				    					<input type="text" placeholder="Draw Number" /><br />
-				    					<span>or</span>
-				    					<input type="date" placeholder="Draw Date" />
+				    					<form onSubmit={this.handleSearchSubmit}>
+					    					<input type="text" placeholder="Draw Number" name="search_number" onChange={this.handleChange} value={this.state.search_number} /><br />
+					    					<span>or</span>
+					    					<input type="date" placeholder="Draw Date" name="search_date" onChange={this.handleChange} value={this.state.search_date} />
+				    					</form>
 				    				</div>
 				    			</div>
 				    			<div className="col-lg-7">
