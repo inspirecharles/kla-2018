@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-import {formatMoney} from "../../helper";
+import {formatMoney, createGameUrlSlug} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
 
 class HomeCardComponent extends Component {
@@ -69,7 +69,7 @@ class HomeCardComponent extends Component {
 	                            		<div className="supp-link-icons">
 	                            			<a className="icons"><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
 			                            	<a className="icons"><img className="img-fluid icon-download" src="/img/icons/download.svg" /></a>
-			                            	<Link className="icons icon-pastresult" to={"/results/"+this.props.game.slug}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
+			                            	<Link className="icons icon-pastresult" to={"/"+createGameUrlSlug(this.props.game.slug)+"/results"}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
 			                            </div>
 	                            	</div>
 	                            </div>

@@ -115,7 +115,7 @@ class ResultContainer extends Component {
 	      		<section className="view-past-result">
 	      			<div className="container text-center pt-3 pb-3">
 	      				<span>View Past {this.props.result_detail && this.props.result_detail.name} Draw Results</span>
-	      				<Link to={"/results/"+(this.props.result_detail && this.props.result_detail.slug)}><button className="btn ml-5">Past Draws</button></Link>
+	      				<Link to={"/"+(this.props.result_detail && this.props.result_detail.slug)+"/results"}><button className="btn ml-5">Past Draws</button></Link>
 	      			</div>
 	      		</section>
 	      		<section className="result-video">
