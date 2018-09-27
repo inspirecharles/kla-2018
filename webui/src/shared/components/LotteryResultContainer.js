@@ -36,9 +36,11 @@ class LotteryResultContainer extends Component {
 				    	</div>
 	    	 		</div>
 	    	 	</section>
-	    	 	<section className="all-news space-top">
+	    	 	<section className="all-news">
 	    	 		<div className="container">
+	    	 			<h3 className="step-textTitle">Step 1 - Select a Lottery</h3>
 	    	 			<div className="row">
+
 	    	 				{this.props.games_only.length && this.props.games_only.map((game, i) =>  {
 						    		return (
 						    			<Link to={"/"+createGameUrlSlug(game.slug)+"/results"} key={i}>
