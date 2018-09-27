@@ -11,6 +11,15 @@ li {
 
 section.articles-section {
     padding: 52px 0;
+
+    .uk-lotto-news-wrapper {
+        .blog-text {
+            color: #1D1D1D; 
+            font-family: "Nunito Regular", sans-serif;
+            font-size: 16px;    
+            line-height: 22px;
+        }
+    }
 }
 
 section.lottery-content {
@@ -30,10 +39,25 @@ section.news {
         .section-title, .card-title{
             color: #1D1D1D;
         }
+
         .card-title{
             font-size: 20px;
         }
 
+        .blog-text {
+            color: #1D1D1D; 
+            font-family: "Nunito Regular", sans-serif;
+            font-size: 16px;    
+            line-height: 22px;
+        }
+
+    }
+}
+
+section.all-news {
+    .card-body {
+        color: #1D1D1D; 
+        font-family: "Nunito Regular", sans-serif;
     }
 }
 
@@ -87,6 +111,7 @@ label {
 .supplementary_numbers,
 .main_numbers{
     min-height: 80px;
+    display: inline-block;
 }
 
 .mainNumber_label, .supplementary_label {
