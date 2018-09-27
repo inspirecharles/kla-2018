@@ -5,6 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\News;
 
 /**
  * Site controller
@@ -21,7 +22,7 @@ class NewsController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'add'],
+                        'actions' => ['login', 'error', 'add', 'update'],
                         'allow' => true,
                     ],
                     [
@@ -64,5 +65,10 @@ class NewsController extends Controller
 
     public function actionAdd(){
         return $this->render('add');
+    }
+
+    public function actionUpdate($id){
+        $model = News::find()->where(['id' => $id])->one();
+        return $this->render('update', ['news' => $model]);
     }
 }
