@@ -51,14 +51,18 @@ class ResultContainer extends Component {
 		let firstValue = '';
 		let secondValue = '';
 		let thirdValue = '';
+		let current_jackpot = '';
+		let next_jackpot = '';
+
 		if(this.props.result_detail.results && this.props.result_detail.results.length){
+			/*
 			if(this.props.result_detail && this.props.result_detail.slug == "health_lottery"){
 					firstStat = "£\'s RAISED";
 					secondStat= "£\'s WON";
 					thirdStat ='WINNERS';
 					firstValue = '58 MILLION';
 					secondValue = '87 MILLION';
-					thirdValue = '3 MILLION';
+					thirdValue = '3 MILLION';	
 			}else if(this.props.result_detail && (this.props.result_detail.slug == "postcode_daily" ||this.props.result_detail.slug == "postcode_weekly" ||this.props.result_detail.slug == "postcode_monthly")){
 					firstStat = 'Amount Raised for Charity so far';
 					secondStat='Number of Players';
@@ -73,8 +77,56 @@ class ResultContainer extends Component {
 					firstValue = "£ " +formatMoney(this.getStat().AveragePrizeWon);
 					secondValue = this.getStat().AboveAverageWins+" %";
 					thirdValue = "£ " +formatMoney(this.getStat().LargestPrizeWon);
-			}
+			}*/
+				
+			switch(this.props.result_detail.slug) {
+		    case '49lottery':
+			   		firstStat = 'Avg. prize Won';
+					secondStat='Above avg. wins';
+					thirdStat ='Largest prize Won';
+					firstValue = "£ " +formatMoney(this.getStat().AveragePrizeWon);
+					secondValue = this.getStat().AboveAverageWins+" %";
+					thirdValue = "£ " +formatMoney(this.getStat().LargestPrizeWon);
+					current_jackpot =  "Min £25,000 or 10% of sales";
+					next_jackpot = "Min £25,000 or 10% of sales";
+			        break;
+		    case 'postcode_daily':		   		
+		    case 'postcode_weekly':		   		
+		    case 'postcode_monthly' :
+		   			firstStat = 'Amount Raised for Charity so far';
+					secondStat='Number of Players';
+					thirdStat ='% of Sub given to charity';
+					firstValue = '$255M';
+					secondValue = '2.4M';
+					thirdValue = '31%';
+					current_jackpot =  "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot);
+					next_jackpot = "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot);
+		        break;
+		    case 'health_lottery':
+		   			firstStat = "£\'s RAISED";
+					secondStat= "£\'s WON";
+					thirdStat ='WINNERS';
+					firstValue = '58 MILLION';
+					secondValue = '87 MILLION';
+					thirdValue = '3 MILLION';
+					current_jackpot =  "Min £25,000 or 10% of sales";
+					next_jackpot = "Min £25,000 or 10% of sales";	
+		        break;
+		    default:
+		    		firstStat = 'Avg. prize Won';
+					secondStat='Above avg. wins';
+					thirdStat ='Largest prize Won';
+					firstValue = "£ " +formatMoney(this.getStat().AveragePrizeWon);
+					secondValue = this.getStat().AboveAverageWins+" %";
+					thirdValue = "£ " +formatMoney(this.getStat().LargestPrizeWon);
+					current_jackpot =  "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot);
+					next_jackpot = "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot);
+		         break;
+			} 
 		}
+
+		
+
 
 	    return (
 			<div id="result-detail">
@@ -91,7 +143,7 @@ class ResultContainer extends Component {
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="game-prize-date text-right">
-			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
+			    					<span className="current-jackpot">{current_jackpot}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
@@ -100,7 +152,7 @@ class ResultContainer extends Component {
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<div>Next Draw</div>
-				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot)}</div>
+				    					<div>{next_jackpot}</div>
 				    					<div className="text-center mt-3">
 				    						<Link to={"/buy-now"}><button className="btn">Buy Now</button></Link>				    					</div>
 				    				</div>
