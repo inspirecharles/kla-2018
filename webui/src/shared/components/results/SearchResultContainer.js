@@ -7,7 +7,7 @@ import {renderDividends, formatMoney} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
 import NewsSliderComponent from "../home/NewsSliderComponent"
 
-import {fetchLatestResultDrawByGame, emptyResultDetail} from "../../actions/action-result-detail";
+import {fetchLatestResultDrawByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
 
 class SearchResultContainer extends Component {
 	constructor(props) {
@@ -57,7 +57,7 @@ class SearchResultContainer extends Component {
 
 	handleSearchSubmit(event){
 		event.preventDefault();
-		console.log(this.state);
+		this.props.dispatch(searchResult(this.props.result_detail.slug, this.state))
 	}
 
 	render() {

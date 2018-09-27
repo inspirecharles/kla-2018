@@ -48,4 +48,18 @@ class ResultsController extends ActiveController
         ->where(['games.slug'=>$game_slug])
         ->asArray()->one();
     }
+
+    public function actionSearch($game_slug, $search_data = null){
+        $search_data = json_decode($search_data);
+
+        return Games::find()->joinWith(['results' => function($query) use ($search_data){
+            $query->orderBy(['results.draw_date' => SORT_DESC]);
+            if( trim($search_data->search_number) != "" )
+                $query->orWhere(['draw_id' => $search_data->search_number]);
+            if( trim($search_data->search_date) )
+                $query->orWhere(['draw_date' => $search_data->search_date]);
+        }])
+        ->where(['games.slug'=> $game_slug])
+        ->asArray()->one();
+    }
 }
