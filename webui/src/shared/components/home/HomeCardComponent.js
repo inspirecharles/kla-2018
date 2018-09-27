@@ -4,6 +4,7 @@ import moment from "moment";
 
 import {formatMoney, buyNowUrl, createGameUrlSlug} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
+import ExportComponent from "../utilities/ExportComponent"
 
 class HomeCardComponent extends Component {
 
@@ -96,7 +97,7 @@ class HomeCardComponent extends Component {
 	                            	<div className="supplementary_numbers col-lg-12 col-md-12">
 	                            		<div className="supp-link-icons">
 	                            			<a className="icons"><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
-			                            	<a className="icons"><img className="img-fluid icon-download" src="/img/icons/download.svg" /></a>
+			                            	<ExportComponent game={this.props.game.slug} />
 			                            	<Link className="icons icon-pastresult" to={"/"+createGameUrlSlug(this.props.game.slug)+"/results"}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
 			                            </div>
 	                            	</div>
