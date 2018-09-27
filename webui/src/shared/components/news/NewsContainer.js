@@ -24,9 +24,21 @@ class NewsContainer extends Component {
 
 	render() {
 	    return (
-			<div id="news-list" className="background-blue">
-				<section>
-		    		<div className="container space-top">
+			<div id="news-list">
+				<section className="news-section background-blue space-top">
+		    		<div className="container">
+			    	 	<div className="row">
+			    	 		<div className="col-lg-12">
+			    	 			<h1 className="display-5 text-left text-white blog-title">
+			    	 				All News
+			    	 			</h1>
+			    	 		</div>
+			    	 	</div>
+		      		</div>
+	      		</section>
+
+				<section className="all-news">
+		    		<div className="container">
 		    			<div className="row">
 			    	 	{this.props.news && this.props.news.length && this.props.news.map((news, i)=>{
 				        	return (
