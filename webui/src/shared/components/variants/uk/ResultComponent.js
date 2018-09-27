@@ -66,8 +66,8 @@ class ResultComponent extends Component {
   	}
 
 	render() {
-		let support = 'Supplementary';
-		let main = 'Main Numbers';
+	let support = 'Supplementary Numbers';
+	let main = 'Main Numbers';
 	switch(this.props.game.slug) {
     case 'lotto':
         support = 'Bonus Ball';
@@ -92,7 +92,7 @@ class ResultComponent extends Component {
    		main ='Winning Postcode';
         break;
     default:
-        support = '';
+         break;
 	} 
     
 		return (
