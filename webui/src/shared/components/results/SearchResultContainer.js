@@ -5,7 +5,7 @@ import moment from "moment";
 
 import {renderDividends, formatMoney} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
-import NewsSliderComponent from "../home/NewsSliderComponent"
+import NewsSliderComponent from "../home/NewsSliderComponent";
 
 import {fetchLatestResultDrawByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
 
