@@ -75,6 +75,9 @@ class SearchResultContainer extends Component {
 			    				<div className="lotto-game-logo">
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
+			    				<div className="change-lottery">
+									<Link to={"/results"}><button className="btn btn-primary blueBtn change-btn">CHANGE LOTTERY</button></Link>
+								</div>
 			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
@@ -86,9 +89,10 @@ class SearchResultContainer extends Component {
 				    				<div className="next-draw">
 				    					<h3>Step2 - Select A Draw</h3>
 				    					<form onSubmit={this.handleSearchSubmit}>
-					    					<input type="text" className="form-control" placeholder="Draw Number" name="search_number" onChange={this.handleChange} value={this.state.search_number} /><br />
+					    					<input type="text" className="form-control" placeholder="Draw Number" name="search_number" onChange={this.handleChange} value={this.state.search_number} />
 					    					<span>or</span>
 					    					<input type="date" className="form-control" placeholder="Draw Date" name="search_date" onChange={this.handleChange} value={this.state.search_date} />
+				    						<button type="submit" className="btn btn-primary blueBtn find-result">FIND RESULTS</button>
 				    					</form>
 				    				</div>
 				    			</div>

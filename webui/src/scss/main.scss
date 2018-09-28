@@ -62,13 +62,19 @@ a:hover {
 }
 
 .btn {
-	padding: 0.375rem 1.75rem;
+	padding: 0.375rem 0;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 	width: 140px;
+	font-family: "Nunito Regular", sans-serif;
+}
+
+.change-btn {
+	width: 160px;
 }
 
 .blueBtn {
 	background-color: #2965cc;
+	border: 1px solid #2965cc;
 }
 
 .blueBtn:hover {
