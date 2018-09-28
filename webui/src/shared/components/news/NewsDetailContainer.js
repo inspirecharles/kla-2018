@@ -3,6 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 
 import {fetchNewsBySlug} from "../../actions/action-news";
+import SubscriptionComponent from "../subscribe/SubscriptionComponent"
 
 class NewsDetailContainer extends Component {
 	constructor(props) {
@@ -54,6 +55,16 @@ class NewsDetailContainer extends Component {
 	      				</div>
 	      			</div>
 	      		</section>
+
+	      		<section className="subscription-component">
+                    <div className="subscribe-wrapper">
+                        <div className="container">
+                            <div className="subscribe-container">
+                                <SubscriptionComponent/>                            
+                            </div>
+                        </div>
+                    </div>
+                </section>
       		</div>
 	    );
 	}
