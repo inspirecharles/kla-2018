@@ -75,6 +75,16 @@ section.page-footer {
     padding: 52px 0;
 }
 
+#news-detail {
+    section.news-contentDetail {
+        margin-top: 36px;
+
+        .news-content {
+            margin-top: 36px;
+        }
+    }
+}
+
 #mainNav{
     ul.navbar-nav{
         a.nav-link.active{
