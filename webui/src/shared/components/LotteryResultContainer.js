@@ -31,7 +31,7 @@ class LotteryResultContainer extends Component {
 	    	 		<div className="container">
 	    	 			<div className="row">
 				    		<div className="col-lg-12">
-				    			<h1 className="text-left text-white latest-title">Past Lottery Results</h1>
+				    			<h1 className="text-left text-white latest-title margin-bottom">Past Lottery Results</h1>
 				    		</div>
 				    	</div>
 	    	 		</div>
@@ -44,10 +44,10 @@ class LotteryResultContainer extends Component {
 	    	 				{this.props.games_only.length && this.props.games_only.map((game, i) =>  {
 						    		return (
 						    			<Link to={"/"+createGameUrlSlug(game.slug)+"/results"} key={i}>
-						    				<div className="col-sm-4 lottery-container">
-											    <div className="card">
+						    				<div className="col-xs-12 lottery-container">
+											    <div className="col-xs-2 card">
 											    	<div className="card-body lottery">
-											    		<img className={"img-fluid "+game.variant+"-logo-lotto game-"+game.slug} src={"/img/variants/"+game.variant+"/"+game.slug+".png"} />
+											    		<img className={"img-fluid sluggame-logo "+game.variant+"-logo-lotto game-"+game.slug} src={"/img/variants/"+game.variant+"/"+game.slug+".png"} />
 											      	</div>
 											    </div>
 											</div>

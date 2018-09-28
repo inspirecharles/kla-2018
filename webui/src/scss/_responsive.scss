@@ -1,5 +1,27 @@
 @media (max-width: 389.98px) {
 
+	#lottery-result {
+		section.all-news {
+			.step-textTitle {
+				margin: 20px 0;
+			}
+			.lottery-container {
+				/*max-width: 100%;*/
+				margin-bottom: 10px;
+				margin-left: 15px;
+
+				.card-body {
+					width: 140px !important;
+				}
+
+
+				.sluggame-logo {
+					width: 90% !important;
+				}
+			}
+		}
+	}
+
 	.result-container {
 
 		.uk-logo-lotto {
@@ -43,6 +65,28 @@
 			.uk-logo {
 				width: 230px;
 				height: 65px;
+			}
+		}
+	}
+
+	#lottery-result {
+		section.all-news {
+			.step-textTitle {
+				margin: 20px 0;
+			}
+			.lottery-container {
+				/*max-width: 100%;*/
+				margin-bottom: 10px;
+				margin-left: 15px;
+
+				.card-body {
+					width: 190px;
+				}
+
+
+				.sluggame-logo {
+					width: 70%;
+				}
 			}
 		}
 	}
