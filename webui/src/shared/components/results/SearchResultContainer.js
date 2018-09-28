@@ -7,7 +7,7 @@ import {renderDividends, formatMoney} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
 import NewsSliderComponent from "../home/NewsSliderComponent"
 
-import {fetchLatestResultDrawByGame, emptyResultDetail} from "../../actions/action-result-detail";
+import {fetchLatestResultDrawByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
 
 class SearchResultContainer extends Component {
 	constructor(props) {
@@ -16,6 +16,14 @@ class SearchResultContainer extends Component {
     	this.renderResult = this.renderResult.bind(this);
 
     	this.getStat = this.getStat.bind(this);
+
+    	this.state = {
+    		search_number: '',
+    		search_date: '',
+    	}
+
+    	this.handleChange = this.handleChange.bind(this);
+    	this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 	}
 
 	static initialAction(game_slug = null ) {
@@ -41,6 +49,15 @@ class SearchResultContainer extends Component {
 
 	getStat(){
 		return JSON.parse(this.props.result_detail && this.props.result_detail.results.length && this.props.result_detail.results[0].stats);
+	}
+
+	handleChange(event) {
+	    this.setState({...this.state, [event.target.name]:event.target.value})
+	}
+
+	handleSearchSubmit(event){
+		event.preventDefault();
+		this.props.dispatch(searchResult(this.props.result_detail.slug, this.state))
 	}
 
 	render() {
@@ -71,13 +88,12 @@ class SearchResultContainer extends Component {
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<h3>Step2 - Select A Draw</h3>
-				    					<input type="text" className="form-control" placeholder="Draw Number" />
-				    					<span>or</span>
-				    					<input type="date" className="form-control" placeholder="Draw Date" />
-
-				    					<div className="find-result">
-											<Link to={"/#"}><button className="btn btn-primary blueBtn">FIND RESULTS</button></Link>
-										</div>
+				    					<form onSubmit={this.handleSearchSubmit}>
+					    					<input type="text" className="form-control" placeholder="Draw Number" name="search_number" onChange={this.handleChange} value={this.state.search_number} />
+					    					<span>or</span>
+					    					<input type="date" className="form-control" placeholder="Draw Date" name="search_date" onChange={this.handleChange} value={this.state.search_date} />
+				    						<button type="submit" className="btn btn-primary blueBtn find-result">FIND RESULTS</button>
+				    					</form>
 				    				</div>
 				    			</div>
 				    			<div className="col-lg-7">

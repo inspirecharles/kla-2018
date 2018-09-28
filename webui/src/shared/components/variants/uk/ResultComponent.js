@@ -54,7 +54,7 @@ class ResultComponent extends Component {
 		}
 	}
 	
-	/*componentWillReceiveProps(nextProps) {
+	componentWillReceiveProps(nextProps) {
 		if(nextProps.game.results && nextProps.game.results.length){
 			var main_numbers = this.processMainNumbers(nextProps.game.results[0].main_numbers);
 			var supp_numbers = this.processSuppNumbers(nextProps.game.results[0].supp_numbers);
@@ -63,11 +63,11 @@ class ResultComponent extends Component {
 				supp_numbers: supp_numbers,
 			})
 		}
-  	}*/
+  	}
 
 	render() {
-		let support = 'Supplementary';
-		let main = 'Main Numbers';
+	let support = 'Supplementary Numbers';
+	let main = 'Main Numbers';
 	switch(this.props.game.slug) {
     case 'lotto':
         support = 'Bonus Ball';
@@ -92,7 +92,7 @@ class ResultComponent extends Component {
    		main ='Winning Postcode';
         break;
     default:
-        support = '';
+         break;
 	} 
     
 		return (

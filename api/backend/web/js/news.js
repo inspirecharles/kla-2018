@@ -19,6 +19,21 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$('#update-news-form').submit(function(e){
+		e.preventDefault();
+		$.ajax({
+			url: window.api_url+'/news/updatesubmit',
+			method: 'post',
+			data: new FormData( this ),
+			processData: false,
+      		contentType: false,
+			success: function(res){
+				if(res.type=="success")
+					alert('News updated successfully.')
+			}
+		});
+	});
 })
 
 
@@ -33,6 +48,7 @@ function getAllNews(){
 				html += '<td>'+row.title+'</td>';
 				html += '<td>'+row.art_status+'</td>';
 				html += '<td>'+row.date_submitted+'</td>';
+				html += '<td><a href="/news/update/'+row.id+'"><button class="btn btn-info btn-sm">Update</button></a></td>';
 				html += '</tr>';
 				$('#news tbody').append(html);
 			})

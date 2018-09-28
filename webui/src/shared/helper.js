@@ -31,4 +31,49 @@ export function formatMoney(amount, decimalCount = 2, decimal = ".", thousands =
   } catch (e) {
     console.log(e)
   }
+}
+
+
+export function buyNowUrl(game_slug) {
+  try {
+    let support = "";
+      switch(game_slug) {
+      case "lotto":
+          support = "https://www.national-lottery.co.uk/games/lotto";
+          break;
+      case "hotpicks":
+          support = "https://www.national-lottery.co.uk/games/lotto-hotpicks";
+          break;
+      case "euro_millions":
+           support = "https://www.national-lottery.co.uk/games/euromillions";
+          break;
+      case "euromillions_hotpick":
+           support = "https://www.national-lottery.co.uk/games/euromillions-hotpicks";
+          break;
+      case "thunderball":
+           support = "https://www.national-lottery.co.uk/games/thunderball";
+          break;
+      case "49lottery":
+            support = "http://www.49s.co.uk/";          
+          break;
+      case "postcode_daily":
+          support = "https://www.postcodelottery.co.uk/play";
+          break;
+      case "postcode_weekly":
+         support = "https://www.postcodelottery.co.uk/play";
+          break;
+      case "postcode_monthly":
+          support = "https://www.postcodelottery.co.uk/play";
+          break;
+      case "health_lottery":
+          support = "https://www.healthlottery.co.uk/play-now/";
+          break;           
+      default:
+           break;
+    } 
+    return   support;
+  } catch (e) {
+    console.log(e)
+  }
 };
+
