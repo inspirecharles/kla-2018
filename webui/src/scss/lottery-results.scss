@@ -1,5 +1,6 @@
 #lottery-result {
 	section.lotteries{
+
 		.lottery-container{
 			background-color: #fff;
 			padding: 50px 40px;
@@ -33,6 +34,9 @@
 	}
 
 	section.all-news {
+		.step-textTitle {
+			margin: 20px 0;
+		}
 		.lottery-container {
 			max-width: 100%;
 			margin-bottom: 10px;

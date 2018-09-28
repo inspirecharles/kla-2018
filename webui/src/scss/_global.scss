@@ -7,6 +7,7 @@ li {
 
 .form-control {
     border-radius: 0;
+    font-family: "Nunito Regular", sans-serif;
 }
 
 section.articles-section {
@@ -58,6 +59,15 @@ section.all-news {
     .card-body {
         color: #1D1D1D; 
         font-family: "Nunito Regular", sans-serif;
+        height: 180px;
+    }
+}
+
+section.game_result {
+    .next-draw {
+        .find-result {
+            margin-top: 15px;
+        }
     }
 }
 

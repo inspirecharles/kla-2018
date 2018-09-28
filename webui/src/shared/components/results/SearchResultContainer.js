@@ -58,6 +58,9 @@ class SearchResultContainer extends Component {
 			    				<div className="lotto-game-logo">
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
+			    				<div className="change-lottery">
+									<Link to={"/results"}><button className="btn btn-primary blueBtn change-btn">CHANGE LOTTERY</button></Link>
+								</div>
 			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
@@ -68,9 +71,13 @@ class SearchResultContainer extends Component {
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<h3>Step2 - Select A Draw</h3>
-				    					<input type="text" className="form-control" placeholder="Draw Number" /><br />
+				    					<input type="text" className="form-control" placeholder="Draw Number" />
 				    					<span>or</span>
 				    					<input type="date" className="form-control" placeholder="Draw Date" />
+
+				    					<div className="find-result">
+											<Link to={"/#"}><button className="btn btn-primary blueBtn">FIND RESULTS</button></Link>
+										</div>
 				    				</div>
 				    			</div>
 				    			<div className="col-lg-7">
