@@ -64,7 +64,7 @@ class HomeCardComponent extends Component {
 		}
 
 		return (
-	        <div className={"col-lg-6 game_result "+" "+this.props.game.slug+" "+(this.props.game.slug.includes('postcode')?'postcode':'')}>
+	        <div id={this.props.game.slug+"-container"} className={"col-lg-6 game_result "+" "+this.props.game.slug+" "+(this.props.game.slug.includes('postcode')?'postcode':'')}>
 	        	<div className="accordion md-accordion accordion-3 z-depth-1-half" role="tablist" aria-multiselectable="true">
 					<div className="card">
 						<div className="lottery-results-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true" onClick={this.toggleShow}>
@@ -96,7 +96,7 @@ class HomeCardComponent extends Component {
 	                        	<div className="actionLink">
 	                            	<div className="supplementary_numbers col-lg-12 col-md-12">
 	                            		<div className="supp-link-icons">
-	                            			<PrintComponent />
+	                            			<PrintComponent elem={this.props.game.slug} />
 			                            	<ExportComponent game={this.props.game.slug} draw_id={this.props.game.results && this.props.game.results[0] && this.props.game.results[0].draw_id} />
 			                            	<Link className="icons icon-pastresult" to={"/"+createGameUrlSlug(this.props.game.slug)+"/results"}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
 			                            </div>

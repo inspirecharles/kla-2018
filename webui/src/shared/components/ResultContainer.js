@@ -7,6 +7,9 @@ import {renderDividends, formatMoney, createGameUrlSlug, buyNowUrl} from "../hel
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 import SubscriptionComponent from "./subscribe/SubscriptionComponent"
+import ExportComponent from "./utilities/ExportComponent";
+import PrintComponent from "./utilities/PrintComponent";
+
 import {fetchResultByGameAndDrawId, emptyResultDetail} from "../actions/action-result-detail";
 
 class ResultContainer extends Component {
@@ -130,7 +133,7 @@ class ResultContainer extends Component {
 
 	    return (
 			<div id="result-detail">
-	    		<section className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
+	    		<section id={this.props.result_detail.slug+"-container"} className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
 	    			<div className="container">
 			    	 	<div className="row">
 				    		<div className="col-lg-12">
@@ -160,6 +163,8 @@ class ResultContainer extends Component {
 				    			</div>
 				    			<div className="col-lg-7">
 				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, this.props.result_detail.slug == "49lottery"?'chance_to_win':'lotto_dividends') }
+				    				<PrintComponent elem={this.props.result_detail.slug} />
+	                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
 				    			</div>
 			    			</div>
 			    		</div>
