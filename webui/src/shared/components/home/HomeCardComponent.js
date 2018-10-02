@@ -4,7 +4,8 @@ import moment from "moment";
 
 import {formatMoney, buyNowUrl, createGameUrlSlug} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
-import ExportComponent from "../utilities/ExportComponent"
+import ExportComponent from "../utilities/ExportComponent";
+import PrintComponent from "../utilities/PrintComponent";
 
 class HomeCardComponent extends Component {
 
@@ -56,7 +57,6 @@ class HomeCardComponent extends Component {
 					next_jackpot = "Min £25,000 or 10% of sales";	
 		        break;
 		    default:
-		    		
 					current_jackpot =  "£ " + formatMoney(this.props.game.results[0].current_jackpot);
 					next_jackpot = "£ " + formatMoney(this.props.game.results[0].next_jackpot);
 		         break;
@@ -96,8 +96,8 @@ class HomeCardComponent extends Component {
 	                        	<div className="actionLink">
 	                            	<div className="supplementary_numbers col-lg-12 col-md-12">
 	                            		<div className="supp-link-icons">
-	                            			<a className="icons"><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
-			                            	<ExportComponent game={this.props.game.slug} />
+	                            			<PrintComponent />
+			                            	<ExportComponent game={this.props.game.slug} draw_id={this.props.game.results && this.props.game.results[0] && this.props.game.results[0].draw_id} />
 			                            	<Link className="icons icon-pastresult" to={"/"+createGameUrlSlug(this.props.game.slug)+"/results"}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
 			                            </div>
 	                            	</div>
