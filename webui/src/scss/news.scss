@@ -17,7 +17,7 @@
 	section.all-news {
 
 		padding: 52px 0;
-		
+
 		.news-container {
 			.media {
 				padding: 0;
@@ -27,6 +27,13 @@
 				.media-img {
 					width: 300px;
 					height: 200px;
+				}
+
+				.news-content {
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: 200px;
 				}
 			}
 		}

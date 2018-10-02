@@ -54,9 +54,9 @@ class NewsContainer extends Component {
 											    </a>
 										  	</div>
 										  	<div className="media-body">
-										    	<h4 className="media-heading">{news.title}</h4>
-										    	<div dangerouslySetInnerHTML={{__html: news.article}}></div>
-										    	<div className="row media-right notif-button read-more-news">
+										    	<h4 className="media-heading mt-4">{news.title}</h4>
+										    	<div className="margin-bottom news-content" dangerouslySetInnerHTML={{__html: news.article}}></div>
+										    	<div className="read-more-news">
 													<Link to={"/news/"+news.slug}><button className="btn btn-primary blueBtn">Read More...</button></Link>
 												</div>
 										  	</div>
