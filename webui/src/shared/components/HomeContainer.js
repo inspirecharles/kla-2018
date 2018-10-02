@@ -119,7 +119,7 @@ class HomeContainer extends Component {
 					<div className="subscribe-wrapper">
 						<div className="container">
 							<div className="subscribe-container">								
-									<SubscriptionComponent/>								
+								<SubscriptionComponent/>								
 							</div>
 						</div>
 					</div>

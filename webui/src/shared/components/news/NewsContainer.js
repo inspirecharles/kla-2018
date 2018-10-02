@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
+import SubscriptionComponent from "../subscribe/SubscriptionComponent"
 
 import {fetchNews} from "../../actions/action-news";
 
@@ -32,6 +33,9 @@ class NewsContainer extends Component {
 			    	 			<h1 className="display-5 text-left text-white blog-title">
 			    	 				All News
 			    	 			</h1>
+			    	 			<p className="text-white">
+			    	 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo pulvinar sapien ut hendrerit. Ut eros mi, tristique facilisis nibh quis, pretium laoreet velit. Suspendisse potenti. Duis quis nibh ac ante aliquam varius. Nulla varius risus orci, in scelerisque odio aliquet eget. Nam consequat justo diam, id finibus nunc ullamcorper at. Aliquam volutpat ante ante, nec rutrum odio placerat quis. Vivamus semper blandit ex quis lacinia. Vivamus non consectetur quam, id gravida mi. Sed in porta nisl.
+			    	 			</p>
 			    	 		</div>
 			    	 	</div>
 		      		</div>
@@ -40,24 +44,40 @@ class NewsContainer extends Component {
 				<section className="all-news">
 		    		<div className="container">
 		    			<div className="row">
-			    	 	{this.props.news && this.props.news.length && this.props.news.map((news, i)=>{
-				        	return (
-				        		<div key={i} className="col-lg-4 mt-4">
-				        			<Link to={"/news/"+news.slug}>
-										<div className="card h-100">
-											<div className="featured-image" style={{"backgroundImage": "url('"+this.props.env.API_URL+"/uploads/news/"+news.id+"/"+news.feat_img+"')"}}></div>
-											<div className="card-body">
-												<h3 className="card-title blog-title celias">{news.title}</h3>
-												<div className="card-text blog-text" dangerouslySetInnerHTML={{__html: news.article}}></div>
-											</div>
-										</div>
-									</Link>
-								</div>
-				        	)
-				        })}
-				        </div>
+		    				<div className="news-container col-lg-12">
+		    					{this.props.news && this.props.news.length && this.props.news.map((news, i)=>{
+									return (
+				    					<div className="media margin-bottom">
+											<div className="media-left">
+											    <a href="#">
+											      <img className="img-fluid media-img" src={this.props.env.API_URL+"/uploads/news/"+news.id+"/"+news.feat_img} />
+											    </a>
+										  	</div>
+										  	<div className="media-body">
+										    	<h4 className="media-heading">{news.title}</h4>
+										    	<div dangerouslySetInnerHTML={{__html: news.article}}></div>
+										    	<div className="row media-right notif-button read-more-news">
+													<Link to={"/news/"+news.slug}><button className="btn btn-primary blueBtn">Read More...</button></Link>
+												</div>
+										  	</div>
+											
+								        </div>
+									)
+								})}
+		    				</div>
+		    			</div>
 		      		</div>
 	      		</section>
+
+	      		<section>
+					<div className="subscribe-wrapper">
+						<div className="container">
+							<div className="subscribe-container">								
+									<SubscriptionComponent/>								
+							</div>
+						</div>
+					</div>
+				</section>
       		</div>
 	    );
 	}
