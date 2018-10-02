@@ -147,7 +147,7 @@ class ResultContainer extends Component {
 			    				</div>
 			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{current_jackpot}</span><br/>
-				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
+				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
 			    			<div className="row mt-3">
