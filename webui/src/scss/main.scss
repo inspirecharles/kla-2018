@@ -170,7 +170,7 @@ body {
 
 
 /* for header */
-.result-container {
+.result-container, #print-me {
 	background-color: #2965cc;
 
 	.game-row {
@@ -454,5 +454,13 @@ footer {
 @media print {
     body {
         -webkit-print-color-adjust: exact; 
+
+        #print-me{
+        	.btn,
+        	.supp-link-icons,
+        	.arrow-icon{
+        		display: none;
+        	}
+        }
     }
 }

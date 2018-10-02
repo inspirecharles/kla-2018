@@ -11,17 +11,17 @@ class PrintComponent extends Component {
 	}
 
 	printDiv(){
-	    let toPrint = document.getElementById(this.props.elem+"-container");
+	    let toPrint = document.getElementById(this.props.elem);
 
 	    let print_me = document.getElementById("print-me");
 	    print_me.innerHTML = toPrint.outerHTML;
 
-	    let root = document.getElementById('root');
-	    root.style.display = "none";
+	    let rootdiv = document.getElementById('root');
+	    rootdiv.style.display = "none";
 
 	    window.print();
 
-	    root.style.display = "block";
+	    rootdiv.style.display = "block";
 	    print_me.innerHTML = "";
 	    return true;
 	}

@@ -96,7 +96,7 @@ class HomeCardComponent extends Component {
 	                        	<div className="actionLink">
 	                            	<div className="supplementary_numbers col-lg-12 col-md-12">
 	                            		<div className="supp-link-icons">
-	                            			<PrintComponent elem={this.props.game.slug} />
+	                            			<PrintComponent elem={this.props.game.slug+"-container"} />
 			                            	<ExportComponent game={this.props.game.slug} draw_id={this.props.game.results && this.props.game.results[0] && this.props.game.results[0].draw_id} />
 			                            	<Link className="icons icon-pastresult" to={"/"+createGameUrlSlug(this.props.game.slug)+"/results"}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
 			                            </div>
