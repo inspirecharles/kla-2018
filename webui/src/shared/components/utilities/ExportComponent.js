@@ -4,7 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 import Modal from 'react-modal';
 
-import {exportResults} from "../../actions/action-results"
+import {exportResults, exportResultByDrawId} from "../../actions/action-results"
 
 Modal.setAppElement('#root');
 
@@ -40,6 +40,7 @@ class ExportComponent extends Component {
 	    this.closeModal = this.closeModal.bind(this);
 	    this.handleSubmit = this.handleSubmit.bind(this);
 	    this.handleChange = this.handleChange.bind(this);
+	    this.handleExportByDrawId = this.handleExportByDrawId.bind(this);
 	}
 
 	openModal() {
@@ -68,9 +69,15 @@ class ExportComponent extends Component {
   		}
   	}
 
+  	handleExportByDrawId(event){
+  		event.preventDefault();
+  		this.props.dispatch( exportResultByDrawId( this.props.game, this.props.draw_id ) )
+  	}
+
 	render() {
 	    return (
-	    	<div>
+	    	<a className="icons" onClick={this.handleExportByDrawId}><img className="img-fluid icon-download" src="/img/icons/download.svg" /></a>
+	    	/*<div>
 				<a className="icons" onClick={this.openModal}><img className="img-fluid icon-download" src="/img/icons/download.svg" /></a>
 				<Modal
 		          isOpen={this.state.modalIsOpen}
@@ -89,7 +96,7 @@ class ExportComponent extends Component {
 		          	</form>
 		          	</div>
 		        </Modal>
-	        </div>
+	        </div>*/
 	    );
 	}
 	

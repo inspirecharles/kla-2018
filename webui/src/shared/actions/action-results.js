@@ -20,3 +20,7 @@ export const fetchResults = () => (dispatch, getState) => {
 export const exportResults = (game, draw_date, draw_date_to) => (dispatch, getState) => {
 	window.location = getState().env.API_URL+"/results/exportresults?game="+game+"&draw_date="+draw_date+"&draw_date_to="+draw_date_to;
 }
+
+export const exportResultByDrawId = (game, draw_id) => (dispatch, getState) => {
+	window.location = getState().env.API_URL+"/results/exportresults?game="+game+"&draw_id="+draw_id;
+}

@@ -64,6 +64,7 @@ class ResultsController extends ActiveController
         ->asArray()->one();
     }
 
+    /* export by date range */
     public function actionExportresults(){
         $slug = null;
         if (isset($_GET['game'])) {
@@ -81,103 +82,113 @@ class ResultsController extends ActiveController
         }
 
         try {
-            $variant = Yii::$app->Settings->getVariant();
+            $toExports = null;
+            $filename = null;
             $results = new Results();
-            $toExports = $results->getResultRange($slug, 
-                ['between', 'draw_date', $_GET["draw_date"], $_GET["draw_date_to"] ]
-            );
-            $export = [];
-            $export[] = ['GAME', 'DRAW ID', 'DRAW DATE', 'MAIN NUMBERS', 'SUPP'];
-            foreach($toExports as $row){
-                $main = '';
-                $supp = '';
 
-                $mainNumbers = json_decode($row->main_numbers);
-                $suppNumbers = json_decode($row->supp_numbers);
-                $powerball_numbers = [];
-                $strike_numbers = [];
-
-                if ($variant == 'nz' && $slug == 'lotto') {
-                    if (isset($row->powerball_numbers)) {
-                        $powerball_numbers = json_decode($row->powerball_numbers);
-                    }
-
-                    if (isset($row->strike_numbers)) {
-                        $strike_numbers = json_decode($row->strike_numbers);
-                    }
-                }
-
-                foreach ($mainNumbers as $key => $value){
-                    if ($key != 'type' && $value != '' && is_numeric( $value ))
-                        $main .= $value.' ';
-                    
-                }
-
-                $isGlucksspirale = (Yii::$app->Settings->getVariant() == 'de' && $game['slug'] == 'glucksspirale') ? true : false;
-                if ($isGlucksspirale){
-                    if (count($suppNumbers) > 0){
-                        if (!is_null($suppNumbers) && $suppNumbers != '') {
-                            foreach ($suppNumbers as $key => $value){
-                                if ($key != 'type' && $value != ''){
-                                    $supp .= $value.' ';
-                                }
-                            }
-                        }
-                    }
-                }
-                else{ // not sure if needs to put else here.
-                    if (count($suppNumbers) > 0){
-                        if (!is_null($suppNumbers) && $suppNumbers != ''){
-                            foreach ($suppNumbers as $key => $value){
-                                if ($key !== 'type' && $value != '')
-                                    $supp .= $value.' ';
-                            }
-                        }
-                    }
-                    if (count($powerball_numbers) > 0){
-                        foreach ($powerball_numbers as $key => $value){
-                            $supp .= $value.' ';
-                        }
-                    }
-                    if (count($strike_numbers) > 0){
-                        foreach ($strike_numbers as $key => $value)
-                            $supp .= $value.' ';
-                    }
-                }
-
-                $data = [
-                    $slug,
-                    $row->draw_id,
-                    date('l d M Y', strtotime($row->draw_date)),
-                    $main,
-                    $supp,
-                ];
-
-                $export[] = $data;
-            }
-            if( count($export) > 1 ){
-                $filename = $slug.'_'.$_GET["draw_date"].'_'.$_GET["draw_date_to"].'.csv';
-                $this->arrayToCsvDownload($export, $filename, ',');
+            if( isset($_GET['draw_id']) ){
+                $toExports = $results->getResultRange($slug, ['=', 'draw_id', $_GET["draw_id"]]);
+                $filename = $slug.'_draw-'.$_GET["draw_id"].'.csv';
             }
             else{
-                throw new \yii\web\HttpException(500, 'No results found.');   
+                $toExports = $results->getResultRange($slug, ['between', 'draw_date', $_GET["draw_date"], $_GET["draw_date_to"] ]);
+                $filename = $slug.'_'.$_GET["draw_date"].'_'.$_GET["draw_date_to"].'.csv';
             }
+
+            $this->arrayToCsvDownload($toExports, $filename, ',');
 
         } catch (Exception $ex) {
             throw new \yii\web\HttpException(500, 'Internal server error');
         }
     }
 
-    private function arrayToCsvDownload($array, $filename = "export.csv", $delimiter=";") {
-        header('Content-Type: application/csv');
-        header('Content-Disposition: attachment; filename="'.$filename.'";');
+    private function arrayToCsvDownload($toExports, $filename = "export.csv", $delimiter=";") {
+        $variant = Yii::$app->Settings->getVariant();
+        $export = [];
+        $export[] = ['GAME', 'DRAW ID', 'DRAW DATE', 'MAIN NUMBERS', 'SUPP'];
+        foreach($toExports as $row){
+            $main = '';
+            $supp = '';
 
-        // open the "output" stream
-        // see http://www.php.net/manual/en/wrappers.php.php#refsect2-wrappers.php-unknown-unknown-unknown-descriptioq
-        $f = fopen('php://output', 'w');
+            $mainNumbers = json_decode($row->main_numbers);
+            $suppNumbers = json_decode($row->supp_numbers);
+            $powerball_numbers = [];
+            $strike_numbers = [];
 
-        foreach ($array as $line) {
-            fputcsv($f, $line, $delimiter);
+            if ($variant == 'nz' && $row->slug == 'lotto') {
+                if (isset($row->powerball_numbers)) {
+                    $powerball_numbers = json_decode($row->powerball_numbers);
+                }
+
+                if (isset($row->strike_numbers)) {
+                    $strike_numbers = json_decode($row->strike_numbers);
+                }
+            }
+
+            foreach ($mainNumbers as $key => $value){
+                if ($key != 'type' && $value != '' && is_numeric( $value ))
+                    $main .= $value.' ';
+                
+            }
+
+            $isGlucksspirale = (Yii::$app->Settings->getVariant() == 'de' && $game['slug'] == 'glucksspirale') ? true : false;
+            if ($isGlucksspirale){
+                if (count($suppNumbers) > 0){
+                    if (!is_null($suppNumbers) && $suppNumbers != '') {
+                        foreach ($suppNumbers as $key => $value){
+                            if ($key != 'type' && $value != ''){
+                                $supp .= $value.' ';
+                            }
+                        }
+                    }
+                }
+            }
+            else{ // not sure if needs to put else here.
+                if (count($suppNumbers) > 0){
+                    if (!is_null($suppNumbers) && $suppNumbers != ''){
+                        foreach ($suppNumbers as $key => $value){
+                            if ($key !== 'type' && $value != '')
+                                $supp .= $value.' ';
+                        }
+                    }
+                }
+                if (count($powerball_numbers) > 0){
+                    foreach ($powerball_numbers as $key => $value){
+                        $supp .= $value.' ';
+                    }
+                }
+                if (count($strike_numbers) > 0){
+                    foreach ($strike_numbers as $key => $value)
+                        $supp .= $value.' ';
+                }
+            }
+
+            $data = [
+                $row->game->slug,
+                $row->draw_id,
+                date('l d M Y', strtotime($row->draw_date)),
+                $main,
+                $supp,
+            ];
+
+            $export[] = $data;
         }
+
+        if( count($export) > 1 ){
+            header('Content-Type: application/csv');
+            header('Content-Disposition: attachment; filename="'.$filename.'";');
+
+            // open the "output" stream
+            // see http://www.php.net/manual/en/wrappers.php.php#refsect2-wrappers.php-unknown-unknown-unknown-descriptioq
+            $f = fopen('php://output', 'w');
+
+            foreach ($export as $line) {
+                fputcsv($f, $line, $delimiter);
+            }
+        }
+        else{
+            throw new \yii\web\HttpException(500, 'No results found.');   
+        }
+        
     }   
 }
