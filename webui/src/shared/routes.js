@@ -33,7 +33,7 @@ const routes = [
     component: ResultContainer
   },
   {
-    path: "/tickets",
+    path: "/check-your-ticket",
     exact: true,
     component: ComingSoonContainer,
     title: 'Tickets'
