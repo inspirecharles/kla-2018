@@ -11,21 +11,18 @@ class PrintComponent extends Component {
 	}
 
 	printDiv(){
+	    let toPrint = document.getElementById(this.props.elem+"-container");
 
-		/*var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+	    let print_me = document.getElementById("print-me");
+	    print_me.innerHTML = toPrint.outerHTML;
 
-	    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
-	    mywindow.document.write('</head><body >');
-	    mywindow.document.write('<h1>' + document.title  + '</h1>');
-	    mywindow.document.write(document.getElementById(this.props.elem+"-container").innerHTML);
-	    mywindow.document.write('</body></html>');
-
-	    mywindow.document.close(); // necessary for IE >= 10
-	    mywindow.focus(); // necessary for IE >= 10*/
+	    let root = document.getElementById('root');
+	    root.style.display = "none";
 
 	    window.print();
-	    //mywindow.close();
 
+	    root.style.display = "block";
+	    print_me.innerHTML = "";
 	    return true;
 	}
 
