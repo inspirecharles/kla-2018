@@ -146,6 +146,10 @@ class ResultContainer extends Component {
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="game-prize-date text-right">
+			    					<div className="supp-link-icons">
+					    				<PrintComponent elem="lotto-container" />
+		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
+	                            	</div>
 			    					<span className="current-jackpot">{current_jackpot}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
@@ -163,10 +167,6 @@ class ResultContainer extends Component {
 				    			</div>
 				    			<div className="col-lg-7">
 				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, this.props.result_detail.slug == "49lottery"?'chance_to_win':'lotto_dividends') }
-				    				<div className="supp-link-icons">
-					    				<PrintComponent elem="detail-content" />
-		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
-	                            	</div>
 				    			</div>
 			    			</div>
 			    		</div>
