@@ -190,7 +190,7 @@ body {
 	}
 
 	a.icons {
-		padding-right: 15px;
+		cursor: pointer;
 	}
 
 	.icon-pastresult {
@@ -458,7 +458,8 @@ footer {
         #print-me{
         	.btn,
         	.supp-link-icons,
-        	.arrow-icon{
+        	.arrow-icon,
+        	a.icons{
         		display: none;
         	}
         }

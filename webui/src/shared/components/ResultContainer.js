@@ -3,7 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 import moment from "moment";
 
-import {renderDividends, formatMoney, createGameUrlSlug, buyNowUrl} from "../helper";
+import {renderDividends, formatMoney, createGameUrlSlug} from "../helper";
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 import SubscriptionComponent from "./subscribe/SubscriptionComponent"
@@ -146,6 +146,10 @@ class ResultContainer extends Component {
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="game-prize-date text-right">
+			    					<div className="supp-link-icons">
+					    				<PrintComponent elem={this.props.result_detail.slug+"-container"} />
+		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
+	                            	</div>
 			    					<span className="current-jackpot">{current_jackpot}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
@@ -157,16 +161,12 @@ class ResultContainer extends Component {
 				    					<div>Next Draw</div>
 				    					<div>{next_jackpot}</div>
 				    					<div className="text-center mt-3">
-				    						<a href={buyNowUrl(this.props.result_detail && this.props.result_detail.slug)} target="_blank"><button className="btn">Buy Now</button></a>
+				    						<a href={this.props.result_detail && this.props.result_detail.buy_url} target="_blank"><button className="btn">Buy Now</button></a>
 				    					</div>
 				    				</div>
 				    			</div>
 				    			<div className="col-lg-7">
 				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, this.props.result_detail.slug == "49lottery"?'chance_to_win':'lotto_dividends') }
-				    				<div className="supp-link-icons">
-					    				<PrintComponent elem="detail-content" />
-		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
-	                            	</div>
 				    			</div>
 			    			</div>
 			    		</div>
@@ -181,11 +181,8 @@ class ResultContainer extends Component {
 	      		<section className="result-video">
 	      			<div className="container">
 	      				<div className="row">
-	      					<div className="col-lg-6">
-	      						<h2 className="section-title">An Awesome Title About the<br/> Lottery Goes Here</h2>
-	      						<p>
-	      							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo pulvinar sapien ut hendrerit. Ut eros mi, tristique facilisis nibh quis, pretium laoreet velit. <br/><br/>Suspendisse potenti. Duis quis nibh ac ante aliquam varius. Nulla varius risus orci, in scelerisque odio aliquet eget. Nam consequat justo diam, id finibus nunc ullamcorper at. <br/><br/>Sed eu dictum risus, accumsan mollis felis. Phasellus et sapien eget orci elementum condimentum. Nulla tincidunt laoreet auctor. Cras et nulla velit. Donec eget sodales erat. Aliquam volutpat ante ante, nec rutrum odio placerat quis. Vivamus semper blandit ex quis lacinia. Vivamus non consectetur quam, id gravida mi. Sed in porta nisl.
-	      						</p>
+	      					<div className="col-lg-6" dangerouslySetInnerHTML={{ __html: this.props.result_detail && this.props.result_detail.description }}>
+	      						
 	      					</div>
 	      					<div className="col-lg-6 video-container">
 	      						<iframe 

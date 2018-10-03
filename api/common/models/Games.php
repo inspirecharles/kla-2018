@@ -26,7 +26,8 @@ class Games extends ActiveRecord
             [['name'], 'string', 'max' => 45],
             [['slug'], 'string', 'max' => 45],
             [['slug'], 'unique'],
-            [['priority'], 'integer', 'integerOnly' => true]
+            [['priority'], 'integer', 'integerOnly' => true],
+            [['buy_url', 'description'], 'string'],
         ];
     }
 
