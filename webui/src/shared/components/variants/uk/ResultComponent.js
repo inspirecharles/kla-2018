@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
-import {createResultLink} from "../../../helper.js"
+import {createGameUrlSlug} from "../../../helper.js"
 
 class ResultComponent extends Component {
 
@@ -16,7 +16,7 @@ class ResultComponent extends Component {
 
     	this.processMainNumbers = this.processMainNumbers.bind(this);
     	this.processSuppNumbers = this.processSuppNumbers.bind(this);
-	} 
+	}
 
 	processMainNumbers(main_numbers){
 		var main_array = [];
@@ -120,7 +120,7 @@ class ResultComponent extends Component {
                             }) }
 
                             { !this.props.hideViewPrizes &&
-                            <Link to={createResultLink(this.props.game)}><button className="btn btn-primary float-right blueBtn">View Prizes</button></Link>
+                            <Link to={"/"+createGameUrlSlug(this.props.game.slug)}><button className="btn btn-primary float-right blueBtn">View Prizes</button></Link>
 							}
 						</div>
                     </div>

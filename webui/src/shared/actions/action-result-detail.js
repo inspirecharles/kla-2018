@@ -20,8 +20,15 @@ export const emptyResultDetail = () => (dispatch, getState) => {
 	return dispatch( emptyResult() );
 }
 
+export const fetchResultByGame = (game_slug) => (dispatch, getState) => {
+  	return fetch(getState().env.API_URL+"/results/fetchbygame?game_slug="+(game_slug && game_slug.replace("-", "_")) )
+	    .then(response => response.json())
+	    .then(result => dispatch(receivedResult(result)))
+	    .catch(err => dispatch(resultError(err)));
+};
+
 export const fetchResultByGameAndDrawId = (game_slug, draw_id) => (dispatch, getState) => {
-  	return fetch(getState().env.API_URL+"/results/fetchbygameanddrawid?game_slug="+(game_slug && game_slug.replace("-", "_"))+"&draw_id="+(draw_id && draw_id.replace("draw-","")))
+  	return fetch(getState().env.API_URL+"/results/fetchbygameanddrawid?game_slug="+(game_slug && game_slug.replace("-", "_"))+ "&draw_id="+(draw_id && draw_id.replace("draw-","")))
 	    .then(response => response.json())
 	    .then(result => dispatch(receivedResult(result)))
 	    .catch(err => dispatch(resultError(err)));
