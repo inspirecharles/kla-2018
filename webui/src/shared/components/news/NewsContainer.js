@@ -46,7 +46,7 @@ class NewsContainer extends Component {
 		    			<div className="row">
 	    					{this.props.news && this.props.news.length && this.props.news.map((news, i)=>{
 								return (
-		    						<div className="news-container col-lg-12">
+		    						<div className="news-container col-lg-12" key={i}>
 				    					<div className="media margin-bottom">
 											<div className="media-left">
 											    <a href="#">
