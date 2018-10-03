@@ -147,7 +147,7 @@ class ResultContainer extends Component {
 			    				</div>
 			    				<div className="game-prize-date text-right">
 			    					<div className="supp-link-icons">
-					    				<PrintComponent elem="lotto-container" />
+					    				<PrintComponent elem={this.props.result_detail.slug+"-container"} />
 		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
 	                            	</div>
 			    					<span className="current-jackpot">{current_jackpot}</span><br/>
