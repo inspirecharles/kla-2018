@@ -181,11 +181,8 @@ class ResultContainer extends Component {
 	      		<section className="result-video">
 	      			<div className="container">
 	      				<div className="row">
-	      					<div className="col-lg-6">
-	      						<h2 className="section-title">An Awesome Title About the<br/> Lottery Goes Here</h2>
-	      						<p>
-	      							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo pulvinar sapien ut hendrerit. Ut eros mi, tristique facilisis nibh quis, pretium laoreet velit. <br/><br/>Suspendisse potenti. Duis quis nibh ac ante aliquam varius. Nulla varius risus orci, in scelerisque odio aliquet eget. Nam consequat justo diam, id finibus nunc ullamcorper at. <br/><br/>Sed eu dictum risus, accumsan mollis felis. Phasellus et sapien eget orci elementum condimentum. Nulla tincidunt laoreet auctor. Cras et nulla velit. Donec eget sodales erat. Aliquam volutpat ante ante, nec rutrum odio placerat quis. Vivamus semper blandit ex quis lacinia. Vivamus non consectetur quam, id gravida mi. Sed in porta nisl.
-	      						</p>
+	      					<div className="col-lg-6" dangerouslySetInnerHTML={{ __html: this.props.result_detail && this.props.result_detail.description }}>
+	      						
 	      					</div>
 	      					<div className="col-lg-6 video-container">
 	      						<iframe 
