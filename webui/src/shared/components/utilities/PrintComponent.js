@@ -6,11 +6,29 @@ import {connect} from "react-redux";
 class PrintComponent extends Component {
 	constructor() {
 	    super();
+
+	    this.printDiv = this.printDiv.bind(this);
+	}
+
+	printDiv(){
+	    let toPrint = document.getElementById(this.props.elem);
+
+	    let print_me = document.getElementById("print-me");
+	    print_me.innerHTML = toPrint.outerHTML;
+
+	    let rootdiv = document.getElementById('root');
+	    rootdiv.style.display = "none";
+
+	    window.print();
+
+	    rootdiv.style.display = "block";
+	    print_me.innerHTML = "";
+	    return true;
 	}
 
 	render() {
 	    return (
-			<a className="icons"><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
+			<a className="icons" onClick={this.printDiv}><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
 	    );
 	}
 	

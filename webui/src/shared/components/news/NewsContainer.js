@@ -44,9 +44,9 @@ class NewsContainer extends Component {
 				<section className="all-news">
 		    		<div className="container">
 		    			<div className="row">
-		    				<div className="news-container col-lg-12">
-		    					{this.props.news && this.props.news.length && this.props.news.map((news, i)=>{
-									return (
+	    					{this.props.news && this.props.news.length && this.props.news.map((news, i)=>{
+								return (
+		    						<div className="news-container col-lg-12">
 				    					<div className="media margin-bottom">
 											<div className="media-left">
 											    <a href="#">
@@ -62,9 +62,9 @@ class NewsContainer extends Component {
 										  	</div>
 											
 								        </div>
-									)
-								})}
-		    				</div>
+		    						</div>
+								)
+							})}
 		    			</div>
 		      		</div>
 	      		</section>

@@ -81,6 +81,7 @@ function renderFullPage(html, preloadedState) {
 				<link rel="stylesheet" type="text/css" href="/css/main.css">
 			</head>
 			<body>
+				<div id="print-me"></div>
 				<div id="root">${html}</div>
 			</body>
 			<script>window.__PRELOADED_STATE__ = ${serialize(preloadedState)}</script>

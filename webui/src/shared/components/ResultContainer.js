@@ -7,6 +7,9 @@ import {renderDividends, formatMoney, createGameUrlSlug, buyNowUrl} from "../hel
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 import SubscriptionComponent from "./subscribe/SubscriptionComponent"
+import ExportComponent from "./utilities/ExportComponent";
+import PrintComponent from "./utilities/PrintComponent";
+
 import {fetchResultByGameAndDrawId, emptyResultDetail} from "../actions/action-result-detail";
 
 class ResultContainer extends Component {
@@ -130,21 +133,21 @@ class ResultContainer extends Component {
 
 	    return (
 			<div id="result-detail">
-	    		<section className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
+	    		<section id={this.props.result_detail.slug+"-container"} className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
 	    			<div className="container">
 			    	 	<div className="row">
 				    		<div className="col-lg-12">
 				    			<h1 className="display-5 text-left text-white mt-4 latest-title">Latest {this.props.result_detail && this.props.result_detail.name} Results - Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id}</h1>
 				    		</div>
 				    	</div>
-			    		<div className="detail-content col-lg-12 mt-3">
+			    		<div id="detail-content" className="detail-content col-lg-12 mt-3">
 			    			<div className="row">
 			    				<div className="lotto-game-logo">
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{current_jackpot}</span><br/>
-				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
+				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
 			    			<div className="row mt-3">
@@ -160,6 +163,10 @@ class ResultContainer extends Component {
 				    			</div>
 				    			<div className="col-lg-7">
 				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, this.props.result_detail.slug == "49lottery"?'chance_to_win':'lotto_dividends') }
+				    				<div className="supp-link-icons">
+					    				<PrintComponent elem="detail-content" />
+		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
+	                            	</div>
 				    			</div>
 			    			</div>
 			    		</div>
