@@ -3,7 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 import moment from "moment";
 
-import {renderDividends, formatMoney, createGameUrlSlug, buyNowUrl} from "../helper";
+import {renderDividends, formatMoney, createGameUrlSlug} from "../helper";
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
 import SubscriptionComponent from "./subscribe/SubscriptionComponent"
@@ -161,7 +161,7 @@ class ResultContainer extends Component {
 				    					<div>Next Draw</div>
 				    					<div>{next_jackpot}</div>
 				    					<div className="text-center mt-3">
-				    						<a href={buyNowUrl(this.props.result_detail && this.props.result_detail.slug)} target="_blank"><button className="btn">Buy Now</button></a>
+				    						<a href={this.props.result_detail && this.props.result_detail.buy_url} target="_blank"><button className="btn">Buy Now</button></a>
 				    					</div>
 				    				</div>
 				    			</div>
