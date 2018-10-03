@@ -19,10 +19,13 @@
 		padding: 52px 0;
 
 		.news-container {
+
 			.media {
 				padding: 0;
 				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     			border: 0;
+    			overflow: hidden;
+    			height: 200px;
 
 				.media-img {
 					width: 300px;
