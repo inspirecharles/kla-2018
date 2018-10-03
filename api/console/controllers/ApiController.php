@@ -129,10 +129,22 @@ class ApiController extends Controller
                     $data->dividends = json_encode($dr->dividends);
                     $data->next_jackpot = $grData->Results->Next_Jackpot;
                     $data->current_jackpot =$grData->Results->Current_Jackpot;
-                    if(property_exists($dr, 'stats')){
+                    if(property_exists($dr, 'stats') && $data->slug != "health_lottery"){
                         $data->stats = json_encode($dr->stats);
                     }else{
+                        if($data->slug == 'health_lottery'){
+                            $newObject['stats']['AveragePrizeWon'] ='58 MILLION';
+                            $newObject['stats']['AboveAverageWins'] = '87 MILLION';
+                            $newObject['stats']['LargestPrizeWon'] = '3 MILLION';
+                            $data->stats = json_encode($newObject);
+                        }else if($data->slug == 'postcode_daily' || $data->slug == 'postcode_weekly'|| $data->slug == 'postcode_monthly'){
+                            $newObject['stats']['AveragePrizeWon'] ='$255M';
+                            $newObject['stats']['AboveAverageWins'] = '2.4M';
+                            $newObject['stats']['LargestPrizeWon'] = '31%';
+                            $data->stats = json_encode($newObject);                            
+                        }else{
                         $data->stats = null;
+                        }
                     }
                     if (property_exists($dr, 'videoLink')){ 
                         $data->video_link =  $dr->videoLink;

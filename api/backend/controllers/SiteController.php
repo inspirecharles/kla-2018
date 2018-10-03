@@ -78,6 +78,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
+            $this->layout = '@backend/views/layouts/unauth.php';
             $model->password = '';
 
             return $this->render('login', [

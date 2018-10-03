@@ -1,4 +1,4 @@
-#result-detail{
+#result-detail, #print-me{
 	
 	section.detail{
 		background-color: #2a65cd;
@@ -13,6 +13,14 @@
 
 			img.game-logo{
 				width: 150px;
+			}
+
+			.lotto-game-logo {
+				margin-left: 15px;
+			}
+
+			.change-lottery {
+				margin-left: 35px;
 			}
 
 			.game-prize-date {
@@ -129,7 +137,7 @@
 			}
 
 			span.value{
-				font-size: 3em;
+				font-size: 2.5em;
 				line-height: .9;
 			}
 		}

@@ -1,5 +1,27 @@
 @media (max-width: 389.98px) {
 
+	#lottery-result {
+		section.all-news {
+			.step-textTitle {
+				margin: 20px 0;
+			}
+			.lottery-container {
+				/*max-width: 100%;*/
+				margin-bottom: 10px;
+				margin-left: 15px;
+
+				.card-body {
+					width: 140px !important;
+				}
+
+
+				.sluggame-logo {
+					width: 90% !important;
+				}
+			}
+		}
+	}
+
 	.result-container {
 
 		.uk-logo-lotto {
@@ -43,6 +65,28 @@
 			.uk-logo {
 				width: 230px;
 				height: 65px;
+			}
+		}
+	}
+
+	#lottery-result {
+		section.all-news {
+			.step-textTitle {
+				margin: 20px 0;
+			}
+			.lottery-container {
+				/*max-width: 100%;*/
+				margin-bottom: 10px;
+				margin-left: 15px;
+
+				.card-body {
+					width: 190px;
+				}
+
+
+				.sluggame-logo {
+					width: 70%;
+				}
 			}
 		}
 	}
@@ -93,6 +137,16 @@
 		.card-footer {
 			padding: 26px 15px;
 		}
+	}
+
+	.game_result.postcode{
+
+	    &.postcode_weekly, &.postcode_monthly {
+	        .numbers.circle {
+	            min-width: 100%;
+	        }
+	    }
+
 	}
 
 	.notification-wrapper {
@@ -187,6 +241,25 @@
 }
 
 @media (min-width: 576px) {
+	#result-detail {
+		section.detail {
+			.detail-content{
+
+				.next-draw {
+					text-align: center;
+
+					span {
+						font-family: "Nunito Regular", sans-serif;
+		    			font-size: 20px;
+					}
+				}
+			}
+
+			.latest-title {
+				line-height: 35px;
+			}
+		}
+	}
 }
 
 // Medium devices (tablets, 768px and up)

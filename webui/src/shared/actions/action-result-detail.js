@@ -26,3 +26,17 @@ export const fetchResultByGameAndDrawId = (game_slug, draw_id) => (dispatch, get
 	    .then(result => dispatch(receivedResult(result)))
 	    .catch(err => dispatch(resultError(err)));
 };
+
+export const fetchLatestResultDrawByGame = (game_slug) => (dispatch, getState) => {
+	return fetch(getState().env.API_URL+"/results/fetchbygame?game_slug="+(game_slug && game_slug.replace("-", "_")))
+	    .then(response => response.json())
+	    .then(result => dispatch(receivedResult(result)))
+	    .catch(err => dispatch(resultError(err)));
+}
+
+export const searchResult = ( game_slug, search_data ) => (dispatch, getState) => {
+	return fetch(getState().env.API_URL+"/results/search?game_slug="+game_slug+"&search_data="+JSON.stringify(search_data))
+	    .then(response => response.json())
+	    .then(result => dispatch(receivedResult(result)))
+	    .catch(err => dispatch(resultError(err)));
+}

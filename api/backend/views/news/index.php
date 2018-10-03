@@ -7,6 +7,7 @@
 				<th>Title</th>
 				<th>Status</th>
 				<th>Date Created</th>
+				<th>Actions</th>
 			</thead>
 			<tbody>
 

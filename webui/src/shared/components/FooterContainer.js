@@ -23,9 +23,6 @@ class FooterContainer extends Component {
 			              <li>
 			                <Link className="footer-list" to="/privacy">Privacy Policy</Link>
 			              </li>
-			              <li>
-			                <a className="footer-list" href="/sitemap.xml">Sitemap</a>
-			              </li>
 			            </ul>
 
 			          </div>
@@ -35,15 +32,9 @@ class FooterContainer extends Component {
 			          	<p className="mb-1 sm-font">Find Us On Social Media</p>
 
 			            <ul className="list-unstyled list-inline text-right">
-						      <li className="list-inline-item">
-						      	<a href={"https://www.facebook.com/lotteryresults/"}><img className="sm-fb" src="/img/icons/iconmonstr-facebook-3.svg" /></a>
-						      </li>
-						      <li className="list-inline-item">
-						        <a href="#"><img className="sm-twitter" src="/img/icons/iconmonstr-twitter-3.svg" /></a>
-						      </li>
-						      <li className="list-inline-item">
-						        <a href="#"><img className="uk-gplus" src="/img/icons/iconmonstr-google-plus-3.svg" /></a>
-						      </li>
+					      	<li className="list-inline-item">
+					      		<a href={"https://www.facebook.com/lotteryresults/"}><img className="sm-fb" src="/img/icons/iconmonstr-facebook-3.svg" /></a>
+					      	</li>
 						</ul>
 
 			          </div>

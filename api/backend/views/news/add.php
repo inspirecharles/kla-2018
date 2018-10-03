@@ -30,7 +30,6 @@
 	</div>
 </div>
 <link rel="stylesheet" type="text/css" href="/trumbowyg/trumbowyg.min.css">
-
 <?php 
 	$this->registerJsFile('/trumbowyg/trumbowyg.min.js',['position' => \yii\web\View::POS_END, 'depends' => 'yii\bootstrap\BootstrapPluginAsset']);
 	$this->registerJsFile('/js/news.js',['position' => \yii\web\View::POS_END, 'depends' => '/trumbowyg/trumbowyg.min.js']);

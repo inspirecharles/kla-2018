@@ -24,7 +24,6 @@ class ComingSoonContainer extends Component {
 	    	 		<div className="container">
 			    	 	<div className="row">
 			    	 		<div className="col-lg-12">
-			    	 			<h1>{this.props.title}</h1>
 			    	 			<h2 className="launchingSoon-text text-center text-white">LAUNCHING SOON</h2>
 			    	 			<p className="comingSoon-text text-center text-white">
 			    	 				This awesome feature is coming soon. <br />
@@ -60,7 +59,7 @@ class ComingSoonContainer extends Component {
 									<div className="media-body subscribe-body right col-lg-6 col-md-12 subscribe">
 										<div className="single">
 											<div className="input-group">
-									         <input type="email" className="form-control" placeholder="youremail@email.com" />
+									         <input type="email" className="form-control" placeholder="Email" />
 										        <span className="input-group-btn">
 										        	<button className="btn btn-theme btn-subscribe" type="submit">Subscribe</button>
 									         	</span>
