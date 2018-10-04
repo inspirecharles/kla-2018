@@ -160,8 +160,12 @@ class Results extends \yii\db\ActiveRecord
          $command = $connection->createCommand($query)->cache(60);
         return $command->queryAll();
     }
-     public function getAllResults() {
+    public function getAllResults() {
         return Results::find()->with('game')->where('main_numbers is not null')->orderBy('draw_date desc')->all();
+    }
+
+    public function getAllResultsSpeficGame($game='') {
+        return Results::find()->where('main_numbers is not null')->andWhere(['game_id' =>$game])->orderBy('draw_date asc')->all();
     }
      public function getResultDetails($where = array(), $fields = array())
     {
