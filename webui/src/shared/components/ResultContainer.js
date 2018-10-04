@@ -6,6 +6,7 @@ import moment from "moment";
 import {renderDividends, formatMoney, createGameUrlSlug} from "../helper";
 import UKResult from "./variants/uk/ResultComponent";
 import NewsSliderComponent from "./home/NewsSliderComponent"
+import StatComponent from "./results/StatComponent"
 import SubscriptionComponent from "./subscribe/SubscriptionComponent"
 import ExportComponent from "./utilities/ExportComponent";
 import PrintComponent from "./utilities/PrintComponent";
@@ -48,88 +49,6 @@ class ResultContainer extends Component {
 	}
 
 	render() {
-		let firstStat='';
-		let secondStat='';
-		let thirdStat='';
-		let firstValue = '';
-		let secondValue = '';
-		let thirdValue = '';
-		let current_jackpot = '';
-		let next_jackpot = '';
-
-		if(this.props.result_detail.results && this.props.result_detail.results.length){
-			/*
-			if(this.props.result_detail && this.props.result_detail.slug == "health_lottery"){
-					firstStat = "£\'s RAISED";
-					secondStat= "£\'s WON";
-					thirdStat ='WINNERS';
-					firstValue = '58 MILLION';
-					secondValue = '87 MILLION';
-					thirdValue = '3 MILLION';	
-			}else if(this.props.result_detail && (this.props.result_detail.slug == "postcode_daily" ||this.props.result_detail.slug == "postcode_weekly" ||this.props.result_detail.slug == "postcode_monthly")){
-					firstStat = 'Amount Raised for Charity so far';
-					secondStat='Number of Players';
-					thirdStat ='% of Sub given to charity';
-					firstValue = '$255M';
-					secondValue = '2.4M';
-					thirdValue = '31%';
-			}else{
-					firstStat = 'Avg. prize Won';
-					secondStat='Above avg. wins';
-					thirdStat ='Largest prize Won';
-					firstValue = "£ " +formatMoney(this.getStat().AveragePrizeWon);
-					secondValue = this.getStat().AboveAverageWins+" %";
-					thirdValue = "£ " +formatMoney(this.getStat().LargestPrizeWon);
-			}*/
-				
-			switch(this.props.result_detail.slug) {
-		    case '49lottery':
-			   		firstStat = 'Avg. prize Won';
-					secondStat='Above avg. wins';
-					thirdStat ='Largest prize Won';
-					firstValue = "£ " +formatMoney(this.getStat().AveragePrizeWon);
-					secondValue = this.getStat().AboveAverageWins+" %";
-					thirdValue = "£ " +formatMoney(this.getStat().LargestPrizeWon);
-					current_jackpot =  "Min £25,000 or 10% of sales";
-					next_jackpot = "Min £25,000 or 10% of sales";
-			        break;
-		    case 'postcode_daily':		   		
-		    case 'postcode_weekly':		   		
-		    case 'postcode_monthly' :
-		   			firstStat = 'Amount Raised for Charity so far';
-					secondStat='Number of Players';
-					thirdStat ='% of Sub given to charity';
-					firstValue = '$255M';
-					secondValue = '2.4M';
-					thirdValue = '31%';
-					current_jackpot =  "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot);
-					next_jackpot = "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot);
-		        break;
-		    case 'health_lottery':
-		   			firstStat = "£\'s RAISED";
-					secondStat= "£\'s WON";
-					thirdStat ='WINNERS';
-					firstValue = '58 MILLION';
-					secondValue = '87 MILLION';
-					thirdValue = '3 MILLION';
-					current_jackpot =  "Min £25,000 or 10% of sales";
-					next_jackpot = "Min £25,000 or 10% of sales";	
-		        break;
-		    default:
-		    		firstStat = 'Avg. prize Won';
-					secondStat='Above avg. wins';
-					thirdStat ='Largest prize Won';
-					firstValue = "£ " +formatMoney(this.getStat().AveragePrizeWon);
-					secondValue = this.getStat().AboveAverageWins+" %";
-					thirdValue = "£ " +formatMoney(this.getStat().LargestPrizeWon);
-					current_jackpot =  "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot);
-					next_jackpot = "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot);
-		         break;
-			} 
-		}
-
-		
-
 
 	    return (
 			<div id="result-detail">
@@ -150,7 +69,7 @@ class ResultContainer extends Component {
 					    				<PrintComponent elem={this.props.result_detail.slug+"-container"} />
 		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
 	                            	</div>
-			    					<span className="current-jackpot">{current_jackpot}</span><br/>
+			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].current_jackpot}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
@@ -159,7 +78,7 @@ class ResultContainer extends Component {
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
 				    				<div className="next-draw">
 				    					<div>Next Draw</div>
-				    					<div>{next_jackpot}</div>
+				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].current_jackpot}</div>
 				    					<div className="text-center mt-3">
 				    						<a href={this.props.result_detail && this.props.result_detail.buy_url} target="_blank"><button className="btn">Buy Now</button></a>
 				    					</div>
@@ -196,29 +115,7 @@ class ResultContainer extends Component {
 	      				</div>
 	      			</div>
 	      		</section>
-	      		<section className="draw-statistics">
-	      			<div className="container">
-	      				<div className="row">
-	      					<div className="col-lg-12 text-center section-title margin-bottom">
-	      						Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id} Statistics
-	      					</div>
-	      				</div>	      			
-	      				<div className="row text-center">
-	      					<div className="col-lg-4 margin-bottom">
-	      						<label>{firstStat}</label><br/>
-	      						<span className="value">{firstValue}</span>
-	      					</div>
-	      					<div className="col-lg-4 margin-bottom">
-	      						<label>{secondStat}</label><br/>
-	      						<span className="value">{secondValue}</span>
-	      					</div>
-	      					<div className="col-lg-4 margin-bottom">
-	      						<label>{thirdStat}</label><br/>
-	      						<span className="value">{thirdValue}</span>
-	      					</div>
-	      				</div>
-	      			</div>
-	      		</section>
+	      		<StatComponent />
 	      		<section className="news">
 	      			<div className="container">
 	      				<h2 className="text-center uk-lotto-news-title celias section-title">Lotto Winner Stories</h2>
@@ -228,7 +125,6 @@ class ResultContainer extends Component {
 						</div>
 	      			</div>
 	      		</section>
-
 	      		<section>
 					<div className="subscribe-wrapper">
 						<div className="container">
