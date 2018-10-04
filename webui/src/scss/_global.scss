@@ -19,6 +19,9 @@ section.articles-section {
             font-family: "Nunito Regular", sans-serif;
             font-size: 16px;    
             line-height: 22px;
+            overflow: hidden;
+            height: 110px;
+            margin-bottom: 15px;
         }
     }
 }
@@ -113,9 +116,9 @@ section.page-footer {
     line-height: 24px;
 }
 
-.blog-title {
+/*.blog-title {
     padding-bottom: 20px;
-}
+}*/
 
 .bg-image-full {
     width: 100%;
