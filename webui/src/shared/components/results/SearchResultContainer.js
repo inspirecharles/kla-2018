@@ -8,11 +8,11 @@ import UKResult from "../variants/uk/ResultComponent";
 import NewsSliderComponent from "../home/NewsSliderComponent";
 import SubscriptionComponent from "../subscribe/SubscriptionComponent"
 
-import {fetchLatestResultDrawByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
+import {fetchResultByGameAndDrawId, fetchResultByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
 
 class SearchResultContainer extends Component {
-	constructor(props) {
-	    super(props);
+	constructor(props, context) {
+	    super(props, context);
 
     	this.renderResult = this.renderResult.bind(this);
 
@@ -27,12 +27,15 @@ class SearchResultContainer extends Component {
     	this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 	}
 
-	static initialAction(game_slug = null ) {
-    	return fetchLatestResultDrawByGame(game_slug);
+	static initialAction(game_slug = null, draw_id = null ) {
+		if( draw_id )
+    		return fetchResultByGameAndDrawId(game_slug, draw_id);
+    	else
+    		return fetchResultByGame(game_slug);
   	}
 
 	componentWillMount(){
-      	this.props.dispatch(SearchResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_") ));
+      	this.props.dispatch(SearchResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), (this.props.match.params.draw_id && this.props.match.params.draw_id.replace("draw-", "")) || null ));
 	}
 
 	componentDidMount() {
@@ -41,6 +44,11 @@ class SearchResultContainer extends Component {
 
 	componentWillUnmount(){
 		this.props.dispatch(emptyResultDetail());
+	}
+
+	componentDidUpdate (nextProps){
+		if( nextProps.location.pathname != this.props.location.pathname )
+			this.props.dispatch(SearchResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), (this.props.match.params.draw_id && this.props.match.params.draw_id.replace("draw-", "")) || null ));
 	}
 
 	renderResult(){
@@ -58,7 +66,21 @@ class SearchResultContainer extends Component {
 
 	handleSearchSubmit(event){
 		event.preventDefault();
-		this.props.dispatch(searchResult(this.props.result_detail.slug, this.state))
+		var self = this;
+		//this.props.dispatch(searchResult(this.props.result_detail.slug, this.state))
+		fetch(this.props.env.API_URL+"/results/search?game_slug="+this.props.result_detail.slug+"&search_data="+JSON.stringify(this.state))
+	    .then(response => response.json())
+	    .then(result => {
+	    	if( !result.type ){
+	    		console.log(result);
+	    		self.props.history.push('/'+this.props.result_detail.slug+'/results/draw-'+result.results[0].draw_id);
+	    		//window.location = '/'+this.props.result_detail.slug+'/results/draw-'+result.results[0].draw_id
+	    	}else
+	    		alert('no result found.')
+	    })
+	    .catch(err => {
+	    	console.log(err);
+	    });
 	}
 
 	render() {
@@ -82,7 +104,7 @@ class SearchResultContainer extends Component {
 			    				
 			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
-				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
+				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
 			    			<div className="row mt-3">
@@ -133,7 +155,8 @@ class SearchResultContainer extends Component {
 
 function mapStateToProps(state){
   	return {
-    	result_detail: state.result_detail
+    	result_detail: state.result_detail,
+    	env: state.env
   	}
 }
 

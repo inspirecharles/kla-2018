@@ -10,9 +10,9 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
-				<switch>
+				<Switch>
 					{routes.map((route, i) => <Route key={i} {...route} />)}
-				</switch>
+				</Switch>
 				<Footer />
 			</div>
 		)

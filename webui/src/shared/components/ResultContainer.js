@@ -10,7 +10,7 @@ import SubscriptionComponent from "./subscribe/SubscriptionComponent"
 import ExportComponent from "./utilities/ExportComponent";
 import PrintComponent from "./utilities/PrintComponent";
 
-import {fetchResultByGameAndDrawId, emptyResultDetail} from "../actions/action-result-detail";
+import {fetchResultByGame, emptyResultDetail} from "../actions/action-result-detail";
 
 class ResultContainer extends Component {
 	constructor(props) {
@@ -21,13 +21,13 @@ class ResultContainer extends Component {
     	this.getStat = this.getStat.bind(this);
 	}
 
-	static initialAction(game_slug = null, draw_id=null) {
+	static initialAction(game_slug = null) {
 					
-    	return fetchResultByGameAndDrawId(game_slug, draw_id);
+    	return fetchResultByGame(game_slug);
   	}
 
 	componentWillMount(){
-      	this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), this.props.match.params.draw_id.replace("draw-","") ));
+      	this.props.dispatch(ResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_") ));
 	}
 
 	componentDidMount() {

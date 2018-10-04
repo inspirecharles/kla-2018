@@ -22,15 +22,10 @@ const routes = [
     title: 'Results'
   },
   {
-    path: "/:game_slug/results",
+    path: "/:game_slug/results/:draw_id?",
     exact: true,
     component: SearchResultContainer,
     title: 'Results (Game)'
-  },
-  {
-    path: "/:game_slug/draw-:draw_id",
-    exact: true,
-    component: ResultContainer
   },
   {
     path: "/check-your-ticket",
@@ -73,6 +68,11 @@ const routes = [
     exact: true,
     component: PrivacyContainer,
     title: 'Privacy Policy'
+  },
+  {
+    path: "/:game_slug",
+    exact: true,
+    component: ResultContainer
   },
 
 
