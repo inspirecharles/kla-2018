@@ -53,22 +53,6 @@
 			margin-left: 10px;
 		}
 	}
-
-	#result-detail {
-		section.detail {
-
-			.detail-content{
-				.mainNumber-div {
-					width: 55%;
-				}
-				.suppNumber-div {
-					width: 45%;
-				}
-			}
-		}
-	}
-
-
 }
 
 @media (max-width: 575.98px) {
@@ -221,15 +205,6 @@
 
 			.detail-content{
 				padding: 15px;
-
-				.mainNumber-div {
-					width: 55%;
-					display: inline-block;
-				}
-				.suppNumber-div {
-					width: 45%;
-					display: inline-block;
-				}
 
 				.next-draw {
 					text-align: center;
