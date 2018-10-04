@@ -6,17 +6,12 @@
 				margin: 20px 0;
 			}
 			.lottery-container {
-				/*max-width: 100%;*/
+				/*max-width: 100%;
 				margin-bottom: 10px;
-				margin-left: 15px;
+				margin-left: 15px;*/
 
 				.card-body {
 					width: 140px !important;
-				}
-
-
-				.sluggame-logo {
-					width: 90% !important;
 				}
 			}
 		}
@@ -53,6 +48,8 @@
 			margin-left: 10px;
 		}
 	}
+<<<<<<< HEAD
+=======
 
 	#result-detail{
 		.draw-statistics{
@@ -65,6 +62,7 @@
 	}
 
 
+>>>>>>> dd85e59595f9c69c285a5b1fdcd33261e4c4023d
 }
 
 @media (max-width: 575.98px) {
@@ -85,17 +83,14 @@
 				margin: 20px 0;
 			}
 			.lottery-container {
-				/*max-width: 100%;*/
+				/*max-width: 100%;
 				margin-bottom: 10px;
-				margin-left: 15px;
+				margin-left: 15px;*/
+				width: 45%;
+    			margin: 8px;
 
 				.card-body {
 					width: 190px;
-				}
-
-
-				.sluggame-logo {
-					width: 70%;
 				}
 			}
 		}
@@ -161,7 +156,7 @@
 
 	.notification-wrapper {
 		.media-heading {
-		    font-family: "Celias Medium";
+		    font-family: "Celias Medium", sans-serif;
 		    font-size: 20px;
 		    font-weight: 900;
 		    line-height: 20px;
@@ -189,7 +184,7 @@
 
 		.card-title {
 			a {
-				font-family: "Celias Black";
+				font-family: "Celias Black", sans-serif;
 			}
 		}
 	}
@@ -220,6 +215,12 @@
 
 				.next-draw {
 					text-align: center;
+				}
+
+				.game-prize-date {
+					margin: 0 auto;
+				    text-align: center !important;
+				    padding-right: 0;
 				}
 			}
 
@@ -270,7 +271,20 @@
 		}
 	}
 
-	#result-detail{
+	#result-detail {
+		section.detail {
+
+			.detail-content{
+				padding: 15px;
+
+				.game-prize-date {
+					margin: 0 auto;
+				    text-align: center !important;
+				    padding-right: 0;
+				}
+			}
+		}
+
 		.result-video{
 			.video-container{
 				height: 405px;
@@ -300,6 +314,18 @@
 
 			.latest-title {
 				line-height: 35px;
+			}
+		}
+	}
+
+	#lottery-result {
+		section.all-news {
+			.lottery-container {
+				/*max-width: 100%;
+				margin-bottom: 10px;
+				margin-left: 15px;*/
+				width: 18%;
+				margin: 8px;
 			}
 		}
 	}

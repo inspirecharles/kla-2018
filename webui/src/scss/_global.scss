@@ -79,8 +79,12 @@ section.page-footer {
 
 #result-detail {
     section.detail {
+        .result-title {
+            margin-left: 15px;
+        }
         .change-lottery {
-            text-align: right;
+            margin: 0 15px 0px auto;
+            word-wrap: break-word;
         }
     }
 }
@@ -141,7 +145,7 @@ label {
 .supplementary_numbers,
 .main_numbers{
     min-height: 80px;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 .mainNumber_label, .supplementary_label {

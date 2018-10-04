@@ -90,19 +90,18 @@ class SearchResultContainer extends Component {
 	    		<section className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
 	    			<div className="container">
 			    	 	<div className="row">
-				    		<div className="col-lg-8 result-title">
+				    		<div className="result-title">
 				    			<h1 className="display-5 text-left text-white latest-title">Past Lottery Results</h1>
 				    		</div>
-				    		<div className="col-lg-4 change-lottery">
-								<Link to={"/results"}><button className="btn btn-light change-btn">CHANGE LOTTERY</button></Link>
-							</div>
 				    	</div>
 			    		<div className="detail-content col-lg-12 mt-3">
 			    			<div className="row">
 			    				<div className="lotto-game-logo">
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
-			    				
+			    				<div className="change-lottery">
+									<Link to={"/results"}><button className="btn btn-primary blueBtn change-btn">CHANGE LOTTERY</button></Link>
+								</div>
 			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('ddd DD MMMM YYYY')}</span>
