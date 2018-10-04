@@ -6,7 +6,8 @@ import moment from "moment";
 import {renderDividends, formatMoney} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
 import NewsSliderComponent from "../home/NewsSliderComponent";
-import SubscriptionComponent from "../subscribe/SubscriptionComponent"
+import SubscriptionComponent from "../subscribe/SubscriptionComponent";
+import StatComponent from "./StatComponent";
 
 import {fetchResultByGameAndDrawId, fetchResultByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
 
@@ -126,6 +127,7 @@ class SearchResultContainer extends Component {
 			    		</div>
 		    		</div>
 	      		</section>
+	      		<StatComponent/>
 	      		<section className="news">
 	      			<div className="container">
 	      				<h2 className="text-center uk-lotto-news-title celias section-title">Lotto Winner Stories</h2>
