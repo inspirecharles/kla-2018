@@ -54,6 +54,20 @@
 		}
 	}
 
+	#result-detail {
+		section.detail {
+
+			.detail-content{
+				.mainNumber-div {
+					width: 55%;
+				}
+				.suppNumber-div {
+					width: 45%;
+				}
+			}
+		}
+	}
+
 
 }
 
@@ -151,7 +165,7 @@
 
 	.notification-wrapper {
 		.media-heading {
-		    font-family: "Celias Medium";
+		    font-family: "Celias Medium", sans-serif;
 		    font-size: 20px;
 		    font-weight: 900;
 		    line-height: 20px;
@@ -179,7 +193,7 @@
 
 		.card-title {
 			a {
-				font-family: "Celias Black";
+				font-family: "Celias Black", sans-serif;
 			}
 		}
 	}
@@ -208,8 +222,23 @@
 			.detail-content{
 				padding: 15px;
 
+				.mainNumber-div {
+					width: 55%;
+					display: inline-block;
+				}
+				.suppNumber-div {
+					width: 45%;
+					display: inline-block;
+				}
+
 				.next-draw {
 					text-align: center;
+				}
+
+				.game-prize-date {
+					margin: 0 auto;
+				    text-align: center !important;
+				    padding-right: 0;
 				}
 			}
 
@@ -255,6 +284,21 @@
 					.media-body{
 						margin-top: 200px;
 					}
+				}
+			}
+		}
+	}
+
+	#result-detail {
+		section.detail {
+
+			.detail-content{
+				padding: 15px;
+
+				.game-prize-date {
+					margin: 0 auto;
+				    text-align: center !important;
+				    padding-right: 0;
 				}
 			}
 		}

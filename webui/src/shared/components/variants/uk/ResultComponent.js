@@ -97,10 +97,10 @@ class ResultComponent extends Component {
     
 		return (
 			<div>
-                <div className="card-body pt-0" id="lotto">
-                	<div className="main_numbers col-lg-12 col-md-12">
-                		<div className="clr mainNumber_label col-lg-12 col-md-12">{main}</div>
-                		<div className="">
+                <div className="mainNumber-div card-body pt-0" id="lotto">
+                	<div className="main_numbers">
+                		<div className="clr mainNumber_label">{main}</div>
+                		<div className="circle-lottoNumbers">
 						    { this.state.main_numbers.map((item, i) => {
                             	return <div key={i} className={"numbers circle bc_lotto d-inline-block"}>{item}</div>
                             }) }
@@ -111,9 +111,9 @@ class ResultComponent extends Component {
                     </div>
                 </div>
 
-                <div className="card-body pt-0" id="lotto">
-                	<div className="supplementary_numbers col-lg-12 col-md-12">
-            			<div className={"clr supplementary_label col-lg-12 col-md-12 "+(this.state.supp_numbers.length?'':'invisible')}>{support}</div>
+                <div className="suppNumber-div card-body pt-0" id="lotto">
+                	<div className="supplementary_numbers">
+            			<div className={"clr supplementary_label"+(this.state.supp_numbers.length?'':'invisible')}>{support}</div>
                 		<div className="">
 						    { this.state.supp_numbers.map((item, i) => {
                             	return <div key={i} className="numbers circle supplementary d-inline-block">{item}</div>
