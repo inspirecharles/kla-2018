@@ -259,6 +259,14 @@
 			}
 		}
 	}
+
+	#result-detail{
+		.result-video{
+			.video-container{
+				height: 405px;
+			}
+		}
+	}
 }
 
 @media (min-width: 576px) {
