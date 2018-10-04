@@ -230,6 +230,36 @@
 	}
 }
 
+@media (max-width: 991px) {
+	#news-list{
+		section.all-news{
+			.news-container{
+				.media{
+					position: relative;
+    				height: 400px;
+
+					.media-left.media-img-container{
+						position: absolute;
+					    top: 0;
+					    width: 100%;
+					    text-align: center;
+					    height: 200px;
+					    overflow: hidden;
+
+						img{
+							width: 100%;
+    						height: auto;
+						}
+					}
+					.media-body{
+						margin-top: 200px;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (min-width: 576px) {
 	#result-detail {
 		section.detail {
