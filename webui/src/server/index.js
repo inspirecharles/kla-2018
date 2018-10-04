@@ -77,7 +77,7 @@ function renderFullPage(html, preloadedState) {
 		<!DOCTYPE html>
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<title>Test</title>
+				<title>Latest UK Lottery Results</title>
 				<link rel="stylesheet" type="text/css" href="/css/main.css">
 			</head>
 			<body>
