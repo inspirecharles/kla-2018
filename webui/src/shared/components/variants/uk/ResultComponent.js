@@ -113,7 +113,7 @@ class ResultComponent extends Component {
 
                 <div className="suppNumber-div card-body pt-0" id="lotto">
                 	<div className="supplementary_numbers">
-            			<div className={"clr supplementary_label"+(this.state.supp_numbers.length?'':'invisible')}>{support}</div>
+            			<div className={"clr supplementary_label "+(this.state.supp_numbers.length?'':'invisible')}>{support}</div>
                 		<div className="">
 						    { this.state.supp_numbers.map((item, i) => {
                             	return <div key={i} className="numbers circle supplementary d-inline-block">{item}</div>
