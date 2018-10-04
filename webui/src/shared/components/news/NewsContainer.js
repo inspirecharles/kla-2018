@@ -48,8 +48,8 @@ class NewsContainer extends Component {
 								return (
 		    						<div className="news-container col-lg-12" key={i}>
 				    					<div className="media margin-bottom">
-											<div className="media-left media-img-container">
-											    <Link to={"/news/"+news.slug}>
+											<div className="media-left media-img-container" style={{background: 'url('+this.props.env.API_URL+"/uploads/news/"+news.id+"/"+news.feat_img+')'}}>
+											    <Link to={"/news/"+news.slug} >
 											      <img className="img-fluid media-img" src={this.props.env.API_URL+"/uploads/news/"+news.id+"/"+news.feat_img} />
 											    </Link>
 										  	</div>
