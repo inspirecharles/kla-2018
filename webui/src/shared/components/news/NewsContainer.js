@@ -49,9 +49,9 @@ class NewsContainer extends Component {
 		    						<div className="news-container col-lg-12" key={i}>
 				    					<div className="media margin-bottom">
 											<div className="media-left media-img-container">
-											    <a href="#">
+											    <Link to={"/news/"+news.slug}>
 											      <img className="img-fluid media-img" src={this.props.env.API_URL+"/uploads/news/"+news.id+"/"+news.feat_img} />
-											    </a>
+											    </Link>
 										  	</div>
 										  	<div className="media-body">
 										    	<h4 className="media-heading mt-4">{news.title}</h4>
