@@ -77,7 +77,7 @@ class HomeCardComponent extends Component {
 										    </div>
 										    <div className="prize-date">
 										    	<p className="prize text-right">{current_jackpot}</p>
-												<p className="date text-right">{this.props.game.results && this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('dddd DD MMMM YYYY') }</p>
+												<p className="date text-right">{this.props.game.results && this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('ddd DD MMMM YYYY') }</p>
 										    </div>
 										    <div className="arrow-icon">
 										    	<i className={"fa fa-angle-"+(this.state.show==true?'up':'down')+" rotate-icon fa-2x align-middle"}></i>
