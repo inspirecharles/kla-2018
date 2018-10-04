@@ -72,7 +72,7 @@ class ResultContainer extends Component {
 			    			<div className="row mt-3">
 				    			<div className="col-lg-5">
 				    				{ this.props.result_detail && this.props.result_detail.results && this.props.result_detail.results.length && this.renderResult() }
-				    				
+
 			    					<div className="supp-link-icons">
 					    				<PrintComponent elem={this.props.result_detail.slug+"-container"} />
 		                            	<ExportComponent game={this.props.result_detail.slug} draw_id={this.props.result_detail.results && this.props.result_detail.results[0] && this.props.result_detail.results[0].draw_id} />
