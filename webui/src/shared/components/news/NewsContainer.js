@@ -31,10 +31,10 @@ class NewsContainer extends Component {
 			    	 	<div className="row">
 			    	 		<div className="col-lg-12">
 			    	 			<h1 className="display-5 text-left text-white blog-title">
-			    	 				All News
+			    	 				Lottery News
 			    	 			</h1>
 			    	 			<p className="text-white">
-			    	 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo pulvinar sapien ut hendrerit. Ut eros mi, tristique facilisis nibh quis, pretium laoreet velit. Suspendisse potenti. Duis quis nibh ac ante aliquam varius. Nulla varius risus orci, in scelerisque odio aliquet eget. Nam consequat justo diam, id finibus nunc ullamcorper at. Aliquam volutpat ante ante, nec rutrum odio placerat quis. Vivamus semper blandit ex quis lacinia. Vivamus non consectetur quam, id gravida mi. Sed in porta nisl.
+			    	 				Answering the big lottery questions like what happens after you win, who are the biggest lottery winners in history and all the latest changes to your favourite games. <Link to="/">LotteryResults.co.uk</Link> news is the best place to find our what’s happening in the world of UK Lotteries
 			    	 			</p>
 			    	 		</div>
 			    	 	</div>
