@@ -78,7 +78,7 @@ function renderFullPage(html, preloadedState) {
 			<head>
 				<title>Latest UK Lottery Results</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<meta charset="utf-8">
+				<meta charset="UTF-8">
 				<meta name="application-name" content="Latest UK Lottery Results"/>
 				<meta name="description" content="Latest UK Lottery Results">
 				<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
