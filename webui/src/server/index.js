@@ -90,6 +90,10 @@ function renderFullPage(html, preloadedState) {
 				<!-- End Google Tag Manager -->
 			</head>
 			<body>
+				<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV45HPT"
+				height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+				<!-- End Google Tag Manager (noscript) -->
 				<div id="print-me"></div>
 				<div id="root">${html}</div>
 			</body>
