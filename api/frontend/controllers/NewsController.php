@@ -111,4 +111,13 @@ class NewsController extends ActiveController
         else
                 return ['type' => 'fail', 'message' => 'cant load model'];
     }
+
+    public function actionDeletenews()
+    {
+        $model = News::find()->where(['id' => Yii::$app->request->post('id')])->one();
+        if( $model->delete() )
+            return ['type' => 'success', 'message' => 'News deleted successfully.'];
+        else
+            return ['type' => 'fail', 'message' => 'Something went wrong.'];
+    }
 }

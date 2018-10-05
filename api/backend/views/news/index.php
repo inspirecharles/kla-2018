@@ -16,5 +16,6 @@
 	</div>
 </div>
 <?php 
+	$this->registerJsFile('/trumbowyg/trumbowyg.min.js',['position' => \yii\web\View::POS_END, 'depends' => 'yii\bootstrap\BootstrapPluginAsset']);
 	$this->registerJsFile('/js/news.js',['position' => \yii\web\View::POS_END, 'depends' => 'yii\web\JqueryAsset']);
 ?>
