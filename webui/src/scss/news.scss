@@ -10,7 +10,7 @@
 			background-color: #555;
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: contain;
+			background-size: cover;
 		}
 	}
 
@@ -19,21 +19,78 @@
 		padding: 52px 0;
 
 		.news-container {
+
 			.media {
 				padding: 0;
 				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     			border: 0;
+    			overflow: hidden;
+    			height: 200px;
+
+    			.media-left{
+    				background-size: cover;
+    			}
 
 				.media-img {
 					width: 300px;
-					height: 200px;
+					height: 100%;
 				}
 
 				.news-content {
-					white-space: nowrap;
+					/*white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					max-width: 200px;
+					max-height: 55px;*/
+					/* hide text if it more than N lines  */
+				  overflow: hidden;
+				  /* for set '...' in absolute position */
+				  position: relative; 
+				  /* use this value to count block height */
+				  line-height: 1.2em;
+				  /* max-height = line-height (1.2) * lines max number (3) */
+				  max-height: 3.6em;  
+				  /* place for '...' */
+				  margin-right: -1em;
+				  padding-right: 1em;
+
+				  	img{
+				  		width: 100% !important;
+				  	}
+				}
+
+				.news-content:before {
+					/* points in the end */
+					content: '...';
+					/* absolute position */
+					position: absolute;
+					/* set position to right bottom corner of block */
+					right: 0;
+					bottom: 0;
+				}
+
+				.news-content:after {
+					/* points in the end */
+  					content: '';
+				  	/* absolute position */
+				  	position: absolute;
+				  	/* set position to right bottom corner of text */
+				  	right: 0;
+				  	/* set width and height */
+				  	width: 1em;
+				  	height: 1em;
+				  	margin-top: 0.2em;
+				  	/* bg color = bg color under block */
+				  	background: white;
+				}
+
+				.read-more-news {
+					text-align: right;
+				}
+
+				.media-img-container {
+					width: 300px;
+    				height: 200px;
 				}
 			}
 		}

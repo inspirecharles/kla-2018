@@ -19,6 +19,9 @@ section.articles-section {
             font-family: "Nunito Regular", sans-serif;
             font-size: 16px;    
             line-height: 22px;
+            overflow: hidden;
+            height: 110px;
+            margin-bottom: 15px;
         }
     }
 }
@@ -74,6 +77,18 @@ section.page-footer {
     padding: 52px 0;
 }
 
+#result-detail {
+    section.detail {
+        .result-title {
+            margin-left: 15px;
+        }
+        .change-lottery {
+            margin: 0 15px 0px auto;
+            word-wrap: break-word;
+        }
+    }
+}
+
 #news-detail {
     section.news-contentDetail {
         margin-top: 36px;
@@ -113,9 +128,9 @@ section.page-footer {
     line-height: 24px;
 }
 
-.blog-title {
+/*.blog-title {
     padding-bottom: 20px;
-}
+}*/
 
 .bg-image-full {
     width: 100%;
@@ -130,7 +145,7 @@ label {
 .supplementary_numbers,
 .main_numbers{
     min-height: 80px;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 .mainNumber_label, .supplementary_label {

@@ -46,12 +46,9 @@ class NewsContainer extends Component {
 		    			<div className="row">
 	    					{this.props.news && this.props.news.length && this.props.news.map((news, i)=>{
 								return (
-		    						<div className="news-container col-lg-12">
+		    						<div className="news-container col-lg-12" key={i}>
 				    					<div className="media margin-bottom">
-											<div className="media-left">
-											    <a href="#">
-											      <img className="img-fluid media-img" src={this.props.env.API_URL+"/uploads/news/"+news.id+"/"+news.feat_img} />
-											    </a>
+											<div className="media-left media-img-container" style={{backgroundImage: 'url('+this.props.env.API_URL+"/uploads/news/"+news.id+"/"+news.feat_img+')'}}>
 										  	</div>
 										  	<div className="media-body">
 										    	<h4 className="media-heading mt-4">{news.title}</h4>

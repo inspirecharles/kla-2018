@@ -11,24 +11,27 @@ class PrintComponent extends Component {
 	}
 
 	printDiv(){
-	    let toPrint = document.getElementById(this.props.elem);
+		if(document.readyState === 'ready' || document.readyState === 'complete') {
+			let toPrint = document.getElementById(this.props.elem);
 
-	    let print_me = document.getElementById("print-me");
-	    print_me.innerHTML = toPrint.outerHTML;
+		    let print_me = document.getElementById("print-me");
+		    print_me.innerHTML = toPrint.outerHTML;
 
-	    let rootdiv = document.getElementById('root');
-	    rootdiv.style.display = "none";
+		    let rootdiv = document.getElementById('root');
+		    rootdiv.style.display = "none";
 
-	    window.print();
-
-	    rootdiv.style.display = "block";
-	    print_me.innerHTML = "";
-	    return true;
+			window.print();
+		    rootdiv.style.display = "block";
+		    print_me.innerHTML = "";
+	    	return true;
+	    }
+	    else
+	    	return false;
 	}
 
 	render() {
 	    return (
-			<a className="icons" onClick={this.printDiv}><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
+			<a className="icons" onClick={this.printDiv}><img className="img-fluid icon-printresult mr-2" src="/img/icons/print-results.svg" /></a>
 	    );
 	}
 	

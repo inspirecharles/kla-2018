@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-import {formatMoney, buyNowUrl, createGameUrlSlug} from "../../helper";
+import {formatMoney, createGameUrlSlug} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
 import ExportComponent from "../utilities/ExportComponent";
 import PrintComponent from "../utilities/PrintComponent";
@@ -77,7 +77,7 @@ class HomeCardComponent extends Component {
 										    </div>
 										    <div className="prize-date">
 										    	<p className="prize text-right">{current_jackpot}</p>
-												<p className="date text-right">{this.props.game.results && this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('dddd DD MMMM YYYY') }</p>
+												<p className="date text-right">{this.props.game.results && this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('ddd DD MMMM YYYY') }</p>
 										    </div>
 										    <div className="arrow-icon">
 										    	<i className={"fa fa-angle-"+(this.state.show==true?'up':'down')+" rotate-icon fa-2x align-middle"}></i>
@@ -107,7 +107,7 @@ class HomeCardComponent extends Component {
 	                        <div className="card-footer container">
 								<div className="row footerNextDraw">
 									<h3 className="nextDraw">Next Draw: {next_jackpot}</h3>
-									<a target="_blank" href={buyNowUrl(this.props.game.slug)} className="ml-auto"><button className="btn btn-light buy-now-btn">Buy Now</button></a>
+									<a target="_blank" href={this.props.game.buy_url} className="ml-auto"><button className="btn btn-light buy-now-btn">Buy Now</button></a>
 								</div>
 							</div>
 	                    </div>

@@ -43,15 +43,13 @@ class LotteryResultContainer extends Component {
 
 	    	 				{this.props.games_only.length && this.props.games_only.map((game, i) =>  {
 						    		return (
-						    			<Link to={"/"+createGameUrlSlug(game.slug)+"/results"} key={i}>
-						    				<div className="col-xs-12 lottery-container">
-											    <div className="col-xs-2 card">
-											    	<div className="card-body lottery">
-											    		<img className={"img-fluid sluggame-logo "+game.variant+"-logo-lotto game-"+game.slug} src={"/img/variants/"+game.variant+"/"+game.slug+".png"} />
-											      	</div>
+						    			<div className="col-xs-6 lottery-container">
+					    					<Link to={"/"+createGameUrlSlug(game.slug)+"/results"} key={i}>
+											    <div className="lottery">
+											    	<img className={"img-responsive sluggame-logo "+game.variant+"-logo-lotto game-"+game.slug} src={"/img/variants/"+game.variant+"/"+game.slug+".png"} />
 											    </div>
-											</div>
-						    			</Link>
+											</Link>
+										</div>
 						    		);
 						    	}
 						  	)}

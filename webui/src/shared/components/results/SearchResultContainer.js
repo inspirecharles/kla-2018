@@ -6,12 +6,14 @@ import moment from "moment";
 import {renderDividends, formatMoney} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
 import NewsSliderComponent from "../home/NewsSliderComponent";
+import SubscriptionComponent from "../subscribe/SubscriptionComponent";
+import StatComponent from "./StatComponent";
 
-import {fetchLatestResultDrawByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
+import {fetchResultByGameAndDrawId, fetchResultByGame, emptyResultDetail, searchResult} from "../../actions/action-result-detail";
 
 class SearchResultContainer extends Component {
-	constructor(props) {
-	    super(props);
+	constructor(props, context) {
+	    super(props, context);
 
     	this.renderResult = this.renderResult.bind(this);
 
@@ -26,12 +28,15 @@ class SearchResultContainer extends Component {
     	this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
 	}
 
-	static initialAction(game_slug = null ) {
-    	return fetchLatestResultDrawByGame(game_slug);
+	static initialAction(game_slug = null, draw_id = null ) {
+		if( draw_id )
+    		return fetchResultByGameAndDrawId(game_slug, draw_id);
+    	else
+    		return fetchResultByGame(game_slug);
   	}
 
 	componentWillMount(){
-      	this.props.dispatch(SearchResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_") ));
+      	this.props.dispatch(SearchResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), (this.props.match.params.draw_id && this.props.match.params.draw_id.replace("draw-", "")) || null ));
 	}
 
 	componentDidMount() {
@@ -40,6 +45,11 @@ class SearchResultContainer extends Component {
 
 	componentWillUnmount(){
 		this.props.dispatch(emptyResultDetail());
+	}
+
+	componentDidUpdate (nextProps){
+		if( nextProps.location.pathname != this.props.location.pathname )
+			this.props.dispatch(SearchResultContainer.initialAction( this.props.match.params.game_slug.replace("-", "_"), (this.props.match.params.draw_id && this.props.match.params.draw_id.replace("draw-", "")) || null ));
 	}
 
 	renderResult(){
@@ -57,7 +67,21 @@ class SearchResultContainer extends Component {
 
 	handleSearchSubmit(event){
 		event.preventDefault();
-		this.props.dispatch(searchResult(this.props.result_detail.slug, this.state))
+		var self = this;
+		//this.props.dispatch(searchResult(this.props.result_detail.slug, this.state))
+		fetch(this.props.env.API_URL+"/results/search?game_slug="+this.props.result_detail.slug+"&search_data="+JSON.stringify(this.state))
+	    .then(response => response.json())
+	    .then(result => {
+	    	if( !result.type ){
+	    		console.log(result);
+	    		self.props.history.push('/'+this.props.result_detail.slug+'/results/draw-'+result.results[0].draw_id);
+	    		//window.location = '/'+this.props.result_detail.slug+'/results/draw-'+result.results[0].draw_id
+	    	}else
+	    		alert('no result found.')
+	    })
+	    .catch(err => {
+	    	console.log(err);
+	    });
 	}
 
 	render() {
@@ -66,8 +90,8 @@ class SearchResultContainer extends Component {
 	    		<section className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
 	    			<div className="container">
 			    	 	<div className="row">
-				    		<div className="col-lg-12">
-				    			<h1 className="display-5 text-left text-white mt-4 latest-title">Past Lottery Results</h1>
+				    		<div className="result-title">
+				    			<h1 className="display-5 text-left text-white latest-title">Past Lottery Results</h1>
 				    		</div>
 				    	</div>
 			    		<div className="detail-content col-lg-12 mt-3">
@@ -80,7 +104,7 @@ class SearchResultContainer extends Component {
 								</div>
 			    				<div className="game-prize-date text-right">
 			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
-				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && moment(this.props.result_detail.results[0].draw_date).format('dddd DD MMMM YYYY')}</span>
+				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('ddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
 			    			<div className="row mt-3">
@@ -103,6 +127,7 @@ class SearchResultContainer extends Component {
 			    		</div>
 		    		</div>
 	      		</section>
+	      		<StatComponent/>
 	      		<section className="news">
 	      			<div className="container">
 	      				<h2 className="text-center uk-lotto-news-title celias section-title">Lotto Winner Stories</h2>
@@ -116,26 +141,8 @@ class SearchResultContainer extends Component {
 	      		<section>
 					<div className="subscribe-wrapper">
 						<div className="container">
-							<div className="subscribe-container">
-								<div className="row">
-								
-									<div className="media-body subscribe-body col-lg-6 col-md-12">
-										<h3 className="media-heading subscribe-heading celias text-white">Lottery Results in Your Inbox</h3>
-										<p className="subscribe-content text-white">
-											Get the latest UK lottery results direct to your email and never miss your lucky numbers!
-										</p>
-									</div>
-									<div className="media-body subscribe-body right col-lg-6 col-md-12 subscribe">
-										<div className="single">
-											<div className="input-group">
-									         <input type="email" className="form-control" placeholder="Email" />
-										        <span className="input-group-btn">
-										        	<button className="btn btn-theme btn-subscribe" type="submit">Subscribe</button>
-									         	</span>
-									        </div>
-										</div>
-									</div>
-								</div>
+							<div className="subscribe-container">								
+								<SubscriptionComponent/>								
 							</div>
 						</div>
 					</div>
@@ -149,7 +156,8 @@ class SearchResultContainer extends Component {
 
 function mapStateToProps(state){
   	return {
-    	result_detail: state.result_detail
+    	result_detail: state.result_detail,
+    	env: state.env
   	}
 }
 

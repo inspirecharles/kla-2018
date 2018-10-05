@@ -36,6 +36,17 @@
 				line-height: 0;
 			}
 
+			.supp-link-icons{
+				float: right;
+			    //margin-top: -40px;
+			    padding: 0;
+			    right: 0;
+			}
+			
+			a.icons {
+				cursor: pointer;
+			}
+
 			.card-body, 
 			.main_numbers, 
 			.supplementary_numbers{
@@ -49,6 +60,7 @@
 				font-weight: bold;
 				font-size: 2em;
 				color: #fff;
+				margin-top: 35px;
 			}
 
 			.dividends-table{
@@ -74,6 +86,11 @@
 							padding: 10px 7px;
 						}
 					}
+				}
+
+				iframe{
+					width: 100%;
+					height: 335px;
 				}
 			}
 		}
