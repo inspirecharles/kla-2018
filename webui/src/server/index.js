@@ -76,8 +76,12 @@ function renderFullPage(html, preloadedState) {
 	return `
 		<!DOCTYPE html>
 			<head>
-				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>Latest UK Lottery Results</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<meta charset="utf-8">
+				<meta name="application-name" content="Latest UK Lottery Results"/>
+				<meta name="description" content="Latest UK Lottery Results">
+				<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 				<link rel="stylesheet" type="text/css" href="/css/main.css">
 				<!-- Google Tag Manager -->
 				<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(

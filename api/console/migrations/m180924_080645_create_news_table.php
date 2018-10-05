@@ -12,6 +12,13 @@ class m180924_080645_create_news_table extends Migration
      */
     public function safeUp()
     {
+
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('news', [
             'id' => $this->primaryKey(),
             'title' => 'varchar(225) NULL',
@@ -24,7 +31,7 @@ class m180924_080645_create_news_table extends Migration
             'article' => 'text NULL',
             'yr_month' => 'varchar(7) NULL',
             'date_submitted' => 'timestamp NULL DEFAULT CURRENT_TIMESTAMP',
-        ]);
+        ], $tableOptions);
 
         // creates index for column `author_id`
         $this->createIndex(
