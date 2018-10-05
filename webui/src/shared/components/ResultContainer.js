@@ -65,7 +65,7 @@ class ResultContainer extends Component {
 				    				<img className={"img-fluid game-logo "+this.props.result_detail.variant+"-logo-lotto game-"+this.props.result_detail.slug} src={"/img/variants/"+this.props.result_detail.variant+"/"+this.props.result_detail.slug+".png"} />
 			    				</div>
 			    				<div className="game-prize-date text-right">
-			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].current_jackpot}</span><br/>
+			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ "+formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('ddd DD MMMM YYYY')}</span>
 			    				</div>
 			    			</div>
@@ -79,7 +79,7 @@ class ResultContainer extends Component {
 	                            	</div>
 				    				<div className="next-draw">
 				    					<div>Next Draw</div>
-				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].current_jackpot}</div>
+				    					<div>{this.props.result_detail.results && this.props.result_detail.results.length && "£ "+formatMoney(this.props.result_detail.results[0].next_jackpot)}</div>
 				    					<div className="text-center mt-3">
 				    						<a href={this.props.result_detail && this.props.result_detail.buy_url} target="_blank"><button className="btn">Buy Now</button></a>
 				    					</div>
