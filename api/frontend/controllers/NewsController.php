@@ -28,6 +28,24 @@ class NewsController extends ActiveController
         ];
     }
 
+    public function formName()
+    {
+        return '';
+    }
+
+    public function actions() 
+    { 
+        $actions = parent::actions();
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
+        return $actions;
+    }
+
+    public function prepareDataProvider() 
+    {
+        $searchModel = new News();    
+        return $searchModel->search(\Yii::$app->request->queryParams);
+    }
+
     public function beforeAction($action)
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;

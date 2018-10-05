@@ -25,7 +25,7 @@ export const emptyNewsDetail = () => (dispatch, getState) => {
 
 export const fetchNews = () => (dispatch, getState) => {
   dispatch(requestNews());
-  return fetch(getState().env.API_URL+"/news?sort=-date_submitted")
+  return fetch(getState().env.API_URL+"/news?sort=-date_submitted&filter[art_status]=2")
     .then(response => response.json())
     .then(news => dispatch(receivedNews(news)))
     .catch(err => dispatch(NewsError(err)));
@@ -33,7 +33,7 @@ export const fetchNews = () => (dispatch, getState) => {
 
 export const fetchNewsForSlider = () => (dispatch, getState) => {
   //dispatch(requestNews());
-  return fetch(getState().env.API_URL+"/news?sort=-date_submitted&page=1&per-page=6")
+  return fetch(getState().env.API_URL+"/news?sort=-date_submitted&page=1&per-page=6&filter[art_status]=2")
     .then(response => response.json())
     .then(news => dispatch(receivedNewsSlider(news)))
     .catch(err => dispatch(NewsError(err)));
