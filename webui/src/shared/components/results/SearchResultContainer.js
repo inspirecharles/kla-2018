@@ -106,9 +106,12 @@ class SearchResultContainer extends Component {
 			    					<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('ddd DD MMMM YYYY')}</span><br/>
 
-				    				<span className="arrow-prev"><i class="fa fa-angle-double-left"></i>Prev</span>
-				    				<span className="arrow-next">Next<i class="fa fa-angle-double-right"></i></span>
-
+				    				{this.props.result_detail && this.props.result_detail.prev_draw > 0 &&
+				    					<Link to={'/'+this.props.result_detail.slug+'/results/draw-'+this.props.result_detail.prev_draw}><span className="arrow-prev"><i class="fa fa-angle-double-left"></i>Prev</span></Link>
+				    				}
+				    				{this.props.result_detail && this.props.result_detail.next_draw > 0 &&
+				    					<Link to={'/'+this.props.result_detail.slug+'/results/draw-'+this.props.result_detail.next_draw}><span className="arrow-next">Next<i class="fa fa-angle-double-right"></i></span></Link>
+				    				}
 			    				</div>
 			    			</div>
 			    			<div className="row mt-3">
