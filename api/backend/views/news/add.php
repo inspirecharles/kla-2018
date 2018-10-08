@@ -11,7 +11,7 @@
 		  	</div>
 		  	<div class="form-group">
 			    <label for="article">Content</label>
-			    <div id="article" class="article"></div>
+			    <textarea id="article" class="article" name="article"></textarea>
 		  	</div>
 		  	<div class="form-group">
 			    <label for="tags">Tags</label>
@@ -32,5 +32,7 @@
 <link rel="stylesheet" type="text/css" href="/trumbowyg/trumbowyg.min.css">
 <?php 
 	$this->registerJsFile('/trumbowyg/trumbowyg.min.js',['position' => \yii\web\View::POS_END, 'depends' => 'yii\bootstrap\BootstrapPluginAsset']);
+	$this->registerJsFile('/trumbowyg/trumbowyg.allowtagsfrompaste.min.js',['position' => \yii\web\View::POS_END, 'depends' => '/trumbowyg/trumbowyg.min.js']);
+	$this->registerJsFile('/trumbowyg/trumbowyg.cleanpaste.min.js',['position' => \yii\web\View::POS_END, 'depends' => '/trumbowyg/trumbowyg.allowtagsfrompaste.min.js']);
 	$this->registerJsFile('/js/news.js',['position' => \yii\web\View::POS_END, 'depends' => '/trumbowyg/trumbowyg.min.js']);
 ?>

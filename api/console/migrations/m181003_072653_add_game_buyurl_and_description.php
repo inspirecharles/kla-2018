@@ -114,20 +114,22 @@ class m181003_072653_add_game_buyurl_and_description extends Migration
         $this->addColumn('games', 'buy_url','varchar(200)');
         $this->addColumn('games', 'description','text');
 
-        foreach( $this->data as $variant => $games ){
+        /*foreach( $this->data as $variant => $games ){
             foreach( $games as $slug => $game ){
                 $g = Games::find()->where([
                     'variant' => $variant,
                     'slug' => $slug,
                 ])->one();
 
-                $g->buy_url = $game['buy_url'];
-                $g->description = $game['description'];
+                if( $g ){
+                    $g->buy_url = $game['buy_url'];
+                    $g->description = $game['description'];
 
-                if($g->save())
-                    echo "Success [".$variant."] [".$slug."]\n";
+                    if($g->save())
+                        echo "Success [".$variant."] [".$slug."]\n";
+                }
             }
-        }
+        }*/
     }
 
     /**

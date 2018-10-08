@@ -54,6 +54,12 @@
 				  margin-right: -1em;
 				  padding-right: 1em;
 
+				  	ul{
+					  	li{
+					  		list-style: inherit;
+					  	}
+				  	}
+
 				  	img{
 				  		width: 100% !important;
 				  	}
@@ -94,5 +100,15 @@
 				}
 			}
 		}
+	}
+}
+
+#news-detail{
+	.news-content{
+		ul{
+		  	li{
+		  		list-style: inherit;
+		  	}
+	  	}
 	}
 }

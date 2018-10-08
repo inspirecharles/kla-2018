@@ -35,19 +35,32 @@ class ResultsController extends ActiveController
     }
 
     public function actionFetchbygameanddrawid($game_slug, $draw_id){
-        return Games::find()->joinWith(['results' => function($query) use ($draw_id){
+        $game = Games::find()->joinWith(['results' => function($query) use ($draw_id){
             $query->where(['results.draw_id' => $draw_id]);
         }])
-        ->where(['games.slug'=>$game_slug])
-        ->asArray()->one();
+        ->where(['games.slug'=>$game_slug])->asArray()->one();
+
+        if( $game ){
+            $game['prev_draw'] = Games::getPreviousResultId($game['id'], $game['results'][0]['draw_id']);
+            $game['next_draw'] = Games::getNextResultId($game['id'], $game['results'][0]['draw_id']);
+        }
+
+        return $game;
     }
 
     public function actionFetchbygame($game_slug){
-        return Games::find()->joinWith(['results' => function($query){
+        $game = Games::find()->joinWith(['results' => function($query){
             $query->orderBy(['results.draw_date' => SORT_DESC])->limit(1);
         }])
         ->where(['games.slug'=>$game_slug])
         ->asArray()->one();
+        
+        if( $game ){
+            $game['prev_draw'] = Games::getPreviousResultId($game['id'], $game['results'][0]['draw_id']);
+            $game['next_draw'] = Games::getNextResultId($game['id'], $game['results'][0]['draw_id']);
+        }
+
+        return $game;
     }
 
     public function actionSearch($game_slug, $search_data = null){
@@ -192,5 +205,5 @@ class ResultsController extends ActiveController
             throw new \yii\web\HttpException(500, 'No results found.');   
         }
         
-    }   
+    }
 }

@@ -63,6 +63,7 @@ class NewsController extends ActiveController
 
     public function actionAddsubmit(){
         $model = new News();
+        //return Yii::$app->request->post('article');
         if ($model->load(['News' => Yii::$app->request->post()])) {
             $uploadModel = new UploadForm;
             $uploadModel->file = UploadedFile::getInstanceByName('feat_img');
