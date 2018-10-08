@@ -28,9 +28,14 @@
 				padding-right: 15px;
     			padding-top: 15px;
 
+    			.game-prize-wrap {
+    				text-align: right;
+    			}
+
     			.arrow-prev, .arrow-next {
     				font-size: 25px;
-    				padding: 10px 10px;
+    				color: #212529;
+    				display: inline-block;
     			}
 			}
 
