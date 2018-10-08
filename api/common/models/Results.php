@@ -115,22 +115,26 @@ class Results extends \yii\db\ActiveRecord
     }
      public function saveResult($data)
     {
-        echo "Draw id: " . $data->draw_id;
+        $date = date('Y-m-d',strtotime($data->draw_date));
+        echo "Draw id: " .$data->draw_id;
+        
         if (count($data) > 0) {
-            $results = self::find()->where(['game_id' => $data->game_id, 'draw_id' => $data->draw_id])->one();
+            $results = self::find()->where(['game_id' => $data->game_id, 'draw_date'=>$date])->one();
             if (!$results) {
                 $results = new Results();
+                $results->draw_id = $data->draw_id;
+                $results->current_jackpot = $data->current_jackpot;
+                $results->stats = $data->stats;
+                $results->dividends = $data->dividends;
             }
-             $results->game_id = $data->game_id;
-            $results->draw_id = $data->draw_id;
-            $results->draw_date = $data->draw_date;
+
+            $results->game_id = $data->game_id;            
+            $results->draw_date = $date;
             $results->main_numbers = $data->main_numbers;
-            $results->supp_numbers = $data->supp_numbers;
-            $results->dividends = $data->dividends;
-            $results->next_jackpot = $data->next_jackpot;
-            $results->current_jackpot = $data->current_jackpot;
+            $results->supp_numbers = $data->supp_numbers;            
+            $results->next_jackpot = $data->next_jackpot;           
             $results->video_link = $data->video_link;
-            $results->stats = $data->stats;
+            
             //check for additional fields -- this is currently applicable for NZ Lotto/Powerball game
             if (isset($data->powerball_numbers)) {
                 $results->powerball_numbers = $data->powerball_numbers;
@@ -143,6 +147,7 @@ class Results extends \yii\db\ActiveRecord
             } else {
                 echo ".... not saved\n\n";
             }
+
         }
     }
      public function getResults($gameSlug = '')
