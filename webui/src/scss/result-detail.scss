@@ -27,6 +27,11 @@
 				margin-left: auto;
 				padding-right: 15px;
     			padding-top: 15px;
+
+    			.arrow-prev, .arrow-next {
+    				font-size: 25px;
+    				padding: 10px 10px;
+    			}
 			}
 
 			.current-jackpot{
