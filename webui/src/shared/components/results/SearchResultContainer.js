@@ -111,12 +111,12 @@ class SearchResultContainer extends Component {
 				    				<div className="arrows">
 				    					<div className="arrow-prev">
 				    						{this.props.result_detail && this.props.result_detail.prev_draw > 0 &&
-						    					<Link rel="next" to={'/'+createGameUrlSlug(this.props.result_detail.slug)+'/results/draw-'+this.props.result_detail.prev_draw}><span className="arrow-prev"><i class="fa fa-angle-double-left"></i>Prev</span></Link>
+						    					<Link rel="next" to={'/'+createGameUrlSlug(this.props.result_detail.slug)+'/results/draw-'+this.props.result_detail.prev_draw}><span className="arrow-prev"><i className="fa fa-angle-double-left"></i>Prev</span></Link>
 						    				}
 				    					</div>
 					    				<div className="arrow-next">
 					    					{this.props.result_detail && this.props.result_detail.next_draw > 0 &&
-					    					<Link rel="prev" to={'/'+createGameUrlSlug(this.props.result_detail.slug)+'/results/draw-'+this.props.result_detail.next_draw}><span className="arrow-next">Next<i class="fa fa-angle-double-right"></i></span></Link>
+					    					<Link rel="prev" to={'/'+createGameUrlSlug(this.props.result_detail.slug)+'/results/draw-'+this.props.result_detail.next_draw}><span className="arrow-next">Next<i className="fa fa-angle-double-right"></i></span></Link>
 					    				}
 					    				</div>
 				    				</div>
