@@ -122,11 +122,13 @@ class Results extends \yii\db\ActiveRecord
             $results = self::find()->where(['game_id' => $data->game_id, 'draw_date'=>$date])->one();
             if (!$results) {
                 $results = new Results();
-                $results->draw_id = $data->draw_id;
+                
+            }
+
+            $results->draw_id = $data->draw_id;
                 $results->current_jackpot = $data->current_jackpot;
                 $results->stats = $data->stats;
                 $results->dividends = $data->dividends;
-            }
 
             $results->game_id = $data->game_id;            
             $results->draw_date = $date;

@@ -26,17 +26,20 @@ class FixoldresultsController extends Controller
         if (false == $games) {
             throw new \yii\base\ErrorException("No games found...");
         }
- 		
+        
         // get draw results from api
         foreach ($games as $game) {  
           
-        	$results = new Results(); 
-        	$result = $results->getAllResultsSpeficGame($game['id']);
-
-        	if($game['slug'] == 'euro_millions'){
+            $results = new Results(); 
+            $result = $results->getAllResultsSpeficGame($game['id']);
+            print_r($game['slug']);
+            if($game['slug'] == 'euro_millions'){
                 if(count($result) >0){
-        		for($cnt =0; $cnt < count($result); $cnt++){                       
-        		        $returnVal =$this->actionGetDividendsEuroMillions(date_format(date_create($result[$cnt]['draw_date']),'d-m-Y'));
+                for($cnt =0; $cnt < count($result); $cnt++){    
+                        $dateTest = (date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
+                        //if($dateTest != '2017-12-14'){  
+                        if($dateTest > '2018-08-07' && $dateTest < '2018-09-21'){                           
+                        $returnVal =$this->actionGetDividendsEuroMillions(date_format(date_create($result[$cnt]['draw_date']),'d-m-Y'));
                         $resultUpdate = new Results();
                         $resultUpdate = $result[$cnt];
                         $resultUpdate->draw_date = $result[$cnt]['draw_date'];
@@ -44,11 +47,15 @@ class FixoldresultsController extends Controller
                         $resultUpdate->stats = json_encode($returnVal['stats']);
                         $resultUpdate->update();
                     }
-        	   }
-        	}
+                }
+               }
+            }
             if($game['slug'] == 'thunderball'){
                 if(count($result) >0){
-                for($cnt =0; $cnt < count($result); $cnt++){                       
+                for($cnt =0; $cnt < count($result); $cnt++){   
+                  $dateTest = (date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
+                        //if(($dateTest > '2017-03-21' && $dateTest < '2017-03-07') ||$dateTest > '2018-04-13' || $dateTest < '2018-03-07'){   
+                        if($dateTest > '2018-08-31'){                     
                         $returnVal =$this->actionThunderBall(date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
                         $resultUpdate = new Results();
                         $resultUpdate = $result[$cnt];
@@ -59,28 +66,36 @@ class FixoldresultsController extends Controller
                         $resultUpdate->dividends = json_encode($returnVal['dividends']);
                         $resultUpdate->update();
                     }
+                    }
                }
             }
-
+            
             if($game['slug'] == 'lotto'){
                 if(count($result) >0){
-                for($cnt =0; $cnt < count($result); $cnt++){                       
-                          $returnVal =$this->actionLotto(date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
-                        $resultUpdate = new Results();
-                        $resultUpdate = $result[$cnt];
-                        $resultUpdate->draw_date = $result[$cnt]['draw_date'];
-                        $resultUpdate->current_jackpot = $returnVal['current_jackpot'];
-                        $resultUpdate->stats = json_encode($returnVal['stats']);
-                        $resultUpdate->draw_id = $returnVal['drawId'];
-                        $resultUpdate->dividends = json_encode($returnVal['dividends']);
-                        $resultUpdate->update();
+                for($cnt =0; $cnt < count($result); $cnt++){ 
+                        $dateTest = (date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
+                        //if($dateTest != '2017-12-14'){  
+                        if($dateTest > '2018-07-25'){                   
+                              $returnVal =$this->actionLotto(date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
+                            $resultUpdate = new Results();
+                            $resultUpdate = $result[$cnt];
+                            $resultUpdate->draw_date = $result[$cnt]['draw_date'];
+                            $resultUpdate->current_jackpot = $returnVal['current_jackpot'];
+                            $resultUpdate->stats = json_encode($returnVal['stats']);
+                            $resultUpdate->draw_id = $returnVal['drawId'];
+                            $resultUpdate->dividends = json_encode($returnVal['dividends']);
+                            $resultUpdate->update();
+                        }
                     }
                }
             }
             
              if($game['slug'] == 'hotpicks'){
                 if(count($result) >0){
-                for($cnt =0; $cnt < count($result); $cnt++){                       
+                for($cnt =0; $cnt < count($result); $cnt++){  
+                $dateTest = (date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
+                        //if($dateTest != '2017-12-14'){  
+                        if($dateTest > '2018-07-25'){                             
                           $returnVal =$this->actionLottoHotpicks(date_format(date_create($result[$cnt]['draw_date']),'Y-m-d'));
                         $resultUpdate = new Results();
                         $resultUpdate = $result[$cnt];
@@ -91,25 +106,26 @@ class FixoldresultsController extends Controller
                         $resultUpdate->dividends = json_encode($returnVal['dividends']);
                         $resultUpdate->update();
                     }
+                }
                }
             }
         }
     }
 
     public function actionGetDividendsEuroMillions($path=''){
-    		//$returnValue = new stdClass();
-    	$fromSiteForVideo = file_get_contents('https://www.lottery.co.uk/euromillions/results-'.$path);   
-       		
-        	$firstExplodeForVideo = explode('<h2>Prize Breakdown</h2>', $fromSiteForVideo); 
+            //$returnValue = new stdClass();
+        $fromSiteForVideo = file_get_contents('https://www.lottery.co.uk/euromillions/results-'.$path);   
+            
+            $firstExplodeForVideo = explode('<h2>Prize Breakdown</h2>', $fromSiteForVideo); 
                  
             $secondExplodeForVideo = explode('<br>', $firstExplodeForVideo[1]); 
     
 
             $dividends = preg_replace('/<tr(.*?)>/','<tr>', $secondExplodeForVideo[0]);
 
-           	$dividends = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '', $dividends);
-           	$dividends = preg_replace('/<td(.*?)>/','<td>', $dividends);
-          	
+            $dividends = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '', $dividends);
+            $dividends = preg_replace('/<td(.*?)>/','<td>', $dividends);
+            
 
 
             $rows = explode('</tr>',$dividends);
@@ -253,9 +269,9 @@ class FixoldresultsController extends Controller
                     $totalHigherWinners +=$countWinner;
                 }
             }
-            echo $AboveAverageWin = round((($totalHigherWinners/$winners)*100),2);
-            echo $LargestPrizeWon = $highestPrice;
-            echo $AveragePrizeWon =  $AveragePrizeWon; 
+            $AboveAverageWin = round((($totalHigherWinners/$winners)*100),2);
+            $LargestPrizeWon = $highestPrice;
+            $AveragePrizeWon =  $AveragePrizeWon; 
 
         $date = date_format(date_create($path),'d-m-Y');
           $fromSiteForVideo = file_get_contents('https://www.lottery.co.uk/lotto/results-'.$date); 
@@ -357,6 +373,99 @@ class FixoldresultsController extends Controller
 
             return $returnValue;
     }
+
+    public function actionGetpreviousresults(){
+
+        $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'http://admin.kla.lan/api/get-draws');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json'                
+            ));
+            $data = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+            if ($httpCode < 200 || $httpCode >= 300) {
+                throw new \yii\base\ErrorException("Error contacting API: " . curl_error($ch));
+            }
+
+            curl_close($ch);
+            $oldData = json_decode($data);
+            /*print_r(count($oldData->data));
+            $resultsModel = new Results();
+            $res = (object)array(); */       
+            $toWrite ='';
+            for($cnt =0; $cnt < count($oldData->data); $cnt++){
+            //for($cnt =0; $cnt < 20; $cnt++){
+                $resultsModel = new Results();
+                $res = (object)array();         
+                $res->draw_id = $oldData->data[$cnt]->draw_id;
+                $res->draw_date = $oldData->data[$cnt]->draw_date;
+                $res->game_id = $oldData->data[$cnt]->game_id;
+                $res->main_numbers = json_encode($oldData->data[$cnt]->main_numbers);
+                $res->supp_numbers = json_encode($oldData->data[$cnt]->supp_numbers);
+                $res->dividends = json_encode($oldData->data[$cnt]->dividends);
+                $res->next_jackpot = null;
+            $res->current_jackpot = null;
+            $res->video_link = null;
+            $res->stats = null;
+            $one = 'INSERT INTO results(draw_id, draw_date, game_id, main_numbers,supp_numbers,dividends)
+VALUES ('. $res->draw_id.', "'.$res->draw_date.'", '.$res->game_id.',"'.$res->main_numbers.'","'.$res->supp_numbers.'","'.$res->dividends.'");'.PHP_EOL;
+             
+
+            file_put_contents('oldKLAuk.sql', $one, FILE_APPEND);
+            $toWrite = $toWrite.$one.'\n';
+                //print_r($toWrite);
+
+                //$resultsModel->saveResult($res);
+            }
+            
+            $newData = file_get_contents('oldKLAuk.sql');
+
+            $newData = preg_replace('/""/','\'', $newData);
+            file_put_contents('console/data/uk/newKLAuk.sql',$newData);
+    }
+
+    public function actionForfinaldata(){
+        $results = new Results();
+        for($cntGame =1;$cntGame < 11;$cntGame++){
+            $result = $results->getAllResultsSpeficGame($cntGame);
+            for($cnt =0; $cnt < count($result); $cnt++){
+                $resultsModel = new Results();
+                    $res = (object)array();         
+                    $res->draw_id = $result[$cnt]->draw_id;
+                    $res->draw_date = $result[$cnt]->draw_date;
+                    $res->game_id = $result[$cnt]->game_id;
+                    $res->main_numbers = ($result[$cnt]->main_numbers);
+                    $res->supp_numbers =($result[$cnt]->supp_numbers);
+                    $res->dividends = ($result[$cnt]->dividends);
+                    
+                    if($result[$cnt]->next_jackpot!= null){
+                    $res->next_jackpot = $result[$cnt]->next_jackpot;
+                    }else{
+                        $res->next_jackpot = null;
+                    }
+
+                    $res->current_jackpot = $result[$cnt]->current_jackpot;
+                    $res->video_link =  $result[$cnt]->video_link;
+                    $res->stats = ($result[$cnt]->stats);
+
+                    $res->powerball_numbers = json_encode($result[$cnt]->powerball_numbers);
+                    $res->strike_numbers = json_encode($result[$cnt]->strike_numbers);
+
+                $one = 'INSERT INTO results(draw_id, draw_date, game_id, main_numbers,supp_numbers,dividends,powerball_numbers,strike_numbers,current_jackpot,next_jackpot,video_link,stats)
+                        VALUES ('. $res->draw_id.', \''.$res->draw_date.'\', \''.$res->game_id.'\',\''.$res->main_numbers.'\',\''.$res->supp_numbers.'\',\''.$res->dividends.'\',\''.$res->powerball_numbers.'\',\''.$res->strike_numbers.'\',\''.$res->current_jackpot.'\',\''.$res->next_jackpot.'\',\''.$res->video_link.'\',\''.$res->stats.'\');'.PHP_EOL;   
+                file_put_contents('FinalKLAuk.sql', $one, FILE_APPEND);
+        }            
+        }
+
+        $fileToWrite = file_get_contents('FinalKLAuk.sql');
+        //$fileToWrite = preg_replace('/""/','\'', $fileToWrite);
+        file_put_contents('console/data/uk/FinalValues.sql',$fileToWrite);
+
+    }
+
+    
     
     
 }
