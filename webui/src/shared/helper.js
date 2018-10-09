@@ -10,7 +10,12 @@ export function	createResultLink(game){
 
 export function	renderDividends(dividends, type = 'lotto_dividends'){
 	if( dividends ){
-		dividends = JSON.parse(dividends);
+    try{
+		  dividends = JSON.parse(dividends);
+    }
+    catch (e) {
+        return "";
+    }
 		return (
 			<div className="dividends-table" dangerouslySetInnerHTML={{ __html: dividends[type]}}></div>
 		)
