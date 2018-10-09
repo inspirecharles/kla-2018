@@ -43,8 +43,8 @@ class HomeCardComponent extends Component {
 		if(this.props.game && this.props.game.results){
 			switch(this.props.game.slug) {
 		    case '49lottery':			   		
-					current_jackpot =  "Min £25,000 or 10% of sales";
-					next_jackpot = "Min £25,000 or 10% of sales";
+					current_jackpot =  "Up to $140,000 *";
+					next_jackpot = "Up to $140,000 *";
 			        break;
 		    case 'postcode_daily':		   		
 		    case 'postcode_weekly':		   		
