@@ -56,7 +56,7 @@ class ResultContainer extends Component {
 	    			<div className="container">
 			    	 	<div className="row">
 				    		<div className="col-lg-12">
-				    			<h1 className="display-5 text-left text-white mt-4 latest-title">Latest {this.props.result_detail && this.props.result_detail.name} Results - Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id}</h1>
+				    			<h1 className="display-5 text-left text-white latest-title">Latest {this.props.result_detail && this.props.result_detail.name} Results - Draw {this.props.result_detail.results && this.props.result_detail.results.length && this.props.result_detail.results[0].draw_id}</h1>
 				    		</div>
 				    	</div>
 			    		<div id="detail-content" className="detail-content col-lg-12 mt-3">
@@ -85,7 +85,7 @@ class ResultContainer extends Component {
 				    					</div>
 				    				</div>
 				    			</div>
-				    			<div className="col-lg-7">
+				    			<div className="col-lg-7 result-table">
 				    				{ this.props.result_detail.results && this.props.result_detail.results.length && renderDividends(this.props.result_detail.results[0].dividends, this.props.result_detail.slug == "49lottery"?'chance_to_win':'lotto_dividends') }
 				    			</div>
 			    			</div>

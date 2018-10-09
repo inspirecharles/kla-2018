@@ -288,6 +288,12 @@
 			}
 		}
 
+		section.draw-statistics {
+			.container {
+				padding-top: 0;
+			}
+		}
+
 		section.result-video{
 			.video-container{
 				height: 405px;
@@ -317,6 +323,12 @@
 
 			.latest-title {
 				line-height: 35px;
+			}
+		}
+
+		section.draw-statistics {
+			.container {
+				padding-top: 0;
 			}
 		}
 	}

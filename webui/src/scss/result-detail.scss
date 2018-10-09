@@ -3,7 +3,7 @@
 	section.detail{
 		background-color: #2a65cd;
 	    padding-top: 30px;
-	    padding-bottom: 42px;
+	    padding-bottom: 30px;
 	    margin-top: 20px;
 
 		.detail-content{
@@ -56,9 +56,15 @@
 
 			.supp-link-icons{
 				float: right;
-			    //margin-top: -40px;
+			    /*margin-top: -40px;*/
 			    padding: 0;
 			    right: 0;
+			}
+
+			.result-table {
+				height: 500px;
+			    overflow: scroll;
+			    scroll-behavior: smooth;
 			}
 			
 			a.icons {
@@ -157,11 +163,12 @@
 
 	section.draw-statistics{
 		background-color: #2a65cd;
+		padding: 50px;
+
 		.container{
 			color: #fff;
 			font-family: "Celias Black", sans-serif;  
 			font-weight: bold;
-			padding: 50px;
 
 			.section-title{
 				font-size: 1.5em;
