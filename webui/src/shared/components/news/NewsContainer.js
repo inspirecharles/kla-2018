@@ -35,6 +35,7 @@ class NewsContainer extends Component {
 			    	 			</h1>
 			    	 			<p className="text-white">
 			    	 				Answering the big lottery questions like what happens after you win, who are the biggest lottery winners in history and all the latest changes to your favourite games. <Link className="text-white" to="/">LotteryResults.co.uk</Link> news is the best place to find our what’s happening in the world of UK Lotteries
+
 			    	 			</p>
 			    	 		</div>
 			    	 	</div>
