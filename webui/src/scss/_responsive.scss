@@ -1,6 +1,27 @@
 @media (max-width: 389.98px) {
 
+	#lottery-result {
+		section.all-news {
+			.step-textTitle {
+				margin: 20px 0;
+			}
+			.lottery-container {
+				/*max-width: 100%;
+				margin-bottom: 10px;
+				margin-left: 15px;*/
+
+				.card-body {
+					width: 140px !important;
+				}
+			}
+		}
+	}
+
 	.result-container {
+
+		.game-logo {
+			width: 39%;
+		}
 
 		.uk-logo-lotto {
 			width: 100% !important;
@@ -32,7 +53,15 @@
 		}
 	}
 
+	#result-detail{
+		.draw-statistics{
+			font-size: 0.8em;
+		}
 
+		.game-prize-date{
+			font-size: 0.6em;
+		}
+	}
 }
 
 @media (max-width: 575.98px) {
@@ -47,11 +76,30 @@
 		}
 	}
 
+	#lottery-result {
+		section.all-news {
+			.step-textTitle {
+				margin: 20px 0;
+			}
+			.lottery-container {
+				/*max-width: 100%;
+				margin-bottom: 10px;
+				margin-left: 15px;*/
+				width: 45%;
+    			margin: 8px;
+
+				.card-body {
+					width: 190px;
+				}
+			}
+		}
+	}
+
 	.result-container {
 		padding-top: 10px;
 
-		.gameResult-body {
-			padding: 0;
+		.game-logo {
+			width: 47%;
 		}
 
 		.uk-logo-lotto {
@@ -107,7 +155,7 @@
 
 	.notification-wrapper {
 		.media-heading {
-		    font-family: "Celias Medium";
+		    font-family: "Celias Medium", sans-serif;
 		    font-size: 20px;
 		    font-weight: 900;
 		    line-height: 20px;
@@ -135,7 +183,7 @@
 
 		.card-title {
 			a {
-				font-family: "Celias Black";
+				font-family: "Celias Black", sans-serif;
 			}
 		}
 	}
@@ -160,11 +208,18 @@
 
 	#result-detail {
 		section.detail {
+
 			.detail-content{
 				padding: 15px;
 
 				.next-draw {
 					text-align: center;
+				}
+
+				.game-prize-date {
+					margin: 0 auto;
+				    text-align: center !important;
+				    padding-right: 0;
 				}
 			}
 
@@ -186,6 +241,61 @@
 	}
 }
 
+@media (max-width: 991px) {
+	#news-list{
+		section.all-news{
+			.news-container{
+				.media{
+					position: relative;
+    				height: 400px;
+
+					.media-left.media-img-container{
+						position: absolute;
+					    top: 0;
+					    width: 100%;
+					    text-align: center;
+					    height: 200px;
+					    overflow: hidden;
+
+						img{
+							width: 100%;
+    						height: auto;
+						}
+					}
+					.media-body{
+						margin-top: 200px;
+					}
+				}
+			}
+		}
+	}
+
+	#result-detail {
+		section.detail {
+
+			.detail-content{
+				padding: 15px;
+
+				.game-prize-date {
+					margin: 0 auto;
+				    text-align: center !important;
+				    padding-right: 0;
+				}
+			}
+		}
+
+		section.result-video{
+			.video-container{
+				height: 405px;
+			}
+		}
+
+		.dividends-table{
+			margin-top: 5px;
+		}
+	}
+}
+
 @media (min-width: 576px) {
 	#result-detail {
 		section.detail {
@@ -193,11 +303,28 @@
 
 				.next-draw {
 					text-align: center;
+
+					span {
+						font-family: "Nunito Regular", sans-serif;
+		    			font-size: 20px;
+					}
 				}
 			}
 
 			.latest-title {
 				line-height: 35px;
+			}
+		}
+	}
+
+	#lottery-result {
+		section.all-news {
+			.lottery-container {
+				/*max-width: 100%;
+				margin-bottom: 10px;
+				margin-left: 15px;*/
+				width: 18%;
+				margin: 8px;
 			}
 		}
 	}

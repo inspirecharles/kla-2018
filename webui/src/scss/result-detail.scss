@@ -1,4 +1,4 @@
-#result-detail{
+#result-detail, #print-me{
 	
 	section.detail{
 		background-color: #2a65cd;
@@ -19,10 +19,24 @@
 				margin-left: 15px;
 			}
 
+			.change-lottery {
+				margin-left: 35px;
+			}
+
 			.game-prize-date {
 				margin-left: auto;
 				padding-right: 15px;
     			padding-top: 15px;
+
+    			.game-prize-wrap {
+    				text-align: right;
+    			}
+
+    			.arrow-prev, .arrow-next {
+    				font-size: 25px;
+    				color: #212529;
+    				display: inline-block;
+    			}
 			}
 
 			.current-jackpot{
@@ -30,6 +44,17 @@
 				font-weight: bold;
 				font-size: 2em;
 				line-height: 0;
+			}
+
+			.supp-link-icons{
+				float: right;
+			    //margin-top: -40px;
+			    padding: 0;
+			    right: 0;
+			}
+			
+			a.icons {
+				cursor: pointer;
 			}
 
 			.card-body, 
@@ -45,6 +70,7 @@
 				font-weight: bold;
 				font-size: 2em;
 				color: #fff;
+				margin-top: 35px;
 			}
 
 			.dividends-table{
@@ -70,6 +96,11 @@
 							padding: 10px 7px;
 						}
 					}
+				}
+
+				iframe{
+					width: 100%;
+					height: 335px;
 				}
 			}
 		}
@@ -133,7 +164,7 @@
 			}
 
 			span.value{
-				font-size: 3em;
+				font-size: 2.5em;
 				line-height: .9;
 			}
 		}

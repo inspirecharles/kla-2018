@@ -3,6 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import {connect} from "react-redux";
 
 import {fetchNewsBySlug} from "../../actions/action-news";
+import SubscriptionComponent from "../subscribe/SubscriptionComponent"
 
 class NewsDetailContainer extends Component {
 	constructor(props) {
@@ -36,17 +37,17 @@ class NewsDetailContainer extends Component {
 		      		</div>
 	      		</section>
 
-	      		<section>
+	      		<section className="news-contentDetail">
 	      			<div className="row">
 	      				<div className="col-lg-12">
 	      					<div className="container">
 					    	 	<div className="row">
-					    	 		<div className="col-lg-12">
+					    	 		<div className="col-lg-12 news-image">
 					    	 			<header className="bg-image-full">
 									    	<img className="bg-image-full" src={this.props.news_detail && this.props.news_detail.id && this.props.env.API_URL+"/uploads/news/"+this.props.news_detail.id+"/"+this.props.news_detail.feat_img} />
 									    </header>
 					    	 		</div>
-					    	 		<div className="col-lg-12" dangerouslySetInnerHTML={{__html: this.props.news_detail && this.props.news_detail.id && this.props.news_detail.article}}>
+					    	 		<div className="col-lg-12 news-content" dangerouslySetInnerHTML={{__html: this.props.news_detail && this.props.news_detail.id && this.props.news_detail.article}}>
 										
 							        </div>
 					    	 	</div>
@@ -54,6 +55,16 @@ class NewsDetailContainer extends Component {
 	      				</div>
 	      			</div>
 	      		</section>
+
+	      		<section className="subscription-component">
+                    <div className="subscribe-wrapper">
+                        <div className="container">
+                            <div className="subscribe-container">
+                                <SubscriptionComponent/>                            
+                            </div>
+                        </div>
+                    </div>
+                </section>
       		</div>
 	    );
 	}

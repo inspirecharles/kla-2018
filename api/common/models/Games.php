@@ -10,7 +10,8 @@ use common\models\Games;
 class Games extends ActiveRecord
 {
 
-
+    public $prev_draw = null;
+    public $next_draw = null;
     /**
      * @return string the name of the table associated with this ActiveRecord class.
      */
@@ -26,7 +27,8 @@ class Games extends ActiveRecord
             [['name'], 'string', 'max' => 45],
             [['slug'], 'string', 'max' => 45],
             [['slug'], 'unique'],
-            [['priority'], 'integer', 'integerOnly' => true]
+            [['priority'], 'integer', 'integerOnly' => true],
+            [['buy_url', 'description'], 'string'],
         ];
     }
 
@@ -109,7 +111,8 @@ class Games extends ActiveRecord
     {
         return Games::find()->where($where)->exists();
     }
-     public function getPreviousResultId($game_id, $draw_id)
+
+    public static function getPreviousResultId($game_id, $draw_id)
     {
         $query = Results::find()->where(['game_id' => $game_id])->andWhere(['<', 'draw_id', $draw_id])->orderBy(['draw_id' => SORT_DESC])->one();
          // sets to current draw if there's no previous draw
@@ -119,7 +122,8 @@ class Games extends ActiveRecord
         }
          return $query->draw_id;
     }
-     public function getNextResultId($game_id, $draw_id){
+     
+    public static function getNextResultId($game_id, $draw_id){
         $query = Results::find()->where(['game_id' => $game_id])->andWhere(['>', 'draw_id', $draw_id])->orderBy(['draw_id' => SORT_ASC])->one();
          // sets to current draw if there's no previous draw
         if (!isset($query['draw_id'])) {

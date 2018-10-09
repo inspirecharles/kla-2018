@@ -28,6 +28,24 @@ class NewsController extends ActiveController
         ];
     }
 
+    public function formName()
+    {
+        return '';
+    }
+
+    public function actions() 
+    { 
+        $actions = parent::actions();
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
+        return $actions;
+    }
+
+    public function prepareDataProvider() 
+    {
+        $searchModel = new News();    
+        return $searchModel->search(\Yii::$app->request->queryParams);
+    }
+
     public function beforeAction($action)
     {
         \Yii::$app->response->format = Response::FORMAT_JSON;
@@ -45,6 +63,7 @@ class NewsController extends ActiveController
 
     public function actionAddsubmit(){
         $model = new News();
+        //return Yii::$app->request->post('article');
         if ($model->load(['News' => Yii::$app->request->post()])) {
             $uploadModel = new UploadForm;
             $uploadModel->file = UploadedFile::getInstanceByName('feat_img');
@@ -59,8 +78,11 @@ class NewsController extends ActiveController
             if($model->save()){
                 if ($uploadModel->file && $uploadModel->validate()){
                     $file_path = Yii::getAlias('@uploadFolder').'/news/'. $model->id;
-                    mkdir($file_path);
-                    $uploadModel->file->saveAs($file_path .'/'. $uploadModel->file->baseName . '.' . $uploadModel->file->extension );
+                    if( !file_exists($file_path) )
+                        mkdir($file_path);
+
+                    if( !file_exists( $file_path .'/'. $uploadModel->file->baseName . '.' . $uploadModel->file->extension ) )
+                        $uploadModel->file->saveAs($file_path .'/'. $uploadModel->file->baseName . '.' . $uploadModel->file->extension );
 
                     $model->feat_img = $uploadModel->file->baseName . '.' . $uploadModel->file->extension;
                     $model->save();
@@ -75,5 +97,46 @@ class NewsController extends ActiveController
         }
         else
                 return ['type' => 'fail', 'message' => 'cant load model'];
+    }
+
+    public function actionUpdatesubmit(){
+        $model = News::find()->where(['id' => Yii::$app->request->post('id')])->one();
+        if ($model->load(['News' => Yii::$app->request->post()])) {
+            $uploadModel = new UploadForm;
+            $uploadModel->file = UploadedFile::getInstanceByName('feat_img');
+
+            $model->yr_month = date('Y m');
+            $model->tags = strtolower($model->tags);
+            $strSlug = preg_replace('/[^A-Za-z0-9\-\'\ ]/', '', $model->title); 
+            $sr = array("   ", "  ", " ");
+            $model->slug = strtolower(str_replace($sr, "-", $strSlug ));
+            
+            if ($uploadModel->file && $uploadModel->validate()){
+                $file_path = Yii::getAlias('@uploadFolder').'/news/'. $model->id;
+                if( !file_exists($file_path) )
+                    mkdir($file_path);
+
+                if( !file_exists( $file_path .'/'. $uploadModel->file->baseName . '.' . $uploadModel->file->extension ) )
+                    $uploadModel->file->saveAs($file_path .'/'. $uploadModel->file->baseName . '.' . $uploadModel->file->extension );
+
+                $model->feat_img = $uploadModel->file->baseName . '.' . $uploadModel->file->extension;
+                $model->save();
+                return ['type' => 'success', 'message' => 'with feat_img'];
+            }else{
+                $model->save();
+                return ['type' => 'success', 'message' => 'no feat_img'];
+            }
+        }
+        else
+                return ['type' => 'fail', 'message' => 'cant load model'];
+    }
+
+    public function actionDeletenews()
+    {
+        $model = News::find()->where(['id' => Yii::$app->request->post('id')])->one();
+        if( $model->delete() )
+            return ['type' => 'success', 'message' => 'News deleted successfully.'];
+        else
+            return ['type' => 'fail', 'message' => 'Something went wrong.'];
     }
 }

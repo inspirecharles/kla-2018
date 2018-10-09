@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-import {formatMoney,buyNowUrl} from "../../helper";
+import {formatMoney, createGameUrlSlug} from "../../helper";
 import UKResult from "../variants/uk/ResultComponent";
+import ExportComponent from "../utilities/ExportComponent";
+import PrintComponent from "../utilities/PrintComponent";
 
 class HomeCardComponent extends Component {
 
@@ -55,7 +57,6 @@ class HomeCardComponent extends Component {
 					next_jackpot = "Min £25,000 or 10% of sales";	
 		        break;
 		    default:
-		    		
 					current_jackpot =  "£ " + formatMoney(this.props.game.results[0].current_jackpot);
 					next_jackpot = "£ " + formatMoney(this.props.game.results[0].next_jackpot);
 		         break;
@@ -63,7 +64,7 @@ class HomeCardComponent extends Component {
 		}
 
 		return (
-	        <div className={"col-lg-6 game_result "+" "+this.props.game.slug+" "+(this.props.game.slug.includes('postcode')?'postcode':'')}>
+	        <div id={this.props.game.slug+"-container"} className={"col-lg-6 game_result "+" "+this.props.game.slug+" "+(this.props.game.slug.includes('postcode')?'postcode':'')}>
 	        	<div className="accordion md-accordion accordion-3 z-depth-1-half" role="tablist" aria-multiselectable="true">
 					<div className="card">
 						<div className="lottery-results-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true" onClick={this.toggleShow}>
@@ -76,7 +77,7 @@ class HomeCardComponent extends Component {
 										    </div>
 										    <div className="prize-date">
 										    	<p className="prize text-right">{current_jackpot}</p>
-												<p className="date text-right">{this.props.game.results && this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('dddd DD MMMM YYYY') }</p>
+												<p className="date text-right">{this.props.game.results && this.props.game.results[0] && moment(this.props.game.results[0].draw_date).format('ddd DD MMMM YYYY') }</p>
 										    </div>
 										    <div className="arrow-icon">
 										    	<i className={"fa fa-angle-"+(this.state.show==true?'up':'down')+" rotate-icon fa-2x align-middle"}></i>
@@ -95,9 +96,9 @@ class HomeCardComponent extends Component {
 	                        	<div className="actionLink">
 	                            	<div className="supplementary_numbers col-lg-12 col-md-12">
 	                            		<div className="supp-link-icons">
-	                            			<a className="icons"><img className="img-fluid icon-printresult" src="/img/icons/print-results.svg" /></a>
-			                            	<a className="icons"><img className="img-fluid icon-download" src="/img/icons/download.svg" /></a>
-			                            	<Link className="icons icon-pastresult" to={"/results/"+this.props.game.slug}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
+	                            			<PrintComponent elem={this.props.game.slug+"-container"} />
+			                            	<ExportComponent game={this.props.game.slug} draw_id={this.props.game.results && this.props.game.results[0] && this.props.game.results[0].draw_id} />
+			                            	<Link className="icons icon-pastresult" to={"/"+createGameUrlSlug(this.props.game.slug)+"/results"}><img className="img-fluid icon-pastresult" src="/img/icons/past-results.svg" />Past Results</Link>
 			                            </div>
 	                            	</div>
 	                            </div>
@@ -106,7 +107,7 @@ class HomeCardComponent extends Component {
 	                        <div className="card-footer container">
 								<div className="row footerNextDraw">
 									<h3 className="nextDraw">Next Draw: {next_jackpot}</h3>
-									<a target="_blank" href={buyNowUrl(this.props.game.slug)} className="ml-auto"><button className="btn btn-light buy-now-btn">Buy Now</button></a>
+									<a target="_blank" href={this.props.game.buy_url} className="ml-auto"><button className="btn btn-light buy-now-btn">Buy Now</button></a>
 								</div>
 							</div>
 	                    </div>

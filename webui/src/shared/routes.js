@@ -7,6 +7,7 @@ import ResultContainer from "./components/ResultContainer";
 import ComingSoonContainer from "./components/comingsoon/ComingSoonContainer";
 import TermsContainer from "./components/site/TermsContainer";
 import PrivacyContainer from "./components/site/PrivacyContainer";
+import SearchResultContainer from "./components/results/SearchResultContainer";
 
 const routes = [
   {
@@ -17,22 +18,17 @@ const routes = [
   {
     path: "/results",
     exact: true,
-    component: ComingSoonContainer,
+    component: LotteryResultContainer,
     title: 'Results'
   },
   {
-    path: "/results/:game_slug",
+    path: "/:game_slug/results/:draw_id?",
     exact: true,
-    component: ComingSoonContainer,
+    component: SearchResultContainer,
     title: 'Results (Game)'
   },
   {
-    path: "/:game_slug/draw-:draw_id",
-    exact: true,
-    component: ResultContainer
-  },
-  {
-    path: "/tickets",
+    path: "/check-your-ticket",
     exact: true,
     component: ComingSoonContainer,
     title: 'Tickets'
@@ -72,6 +68,11 @@ const routes = [
     exact: true,
     component: PrivacyContainer,
     title: 'Privacy Policy'
+  },
+  {
+    path: "/:game_slug",
+    exact: true,
+    component: ResultContainer
   },
 
 

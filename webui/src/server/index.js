@@ -41,8 +41,11 @@ function handleRender(req, res, next) {
 	const promises = routes.reduce((acc, route) => {
 		var props = matchPath(req.url, route);
 	    if ( props && route.component && route.component.initialAction) {
-	    	if( props.path == '/:game_slug/draw-:draw_id' ){	
-	    		acc.push(Promise.resolve(store.dispatch(route.component.initialAction( props.params.game_slug.replace("-", "_"), props.params.draw_id.replace("draw-","") ))));
+	    	if( props.path == '/:game_slug' ){
+	    		acc.push(Promise.resolve(store.dispatch(route.component.initialAction( props.params.game_slug.replace("-", "_") ))));
+	    	}
+	    	else if( props.path == '/:game_slug/results/:draw_id?' ){
+	    		acc.push(Promise.resolve(store.dispatch(route.component.initialAction( props.params.game_slug.replace("-", "_"), (props.params.draw_id && props.params.draw_id.replace("draw-", "")) || null ))));
 	    	}
 	    	else if( props.path == '/news/:slug' ){
 	    		acc.push(Promise.resolve(store.dispatch(route.component.initialAction( props.params.slug ))));
@@ -73,11 +76,29 @@ function renderFullPage(html, preloadedState) {
 	return `
 		<!DOCTYPE html>
 			<head>
+				<title>Latest UK Lottery Results</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<title>Test</title>
+				<meta charset="UTF-8">
+				<meta name="application-name" content="Latest UK Lottery Results"/>
+				<meta name="description" content="Latest UK Lottery Results">
+				<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 				<link rel="stylesheet" type="text/css" href="/css/main.css">
+				<!-- Google Tag Manager -->
+				<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+
+				{'gtm.start': new Date().getTime(),event:'gtm.js'}
+				);var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer','GTM-MV45HPT');</script>
+				<!-- End Google Tag Manager -->
 			</head>
 			<body>
+				<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV45HPT"
+				height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+				<!-- End Google Tag Manager (noscript) -->
+				<div id="print-me"></div>
 				<div id="root">${html}</div>
 			</body>
 			<script>window.__PRELOADED_STATE__ = ${serialize(preloadedState)}</script>
