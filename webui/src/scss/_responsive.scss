@@ -218,7 +218,7 @@
 
 				.game-prize-date {
 					margin: 0 auto;
-				    text-align: center !important;
+				    text-align: center;
 				    padding-right: 0;
 				}
 			}
@@ -280,6 +280,10 @@
 					margin: 0 auto;
 				    text-align: center !important;
 				    padding-right: 0;
+
+				    .game-prize-wrap {
+				    	text-align: center;
+				    }
 				}
 			}
 		}
