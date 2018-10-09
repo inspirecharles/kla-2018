@@ -23,7 +23,7 @@ class m180817_030028_create_results extends Migration
                 'id' => 'SERIAL PRIMARY KEY',
                 'game_id' => 'INTEGER REFERENCES games(id)',
                 'draw_id' => 'INTEGER NOT NULL',
-                'draw_date' => 'TIMESTAMP',
+                'draw_date' => 'TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP',
                 'main_numbers' => 'text',
                 'supp_numbers' => 'varchar(100)',
                 'dividends' => 'text',
