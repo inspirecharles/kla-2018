@@ -85,6 +85,31 @@ class SearchResultContainer extends Component {
 	}
 
 	render() {
+		let current_jackpot = '';
+		let next_jackpot = '';
+
+		if(this.props.result_detail && this.props.result_detail.results){
+			switch(this.props.result_detail.slug) {
+		    case '49lottery':			   		
+					current_jackpot =  "Up to $140,000 *";
+					next_jackpot = "Up to $140,000 *";
+			        break;
+		    case 'postcode_daily':		   		
+		    case 'postcode_weekly':		   		
+		    case 'postcode_monthly' :		   			
+					current_jackpot =  "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot);
+					next_jackpot = "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot);
+		        break;
+		    case 'health_lottery':		   			
+					current_jackpot =  "Min £25,000 or 10% of sales";
+					next_jackpot = "Min £25,000 or 10% of sales";	
+		        break;
+		    default:
+					current_jackpot =  "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot);
+					next_jackpot = "£ " + formatMoney(this.props.result_detail.results[0].next_jackpot);
+		         break;
+			}
+		}
 	    return (
 			<div id="result-detail">
 	    		<section className={"detail game_result "+" "+this.props.result_detail.slug+" "+(this.props.result_detail.slug && this.props.result_detail.slug.includes('postcode')?'postcode':'')}>
@@ -104,7 +129,7 @@ class SearchResultContainer extends Component {
 								</div>
 			    				<div className="game-prize-date">
 			    					<div className="game-prize-wrap">
-			    						<span className="current-jackpot">{this.props.result_detail.results && this.props.result_detail.results.length && "£ " + formatMoney(this.props.result_detail.results[0].current_jackpot)}</span><br/>
+			    						<span className="current-jackpot">{current_jackpot}</span><br/>
 				    				<span>{this.props.result_detail.results && this.props.result_detail.results.length && "Draw "+this.props.result_detail.results[0].draw_id+" - "+moment(this.props.result_detail.results[0].draw_date).format('ddd DD MMMM YYYY')}</span>
 			    					</div>
 
