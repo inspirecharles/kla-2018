@@ -24,17 +24,21 @@ class SubscriptionComponent extends Component {
 		this.setState({email: this.props.email})
 	}
 
-	submitEmail(){
-		console.log(this.refs.email1.value);
+	submitEmail(e){
+		e.preventDefault();
 		
-		
-		let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
-		if(reg.test(this.refs.email1.value) === false)
+		/*let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+
+
+		console.log(reg.test(this.refs.email1.value));*/
+
+		/*if(reg.test(this.refs.email1.value) === false)
 		{
 			console.log("Email is Not Correct");
 			this.setState({email:this.refs.email1.value, 
 						   errorDisplay:{display: 'block',color:'red'}})			
 		}else{
+		*/
 		  this.setState({email:this.refs.email1.value})
 		  console.log("Email is Correct");
 		  this.setState({errorDisplay:{display: 'none'} ,
@@ -43,9 +47,8 @@ class SubscriptionComponent extends Component {
 		 
 		  this.props.dispatch(saveEmail(this.refs.email1.value));
 		  this.refs.email1.value = '';
-		}
+		/*}*/
 
-		
 	}
 
 	render() {
@@ -62,12 +65,14 @@ class SubscriptionComponent extends Component {
 					<div className="media-body subscribe-body right col-lg-6 col-md-12 subscribe">
 						<div className="single">
 						    <div style={this.state.hideInput}>
-								<div className="input-group">							
-						         <input type="email" ref="email1" className="form-control" placeholder="Email" />
-							        <span className="input-group-btn">
-							        	<button className="btn btn-theme btn-subscribe" onClick={this.submitEmail} type="submit">Subscribe</button>
-						         	</span>
+								<form onSubmit={this.submitEmail}>
+								<div className="input-group">
+							        	<input type="email" ref="email1" className="form-control" placeholder="Email" />
+								        <span className="input-group-btn">
+								        	<button type="submit" className="btn btn-theme btn-subscribe"  type="submit">Subscribe</button>
+							         	</span>
 						        </div>
+					         	</form>
 						        <div style={this.state.errorDisplay}>
 									<span>
 									This email address you have entered is invalid.<br/>
