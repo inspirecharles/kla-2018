@@ -77,6 +77,17 @@ section.page-footer {
     padding: 52px 0;
 }
 
+footer.page-footer {
+    .footer-copyright {
+        .disclaimer {
+            .disclaimer-text {
+                margin-bottom: 0;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
 #result-detail {
     section.detail {
         .result-title {

@@ -43,7 +43,14 @@ class FooterContainer extends Component {
 
 			    </div>
 
-			    <div className="footer-copyright text-center py-3">Copyright © 2018 
+			    <div className="footer-copyright text-center py-3">
+
+			    	<div className="disclaimer">
+			    		<p className="disclaimer-text">* Please check with your local bookmaker</p>
+			    	</div> 
+
+			    	Copyright © 2018
+
 			    	<a className="footer-list" href={"https://www.lotteryresults.co.uk"}> www.lotteryresults.co.uk</a>
 			    	<p className="mb-1 poweredby-text">Powered by
 			      		<a className="footer-list jumbo-corp-link" href={"https://www.jumbointeractive.com/"}> Jumbo Interactive</a>
