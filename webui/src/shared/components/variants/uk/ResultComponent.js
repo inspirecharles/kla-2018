@@ -120,7 +120,7 @@ class ResultComponent extends Component {
                             }) }
 
                             { !this.props.hideViewPrizes &&
-                            <Link to={"/"+createGameUrlSlug(this.props.game.slug)}><button className="btn btn-primary float-right blueBtn">View Prizes</button></Link>
+                            <Link to={"/"+createGameUrlSlug(this.props.game.slug)}><button className="btn btn-primary float-right blueBtn view-prizes">View Prizes</button></Link>
 							}
 						</div>
                     </div>

@@ -64,7 +64,7 @@ class HomeCardComponent extends Component {
 		}
 
 		return (
-	        <div id={this.props.game.slug+"-container"} className={"col-lg-6 game_result "+" "+this.props.game.slug+" "+(this.props.game.slug.includes('postcode')?'postcode':'')}>
+	        <div id={this.props.game.slug+"-container"} className={"col-lg-6 game_result "+" "+this.props.game.slug+" "+(this.props.game.slug.includes('postcode')?'postcode':'')+" container-"+this.props.game.slug}>
 	        	<div className="accordion md-accordion accordion-3 z-depth-1-half" role="tablist" aria-multiselectable="true">
 					<div className="card">
 						<div className="lottery-results-header accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx1" role="tablist" aria-multiselectable="true" onClick={this.toggleShow}>

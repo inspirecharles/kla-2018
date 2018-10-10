@@ -259,6 +259,7 @@ body {
 	}
 
 	.card-body {
+		position:relative;
 		padding: 0;
 		margin-bottom: 2%;
 	}
@@ -297,6 +298,20 @@ body {
 
 	.footerNextDraw {
 		margin: 0;
+	}
+
+	
+
+	.container-49lottery{
+		.view-prizes{
+	        position: absolute;
+		    top: 105px;
+		    right: 0;
+		}
+
+		.gameResults-actionLink{
+			margin-top: 70px;
+		}
 	}
 }
 
